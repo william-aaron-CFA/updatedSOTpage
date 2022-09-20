@@ -1,0 +1,306 @@
+<HTML>
+<HEAD>
+   <TITLE>M&TA data processing</TITLE>
+<!-- Changed by: Scott J. Wolk, 10-Mar-1999 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; I; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#DDDDDD" BGCOLOR="#000000" LINK="#FF0000" VLINK="#FFFF22" 
+ALINK="#7500FF" background="../stars.jpg">
+
+
+
+<h1> M&TA Data Processing </h1>
+
+<hr>
+<FONT COLOR=#00FFFF SIZE=4>
+This page currently a first attempt to flesh out the daily processing 
+to be carried out by M&TA Hardware and software. Software tasks break
+themselves into four types:
+<li> Those which act on and output Raw or standard data products.
+<li> Those which act on standard data products and output
+an MTA product.
+<li> Those which act on special version of standard data products and output
+an MTA product.
+<li> Those which act on an MTA product.
+</FONT>
+<p>
+
+An earlier form of this plan from <a href = "../1997_plan/index.htm" >
+1997 </a> is also available.<br>
+
+<A HREF="../MTA.html">Back to the MTA home page</A>
+<hr>
+<h3> Outline of processing</h3>
+
+<h4>  Act on and output Raw or standard data products.</h4>
+<ol>
+<li><FONT COLOR=#00FFFF SIZE=3>ACORN/MTA-RT</FONT> - This is an MTA
+specialty tool for monitoring the Real-time data. Limits are sensed
+based on the ODB.
+<ul>
+<li> <FONT COLOR=#00FFFF SIZE=2>Input</FONT> - The UDP real-time
+stream from DSN.
+
+<li> <FONT COLOR=#00FFFF SIZE=2>Output</FONT> - Messages to the Notifier.
+</ul>
+
+
+<li><FONT COLOR=#00FFFF SIZE=3>SDP</FONT> - This is the SDP
+version of AP.  It contains the following:
+<ul> 
+
+<li><FONT COLOR=#00FFFF SIZE=2>DECOM</FONT>  Flight DECOM.
+I would prefer relatively large engineering files (~1 hour in formats 1
+& 2) 
+
+<li><FONT COLOR=#00FFFF SIZE=2>L0.5</FONT> This creates setup for L1.
+
+<li><FONT COLOR=#00FFFF SIZE=2>L1 </FONT>Based on the L0 event
+products and L0.5 OBI products.  This pipeline runs on a per/OBI
+basis. Archival L1 event files are created.
+
+<li><FONT COLOR=#00FFFF SIZE=2>L1.5 - Gratings</FONT> MTA has a
+specific suite of procedures be executed against gratings L1 or L1.5 
+files.
+
+<li><FONT COLOR=#FF00FF SIZE=2>L2 - Sources </FONT> MTA has no
+use for SDP L2 sources since they may represent different time slices.
+</ul>
+
+
+<li><FONT COLOR=#00FFFF SIZE=3>MTA special AP (MTA/SAP)</FONT> 
+- This is the MTA version of AP running under separate instantiation 
+than the flight pipeline.  It contains the following:
+<ul> 
+
+<li><FONT COLOR=#00FFFF SIZE=2>DECOM</FONT> - 
+We need to create L0 event lists based on only the dumps worth of data.
+This should be achieved by running ADE and HDE under a separate
+instantiation of the data extractor. These files should time out at
+the end of the playback.  We should also run a limited
+version of the EDE only to produce the on board aspect solution.
+<FONT COLOR=#FF00FF > Question: Are the ACIS/HRC
+event files produced this way 
+cumulative or just data from the last pass?</FONT>
+
+
+<li><FONT COLOR=#00FFFF SIZE=2>L1/OBI</FONT>Based on the L0 event
+product and L0 OBC aspect solution,  MTA should use something like 
+the SI-pipe to generate a  <em> per pass </em> events list.  
+<FONT COLOR=#FF00FF > Question: Can the SI-PIPE use the OBC aspect data?
+</FONT>
+
+
+</ul>
+</ol>
+
+<h4> Act on standard data products and output an MTA product.</h4>
+<ol>
+<li><FONT COLOR=#00FFFF SIZE=3>Static Monitor</FONT> - This is the MTA
+<A HREF="http://hea-www.harvard.edu/~sopdev/mta/pipes/monitor_static.ps">
+Standard Monitoring</A>. 
+<ul>
+<li> <FONT COLOR=#00FFFF SIZE=2>Primary Input</FONT> - L0 engineering like data of msids which are not
+context or state dependent.<em> OR </em> L1 data from ASPECT or other pipes
+which calculate static values useful to monitor.
+
+<li> <FONT COLOR=#00FFFF SIZE=2>Secondary Input </FONT> - Group.list,
+process.list, Limits.db, Email.list.
+
+<li> <FONT COLOR=#00FFFF SIZE=2>Output</FONT> - Data for use by
+notifier, fits file for use by Summary page maker, fits file for use
+by DB ingest.
+</ul>
+<li><FONT COLOR=#00FFFF SIZE=3>Dynamic/State Monitor</FONT> - This is the MTA
+<A HREF="http://hea-www.harvard.edu/~sopdev/mta/pipes/monitor_state.ps">
+State sensitive monitoring</A>.  Really this is a front end to the
+static pipe which updates the limits database with time variability
+information.  This pipeline is  designed to monitor those
+values which are sensitive to the actual state of the spacecraft.
+<em> Whether or not the spacecraft was in the expected state requires
+comparison against the OBSCAT. Therefore we consider that test a V&V
+task.</i>
+
+<ul>
+<li> <FONT COLOR=#00FFFF SIZE=2>Primary Input</FONT> - L0 engineering like data of msids which are context or state dependent.
+
+<li> <FONT COLOR=#00FFFF SIZE=2>Secondary Input </FONT> - Group_list,
+process_list, Var_Limits.db, Email_list.
+
+<li> <FONT COLOR=#00FFFF SIZE=2>Output</FONT> - Data for use by
+notifier, fits file for use by Summary page maker, fits file for use
+by DB ingest.
+</ul>
+
+<li><FONT COLOR=#00FFFF SIZE=3>Photon_mon/ACIS_CCD_mon</FONT> -
+These tools have similar goals.
+<ul>
+<li><a href =" ../specs/photon_mon.ps">Photon_mon</a> creates a quick look at the focal plane and certain PHA
+data and hot pixels..
+<li><a href =" ../specs/acis_ccd_mon.ps">ACIS_CCD_mon</a> looks more carefully at the PHA distributions node by
+node/FEP by FEP as a precursor to CTI.
+</ul>
+<ul>
+<li> <FONT COLOR=#00FFFF SIZE=2>Primary Input</FONT> - L0 or L1 event
+lists. The tools run separately on both products. 
+So When the L0 Archival event list Is created Photon_mon 
+(and if ACIS ACIS_CCD_mon) are executed and write to the DB tables and
+web pages.  When the L1 Archival event list is created Photon_mon 
+(and if ACIS ACIS_CCD_mon) are executed and write to the DB tables and
+update web pages.  <i> Note - when I use the term archival quality
+I mean data in or scheduled to go in the archive, I intend that the
+process run off the cache data </i>. 
+
+<li> <FONT COLOR=#00FFFF SIZE=2>Output</FONT> - Data for use by
+notifier, fits file for use by html page maker (done internally), 
+fits file to be archived (except in the case of Photon_mon - no archive).
+</ul>
+
+<li><FONT COLOR=#00FFFF SIZE=3>ACA_MON</FONT> - This is an MTA
+<a href =" ../specs/aca_mon.ps">specialty tool</a> to monitor the output of the aspect Level 1 pipe.
+<ul>
+<li> <FONT COLOR=#00FFFF SIZE=2>Primary Input</FONT> - Archival
+quality L1 FIDPROPS,
+ACACENT and GSPROPS FILES.
+
+<li> <FONT COLOR=#00FFFF SIZE=2>Secondary Input </FONT> -  Limits.db, Email_list.
+
+<li> <FONT COLOR=#00FFFF SIZE=2>Output</FONT> - Data for use by
+notifier, data for internal Summary page maker, possible data for DB
+(probably handled by ACA_TRD)
+</ul>
+
+<li><FONT COLOR=#00FFFF SIZE=3>Grat_mon</FONT> - This is an MTA
+specialty tool (specification due 3/31 - pseudo-code (IDL) is
+available) to monitor the Gratings data.
+<ul>
+<li> <FONT COLOR=#00FFFF SIZE=2>Primary Input</FONT> - Archival quality
+L1.5 tg events file.
+
+<li> <FONT COLOR=#00FFFF SIZE=2>Output</FONT> - Data for use by
+notifier, data for internal summary page maker, possible data for DB
+(unspecified).
+
+</ul>
+
+<li><FONT COLOR=#00FFFF SIZE=3>Src_mon</FONT> - This is an MTA
+specialty tool (specification due 3/31) to monitor the focus.
+We will apply our own version of cell detect to the L1 data and act on
+the result.
+<ul>
+<li> <FONT COLOR=#00FFFF SIZE=2>Primary Input</FONT> - Archival
+quality L1 events file.
+
+<li> <FONT COLOR=#00FFFF SIZE=2>Output</FONT> - Data for use by
+notifier, data for internal summary page maker, possible data for DB
+(unspecified).
+</ul>
+</ol>
+<h4> Act on an MTASAP product and output an MTA product.</h4>
+Both of these tools write only to the /MTA/Photons/temp region of the
+web site.<BR>
+
+<FONT COLOR=#00FFFF SIZE=3>Photon_mon/ACIS_CCD_mon</FONT> -
+When the MTA/SAP Produces a L0 event list, up to 3 things happen to
+it.
+
+<OL>
+<li><FONT COLOR=#00FFFF SIZE=3> Photon_mon </FONT> - <br>
+ <FONT COLOR=#00FFFF SIZE=2>Input</FONT> Temporary L0 EVENT file. <br>
+ <FONT COLOR=#00FFFF SIZE=2>Output</FONT> Temporary Web pages (with
+possible alerts)
+
+<li> <FONT COLOR=#00FFFF SIZE=3>ACIS_CCD_MON</FONT>  - <br>
+ <FONT COLOR=#00FFFF SIZE=2>Input</FONT> Temporary L0 ACIS Event file. <br>
+ <FONT COLOR=#00FFFF SIZE=2>Output</FONT> Temporary Web pages (with
+possible alerts)
+
+<li> <FONT COLOR=#00FFFF SIZE=3>SI-PIPE</FONT>  (or variant) - <br>
+ <FONT COLOR=#00FFFF SIZE=2>Input</FONT> Temporary L0 Event
+file. Level 0 On-Board Aspect data. <br>
+ <FONT COLOR=#00FFFF SIZE=2>Output</FONT> Temporary L1 event File.
+</ol>
+
+<li>When the MTA/SAP produces a L1 event list, up to 2 things happen to
+it.
+<ol>
+<li> <FONT COLOR=#00FFFF SIZE=3>Photon_mon </FONT> - <br>
+ <FONT COLOR=#00FFFF SIZE=2>Input</FONT> Temporary L1 EVENT file. <br>
+ <FONT COLOR=#00FFFF SIZE=2>Output</FONT> Temporary Web pages (with
+possible alerts)
+
+<li><FONT COLOR=#00FFFF SIZE=3> ACIS_CCD_MON</FONT>  - <br>
+ <FONT COLOR=#00FFFF SIZE=2>Input</FONT> Temporary L1 ACIS Event file. <br>
+ <FONT COLOR=#00FFFF SIZE=2>Output</FONT> Temporary Web pages (with
+possible alerts)
+
+</ol>
+
+
+<h4> Act on an MTA product.</h4>
+The following tools take final action on MTA Products and tend to have
+a life of their own.
+<ol>
+<li><FONT COLOR=#00FFFF SIZE=3>Notifier</FONT> - A.K.A. MTA_PRS.
+This tool sends problem messages to pagers, email accounts and the 
+problem tracker.  It also needs to receive replies to the pager
+messages. This software requires its own account: <i> MTADUDE</i> is
+currently used.
+
+<li><FONT COLOR=#00FFFF SIZE=3>Mk_sum_pg</FONT> - This is a generic
+name for an activity carried out by many pipelines of converting their
+data to web pages and embedded gifs. 
+
+<li><FONT COLOR=#00FFFF SIZE=3>Population of MTA DB Tables</FONT> -
+This activity should occur at the end of most MTA activities which act
+on archival quality products.  Those data which have been acted on
+which are also in the <a href="../MTA_DATABASES.txt">MTA DB tables</a>
+(15 are define 5 more are coming) should be ingested to the
+appropriate tables.
+</ol>
+
+<h4> Out of loop MTA Activities.</h4>
+The following MTA activities are not directly tied to OBSIDs are to
+the spacecraft directly.  So they can be scheduled independently.
+
+<ol>
+<li><FONT COLOR=#00FFFF SIZE=3>Trends</FONT> -
+The current plan is to run trends on a 1/subsystem/week basis.  Monday
+ACIS, Tuesday PCAD, etc.  The plan is to use the Data_seeker version
+1.0 acting on the MTADB tables. The software would execute each
+morning from 3-7 a.m. local time.
+
+<li><FONT COLOR=#00FFFF SIZE=3>Concatenation and archive of *STATIC
+and *STATE FITS files.</FONT> - Currently MTA generates Hundreds of
+these files per day. Basically 1 of each type of file / hour in
+formats 1 and 2. So we have code to concatenate the 24-84 files for a
+given subsystem into 1 file.  We would prefer to archive only that
+file. This activity could be execute by cron job and occur from 12:30
+to 3 a.m. local time.
+
+<li><FONT COLOR=#00FFFF SIZE=3>Problem Tracking</FONT> - MTA problem
+tracking currently runs outside of the ops structure.
+The software receives email and restricted web input to track problem
+status. This software requires its own account: <i> MTA </i> is
+currently used.
+
+</ol>
+<hr>
+
+<h3> TOP Down flow diagram Passes 1 through 4</h3>
+<a href ="pass1.ps"><IMG alt="pass1" SRC="./pass1.gif" ALIGN=Bottom></a>
+<a href ="pass2.ps"><IMG alt="pass2" SRC="./pass2.gif" ALIGN=Bottom></a>
+<a href ="pass3.ps"><IMG alt="pass3" SRC="./pass3.gif" ALIGN=Bottom></a>
+<a href ="pass4.ps"><IMG alt="pass4" SRC="./pass4.gif" ALIGN=Bottom></a>
+<h3> Expected layout of the Web directory structure.</h3>
+<a href ="web_dir.ps"><IMG alt="Web Dir." SRC="web_dir.gif" ALIGN=Bottom></a>
+
+<hr>
+
+<P><A HREF="../MTA.html">The M&TA Home page</A>
+<P><A HREF="mailto:swolk@head-cfa.harvard.edu">Email problems to: swolk@head-cfa.harvard.edu</A>
+(<A HREF="http://hea-www.harvard.edu/~swolk/swolk.html">Scott Wolk</A>) <BR>
+...it is all his fault <BR>
+</P>
+</BODY>
+</HTML>

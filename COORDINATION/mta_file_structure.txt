@@ -1,0 +1,36 @@
+MTA will monitor each product, as it is produced from SDP
+
+
+PCAD X.X.X
+
+L0-->Lm----
+L0-->Lm----MTAPCAD
+L0-->Lm---  X.X.X
+L0-->Lm---- summary file
+      |             |
+      |             |
+      V             V
+    database    Archived
+
+
+HRMA X.X.X
+L1--> Lm  -- -----HRMA
+L1--> Lm           MTA
+      |             |
+      |             |
+      V             V
+    database    Archived
+
+
+
+Note the archived (warehoused) files have the following form 
+TIME  MSID1 MSID1_ST MSID2  MSID2_ST MSID3  MSID3_ST QUAL
+MF10   V1     5       V3     5        V7     5        7
+MF11   V1     5       V3     5        V8     5        4
+MF12   V1     5       V4     5        V9     5        6
+MF13   V1     5       V4     5        V0     5        4
+MF20   V2     4       V5     5        VA     4        7
+MF21   V2     4       V5     5        VB     5        4
+MF22   V2     4       V6     5        VC     5        6
+MF23   V2     4       V6     5        VD     5        4
+

@@ -1,0 +1,80 @@
+#
+# Operationl Limits (based on V6.9)
+#
+# If an MSID's limit values are 2.0, 3.0, 1.0, and 4.0, then its true
+#    limit values are unavailable.
+# If an MSID's limit values are -1000, -1000, -1000, and -1000, then
+#    it has no limits values.
+# All entries with v6.9 Notes are from the v6.9 limit database.
+# If a Description contains an MSID in parentheses, the limit values are for that MSID.
+# All entries with with v6.9* Notes are in tmsrment.txt, but not in the v6.9 limit database.
+#    All listed limit values are obtained or guessed from elsewhere.
+# All entries with v6.9/5 Notes are from OBD v6.5.
+# All entries with v6.9S Notes are from swolk 1/21/99.
+# All entries with mta Notes contain MTA specific limit values.
+# All entries with v6.9A Notes originate from an Acis internal memo.
+# All entries with acis Notes originate from an Acis internal memo.
+# All entries with v6.9H Notes originate from an Hrc internal memo.
+# All entries with v6.9P Notes originate from the Pcad engineering ICD.
+# All entries with sim Notes originate from the Sim ICD.
+# All entries with v6.9Su Nots originate from the Subsystem engineering ICD.
+# All entries with juda1 Notes originate from Michael Juda email 12 May 1999
+# SJW changed K to C for HRC SSD and ACA 8/1/99
+# SJW changed C to K for HRC non SSD  temps.  8/8/99
+#
+# All red max and min limit values are "absolute" and should not be
+#    exceeded while in operation.
+#
+#	5/**/99
+#
+#----------------------------------------------------------------------------------------------------
+#MSID           Yellow          Red             Description                             Unit    Note
+#               min     max     min     max
+#----------------------------------------------------------------------------------------------------
+#
+
+......
+
+
+#hrc1_3_08  Changed K to C 8/1/99 SJW 
+#changed 2's  back 8/8/99 SJW
+#2CEAHVPT        -35.65  45.35   -37.65  47.35     0   #CEA RADIATOR TEMPERATURE AT CENTER     C       v6.9
+#2CHTRPZT        -35.65  35.35   -37.65  37.35     0   #CENTRAL ELECTRONICS BOX TEMP           C       v6.9
+#2CONDMXT        -35.65  45.35   -37.65  47.35     0   #CONDUIT -X FACE TEMPERATURE            C       v6.9
+#2DCENTRT        -10.65  35.35   -12.65  37.35     0   #DETECTOR HOUSING TEMP 2                C       v6.9
+#2DTSTATT        -13.15  35.35   -15.15  37.35     0   #DETECTOR HOUSING TEMP 1                C       v6.9
+#2FHTRMZT        -35.65  35.35   -37.65  37.35     0   #FRONT END ELECTRONICS BOX TEMPERATURE  C       v6.9
+#2FRADPYT        -38.15  35.35   -40.15  37.35     0   #FRONT END ASSEMBLY +Y AT RAD CTR TEMP  C		v 6.9
+#2PMT1T          -35.65  45.35   -37.65  47.35     0   #PMT 1 TEMPERATURE                      C       v6.9
+#2PMT2T          -35.65  45.35   -37.65  47.35     0   #PMT 2 TEMPERATURE                      C       v6.9
+#2UVLSPXT        -45.65  45.35   -37.65  47.35     0   #UV LIGHT SHIELD  NEXT TO SNOUT TEMP    C       v6.9
+SPINATM         -12.15  34.85   -15.15  39.85     0   #Spect det temperature  (2SPINATM)      C       v6.9
+IMINATM         -21.15  34.85   -15.15  39.85     0   #Imaging det temperature (2IMINATM)     C       v6.9
+LVPLATM         -32.15  49.85   -35.15  54.85     0   #LVPS plate temperature (2LVPLATM)      C       v6.9
+SPHVATM         -32.15  49.85   -35.15  54.85     0   #Spect det HVPS temperature (2SPHVATM)  C       v6.9
+IMHVATM         -32.15  49.85   -35.15  54.85     0   #Imaging det HVPS temperature (2IMHVATM)C       v6.9
+SMTRATM         -17.15  44.85   -20.15  49.85     0   #Selected motor temperature (2SMTRATM)  C       v6.9
+FE00ATM         -32.15  44.85   -35.15  49.85     0   #Front end temperature (2FE00ATM)       K       v6.9
+CE00ATM         -32.15  44.85   -35.15  49.85     0   #CE temp - bottom center wall (2CE00ATM)C       v6.9
+CE01ATM         -32.15  44.85   -35.15  49.85     0   #CE temp - top# center wall (2CE01ATM)  C       v6.9
+#
+2CEAHVPT        237.5   318.5   235.5   320.5     0   #CEA RADIATOR TEMPERATURE AT CENTER     K       v6.9
+2CHTRPZT        237.5   308.5   235.5   310.5     0   #CENTRAL ELECTRONICS BOX TEMP           K       v6.9
+2CONDMXT        237.5   318.5   235.5   320.5     0   #CONDUIT -X FACE TEMPERATURE            K       v6.9
+2DCENTRT        262.5   308.5   260.5   310.5     0   #DETECTOR HOUSING TEMP 2                K       v6.9
+2DTSTATT        260.0   308.5   258.0   310.5     0   #DETECTOR HOUSING TEMP 1                K       v6.9
+2FHTRMZT        237.5   308.5   235.5   310.5     0   #FRONT END ELECTRONICS BOX TEMPERATURE  K       v6.9
+2FRADPYT        235.0   308.5   233.0   310.5     0   #FRONT END ASSEMBLY +Y AT RADIATOR CENTER TEMP  K	v6.9
+2PMT1T          237.5   318.5   235.5   320.5     0   #PMT 1 TEMPERATURE                      K       v6.9
+2PMT2T          237.5   318.5   235.5   320.5     0   #PMT 2 TEMPERATURE                      K       v6.9
+2UVLSPXT        227.5   318.5   225.5   320.5     0   #UV LIGHT SHIELD  NEXT TO SNOUT TEMP    K       v6.9
+#SPINATM         261.0   308.0   258.0   313.0     0   #Spect det temperature  (2SPINATM)      K       v6.9
+#IMINATM         261.0   308.0   258.0   313.0     0   #Imaging det temperature (2IMINATM)     K       v6.9
+#LVPLATM         241.0   323.0   238.0   328.0     0   #LVPS plate temperature (2LVPLATM)      K       v6.9
+#SPHVATM         241.0   323.0   238.0   328.0     0   #Spect det HVPS temperature (2SPHVATM)  K       v6.9
+#IMHVATM         241.0   323.0   238.0   328.0     0   #Imaging det HVPS temperature (2IMHVATM)K       v6.9
+#SMTRATM         256.0   318.0   253.0   323.0     0   #Selected motor temperature (2SMTRATM)  K       v6.9
+#FE00ATM         241.0   318.0   238.0   323.0     0   #Front end temperature (2FE00ATM)       K       v6.9
+#CE00ATM         241.0   318.0   238.0   323.0     0   #CE temp - bottom center wall (2CE00ATM)K       v6.9
+#CE01ATM         241.0   318.0   238.0   323.0     0   #CE temp - top center wall (2CE01ATM)   K       v6.9
+#	

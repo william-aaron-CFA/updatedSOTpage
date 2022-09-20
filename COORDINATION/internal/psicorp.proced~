@@ -1,0 +1,83 @@
+REAL-TIME Telemetry_Process_Procedure with EHS HDR's. for FLIGHT Mar.1999
+Editted by SJW after POP.
+        
+: This will be the official RT Telemetry Data Extractor Procedure to    
+  be run from any CFA Server.
+        
+
+Step 1. Initialization
+
+        : source .ascrc OR setascds
+
+Step 2. Setup
+
+        # create directories for telemetry indata/outdata.
+        
+        : mkdir MTA 
+        : mkdir MTA/indata 
+        : mkdir MTA/outdata
+
+
+        # setenv Env varibles for ASCDS_TELEM (for directing or re-directing data flow)
+        # by changing the env PORT to reflect where data is sent to that you want to 
+        # intercept.
+        # Chg env to reflect the PORT that Data is to be sent to:
+        
+        : setenv ASCDS_TELEM_MSGRCVR_PORT 11149
+	(alternatives are 11249 - backup spacecraft data)
+	(alternatives are 11150 - Primary SIM data)
+	(alternatives are 11250 - backup SIM data)
+
+        # Check to make sure env was set.
+        : env |grep ASCDS_TELM
+        
+        ASCDS_TELEMTODARCH_MQ=230
+        ASCDS_TELEM_NAME=telem
+        ASCDS_TELEM_MSGRCVR_HOST=psicorp
+        ASCDS_TELEM_MSGRCVR_PORT=11149
+        ASCDS_TELEM_PWD=telem
+
+        # Clean up shared memory from Last process run's
+        : \rmipc -msq
+        : ipcs
+        # check for anything currently running
+
+        : ps -auxwww | egrep "tph|pi" | egrep -v grep
+
+        # Prepare to start telem_decomm
+        : cd test_dir you want to run test from
+        
+        
+Step 3. Initialization Run tph (Telemetry Packet Handler) via UDP to recieve
+        data.
+
+        # In window #1  start recieving telemetry data.
+        # Note: before starting make sure env are set as described above.
+        
+        : start_telem_proc -d <directory to put output data> -flight -udp  (this cmd will allow all
+          telem_decomm strippers/extractors to trigger. If you want a single stripper/extractor run
+        : start_telem_proc -h (this is the help for strippers/extarctors, and to identify one or
+          more to be triggered as desired.)
+        # Then type the following:
+        : start_telem_proc -d <directory to put output data> -flight -udp -ede (example of running
+          one stripper/extractor. You can run as many on this cmd line as desired.)
+
+
+Step 4. Monitor Processing  by way of top or top26
+        : top 
+        # Review the processing stack for validation of execution
+
+Step 5. Monitor progress by reviewing data products being recv'd
+        # goto directory in window #2 that products are being recv'd
+        : cd <recv'd directory>
+        : cd run
+        # Review products generated
+        : ls -ltr (View until NO more products)
+                
+Step 6. Kill processes when done
+
+        # In window - 1 , do an ^up arrow til you find the start command.
+        # then type ctrl A for backspacing to beginning. Then use cursor to change
+        # word 'start' to 'stop' and hit return.
+        # Review window with top and note processes being killed.
+

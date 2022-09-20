@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+ <TITLE>OBSERVATION DATA OBS ID:   6      </title> </HEAD>
+<BODY TEXT="#BBBBBB" BGCOLOR="#000000" LINK="#FF0000" VLINK="#FFFF22" ALINK="#7500FF" background="../stars.jpg">
+<h1> M&TA Observation data - OBS ID:   6       </h1>
+<table Border>
+<TH valign=top align=left>OBS ID:</TH>
+<TH valign=top align=left><font COLOR=#00FFFF>   6      </TH></FONT>
+ <TH valign=top align=left>V mag.:</TH>
+<TH valign=top align=left><font COLOR=#00FFFF>  NULL    </TH></FONT>
+<TH valign=top align=left>EST COUNT RATE:</FONT></TH>
+<TH valign=top align=left><font COLOR=#00FFFF>     0.60000</TH></FONT> </TR> <TR>
+<TH valign=top align=left>Target Name:</TH> 
+<TH valign=top align=left><font COLOR=#00FFFF>AR LAC-1  ECLIPSE (1</TH></FONT>
+ <TH valign=top align=left>RA:</TH> 
+<TH valign=top align=left><font COLOR=#00FFFF> 332.170000 </TH></FONT>
+<TH valign=top align=left>ROLL:</FONT></TH> 
+<TH valign=top align=left><font COLOR=#00FFFF>    210.000000 </TH></FONT> </TR> <TR>
+<TH valign=top align=left>Grating:</TH> 
+<TH valign=top align=left><font COLOR=#00FFFF> HETG   </TH></FONT>
+ <TH valign=top align=left>DEC:</TH> 
+<TH valign=top align=left><font COLOR=#00FFFF>   45.742222</TH></FONT>
+<TH valign=top align=left>Exposure Time:</FONT></TH> 
+<TH valign=top align=left><font COLOR=#00FFFF>    35.000000  </TH></FONT> </TR> <TR>
+</table>
+
+
+<p> <hr> <font=4> 
+ 3061 HETGS spectra will reveal a wealth of information on the temperature and density structure of stellar coronae. In addition, rotational or eclipse modulation can be used to further determine geometric structure. Two RS CVn stars will be observed with HETG and ACIS-S: AR Lac, and II Peg. AR Lac data will be taken through primary eclipse to map emitting structures. One pre-main-sequence star, TW Hya, which is a nearby, isolated, classical T Tauri object, will provide detail on the nature of young-star X-ray emission.
+ </font> 

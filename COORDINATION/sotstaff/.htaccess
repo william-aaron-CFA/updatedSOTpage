@@ -1,0 +1,8 @@
+AuthType Basic
+AuthName PasswordAdmin
+AuthUserFile /proj/ascds/swolk/www/sotstaff/.file_with_passwords
+
+<Limit GET  POST>
+require valid-user
+</Limit>
+

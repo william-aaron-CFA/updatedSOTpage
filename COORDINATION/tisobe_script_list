@@ -1,0 +1,362 @@
+
+*************
+on colossus
+*************
+
+----
+CTI 
+----
+Computing ACIS CTI
+
+	Location: /data/mta/Script/CTI
+
+	cti_wrap_script: tsch script to set an environment
+	main_cti_script: run cti main script "plot_cti.perl"
+	det_wrap_script: tsch script to set an environment for detrend computation
+	det_script:      run  detrend cti script "detrend.perl"
+
+	plot_cti.perl: this script gets cti infromation from 
+		       /data/mta/www/mp_report/photons/acis/... directories and plot trending
+		       for Al ka, Mn Ka, and Ti ka.
+	detrend.perl: compute detrended cti.
+	get_value:    awk script to get data
+
+	Data:	    Directory keeps computed resluts. 
+			Files with '_det' is detraded data.
+			high_temp contains data dropped due to high temp
+			squeegy: data dropped due to squeegy test.
+			high_temp contains data dropped due to high temp
+			squeegy: data dropped due to squeegy test.
+	Range_data: Directory contains plotting range information
+
+---------
+Bad Pixel
+---------
+Finding ACIS Bad Pixels
+
+	Location: /data/mta/Script/Bias
+
+	wrap_script: setting an environment
+	main_script: run daily script (with live data
+
+	find_bad_pix.perl: finding bad pxiels
+			perl find_bad_pix.perl live: find data from 
+					/dsops/ap/sdp/cache/*/acis/*bias0.fits
+			perl find_bad_pix.perl Data: get data from Data directry
+	past_input_data: list of past data which the script already processed.
+
+	Defect: Directory keeps candidates for bad pixels
+			CCD*: acis*****_max: warm pixels
+			      acis*****_hot: hot pixels
+			      acis*****_col: warm columns
+			bad_col_list: known bad column list
+			bad_pix_list: known bad pixel list	
+	Disp_dir: Directory keeps output data
+			bad_col_cnt*: change of # of bad column data 
+			bad_pix_cnt*: change of # of bad pixel data
+			hot_pix_cnt*: change of # of hot pixel data
+			ccd*:	      bad pixel of the day
+			col*:         bad column of the day
+			change_ccd*:  bad pixel list; list new and improved pixels
+			change_col*:  bad column list; list new and imporved columns
+			data_used.*:  list of data used
+			flickering*:  list of flickering pixels
+			hist_ccd*:    daily changes of bad pixel list
+			imp_ccd*:     list of improved pixels 
+			imp_col*:     list of improved columns
+			new_ccd*:     list of new bad pixels
+			new_col*:     list of new bad columns
+			imp_bad_col_save*: change of # of improved column data
+			imp_bad_pix_save*: change of # of improved pixel data
+			imp_hot_pix_save*: change of # of improved hot piel data
+			new_bad_col_save*: change of # of new bad column data
+			new_bad_pix_save*: change of # of new bad pixel data
+			new_hot_pix_save*: change of # of new hot_pixel data
+			today_new_ccd*:    today's new bad pixels
+			today_imp_ccd*:    today's improved pixels
+
+----------
+Focal Temp
+----------
+
+Finding ACIS Focal Temperature
+	Location: /data/mta/Script/Focal
+
+	wrap_script: setting an environement
+	plotting_script: run several scripts
+		setenv ACISTOOLSDIR /home/pgf: setting for Peter Ford's environment
+		see Prog below for all other perl scripts
+
+	Prog: keep all scripts used to compute focal plane temperature
+		make_list.perl: 	preparing data for plotting
+		prep.perl:		preparing data for short term data
+		focal_plot.perl: 	creatomg 6hr averages of focal plane temp
+		ch_org.perl:		changing date to day of mission
+		make_database.perl: 	collecting data from Short_term database
+				    	and mta_comprehensive_data_summary, and
+				    	make a database for plot and views
+		rm_dupl.perl:		removing deplicated line from a file
+		plot_day.perl: 		plotting routine for a day
+		plot_week.perl:		plotting routine for a week
+		plot_3day.perl:		plotting routine for three deys
+		plot_month.perl: 	plotting routine for a month
+		plot_ft2.perl:		plotting an entire past history
+		diff_fp_daily2.perl: 	plotting difference between focal temp
+					and cold radiator temp
+		print_html.perl:	printing html page
+		fptemp.pl:		Peter Ford's script to decode data
+		getnrt:			Peter Ford's script to translate ASCDS 
+					telemetry frames to packets
+		pnmcrop, pnmflip, pnmpad,pnmscale,ppmquant,ppmtogif:
+					programs change a ps file to a gif file
+
+		Data: Directory keeps output data
+			mj_month_data: data for cold radiator
+			long_term_data: 6 hr average data
+			mj_month_data:  5min average data
+		
+		Short_term: 	detail data for short term plotting
+
+-------------
+State Change
+-------------
+
+creating comprehensive summary fo state change
+	location: /data/mta/Script/OBT/MJ
+
+	mj_wrap_script:	setting an environment
+	mj_script:	setting an extra envirnment, and run scripts
+
+	run_mj_list.perl: getting informaiton from /dsops/GOT/input/...
+			  dump data and monitoring trend of key data
+	 mj_size_check.perl: check mj data is healthy one or not. if
+			     it is not, send out email.
+
+	mta_comprehensive_data_summary: output data
+	systemlog:	sytem log
+	todays_data:	data used for today computation
+
+	Save: holding related script and data
+		comprehensive_data_summary: complete data for the current year
+		header:	header for the final data
+		acron: a script to extrtact data (used in run_mj_list.perl)
+		sedscript1: sed script to extract data (used in run_mj_list.perl)
+		nawkscript: awk script used to extract data (used in run_mj_list.perl)
+		simpos_acis.scr: a script does subformat attitude data for MJ
+
+
+creating summary fo state change
+	location /data/mta/Script/OBT/ACIS
+
+	acis_wrap_script: setting an environment
+	acis_script: setting an extra envirnment, and run script
+
+	run_acis_list.perl: getting informaiton from /dsops/GOT/input/...
+			    dump data and monitoring trend of key data
+
+	mta_sim_data_summary: output data
+	systemlog:	sytem log
+
+	Save: holding related script and data
+		sim_data_summary: complete data for the current year
+		header:	header for the final data
+		acron: a script to extrtact data (used in run_mj_list.perl)
+		sedscript1: sed script to extract data (used in run_mj_list.perl)
+		nawkscript: awk script used to extract data (used in run_mj_list.perl)
+		simpos_acis.scr: a script does subformat attitude data for MJ
+
+---------
+Trending
+---------
+
+trending msids
+	location: /data/mta/Script/Trending
+
+	trend_wrap_script: setting an environment
+	trend_script: setting an extra environment and run script
+	trending.perl: create trending plots
+	input_date_list: list of date 
+	input_data_list: list of data
+	header: header for avg data fits file
+	header0: part of the fits file header
+	header1: part of the fits file header
+	max_header2: part of the fit file header for max cases
+	min_header2: part of the fit file header for min cases
+
+	Outdir: keep the data for each data (e.g.20030610, which has
+		ascii data for each category)
+	Trend: output data directory. fits files
+
+	Idl_trending: create trending plots
+		idl_wrap_script: setting an environment
+		idl_script: starting the idl script with startup
+		trend.pro: idl script to run plot_table.pro with data
+		plot_table.pro: the main plotting script
+		
+
+----------
+Count Rate
+----------
+
+ACIS Count Rate Plot
+
+	location: /data/mta/Script/Count_rate
+
+	dose_wrap_script: setting an environment for a dose plotting script
+	dose_script:	  setting an extra environment and run dose_plot script
+	dose_plot.perl:   Plot ACIS count rate
+
+	ephin_wrap_script: setting an environment for a ephin plot
+	ephin_script:	   setting an extra environment and run ephin_plot script
+	ephin_plot.perl:   plotting ephin count rate
+
+	long_term_wrap_script: setting an environment for a long term plot
+	long_term_script:      setting an extra environment and run long_term_plot
+	long_term_plot.perl:   plotting full range of count rate for s5, s6, and s7
+
+	month_avg_wrap_script: setting an enviroment for a monthly plot
+	month_avg_script:      setting an extra enviroment and run month_avg script
+	month_avg.perl:	       plotting monthly avrage.
+
+
+	print_html.perl: printing  a html page (once a month by cron job)
+
+
+-------------
+ACIS Histgram
+-------------
+
+ACIS Histgram Plotting
+
+	location: /data/mta/Script/Acis_hist
+
+	Read memo for usage
+
+	month_list: put yyyy:mm for the month you want to compute
+
+	get_data.perl: get data from archive and extract data needed for computation
+	create_table.perl:	compute statistics and create tables
+	plot_hist.perl:		plot figs
+	print_html.perl:	print a html page
+
+
+--------------------------
+Celestial Location Monitor
+--------------------------
+
+plots with the difference between coordiates obtained from Chandra observations 
+and those obtained from existing catalogs vs time in day of mission. 
+
+	location: /data/mta/Script/Aspect
+
+	Read procedure for usage
+
+
+
+
+************
+On HEA side
+************
+
+----------------
+ACIS Science Run
+----------------
+
+Obtain Peter Ford's ACIS sicence run information from MIT and plot the data.
+
+	location: /data/mta2/isobe/Acis_log
+
+	Read memo for usage
+
+
+------------------------
+Science Run Interruption
+------------------------
+
+Plot 5 day period around SCS 107 science run interruption
+
+	location: /data/mta2/isobe/Interrupt
+
+	Read procedure for usage
+
+
+
+
+**************
+USINT related
+**************
+
+--------------------------------------------
+Chandra Uplin Support Observatin Search Form
+--------------------------------------------
+
+	location: /home/mta/www/CUS/Usint/search.html
+	address:  http://icxc.harvard.edu/cgi-bin/usg/search.html
+			(/data/asc8/iCXC/cgi-bin/usg/search.html points above).
+
+	related file: /home/mta/www/CUS/Usint/search_help.html--- help page
+		     
+
+------------------
+SOT Search Results
+------------------
+
+	location: /home/mta/www/CUS/Usint/sot_answer.cgi
+	address: ttp://asc.harvard.edu/~mta/CUS/Usint/sot_answer.cgi
+
+----------------
+Obscat Data Page
+----------------
+	location: /home/mta/www/CUS/Usint/ocatdata2html.cgi
+	address:  http://asc.harvard.edu/~mta/CUS/Usint/ocatdata2html.cgi?####
+
+	related file: /home/mta/www/CUS/Usint/info.html --- help page
+		      /home/mta/www/CUS/Usint/ocat_values --- restriction 
+		      /home/mta/www/CUS/Usint/name_list --- entry name list
+		      /data/udoc1/ocat/updates_table.list --- database read and write
+	              /data/udoc1/ocat/updates/$obsid.$rev --- info for indivisual entry
+		      /data/udoc1/ocat/approved --- database read and write
+
+--------------------------
+Summary of Sequence Number
+--------------------------
+
+	location: /home/mta/www/CUS/Usint/target.cgi?
+	address: http://asc.harvard.edu/~mta/CUS/Usint/target.cgi?######
+
+-----------------------------------
+Target Parameter Update Status Form
+-----------------------------------
+
+	location: /home/mta/www/CUS/Usint/orupdate.cgi
+	address: http://icxc.harvard.edu/cgi-bin/usg/orupdate.cgi
+			(/data/asc8/iCXC/cgi-bin/usg/orupdate.cgi points above).
+
+	related file: /data/udoc1/ocat/updates_table.list ---- database 
+	
+
+--------------------
+Updated Targets List
+--------------------
+
+	location: /home/mta/www/CUS/Usint/orupdated.cgi
+	address: http://cxc.harvard.edu/cgi-gen/mta/usint/updated.cgi
+			(/data/asc8/iCXC/cgi-bin/usg/orupdated.cgi points above).
+
+	related file: /data/udoc1/ocat/updates_table.list --- database
+
+-------------------
+Checking Input Data
+-------------------
+
+	location: /home/mta/www/CUS/Usint/chkupdata.cgi
+	address: http://hea-www.harvard.edu/~mta/CUS/Usint/chkupdata.cgi?####.###
+		(/data/asc8/iCXC/cgi-bin/usg/chkupdata.cgi points above).
+
+-------------
+Approved List
+-------------
+
+	location: /data/udoc1/ocat/approved
+	address: http://hea-www.harvard.edu/~mta/CUS/APPROVED
+			(/home/mta/www/CUS/APPROVED points to above).

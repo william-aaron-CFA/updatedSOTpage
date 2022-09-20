@@ -1,0 +1,889 @@
+#Operational Limit Database
+#
+#ACIS
+#
+#******  acis1_4_02  ******
+#
+#(values are dummied 4/29/98)
+#
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#(counts)
+RAD_CNT         N/A             50              N/A             60              0   S            radiation monitor count rate
+#
+#
+#******  acis1_4_03  ******
+#
+#(values are dummied 4/29/98)
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#(electrons)
+VAROCLKH        N/A             7               N/A             8               0               VarianceOverclockHigh
+#						5 electrons for RMS
+#                                                5 electrons for RMS
+#
+#******  acis1_4_07  ******
+#(values dummied 4/30/98)
+#
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#Temp (K)
+1CBAT           0.0             296.0           0.0             298.0           0                              
+1CBBT           0.0             296.0           0.0             298.0           0                              
+1CRAT           0.0             296.0           0.0             298.0           0                              
+1CRBT           0.0             296.0           0.0             298.0           0                              
+1DACTAT         0.0             296.0           0.0             298.0           0                              
+1DACTBT         0.0             296.0           0.0             298.0           0                              
+1DAHAT          n/a             n/a             n/a             n/a             0                              
+1DAHBT          n/a             n/a             n/a             n/a             0                              
+1DEAMZT         0.0             309.0           0.0             311.0           0                              
+1DPAMYT         0.0             314.0           0.0             316.0           0                              
+1DPAMZT         0.0             314.0           0.0             316.0           0                              
+1PDEAAT         0.0             333.0           0.0             335.0           0                              
+1PDEABT         0.0             333.0           0.0             335.0           0                              
+1PIN1AT         0.0             311.0           0.0             313.0           0                              
+1WRAT           0.0             296.0           0.0             298.0           0                              
+1WRBT           0.0             296.0           0.0             298.0           0                              
+1SSMYT          0.0             314.0           0.0             316.0           0                              
+1SSPYT          0.0             314.0           0.0             316.0           0                              
+#
+#current(AMP)
+1DAHACU         -2.0            +2.0            -2.3            +2.3            0                              
+1DAHBCU         -2.0            +2.0            -2.3            +2.3            0                              
+#
+#voltage (V)
+1DAHAVO         0               +20             0               +25             0                              
+1DAHBVO         0               +20             0               +25             0                              
+1DAHHAVO        0               +20             0               +25             0                              
+1DAHHBVO        0               +20             0               +25             0                              
+#
+#
+#******  acis1_4_08  ******
+#
+#(values dummied 4/30/98)
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#volrtage(V)
+1DAHHAVO        0.0             +33             -26             +35             0                              
+1DAHHBVO        0.0             +33             -26             +35             0                              
+1DE28AVO        0.0             +15.0           -8.0            +18.0           0                              
+1DE28BVO        0.0             +15.0           -8.0            +18.0           0                              
+1DEN0AVO        0.0             +15.0           -8.0            +18.0           0                              
+1DEN0BVO        0.0             +15.0           -8.0            +18.0           0                              
+1DEN1AVO        0.0             +15.0           -8.0            +18.0           0                              
+1DEN1BVO        0.0             +15.0           -8.0            +18.0           0                              
+1DEP0AVO        0.0             +15.0           -8.0            +18.0           0                              
+1DEP0BVO        0.0             +15.0           -8.0            +18.0           0                              
+1DEP1AVO        0.0             +15.0           -8.0            +18.0           0                              
+1DEP1BVO        0.0             +15.0           -8.0            +18.0           0                              
+1DEP2AVO        0.0             +33             -26             +35             0                              
+1DEP2BVO        0.0             +33             -26             +35             0                              
+1DEP3AVO        0.0             +33             -26             +35             0                              
+1DEP3BVO        0.0             +33             -26             +35             0                              
+1DP28AVO        0.0             +32             -27             +34             0                              
+1DP28BVO        0.0             +32             -27             +34             0                              
+1DPP0AVO        -16.83          +16.83          -18.83          +18.83          0                              
+1DPP0BVO        -16.83          +16.83          -18.83          +18.83          0                              
+#
+#current (amp)
+1DEICACU        -1.5            +1.5            -2.0            +2.0            0                              
+1DEICBCU        -1.5            +1.5            -2.0            +2.0            0                              
+1DPICACU        -1.0            +1.0            -1.5            +1.5            0                              
+1DPICBCU        -1.0            +1.0            -1.5            +1.5            0                              
+#
+#
+#******  acis1_4_10  ******
+#
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#Temp (K)
+1MAHCAT         0.0             401.0           0.0             403.0           0               no curve       
+1MAHCBT         0.0             401.0           0.0             403.0           0               no curve       
+1MAHOAT         0.0             401.0           0.0             403.0           0               no curve       
+1MAHOBT         0.0             401.0           0.0             403.0           0               no curve       
+1OAHAT          0.0             296.0           0.0             298.0           0                              
+1OAHBT          0.0             296.0           0.0             298.0           0                              
+1VAHCAT         0.0             401.0           0.0             403.0           0               no curve       
+1VAHCBT         0.0             401.0           0.0             403.0           0               no curve       
+1VAHOAT         0.0             401.0           0.0             403.0           0               no curve       
+1VAHOBT         0.0             401.0           0.0             403.0           0               no curve       
+#
+#Pressure (torr)
+1HOPRAPR        N/A             N/A             N/A             N/A             0                              
+1HOPRBPR        N/A             N/A             N/A             N/A             0                              
+#
+#
+#HRC
+#******  hrc1_3_01 ******
+#
+#(values are dummied 4/29/98)
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#(counts)
+BKGRATE         N/A             30              N/A             50              0                              
+#
+#
+#****** hrc1_3_05 ******
+#
+#(values are dummied 4/29/98)
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#(counts)
+VETORT          N/A             30              N/A             50              0                              
+#
+#
+#****** hrc1_3_06 ******
+#
+#(values are dummied 4/29/98)
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#(counts)
+BKGRATE         N/A             30              N/A             50              0                              
+#
+#
+#******  hrc1_3_08 ******
+#
+#                (values dummied 4/29/1998) 
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#Temp (K)
+2TM09TM         5.0             260.0           0.0             265.0           0                              
+2TM10TM         5.0             260.0           0.0             265.0           0                              
+2CEBXTM         5.0             260.0           0.0             265.0           0                              
+2TM08TM         5.0             260.0           0.0             265.0           0                              
+2DTH1TM         5.0             260.0           0.0             265.0           0                              
+2DTH2TM         5.0             260.0           0.0             265.0           0                              
+2FEBXTM         5.0             260.0           0.0             265.0           0                              
+2PMT1TM         5.0             260.0           0.0             265.0           0                              
+2PMT2TM         5.0             260.0           0.0             265.0           0                              
+2TM07TM         5.0             260.0           0.0             265.0           0                              
+FEPRATM         5.0             260.0           0.0             265.0           0                              
+SPINATM         5.0             260.0           0.0             265.0           0                              
+IMINATM         5.0             260.0           0.0             265.0           0                              
+LVPLATM         5.0             260.0           0.0             265.0           0                              
+SPHVATM         5.0             260.0           0.0             265.0           0                              
+IMHVATM         5.0             260.0           0.0             265.0           0                              
+SMTRATM         5.0             260.0           0.0             265.0           0                              
+FE00ATM         5.0             260.0           0.0             265.0           0                              
+CE00ATM         5.0             260.0           0.0             265.0           0                              
+CE01ATM         5.0             260.0           0.0             265.0           0                              
+#
+#Power (W)	(values dummied 4/29/1998)
+PBPWRA          10              40              8               50              0                              
+PBPWRB          10              40              8               50              0                              
+PRBSPWR         10              40              8               50              0                              
+#
+#
+#******  hrc1_3_09 ******
+#(values from a samples 5/22/98)
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#
+#Voltage (V) 
+2C05PALV         0               260.0           0               270.0           0               no curve       
+2C15NALV         0               260.0           0               270.0           0               no curve       
+2C15PALV         0               260.0           0               270.0           0               no curve       
+2C24PALV         0               260.0           0               270.0           0               no curve       
+2N15VAVL         -12             0               -13             0               0               no curve       
+2N15VBVL         -12             0               -13             0               0               no curve       
+2P05VAVL         0               +3.25           0               +3.5            0               no curve       
+2P05VBVL         0               +3.25           0               +3.5            0               no curve       
+2P15VAVL         0               +12             0               +13             0               no curve       
+2P15VBVL         0               +12             0               +13             0               no curve       
+2P24VAVL         0               +22             0               +23             0               no curve       
+2P24VBVL         0               +22             0               +23             0               no curve       
+2PBVOLTA         0               +3.0            0               +3.25           0               (not in v6.0)  
+2PBVOLTB         0               +3.0            0               +3.25           0               (not in v6.0)  
+PRBSVL          0               256             0               270             0               no curve       
+ULDIALV         0               4.0             0               5.0             0               no curve       
+#
+#Amp (A)
+2PBCURTA         0               +1.3            0               +1.5            0               (not in v6.0)  
+2PBCURTB         0               +1.3            0               +1.5            0               (not in v6.0)  
+PRBSCR          0               256             0               270             0                              
+#
+#(steps)
+CALPALV         0               260             0               270             0                              
+CBHUAST         0               260             0               270             0                              
+CBHVAST         0               260             0               270             0                              
+CBLUAST         0               260             0               270             0                              
+CBLVAST         0               260             0               270             0                              
+FCPUAST         0               260             0               270             0                              
+FCPVAST         0               260             0               270             0                              
+IMBPAST         0               260             0               270             0                              
+IMHBLV          0               260             0               270             0                              
+IMHVLV          0               260             0               270             0                              
+IMTPAST         0               260             0               270             0                              
+LLDIALV         0               260             0               270             0                              
+RSRFALV         0               260             0               270             0                              
+S1HVLV          0               260             0               270             0                              
+S1HVST          0               260             0               270             0                              
+S2HVLV          0               260             0               270             0                              
+S2HVST          0               260             0               270             0                              
+SPBPAST         0               260             0               270             0                              
+SPHBLV          0               260             0               270             0                              
+SPHVLV          0               260             0               270             0                              
+SPTPAST         0               260             0               270             0                              
+ULDIAVR         0               260             0               270             0                              
+WDTHAST         0               260             0               270             0                              
+#
+#(counts)
+DETART          50              150             45              155             0                              
+DETBRT          50              150             45              155             0                              
+SCTHAST         50              256             45              260             0                              
+#
+#
+#
+#
+#SIM
+#******  sim1_6_03  ******
+#
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#Temp (K)
+TEMP_FA         242.5           303.5           240.5           305.5           0                              
+TEMP_A	         242.5           303.5           240.5           305.5           0                              
+TEMP_B          242.5           303.5           240.5           305.5           0                              
+TEMP_C          242.5           303.5           240.5           305.5           0                              
+TEMP_BOX        242.5           303.5           240.5           305.5           0                              
+TEMP_PSU        242.5           303.5           240.5           305.5           0                              
+3FARALAT        242.5           303.5           240.5           305.5           0                              
+3FABRAAT        242.5           303.5           240.5           305.5           0                              
+3FABRCAT        242.5           303.5           240.5           305.5           0                              
+TEMP_TSC        233.0           313.0           231.0           315.0           0                              
+3FAMYZAT        242.5           303.5           240.5           305.5           0                              
+3FAPYZAT        242.5           303.5           240.5           305.5           0                              
+3RCTUBPT        232.5           313.5           230.5           315.5           0                              
+3FLCABPT        242.5           303.5           240.5           305.5           0                              
+3BTU_BPT        242.5           303.5           240.5           305.5           0                              
+3TSPYFET        160.0           352.5           158.0           354.5           0                              
+3TSMYDPT        160.0           352.5           158.0           354.5           0                              
+3TSPZSPT        160.0           352.5           158.0           354.5           0                              
+3TSPZDET        160.0           352.5           158.0           354.5           0                              
+3TSMXSPT        160.0           352.5           158.0           354.5           0                              
+3TSMXCET        160.0           352.5           158.0           354.5           0                              
+3TTHRC1T        230.5           353.5           228.5           355.5           0                              
+3TTHRC2T        230.5           353.5           228.5           355.5           0                              
+3TTHRC3T        230.5           353.5           228.5           355.5           0                              
+3TTACS2T        230.5           353.5           228.5           355.5           0                              
+3TTACS3T        230.5           353.5           228.5           355.5           0                              
+3TTACS1T        230.5           353.5           228.5           355.5           0                              
+3TTBRGBT        230.5           353.5           228.5           355.5           0                              
+3TTVALVT        230.5           353.5           228.5           355.5           0                              
+3TTRALAT        227.5           353.5           225.5           355.5           0                              
+3TTRALCT        230.5           353.5           228.5           355.5           0                              
+TEMP_A	         242.5           353.5           240.5           355.5           0                              
+TEMP_B          242.5           353.5           240.5           355.5           0                              
+TEMP_C          242.5           353.5           240.5           355.5           0                              
+TEMP_FA         233.0           313.0           231.0           315.0           0                              
+TEMP_PSU        242.5           333.5           240.5           335.5           0                              
+TEMP_BOX        242.5           333.5           240.5           335.5           0                              
+TEMP_TSC        242.5           333.5           240.5           335.5           0                              
+#
+#Temp (K)
+FLEXATEMP       229.55          276.55          227.55          278.55          0                              
+FLEXBTEMP       229.55          276.55          227.55          278.55          0                              
+FLEXCTEMP       229.55          276.55          227.55          278.55          0                              
+TSCMTRTEMP      205.15          328.65          203.15          330.65          0                              
+FAMTRTEMP       205.15          328.65          203.15          330.65          0                              
+PSUTEMP         205.15          328.65          203.15          330.65          0                              
+BOXTEMP         205.15          328.65          203.15          330.65          0                              
+FLEXATSET       205.15          328.65          203.15          330.65          0                              
+FLEXBTSET       205.15          328.65          203.15          330.65          0                              
+FLEXCTSET       205.15          328.65          203.15          330.65          0                              
+#
+#Temp (K) (these are short name for FLEXATEMP etc). (got from data 5/28/98)
+TEMP_A          270.00          600.00          250.00          610.00          0                              
+TEMP_B          270.00          600.00          250.00          610.00          0                              
+TEMP_C          270.00          600.00          250.00          610.00          0                              
+TEMP_TSC        270.00          610.00          250.00          620.00          0                              
+TEMP_FA         270.00          600.00          250.00          610.00          0                              
+TEMP_PSU        270.00          640.00          250.00          660.00          0                              
+TEMP_BOX        270.00          610.00          250.00          630.00          0                              
+FLEXCTST        270.00          600.00          250.00          610.00          0                              
+FLEXBTST        270.00          600.00          250.00          610.00          0                              
+FLEXATST        270.00          600.00          250.00          610.00          0                              
+#
+#Voltage (V)
+TSCTABADC       -3.0            +3.0            -4.0            +4.0            0                              
+FATABADC        -3.0            +3.0            -4.0            +4.0            0                              
+AGRNDADC        -3.0            +3.0            -4.0            +4.0            0                              
+P15VADC         -3.0            +3.0            -4.0            +4.0            0                              
+P5VADC          -3.0            +3.0            -4.0            +4.0            0                              
+N15VADC         -3.0            +3.0            -4.0            +4.0            0                              
+#
+#Temp (K)
+FLEXATEMPADC    229.55          276.55          227.55          278.55          0                              
+FLEXBTEMPADC    229.55          276.55          227.55          278.55          0                              
+FLEXCTEMPADC    229.55          276.55          227.55          278.55          0                              
+TSCMTRTEMPADC   205.15          328.65          203.15          330.65          0                              
+FAMTRTEMPADC    205.15          328.65          203.15          330.65          0                              
+PSUTEMPADC      205.15          328.65          203.15          330.65          0                              
+BOXTEMPADC      205.15          328.65          203.15          330.65          0                              
+#
+#
+#****** 	sim1_6_04  ******
+#
+#(values dummied 4/30/98)
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#
+#distance (IN)
+#3FAPOS          N/A     3.0     N/A     3.2     SFA POSITION
+3TPOS           N/A             3.0             N/A             3.2             0               SEA T POSITION 
+FAPOS_TU	       N/A             3.0             N/A             3.2             0               SEA FA POSITION  (CH 11)
+TSCPOS_TU	      N/A             3.0             N/A             3.2             0               SEA TSC POSITION  (CH 11)
+#
+#distance (mm) (from sample data 5/22/98)
+FAPOS_TU	       0.0             1500.           0.0             2000.           0               FA position    
+TSCPOS_TU	      0.0             3300.           0.0             3500.           0               TSC position   
+3LDRTRELPOS     N/A             5.2             N/A             5.5             0               Last detected reference tab (not in v6.0)
+#
+#voltage (VDC)
+PWMLEVEL_TU	    N/A             3.0             N/A             3.2             0               SEA MAX MOTOR VOLTAGE
+PWMLEVEL_TU	    N/A             3.0             N/A             3.2             0               SEA MAX MOTOR VOLTAGE (CH 11)
+#
+#
+#
+#
+#HRMA
+#******  hrma1_1_01  ******
+#
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#
+4PRT1AT         0.0             260.0           0.0             270.0           0                              
+4PRT1BT         0.0             260.0           0.0             270.0           0                              
+4PRT2AT         0.0             260.0           0.0             270.0           0                              
+4PRT2BT         0.0             260.0           0.0             270.0           0                              
+4PRT3AT         0.0             260.0           0.0             270.0           0                              
+4PRT3BT         0.0             260.0           0.0             270.0           0                              
+4PRT4AT         0.0             260.0           0.0             270.0           0                              
+4PRT4BT         0.0             260.0           0.0             270.0           0                              
+4PRT5AT         0.0             260.0           0.0             270.0           0                              
+4PRT5BT         0.0             260.0           0.0             270.0           0                              
+4RT12TM         0.0             260.0           0.0             270.            0               (not in v6.0)  
+4RT53TM         0.0             260.0           0.0             270.            0               (not in v6.0)  
+4RT54TM         0.0             260.0           0.0             270.            0               (not in v6.0)  
+4RT555T         0.0             260.0           0.0             270.0           0                              
+4RT556T         0.0             260.0           0.0             270.0           0                              
+4RT557T         0.0             260.0           0.0             270.0           0                              
+4RT558T         0.0             260.0           0.0             270.0           0                              
+4RT559T         0.0             260.0           0.0             270.0           0                              
+4RT55TM         0.0             260.0           0.0             270.            0               (not in v6.0)  
+4RT560T         0.0             260.0           0.0             270.0           0                              
+4RT561T         0.0             260.0           0.0             270.0           0                              
+4RT562T         0.0             260.0           0.0             270.0           0                              
+4RT563T         0.0             260.0           0.0             270.0           0                              
+4RT564T         0.0             260.0           0.0             270.0           0                              
+4RT565T         0.0             260.0           0.0             270.0           0                              
+4RT566T         0.0             260.0           0.0             270.0           0                              
+4RT567T         0.0             260.0           0.0             270.0           0                              
+4RT568T         0.0             260.0           0.0             270.0           0                              
+4RT569T         0.0             260.0           0.0             270.0           0                              
+4RT56TM         0.0             260.0           0.0             270.            0               (not in v6.0)  
+4RT570T         0.0             260.0           0.0             270.0           0                              
+4RT575T         0.0             260.0           0.0             270.0           0                              
+4RT576T         0.0             260.0           0.0             270.0           0                              
+4RT577T         0.0             260.0           0.0             270.0           0                              
+4RT578T         0.0             260.0           0.0             270.0           0                              
+4RT579T         0.0             260.0           0.0             270.0           0                              
+4RT57TM         0.0             260.0           0.0             270.            0               (not in v6.0)  
+4RT580T         0.0             260.0           0.0             270.0           0                              
+4RT581T         0.0             260.0           0.0             270.0           0                              
+4RT582T         0.0             260.0           0.0             270.0           0                              
+4RT583T         0.0             260.0           0.0             270.0           0                              
+4RT584T         0.0             260.0           0.0             270.0           0                              
+4RT585T         0.0             260.0           0.0             270.0           0                              
+4RT586T         0.0             260.0           0.0             270.0           0                              
+4RT587T         0.0             260.0           0.0             270.0           0                              
+4RT588T         0.0             260.0           0.0             270.0           0                              
+4RT589T         0.0             260.0           0.0             270.0           0                              
+4RT590T         0.0             260.0           0.0             270.0           0                              
+4RT591T         0.0             260.0           0.0             270.0           0                              
+4RT592T         0.0             260.0           0.0             270.0           0                              
+4RT593T         0.0             260.0           0.0             270.0           0                              
+4RT594T         0.0             260.0           0.0             270.0           0                              
+4RT595T         0.0             260.0           0.0             270.0           0                              
+4RT596T         0.0             260.0           0.0             270.0           0                              
+4RT597T         0.0             260.0           0.0             270.0           0                              
+4RT598T         0.0             260.0           0.0             270.0           0                              
+4RT700T         0.0             260.0           0.0             270.0           0                              
+4RT701T         0.0             260.0           0.0             270.0           0                              
+4RT702T         0.0             260.0           0.0             270.0           0                              
+4RT703T         0.0             260.0           0.0             270.0           0                              
+4RT704T         0.0             260.0           0.0             270.0           0                              
+4RT705T         0.0             260.0           0.0             270.0           0                              
+4RT706T         0.0             260.0           0.0             270.0           0                              
+4RT707T         0.0             260.0           0.0             270.0           0                              
+4RT708T         0.0             260.0           0.0             270.0           0                              
+4RT709T         0.0             260.0           0.0             270.0           0                              
+4RT710T         0.0             260.0           0.0             270.0           0                              
+4RT711T         0.0             260.0           0.0             270.0           0                              
+
+#
+#******  hrma1_1_06  ******
+#(values dummied 4/30/98)
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#
+#Gradient
+OHRMAPWR        -3.0            +5.0            -5.0            +7.0            0                              
+OHRMGRD1        -3.0            +5.0            -5.0            +7.0            0                              
+OHRMGRD2        -3.0            +5.0            -5.0            +7.0            0                              
+OHRMGRD3        -3.0            +5.0            -5.0            +7.0            0                              
+OHRMGRD4        -3.0            +5.0            -5.0            +7.0            0                              
+OHRMGRD5        -3.0            +5.0            -5.0            +7.0            0                              
+OHRMGRD6        -3.0            +5.0            -5.0            +7.0            0                              
+OHRMGRD7        -3.0            +5.0            -5.0            +7.0            0                              
+OHRMGRD8        -3.0            +5.0            -5.0            +7.0            0                              
+OOBAGRD1        -3.0            +5.0            -5.0            +7.0            0                              
+OOBAGRD2        -3.0            +5.0            -5.0            +7.0            0                              
+OOBAGRD3        -3.0            +5.0            -5.0            +7.0            0                              
+OOBAGRD4        -3.0            +5.0            -5.0            +7.0            0                              
+OOBAGRD5        -3.0            +5.0            -5.0            +7.0            0                              
+OOBAGRD6        -3.0            +5.0            -5.0            +7.0            0                              
+OOBAGRD7        -3.0            +5.0            -5.0            +7.0            0                              
+OOBAGRD8        -3.0            +5.0            -5.0            +7.0            0                              
+#
+#Temp
+OHRTHR01        258.0           288.0           256.0           290.0           0                              
+OHRTHR02        258.0           288.0           256.0           290.0           0                              
+OHRTHR03        258.0           288.0           256.0           290.0           0                              
+OHRTHR04        258.0           288.0           256.0           290.0           0                              
+OHRTHR05        258.0           288.0           256.0           290.0           0                              
+OHRTHR06        258.0           288.0           256.0           290.0           0                              
+OHRTHR07        258.0           288.0           256.0           290.0           0                              
+OHRTHR08        258.0           288.0           256.0           290.0           0                              
+OHRTHR09        258.0           288.0           256.0           290.0           0                              
+OHRTHR10        258.0           288.0           256.0           290.0           0                              
+OHRTHR11        258.0           288.0           256.0           290.0           0                              
+OHRTHR12        258.0           288.0           256.0           290.0           0                              
+OHRTHR13        258.0           288.0           256.0           290.0           0                              
+OHRTHR14        258.0           288.0           256.0           290.0           0                              
+OHRTHR15        258.0           288.0           256.0           290.0           0                              
+OHRTHR16        258.0           288.0           256.0           290.0           0                              
+OHRTHR17        258.0           288.0           256.0           290.0           0                              
+OHRTHR18        258.0           288.0           256.0           290.0           0                              
+OHRTHR19        258.0           288.0           256.0           290.0           0                              
+OHRTHR20        258.0           288.0           256.0           290.0           0                              
+OHRTHR21        258.0           288.0           256.0           290.0           0                              
+OHRTHR22        258.0           288.0           256.0           290.0           0                              
+OHRTHR23        258.0           288.0           256.0           290.0           0                              
+OHRTHR24        258.0           288.0           256.0           290.0           0                              
+OHRTHR25        258.0           288.0           256.0           290.0           0                              
+OHRTHR26        258.0           288.0           256.0           290.0           0                              
+OHRTHR27        258.0           288.0           256.0           290.0           0                              
+OHRTHR28        258.0           288.0           256.0           290.0           0                              
+OHRTHR29        258.0           288.0           256.0           290.0           0                              
+OHRTHR30        258.0           288.0           256.0           290.0           0                              
+OHRTHR31        258.0           288.0           256.0           290.0           0                              
+OHRTHR32        258.0           288.0           256.0           290.0           0                              
+OHRTHR33        258.0           288.0           256.0           290.0           0                              
+OHRTHR34        258.0           288.0           256.0           290.0           0                              
+OHRTHR35        258.0           288.0           256.0           290.0           0                              
+OHRTHR36        258.0           288.0           256.0           290.0           0                              
+OHRTHR37        258.0           288.0           256.0           290.0           0                              
+OHRTHR38        258.0           288.0           256.0           290.0           0                              
+OHRTHR39        258.0           288.0           256.0           290.0           0                              
+OHRTHR40        258.0           288.0           256.0           290.0           0                              
+OHRTHR41        258.0           288.0           256.0           290.0           0                              
+OHRTHR42        258.0           288.0           256.0           290.0           0                              
+OHRTHR43        258.0           288.0           256.0           290.0           0                              
+OHRTHR44        258.0           288.0           256.0           290.0           0                              
+OHRTHR45        258.0           288.0           256.0           290.0           0                              
+OHRTHR46        258.0           288.0           256.0           290.0           0                              
+OHRTHR47        258.0           288.0           256.0           290.0           0                              
+OHRTHR48        258.0           288.0           256.0           290.0           0                              
+OHRTHR49        258.0           288.0           256.0           290.0           0                              
+OHRTHR50        258.0           288.0           256.0           290.0           0                              
+OHRTHR51        258.0           288.0           256.0           290.0           0                              
+OHRTHR52        258.0           288.0           256.0           290.0           0                              
+OHRTHR53        258.0           288.0           256.0           290.0           0                              
+OHRTHR54        258.0           288.0           256.0           290.0           0                              
+OHRTHR55        258.0           288.0           256.0           290.0           0                              
+OHRTHR56        258.0           288.0           256.0           290.0           0                              
+OHRTHR57        258.0           288.0           256.0           290.0           0                              
+OHRTHR58        258.0           288.0           256.0           290.0           0                              
+OHRTHR59        258.0           288.0           256.0           290.0           0                              
+OHRTHR60        258.0           288.0           256.0           290.0           0                              
+OHRTHR61        258.0           288.0           256.0           290.0           0                              
+OHRTHR62        258.0           288.0           256.0           290.0           0                              
+OHRTHR63        258.0           288.0           256.0           290.0           0                              
+OHRTHR64        258.0           288.0           256.0           290.0           0                              
+OHTRSTT1        258.0           288.0           256.0           290.0           0                              
+OHTRSTT2        258.0           288.0           256.0           290.0           0                              
+OHTRSTT3        258.0           288.0           256.0           290.0           0                              
+OHTRSTT4        258.0           288.0           256.0           290.0           0                              
+OHTRSTT5        258.0           288.0           256.0           290.0           0                              
+OOBTHR01        258.0           288.0           256.0           290.0           0                              
+OOBTHR02        258.0           288.0           256.0           290.0           0                              
+OOBTHR03        258.0           288.0           256.0           290.0           0                              
+OOBTHR04        258.0           288.0           256.0           290.0           0                              
+OOBTHR05        258.0           288.0           256.0           290.0           0                              
+OOBTHR06        258.0           288.0           256.0           290.0           0                              
+OOBTHR07        258.0           288.0           256.0           290.0           0                              
+OOBTHR08        258.0           288.0           256.0           290.0           0                              
+OOBTHR09        258.0           288.0           256.0           290.0           0                              
+OOBTHR10        258.0           288.0           256.0           290.0           0                              
+OOBTHR11        258.0           288.0           256.0           290.0           0                              
+OOBTHR12        258.0           288.0           256.0           290.0           0                              
+OOBTHR13        258.0           288.0           256.0           290.0           0                              
+OOBTHR14        258.0           288.0           256.0           290.0           0                              
+OOBTHR15        258.0           288.0           256.0           290.0           0                              
+OOBTHR16        258.0           288.0           256.0           290.0           0                              
+OOBTHR17        258.0           288.0           256.0           290.0           0                              
+OOBTHR18        258.0           288.0           256.0           290.0           0                              
+OOBTHR19        258.0           288.0           256.0           290.0           0                              
+OOBTHR20        258.0           288.0           256.0           290.0           0                              
+OOBTHR21        258.0           288.0           256.0           290.0           0                              
+OOBTHR22        258.0           288.0           256.0           290.0           0                              
+OOBTHR23        258.0           288.0           256.0           290.0           0                              
+OOBTHR24        258.0           288.0           256.0           290.0           0                              
+OOBTHR25        258.0           288.0           256.0           290.0           0                              
+OOBTHR26        258.0           288.0           256.0           290.0           0                              
+OOBTHR27        258.0           288.0           256.0           290.0           0                              
+OOBTHR28        258.0           288.0           256.0           290.0           0                              
+OOBTHR29        258.0           288.0           256.0           290.0           0                              
+OOBTHR30        258.0           288.0           256.0           290.0           0                              
+OOBTHR31        258.0           288.0           256.0           290.0           0                              
+OOBTHR32        258.0           288.0           256.0           290.0           0                              
+OOBTHR33        258.0           288.0           256.0           290.0           0                              
+OOBTHR34        258.0           288.0           256.0           290.0           0                              
+OOBTHR35        258.0           288.0           256.0           290.0           0                              
+OOBTHR36        258.0           288.0           256.0           290.0           0                              
+OOBTHR37        258.0           288.0           256.0           290.0           0                              
+OOBTHR38        258.0           288.0           256.0           290.0           0                              
+OOBTHR39        258.0           288.0           256.0           290.0           0                              
+OOBTHR40        258.0           288.0           256.0           290.0           0                              
+OOBTHR41        258.0           288.0           256.0           290.0           0                              
+OOBTHR42        258.0           288.0           256.0           290.0           0                              
+OOBTHR43        258.0           288.0           256.0           290.0           0                              
+OOBTHR44        258.0           288.0           256.0           290.0           0                              
+OOBTHR45        258.0           288.0           256.0           290.0           0                              
+OOBTHR46        258.0           288.0           256.0           290.0           0                              
+OOBTHR47        258.0           288.0           256.0           290.0           0                              
+OOBTHR48        258.0           288.0           256.0           290.0           0                              
+OOBTHR49        258.0           288.0           256.0           290.0           0                              
+OOBTHR50        258.0           288.0           256.0           290.0           0                              
+OOBTHR51        258.0           288.0           256.0           290.0           0                              
+OOBTHR52        258.0           288.0           256.0           290.0           0                              
+OOBTHR53        258.0           288.0           256.0           290.0           0                              
+OOBTHR54        258.0           288.0           256.0           290.0           0                              
+OOBTHR55        258.0           288.0           256.0           290.0           0                              
+OOBTHR56        258.0           288.0           256.0           290.0           0                              
+OOBTHR57        258.0           288.0           256.0           290.0           0                              
+OOBTHR58        258.0           288.0           256.0           290.0           0                              
+OOBTHR59        258.0           288.0           256.0           290.0           0                              
+OOBTHR60        258.0           288.0           256.0           290.0           0                              
+OOBTHR61        258.0           288.0           256.0           290.0           0                              
+OOBTHR62        258.0           288.0           256.0           290.0           0                              
+OOBTHR63        258.0           288.0           256.0           290.0           0                              
+OOBTHR64        258.0           288.0           256.0           290.0           0                              
+#
+#
+#PCAD
+#******  pcad1_2_02  ******
+#
+#(values dummied 4/30/98)
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#temp (K)
+AACBPPT         0.0             308.0           0.0             310.0           0                              
+AACBPRT         0.0             308.0           0.0             310.0           0                              
+AACCCDPT        0.0             308.0           0.0             310.0           0                              
+AACCCDRT        0.0             308.0           0.0             310.0           0                              
+AACH1T          0.0             260.5           0.0             295.5           0                              
+AACH2T          0.0             260.5           0.0             295.5           0                              
+AAOTALT         0.0             308.0           0.0             310.0           0                              
+AAOTAPMT        0.0             308.0           0.0             310.0           0                              
+AAOTASMT        0.0             308.0           0.0             310.0           0                              
+AAOTH2MT        0.0             308.0           0.0             310.0           0                              
+#
+#temp(C) (value from a sample data 5/22/98)
+TEMPCCD         -50.0           20.0            -60.0           30.0            0                              
+TEMPHOUS        -50.0           20.0            -60.0           30.0            0                              
+TEMPPRIM        -50.0           20.0            -60.0           30.0            0                              
+TEMPSEC         -50.0           20.0            -60.0           30.0            0                              
+#
+#*****  pcad1_2_08  ******
+#
+#(values dummied 4/30/98)
+#
+#                Operational
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#temp (K)
+3FLCABPT        223.0           313.0           221.0           315.0           0                              
+#
+#******  pcad1_2_10  ******
+#
+#(values dummied 4/30/98)
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#temp (K)
+AIRU1BT         0.0             260.            0.0             280.0           0                              
+AIRU1G1T        0.0             260.            0.0             280.0           0                              
+AIRU1G2T        0.0             260.            0.0             280.0           0                              
+AIRU1VFT        0.0             260.            0.0             280.0           0                              
+AIRU2BT         0.0             260.            0.0             280.0           0                              
+AIRU2G1T        0.0             260.            0.0             280.0           0                              
+AIRU2G2T        0.0             260.            0.0             280.0           0                              
+AIRU2VFT        0.0             260.            0.0             280.0           0                              
+#
+#voltage (V)
+AGWS1V          -3.0            255.0           -4.0            260.0           0                              
+AGWS2V          -3.0            255.0           -4.0            260.0           0                              
+#
+#current (mamp)
+AIRU1G1I        0.0             260.0           0.0             270.0           0                              
+AIRU1G2I        0.0             260.0           0.0             270.0           0                              
+AIRU2G1I        0.0             260.0           0.0             270.0           0                              
+AIRU2G2I        0.0             260.0           0.0             270.0           0                              
+#
+#****** pcad1_2_11 *******
+AOGYRCT1	0.0		65536		0.0		65536		0
+AOGYRCT2	0.0		65536		0.0		65536		0
+AOGYRCT3	0.0		65536		0.0		65536		0
+AOGYRCT4	0.0		65536		0.0		65536		0
+#
+#****** pcad Aspect Solution Quality
+img_diam_rms	0.0		0.5		0.0		0.5		0
+img_roll_rms	0.0		5.0		0.0		20.0		0
+target_offset	0.0		30.0		0.0		30.0		0
+img_fit_chisq	0.0		5.0		0.0		20.0		0
+gyro_glitch	0		1		0		256		0
+gyro_gap	0		1		0		256		0
+gyro_incons	0		1		0		1		0
+aca_data_bad	0		1		0		256		0
+rw_speed_bad	0		1		0		256		0
+#
+#
+#SUBSYS
+#******  subsys1_8_04  ******
+#(values dummied 4/20/98)
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#temp(k)
+TAPE1PST        244.1           266.3           243.0           267.4           0                              
+TAPE2PST        244.1           266.3           243.0           267.4           0                              
+TAPEA1T         244.1           266.3           243.0           267.4           0                              
+TAPEA2T         244.1           266.3           243.0           267.4           0                              
+TASPPCM         244.1           266.3           243.0           267.4           0                              
+TASPPCP         244.1           266.3           243.0           267.4           0                              
+TASPPCU         244.1           266.3           243.0           267.4           0                              
+TASPRWC         244.1           266.3           243.0           267.4           0                              
+TATECDPT        244.1           266.3           243.0           267.4           0                              
+TATECDRT        244.1           266.3           243.0           267.4           0                              
+TBOLTCUT        244.1           266.3           243.0           267.4           0                              
+TCM_CTU         244.1           266.3           243.0           267.4           0                              
+TCM_IFU         244.1           266.3           243.0           267.4           0                              
+TCM_OBC         244.1           266.3           243.0           267.4           0                              
+TCM_PA1         244.1           266.3           243.0           267.4           0                              
+TCM_PA2         244.1           266.3           243.0           267.4           0                              
+TCM_PAN         244.1           266.3           243.0           267.4           0                              
+TCM_RFAS        244.1           266.3           243.0           267.4           0                              
+TCM_SSR1        244.1           266.3           243.0           267.4           0                              
+TCM_SSR2        244.1           266.3           243.0           267.4           0                              
+TCM_TX1         244.1           266.3           243.0           267.4           0                              
+TCM_TX2         244.1           266.3           243.0           267.4           0                              
+TCM_USO         244.1           266.3           243.0           267.4           0                              
+TCNR_BRM        244.1           266.3           243.0           267.4           0                              
+TCYLAFT1        244.1           266.3           243.0           267.4           0                              
+TCYLAFT2        244.1           266.3           243.0           267.4           0                              
+TCYLAFT3        244.1           266.3           243.0           267.4           0                              
+TCYLAFT4        244.1           266.3           243.0           267.4           0                              
+TCYLAFT5        244.1           266.3           243.0           267.4           0                              
+TCYLAFT6        244.1           266.3           243.0           267.4           0                              
+TCYLCMM         244.1           266.3           243.0           267.4           0                              
+TCYLFMZM        244.1           266.3           243.0           267.4           0                              
+TCYLFMZP        244.1           266.3           243.0           267.4           0                              
+TCYLPCM         244.1           266.3           243.0           267.4           0                              
+TCYLPCP         244.1           266.3           243.0           267.4           0                              
+TCYLRWC         244.1           266.3           243.0           267.4           0                              
+TCYZ_RW1        244.1           266.3           243.0           267.4           0                              
+TCYZ_RW6        244.1           266.3           243.0           267.4           0                              
+TEIO            244.1           266.3           243.0           267.4           0                              
+TEP_BPAN        244.1           266.3           243.0           267.4           0                              
+TEP_EIA         244.1           266.3           243.0           267.4           0                              
+TEP_PCU         244.1           266.3           243.0           267.4           0                              
+TEP_PPAN        244.1           266.3           243.0           267.4           0                              
+TEP_PSU1        244.1           266.3           243.0           267.4           0                              
+TEP_PSU2        244.1           266.3           243.0           267.4           0                              
+TEP_RCTU        244.1           266.3           243.0           267.4           0                              
+TEPHIN          244.1           266.3           243.0           267.4           0                              
+TESH1           244.1           266.3           243.0           267.4           0                              
+TESH2           244.1           266.3           243.0           267.4           0                              
+TFSPCMM         244.1           266.3           243.0           267.4           0                              
+TFSPCMP         244.1           266.3           243.0           267.4           0                              
+TFSPPCM         244.1           266.3           243.0           267.4           0                              
+TFSPPCP         244.1           266.3           243.0           267.4           0                              
+TFSPPCU         244.1           266.3           243.0           267.4           0                              
+TFSPRWC         244.1           266.3           243.0           267.4           0                              
+TFSSBKT1        244.1           266.3           243.0           267.4           0                              
+TFSSBKT2        244.1           266.3           243.0           267.4           0                              
+TFUTSUPN        244.1           266.3           243.0           267.4           0                              
+TMYHNG          244.1           266.3           243.0           267.4           0                              
+TMYSADA         244.1           266.3           243.0           267.4           0                              
+TMZLGABM        244.1           266.3           243.0           267.4           0                              
+TMZP_CNT        244.1           266.3           243.0           267.4           0                              
+TMZP_MY         244.1           266.3           243.0           267.4           0                              
+TMZP_PY         244.1           266.3           243.0           267.4           0                              
+TOXTSUPN        244.1           266.3           243.0           267.4           0                              
+TPC_CEA         244.1           266.3           243.0           267.4           0                              
+TPC_DEA         244.1           266.3           243.0           267.4           0                              
+TPC_ESE         244.1           266.3           243.0           267.4           0                              
+TPC_FSSE        244.1           266.3           243.0           267.4           0                              
+TPC_PAN         244.1           266.3           243.0           267.4           0                              
+TPC_RCTU        244.1           266.3           243.0           267.4           0                              
+TPC_WDA         244.1           266.3           243.0           267.4           0                              
+TPCM_RW4        244.1           266.3           243.0           267.4           0                              
+TPCM_RW5        244.1           266.3           243.0           267.4           0                              
+TPCP_RW2        244.1           266.3           243.0           267.4           0                              
+TPCP_RW3        244.1           266.3           243.0           267.4           0                              
+TPYSADA         244.1           266.3           243.0           267.4           0                              
+TPZLGABM        244.1           266.3           243.0           267.4           0                              
+TRSPMTPC        244.1           266.3           243.0           267.4           0                              
+TRSPOTEP        244.1           266.3           243.0           267.4           0                              
+TRSPOTEX        244.1           266.3           243.0           267.4           0                              
+TRSPOTPC        244.1           266.3           243.0           267.4           0                              
+TRSPRWBB        244.1           266.3           243.0           267.4           0                              
+TRSPRWBC        244.1           266.3           243.0           267.4           0                              
+TRSPRWCM        244.1           266.3           243.0           267.4           0                              
+TSAMYT          244.1           266.3           243.0           267.4           0                              
+TSAPYT          244.1           266.3           243.0           267.4           0                              
+TSCIUSF1        244.1           266.3           243.0           267.4           0                              
+TSCIUSF2        244.1           266.3           243.0           267.4           0                              
+TSCIUSF5        244.1           266.3           243.0           267.4           0                              
+TSCIUSF8        244.1           266.3           243.0           267.4           0                              
+TSCTSF1         244.1           266.3           243.0           267.4           0                              
+TSCTSF2         244.1           266.3           243.0           267.4           0                              
+TSCTSF3         244.1           266.3           243.0           267.4           0                              
+TSCTSF4         244.1           266.3           243.0           267.4           0                              
+TSCTSF5         244.1           266.3           243.0           267.4           0                              
+TSCTSF6         244.1           266.3           243.0           267.4           0                              
+5EIOT           244.1           266.3           243.0           267.4           0                              
+5EPHINT         244.1           266.3           243.0           267.4           0                              
+#
+#temp(k)
+TB1T1           243.0           303.0           241.0           305.0           0                              
+TB1T2           243.0           303.0           241.0           305.0           0                              
+TB1T3           243.0           303.0           241.0           305.0           0                              
+TB2T1           243.0           303.0           241.0           305.0           0                              
+TB2T2           243.0           303.0           241.0           305.0           0                              
+TB2T3           243.0           303.0           241.0           305.0           0                              
+TB3T1           243.0           303.0           241.0           305.0           0                              
+TB3T2           243.0           303.0           241.0           305.0           0                              
+TB3T3           243.0           303.0           241.0           305.0           0                              
+3RCTUBPT        243.0           303.0           241.0           305.0           0                              
+#
+#******  subsys1_8_05 ******
+#
+#(values dummied 4/30/98)
+#
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#
+#current (AMP)
+EB1CI           -2.0            +2.0            -2.2            +2.2            0                              
+EB1DI           -2.0            +2.0            -2.2            +2.2            0                              
+EB2CI           -2.0            +2.0            -2.2            +2.2            0                              
+EB2DI           -2.0            +2.0            -2.2            +2.2            0                              
+EB3CI           -2.0            +2.0            -2.2            +2.2            0                              
+EB3DI           -2.0            +2.0            -2.2            +2.2            0                              
+ELBI            -2.0            +2.0            -2.2            +2.2            0                              
+ESAMYI          -2.0            +2.0            -2.2            +2.2            0                              
+ESAPYI          -2.0            +2.0            -2.2            +2.2            0                              
+#
+#voltage (V)
+EB1V            -3.0            +3.0            -3.5            +3.5            0                              
+EB2V            -3.0            +3.0            -3.5            +3.5            0                              
+EB3V            -3.0            +3.0            -3.5            +3.5            0                              
+ECNV1V          -3.0            +3.0            -3.5            +3.5            0                              
+ECNV2V          -3.0            +3.0            -3.5            +3.5            0                              
+ECNV3V          -3.0            +3.0            -3.5            +3.5            0                              
+EDISSNPR        -3.0            +3.0            -3.5            +3.5            0                              
+EDISSNRD        -3.0            +3.0            -3.5            +3.5            0                              
+EEPA5V          -3.0            +3.0            -3.5            +3.5            0                              
+EEPB5V          -3.0            +3.0            -3.5            +3.5            0                              
+EIACVAV         -3.0            +3.0            -3.5            +3.5            0                              
+EIACVBV         -3.0            +3.0            -3.5            +3.5            0                              
+ELBV            -3.0            +3.0            -3.5            +3.5            0                              
+EPA15V          -3.0            +3.0            -3.5            +3.5            0                              
+EPB15V          -3.0            +3.0            -3.5            +3.5            0                              
+ES1P5CV         -3.0            +3.0            -3.5            +3.5            0                              
+ES2P5CV         -3.0            +3.0            -3.5            +3.5            0                              
+C10VREFA        -3.0            +3.0            -3.5            +3.5            0                              
+C10VREFB        -3.0            +3.0            -3.5            +3.5            0                              
+C28VMONA        -3.0            +3.0            -3.5            +3.5            0                              
+C28VMONB        -3.0            +3.0            -3.5            +3.5            0                              
+CIUA15V         -3.0            +3.0            -3.5            +3.5            0                              
+CIUA5V          -3.0            +3.0            -3.5            +3.5            0                              
+CIUB15V         -3.0            +3.0            -3.5            +3.5            0                              
+CIUB5V          -3.0            +3.0            -3.5            +3.5            0                              
+CPA1V           -3.0            +3.0            -3.5            +3.5            0                              
+CPA2BPT         -3.0            +3.0            -3.5            +3.5            0                              
+CPA2V           -3.0            +3.0            -3.5            +3.5            0                              
+CPCA15V         -3.0            +3.0            -3.5            +3.5            0                              
+CPCA5V          -3.0            +3.0            -3.5            +3.5            0                              
+CPCB15V         -3.0            +3.0            -3.5            +3.5            0                              
+CPCB5V          -3.0            +3.0            -3.5            +3.5            0                              
+CTUA5V          -3.0            +3.0            -3.5            +3.5            0                              
+CTUB15V         -3.0            +3.0            -3.5            +3.5            0                              
+CTUB5V          -3.0            +3.0            -3.5            +3.5            0                              
+CTXAV           -3.0            +3.0            -3.5            +3.5            0                              
+CTXBV           -3.0            +3.0            -3.5            +3.5            0                              
+CUSOA28V        -3.0            +3.0            -3.5            +3.5            0                              
+CUSOAOV         -3.0            +3.0            -3.5            +3.5            0                              
+CUSOB28V        -3.0            +3.0            -3.5            +3.5            0                              
+CUSOBOV         -3.0            +3.0            -3.5            +3.5            0                              
+CVEEP           -3.0            +3.0            -3.5            +3.5            0                              
+CVEER           -3.0            +3.0            -3.5            +3.5            0                              
+CXO5VOBA        -3.0            +3.0            -3.5            +3.5            0                              
+CXO5VOBB        -3.0            +3.0            -3.5            +3.5            0                              
+#	
+#voltage (VDC)
+CTSA15V         -3.0            +3.0            -3.5            +3.5            0                              
+CTSA5V          -3.0            +3.0            -3.5            +3.5            0                              
+CTSB5V          -3.0            +3.0            -3.5            +3.5            0                              
+CTUA15V         -3.0            +3.0            -3.5            +3.5            0                              
+#
+#power (DBM)
+CPA1PWR         0.0             +25.0           0.0             +30.0           0                              
+CPA2PWR         0.0             +25.0           0.0             +30.0           0                              
+CTXAPWR         0.0             +25.0           0.0             +30.0           0                              
+CTXBPWR         0.0             +25.0           0.0             +30.0           0                              
+#
+#power (W)
+EB1PW           0.0             +25.0           0.0             +30.0           0               BATT 1 POWER (EB1DI*EB1V)
+EB2PW           0.0             +25.0           0.0             +30.0           0               BATT 2 POWER (EB2DI*EB2V)
+EB3PW           0.0             +25.0           0.0             +30.0           0               BATT 3 POWER (EB3DI*EB3V)
+ELBPW           0.0             +25.0           0.0             +30.0           0               LOAD BUS POWER (ELBI*ELBV)
+#
+#
+#
+#
+#EPHIN
+#(values from samples 5/27/98)
+# Name          Yel_Lower       Yel_Upper       Red_Lower       Red_Upper       Time_Valid      Comments
+#voltage (V)
+HKP5V           -1010           5.50            -1020           6.00            0                              
+HK27V           -1010           27.0            -1020           28.0            0               27 Volts Rail - Voltage
+HK6V            -1010           6.50            -1020           7.00            0               6 Volts Rail - Voltage
+HKN6V           -1010           6.20            -1020           7.00            0               -6 Volts Rail - Voltage
+HKGHIV          0.0             1300            0.00            1350            0               G High Voltage 
+#
+#current (AMP)
+HKP5VI          -1010           41.0            -1020           45.0            0               5 Volts Rail - Current
+HKP27VI         -1010           5.00            -1020           6.00            0               27 Volts Rail - Current
+HKP6VI          -1010           155.0           -1020           160.0           0               6 Volts Rail - Current
+HKN6VI          -1010           -2.0            -1020           -1.0            0               6 Volts Rail - Current
+#
+#temp
+HKEBOX          -1010           35.0            -1020           40.0            0               EBOX Tempreture
+#
+#bias
+HKABIAS         0.0             1.3             0.0             1.7             0                              
+HKBBIAS         0.0             1.3             0.0             1.7             0                              
+HKCBIAS         10              50              0.0             55              0                              
+HKDBIAS         5.0             50              0.0             55              0                              
+HKEBIAS         5.0             50              0.0             55              0                              
+HKFBIAS         0.0             50              0.0             55              0                              
+#
+#Gradient Limits
+# Name          Yel_Lower       Yel_Upper       Red_Lower	Red_Upper       Time_Valid      Comments
+4RT01M02TM      -0.75           0.85            -0.85           0.95		0               4RT01TM minus 4RT02TM
+4RT02M03TM      -0.75           0.85            -0.85           0.95		0               4RT02TM minus 4RT03TM
+4RT03M04TM      -0.75           0.85            -0.85           0.95		0               4RT03TM minus 4RT04TM
+4RT04M05TM      -0.75           0.85            -0.85           0.95		0               4RT04TM minus 4RT05TM
+4RT05M06TM      -0.75           0.85            -0.85           0.95		0               4RT05TM minus 4RT06TM
+4RT06M07TM      -0.75           0.85            -0.85           0.95		0               4RT06TM minus 4RT07TM
+4RT07M08TM      -0.75           0.85            -0.85           0.95		0               4RT07TM minus 4RT08TM
+4RT08M09TM      -0.75           0.85            -0.85           0.95		0               4RT08TM minus 4RT09TM
+4RT09M10TM      -0.75           0.85            -0.85           0.95		0               4RT09TM minus 4RT10TM
+4RT10M11TM      -0.75           0.85            -0.85           0.95		0               4RT10TM minus 4RT11TM
+4RT11M12TM      -0.75           0.85            -0.85           0.95		0               4RT11TM minus 4RT12TM
+4RT12M13TM      -0.75           0.85            -0.85           0.95		0               4RT12TM minus 4RT13TM
+4RT13M14TM      -0.75           0.85            -0.85           0.95		0               4RT13TM minus 4RT14TM
+4RT14M15TM      -0.75           0.85            -0.85           0.95		0               4RT14TM minus 4RT15TM

@@ -1,0 +1,81 @@
+PRO obs_html, obscat
+
+;creates a set of html files from the obscat
+
+openr, 1, obscat
+line = 'x'
+
+;READ IN THE FIRST TWO LINES OF JUNK
+readf, 1, line
+readf, 1, line
+
+
+
+
+FOR i =  0, 947 DO BEGIN
+readf, 1, line
+
+obsid = strmid(line,8,10)
+targetname = strmid(line,33,20)
+grating = strmid(line,599,8)
+instrument = strmid(line,607,8) 
+vmag = strmid(line,147,10) 
+RA = strmid(line,166,12)
+DEC =strmid(line,186,12) 
+cntrate =strmid(line,206,12) 
+roll = strmid(line,355,15)
+exptime =strmid(line,400,15) 
+
+htmlname = strcompress(strmid(line,8,10),remove=1)+'.html'
+
+openw, 2,  htmlname
+
+;HEADER
+printf,2,'<HTML>'
+printf,2,'<HEAD>'
+printf,2,' <TITLE>OBSERVATION DATA OBS ID:'+obsid+'</title> </HEAD>
+printf,2,'<BODY TEXT="#BBBBBB" BGCOLOR="#000000" LINK="#FF0000" VLINK="#FFFF22" ALINK="#7500FF" background="../stars.jpg">'
+
+
+printf, 2, '<h1> M&TA Observation data - OBS ID:' + obsid+' </h1>'
+
+
+
+printf, 2, '<table Border>'
+
+printf, 2, '<TH valign=top align=left>instrument:</TH>' 
+printf, 2, '<TH valign=top align=left><font COLOR=#00FFFF>'+instrument+'</TH></FONT>'
+
+printf, 2, ' <TH valign=top align=left>V mag.:</TH>'
+printf, 2, '<TH valign=top align=left><font COLOR=#00FFFF>'+ vmag+'</TH></FONT>'
+
+printf, 2, '<TH valign=top align=left>EST COUNT RATE:</FONT></TH>'
+printf, 2, '<TH valign=top align=left><font COLOR=#00FFFF>'+cntrate+'</TH></FONT> </TR> <TR>'
+
+printf, 2, '<TH valign=top align=left>Target Name:</TH> '
+printf, 2, '<TH valign=top align=left><font COLOR=#00FFFF>'+targetname+'</TH></FONT>'
+
+printf, 2, ' <TH valign=top align=left>RA:</TH> '
+printf, 2, '<TH valign=top align=left><font COLOR=#00FFFF>'+ ra+'</TH></FONT>'
+
+printf, 2, '<TH valign=top align=left>ROLL:</FONT></TH> '
+printf, 2, '<TH valign=top align=left><font COLOR=#00FFFF>'+roll+'</TH></FONT> </TR> <TR>'
+
+printf, 2, '<TH valign=top align=left>Grating:</TH> '
+printf, 2, '<TH valign=top align=left><font COLOR=#00FFFF>'+grating+'</TH></FONT>'
+
+printf, 2, ' <TH valign=top align=left>DEC:</TH> '
+printf, 2, '<TH valign=top align=left><font COLOR=#00FFFF>'+ dec+'</TH></FONT>'
+
+printf, 2, '<TH valign=top align=left>Exposure Time:</FONT></TH> '
+printf, 2, '<TH valign=top align=left><font COLOR=#00FFFF>'+exptime+'</TH></FONT> </TR> <TR>'
+
+printf, 2, '</table>'
+
+close, 2
+ENDFOR
+
+close, 1
+
+return
+END

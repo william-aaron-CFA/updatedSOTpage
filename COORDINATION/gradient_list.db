@@ -1,0 +1,73 @@
+# Subsystem		Mnemonic1       Mnemonic2       New Mnemonic	Decriptor
+#----------		-----------	---------	------------	---------
+#
+#
+# FORWARD APERTURE PLARE
+fap			4RT05TM		4RT06TM		4RT05M06TM	"thermal difference between 4RT05TM and 4RT06TM"
+fap			4RT06TM		4RT07TM		4RT06M07TM	"thermal difference between 4RT06TM and 4RT07TM"
+fap			4RT07TM		4RT08TM		4RT07M08TM	"thermal difference between 4RT07TM and 4RT08TM"
+fap			4RT08TM		4RT09TM		4RT08M09TM	"thermal difference between 4RT08TM and 4RT09TM"
+fap			4RT09TM		4RT10TM		4RT09M10TM	"thermal difference between 4RT09TM and 4RT10TM"
+#
+#
+# CENTRAL APERTURE PLARE
+cap			4RT01TM		4RT02TM		4RT01M02TM	"thermal difference between 4RT01TM and 4RT02TM"
+cap			4RT02TM		4RT03TM		4RT02M03TM	"thermal difference between 4RT02TM and 4RT03TM"
+cap			4RT03TM		4RT04TM		4RT03M04TM	"thermal difference between 4RT03TM and 4RT04TM"
+cap			4RT04TM		4RT05TM		4RT04M05TM	"thermal difference between 4RT04TM and 4RT05TM"
+#
+#
+# HYPERBOLIC SHELL 1
+shellh1		4RT10TM		4RT11TM		4RT10M11TM	"thermal difference between 4RT10TM and 4RT11TM"
+shellh1		4RT11TM		4RT12TM		4RT11M12TM	"thermal difference between 4RT11TM and 4RT12TM"
+shellh1		4RT12TM		4RT13TM		4RT12M13TM	"thermal difference between 4RT12TM and 4RT13TM"
+shellh1		4RT13TM		4RT14TM		4RT13M14TM	"thermal difference between 4RT13TM and 4RT14TM"
+#
+#
+# HYPERBOLIC SHELL 3
+shellh3		4RT10TM		4RT11TM		4RT10M11TM	"thermal difference between 4RT10TM and 4RT11TM"
+shellh3		4RT11TM		4RT12TM		4RT11M12TM	"thermal difference between 4RT11TM and 4RT12TM"
+shellh3		4RT12TM		4RT13TM		4RT12M13TM	"thermal difference between 4RT12TM and 4RT13TM"
+shellh3		4RT13TM		4RT14TM		4RT13M14TM	"thermal difference between 4RT13TM and 4RT14TM"
+#
+#
+# HYPERBOLIC SHELL 4
+shellh4		4RT10TM		4RT11TM		4RT10M11TM	"thermal difference between 4RT10TM and 4RT11TM"
+shellh4		4RT11TM		4RT12TM		4RT11M12TM	"thermal difference between 4RT11TM and 4RT12TM"
+shellh4		4RT12TM		4RT13TM		4RT12M13TM	"thermal difference between 4RT12TM and 4RT13TM"
+shellh4		4RT13TM		4RT14TM		4RT13M14TM	"thermal difference between 4RT13TM and 4RT14TM"
+#
+# HYPERBOLIC SHELL 6
+shellh6		4RT10TM		4RT11TM		4RT10M11TM	"thermal difference between 4RT10TM and 4RT11TM"
+shellh6		4RT11TM		4RT12TM		4RT11M12TM	"thermal difference between 4RT11TM and 4RT12TM"
+shellh6		4RT12TM		4RT13TM		4RT12M13TM	"thermal difference between 4RT12TM and 4RT13TM"
+shellh6		4RT13TM		4RT14TM		4RT13M14TM	"thermal difference between 4RT13TM and 4RT14TM"
+#
+#
+# PARABOLIC SHELL 1
+shellp1		4RT10TM		4RT11TM		4RT10M11TM	"thermal difference between 4RT10TM and 4RT11TM"
+shellp1		4RT11TM		4RT12TM		4RT11M12TM	"thermal difference between 4RT11TM and 4RT12TM"
+shellp1		4RT12TM		4RT13TM		4RT12M13TM	"thermal difference between 4RT12TM and 4RT13TM"
+shellp1		4RT13TM		4RT14TM		4RT13M14TM	"thermal difference between 4RT13TM and 4RT14TM"
+#
+#
+# PARABOLIC SHELL 3
+shellp3		4RT10TM		4RT11TM		4RT10M11TM	"thermal difference between 4RT10TM and 4RT11TM"
+shellp3		4RT11TM		4RT12TM		4RT11M12TM	"thermal difference between 4RT11TM and 4RT12TM"
+shellp3		4RT12TM		4RT13TM		4RT12M13TM	"thermal difference between 4RT12TM and 4RT13TM"
+shellp3		4RT13TM		4RT14TM		4RT13M14TM	"thermal difference between 4RT13TM and 4RT14TM"
+#
+#
+# PARABOLIC SHELL 4
+shellp4		4RT10TM		4RT11TM		4RT10M11TM	"thermal difference between 4RT10TM and 4RT11TM"
+shellp4		4RT11TM		4RT12TM		4RT11M12TM	"thermal difference between 4RT11TM and 4RT12TM"
+shellp4		4RT12TM		4RT13TM		4RT12M13TM	"thermal difference between 4RT12TM and 4RT13TM"
+shellp4		4RT13TM		4RT14TM		4RT13M14TM	"thermal difference between 4RT13TM and 4RT14TM"
+#
+#
+# PARABOLIC SHELL 6
+shellp6		4RT10TM		4RT11TM		4RT10M11TM	"thermal difference between 4RT10TM and 4RT11TM"
+shellp6		4RT11TM		4RT12TM		4RT11M12TM	"thermal difference between 4RT11TM and 4RT12TM"
+shellp6		4RT12TM		4RT13TM		4RT12M13TM	"thermal difference between 4RT12TM and 4RT13TM"
+shellp6		4RT13TM		4RT14TM		4RT13M14TM	"thermal difference between 4RT13TM and 4RT14TM"
+

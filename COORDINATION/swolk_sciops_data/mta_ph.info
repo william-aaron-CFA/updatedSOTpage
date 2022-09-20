@@ -1,0 +1,336 @@
+
+-------------------------------------------------------------------------------------
+		Monitoring and Trends Analysis (MTA) Help Information
+
+
+
+	Welcome to the MTA Data Inspector written using Interactive Data Language 
+(IDL) 5.0 (http://www.rsinc.com).  The current version of this tool will allow users
+to make strip plots, 3D visualizations, and perform simple analysis of data and if
+possible save hardcopies.  We refer to all our tools as gadgets.
+
+	The Pull Down Menu (PDM) heirarchy is described below. The inactive menus 
+can be identified via a -, a + denotes an working menu selection, and a * represents
+a class.
+
+-------------------------------------------------------------------------------------
+o File
+
+  + Open
+  ------
+	This PDM allows the user to open a FITS file.  The current version of this 
+	tool only handles flat FITS files (i.e. the columns are scalar).
+
+  + Expressions
+  -------------
+	This PDM calls the Expression Generation Gadget, also know as the EGG.  The
+	EGG combines the flexibility of an IDL command line and access to the classes
+	data wrapped in a nice widget based shell. The EGG will allow the user to 
+	perform any operation upon the data choosen.  The operations are not limited
+	to *, /, +, -, or %, but any operation can be performed upon the data.
+
+	This gadget also allows the user to create their own data using standard 
+	IDL commands.
+
+	FUTURE UPGRADES:  Allowing this Class to be called in a non interactive mode
+			  so that operations can be performed in an automatic 
+			  pipeline style.
+
+	CAUTION:  	  STILL IN TESTING PHASE
+
+  + Set Filter(s)
+  ---------------
+	This PDM will call the MTA Filter Class and allow the user to define what
+	string filers can be applied.
+
+	DEFAULT FILTERS:	'time','_'
+
+	FUTURE UPGRADES:  We expect to add both filter and mask ability to this tool.
+ 
+
+  + File Info
+  -----------
+	This PDM will return the file information for each file that has been loaded.
+	
+
+  + Show Mnemonics
+  ----------------
+	Print a list of the mnemonics to the screen.  
+
+	FUTURE UPGRADES:  Fix format problems when mnemonic name lengths are uneven.
+
+  + Exit
+  ------
+	Exit the Data Inspector
+
+-------------------------------------------------------------------------------------
+o Viewers
+
+  + Strip plots - OD   (OBJECT - DRAW)
+  ------------------
+	This PDM will call the MTA xplot Class which uses the object draw ability
+	of IDL 5.0.  This gadget is will open two widget bases: 1) A nonexclusive 
+	mnemonic list (select what you want plotted), and 2) A draw window in which
+	the plots are drawn.  This class also has the neat feature of zooming in on 
+	data.  By clicking on the upper left corner of your desired zoom box and
+	dragging the mouse to the lower right corner you can zoom in on the data. A
+	red selection box is drawn over the region you have selected to show what 
+	region has been selected.
+
+	DISADVANTAGES:	 object graphics to slow!
+		
+	FUTURE UPGRADES:	? ? ?	
+
+
+  + Strip plots - DD (DIRECT - DRAW)
+  ------------------
+	This PDM will call the MTA plot Class which uses the direct draw ability
+	of IDL 5.0.  This gadget is will open a widget base that contains: A 
+	nonexclusive mnemonic list (select what you want plotted), a draw window
+	in which the plots are drawn, min/max sliders, window size (x,y amplifiers),
+	plot columns and plot row 
+
+	CMTAPLOT PDMs:
+	  o FILE:	 
+	  -------
+		- Open:
+		+ Save ad GIF:
+			 This PDM will allow users to save their plot as a GIF.  A
+			 pickfile dialog box is opened and queries for a filename.
+		 	 DEFAULT FILENAME = tmp.gif
+		+ Print: Save view as color PS file.
+		- Print setup: 
+		- Exit:  Exit the Strip Plot gadget.
+
+	  o PLOTTING:
+	  -----------
+		+ Fit Data:
+		+ Overplot:
+
+	  o INFORMATION:
+	  --------------
+		+ About:
+		+ Help:
+
+
+	ADVANTAGES:	 Direct-Draw graphics faciliates storing to output (PS, GIF,
+			 PS, etc.)
+
+	DISADVANTAGES:	 Not as powerful as object graphics.
+		
+	FUTURE UPGRADES:   1) The MTA Class is also able to be used in a Non
+			   interactive mode. 2) Increase Fitting capabilties. 3)
+			   increase diversity of colors, linestyles, psyms, for	
+			   overplotting.
+
+  - XY Correlation:   NO TOOL YET
+  ----------------
+
+  - Images:  NO TOOL YET
+  --------
+	View / Analyize Image data
+
+	FUTURE UPGRADES:  Write tools that handle files seperately or rewrite the
+	 		   MTA File class which handles the flat FITS files.  
+			   Incorporate other SW.
+
+  + 3-D
+  -----
+	This PDM calls the MTA 3D visualization class.  This class which utilizes
+	IDL 5.0s object draw allows the user to plot 3 mnemonics verse one another
+	and rotate the plot in 3D viewing it from any possible angle.  Upon being
+	created a mock data set is displayed using a RGYB color cycle.  This is 
+	only for asthetic quality and does NOT represent data status.
+
+	o FILE:  This PDM will allow the users to perform the following commands
+	------
+	     PRINT:  Save view as EPS file.
+	     PRINT SETUP: Setup the printing format.
+	     SAVE AS:	Save view as GIF, TIFF, or JPEG image.  Def. name = idl.ext.
+	     EXIT:	Exit the 3D viewer.
+
+	o COLORS: This PDM will allow the users to modify the colors of the view and
+	--------   uses the following colors. (Black,Blue,Green,Yellow,Red, White)
+
+	    DATA: Change data color: Standard colors, Cyclic, other(Not funct.).
+	    AXIS: Change axes color:  Standard colors.
+	    BACKGROUND: Change background color: Standard colrs.
+	    Default:  Default colors are white background, black axes, and RGYB 
+			cyclic data.
+
+	o STYLE: This PDM will allow the users to modify how the data are 
+	-------   represented.
+	    LINESTYLES: Change the linestyle of the data.
+		(solid, dotted, dash, dash-dot, dash-dot-dot, etc.)
+
+	    SYMBOLS:    Change the Symbol type of the data.
+		(plus, asterisk, period, diamond, square, X)
+
+
+	+ Data Selection Droplists [X:,Y:,Z:]  
+	    These droplists allow the user to choose the data for a given axis 
+	     from a list of possible mnemonics.
+
+	+ View Orientation buttons:  Sometimes an axis label will dissappear.  This
+		is a known feature and a fixed is being desigened for the future.
+
+		   XY Plane:	View the X-Y plane.
+		   YZ Plane:	View the Y-Z plane.
+		   XZ Plane:	View the X-Z plane.
+		   XYZ Original Orientation:   Return to the original orientation
+						 of the data set.
+
+	
+	DRAW BACKS:  Slow, but not outrageously slow.
+
+	ADVANTAGES:  Trackball capability to rotate the data.
+
+-------------------------------------------------------------------------------------
+o Analysis
+  --------
+
+  + No Limits status
+  ------------------
+	Return min, max, average, std. dev., # Red violations, # Green violations,
+	# Yellow violations, # Blue violations, # total points for each mnemonic.
+
+  + Limits status
+  ------------------
+	Return min, max, average, std. dev. for each mnemonic.
+
+
+-------------------------------------------------------------------------------------
+o Monitoring
+  ----------
+
+  + FLAG FLight Aca egse Gadget
+  -----------------------------
+	This PDM will call the MTA ACA Class which will create the FLAG which is 
+	comprised of four basic seperate classes: 1) Images Class, 2) Image_map,
+	3) Table, 4) Control_Panel.  No data are passed from the DI to the Flag so
+	all data must be opened manually.
+
+	SLOT:  Integer 0-7 identifying the image slot
+	TYPE:	Raw 		- Raw Image         (L0 data product)
+		Corr		- Corrected Image   (L1 product)
+		Resid		- Residuals between (fit and Corr) (L1 product)
+		None		- No Image selected (EMPTY IMAGE)
+
+	* FLAG:  This class wraps, controls and connects the four basic classes.
+	------
+		+ FILE
+		------
+		  + OPEN
+		  ------
+		      This PDM allows users to open FITS files.  When a ACA L0 FITS
+		      file is selected the code looks for eight files 
+		      <time_stamp>_img_0.fits.  Currently this is the ONLY naming
+		      convention available for FITS files.  This gadget can also
+		      handle previous IDL save sets which are currently created only
+		      upon opening a valid set of FITS files.  The default file name
+		      is data.dat.
+
+		  + EXIT
+		   ------
+		      This PDM will cleanup the FLAG and exit.
+		
+	* TABLE:  This class controls the ascii image viewer.
+	-------
+		Slot:  Slot ID (see above)
+		Type:  Image Type (see above)
+
+
+	* IMAGES:  This class controls scaling, range, and type od data shown in 
+  	--------   the ACA Image slot views.  The images, even though they maybe
+		   4x4, 6x6, or 8x8 pixel images, are all drawn as 8x8 images.  The
+		   extra space is filled in with blue background to help identify
+		   the image sizes.  Fid images are shown in a red scale and stars
+		   are shown in a gray scale.
+
+
+		SCALE[0-7]: Scaling factor for Slots.
+		Image Type:  (see above)
+		Time:	T [Current Time], T+1 [Index of Current Time+1],
+			T+2 [Index of Current Time +2]
+		Scale: Scaling applied to image (Linear, Log (alog10), Sqrt)
+		Min:   Minimum Point of prescaled Image (default = min of image)
+		Max:   Maximum of prescaled Image (default = max of image)
+		
+		Auto Scaling: Control Slot Image scaling factors.
+			On:  Automatically set the scaling factors 
+			     for each tier
+			Off: Shut off autoscaling.
+			Reset: resets Scale[0-7] to 1.00
+
+		Min/Max Reset: Control min/max scaling for each/all tiers
+				 [Tier 1, Tier 2, Tier 3, All Tiers].
+			
+
+	* IMAGE_MAP:  This class controls the details for the slot position viewer
+	-----------   which reveals where on the 1K chip the slots were obtained 
+		      from.  FID lights are represented as red boxes and stars are
+		      identified as white asterisks.  The slot number is placed on
+		      the inner most corner of the position.  The history 
+		      information is shown as blue dots.
+
+
+		History: 	   - Show position history [On/Off].
+		History Amplifier: - Amplify star movements since the display is
+					undersamples by 4x.
+		 	* NOT IMPLEMENTED AS OF YET. Planned for release 
+			   before flight.
+
+	* CONTROL_PANEL:  This class controls the mode of operation, the current 
+	---------------	  time, play mode and speed of play.
+	
+		MODE:		- Play mode [ONLINE, OFFLINE]
+				  offline: open files manually
+				  online:  runs automatically opening files when
+					    end of previous file has been reached.
+				* CURRENTLY only OFFLINE mode works.  ONLINE is
+				  slatted to be released before FLIGHT.
+	
+		INPUT FILE:  	- File name (full path) of file currently open. 
+
+		START TIME:	- start time for data in current file. Not editable.
+		STOP TIME: 	- stop time for data in current file. Not editable.
+
+		CURRENT TIME:	- Current time for data of time T begin displayed.
+				  editable.
+
+		PLAY MODE:	|<		- Rewind to beginning of data
+			  	<<		- Rewind one index
+				<Play		- Play Backwards
+				Stop		- STOP
+				Play>		- Play forwards
+				>>		- Fastforward one index
+				>|		- FF to end of data
+	
+		PLAY SPEED:	Controls the number of 0.3 second intervals during
+				which the S/W pauses. Allowing the S/W to run slower
+				on faster machines.
+
+				0 -> faster play speed (0 sec. wait)
+				9 -> slowest play speed (9 sec. wait)
+
+  + HRMA Visualization Gadget (NOT YET INCLUDED).
+  ---------------------------
+	This gadget will allow users to look at a section of
+	the HRMA [FAP, CAP, etc.] and see the highest violation, determine gradients,
+	as well as look at individual strip plots for each thermistor or even an
+	over plot of all thermistors for a section.
+	
+	* NOT YET COMPLETED
+	
+-------------------------------------------------------------------------------------
+o Help
+  ----
+
+  + Help
+  ------
+	Help Information
+
+  + About
+  -------
+	Contacts and Information about the MTA DI
+

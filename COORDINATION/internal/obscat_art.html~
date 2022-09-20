@@ -1,0 +1,112 @@
+
+<HTML>
+<HEAD>
+ <TITLE>OBSERVATION DATA OBS ID:   4      </title> </HEAD>
+<BODY TEXT="#BBBBBB" BGCOLOR="#000000" LINK="#FF0000" VLINK="#FFFF22" ALINK="#7500FF" background="../stars.jpg">
+<h1> M&TA Observation data - OBS ID:   4       </h1>
+<h3> Title : Energetic Beaming in PKS0637-752 </h3>
+<h4> PI : Dr. Stella Burning </h3>
+<table Border>
+<TH valign=top align=left>instrument:</TH>
+<TH valign=top align=left><font COLOR=#00FFFF> ACIS-I </TH></FONT>
+ <TH valign=top align=left>V mag.:</TH>
+<TH valign=top align=left><font COLOR=#00FFFF>     NULL </TH></FONT>
+<TH valign=top align=left>EST COUNT RATE:</FONT></TH>
+<TH valign=top align=left><font COLOR=#00FFFF>     NULL</TH></FONT> </TR> <TR>
+<TH valign=top align=left>Target Name:</TH> 
+<TH valign=top align=left><font COLOR=#00FFFF> PKS0637-752  </TH></FONT>
+ <TH valign=top align=left>RA:</TH> 
+<TH valign=top align=left><font COLOR=#00FFFF>98.940000   </TH></FONT>
+<TH valign=top align=left>ROLL:</FONT></TH> 
+<TH valign=top align=left><font COLOR=#00FFFF> 0.0000 </TH></FONT> </TR> <TR>
+<TH valign=top align=left>Grating:</TH> 
+<TH valign=top align=left><font COLOR=#00FFFF> NONE   </TH></FONT>
+ <TH valign=top align=left>DEC:</TH> 
+<TH valign=top align=left><font COLOR=#00FFFF> -75.270000 </TH></FONT>
+<TH valign=top align=left>Exposure Time:</FONT></TH> 
+<TH valign=top align=left><font COLOR=#00FFFF>    33.000000  </TH></FONT> </TR> <TR>
+</table>
+<p> <hr> <font size=4> 
+ 3060 HETGS spectra will reveal a wealth of information on the temperature and density structure of stellar coronae and winds. The Trapezium in Orion contains many hot and cool young stars. HETGS observations of Orion will simultaneously obtain dispersed spectra of the brightest objects (hot stars), and CCD PHA spectra of young cool stars. This observation will also test the abilities of multiple source spectroscopy with HETGS.
+ </font>
+</body> 
+</html>
+
+title,s,h,"Energetic Beaming in PKS0637-752",,,"Proposal title"
+observer,s,h,"Dr. Stella Burning",,,"Principal investigator"
+object,s,h,"PKS0637-752",,,"Source name"
+ss_object,s,h,"NONE",,,"Solar system object"
+obs_id,i,h,1058,,,"Observation id"
+seq_num,i,h,001058,,,"Sequence number"
+instrume,s,h,"ACIS",,,"Instrument"
+grating,s,h,"NONE",,,"Grating"
+detnam,s,h,"ACIS-I",,,"Detector"
+optical_monitor,s,h,"N",,,"Optical monitor data requested"
+raster_scan,s,h,"N",,,"Raster scan observation"
+dither,s,h,"N",,,"Special dither requested"
+phase_constraint,s,h,"N",,,"Phase constraints"
+ra_pnt,r,h,98.940000,0.0,360.0,"Pointing RA"
+dec_pnt,r,h,-75.270000,-90.0,90.0,"Pointing Dec"
+roll_pnt,r,h,0.000000,0.0,360.0,"Pointing Roll"
+roll_tol,r,h,,,,"Roll tolerance"
+y_det_offset,r,h,,,,"Detector Y offset"
+z_det_offset,r,h,,,,"Detector Z offset"
+radial_offset,r,h,,,,"Radial offset"
+window_start,r,h,,,,"Window start time"
+window_stop,r,h,,,,"Window stop time"
+pre_min_lead,r,h,,,,"Pre_id min lead time"
+pre_max_lead,r,h,,,,"Pre_id max lead time"
+pre_id,s,h,"",,,"Preceeding Obs_Id"
+seg_max_num,i,h,,,,"Max number of segments"
+ra_nom,r,h,-999,,,"Nominal RA"
+dec_nom,r,h,-999,,,"Nominal Dec"
+roll_nom,r,h,-999,,,"Nominal Roll"
+date-obs,s,h,"1999-05-14T05:19:35",,,"Observation start date"
+date-end,s,h,"1999-05-14T08:20:17",,,"Observation end date"
+tstart,r,h,43046376.4,,,"Observation start time"
+tstop,r,h,43057218.6,,,"Observation stop time"
+sched_start,r,h,43046376.4,,,"Scheduled observation start time"
+sched_stop,r,h,43057218.6,,,"Scheduled observation stop time"
+obs_mode,s,h,"POINTING",,,"Observation mode"
+revision,i,h,1,,,"Processing version of data"
+maneuver,s,h,"N",,,"Sky maneuver"
+maneuver_v1,r,h,,,,"Maneuver v1"
+maneuver_v2,r,h,,,,"Maneuver v2"
+maneuver_v3,r,h,,,,"Maneuver v3"
+maneuver_angle,r,h,,,,"Maneuver angle"
+maneuver_ref,s,h,,,,"Maneuver reference frame"
+mjdref,r,h,50814.0,,,"MJD zero point for times"
+timezero,r,h,0.0,,,"Clock correction"
+timeunit,s,h,"s",,,"Time unit"
+timesys,s,h,"TT",,,"Time system"
+timversn,s,h,"ASC-FITS-2.0",,,"Timing system definition"
+datamode,s,h,"FAINT_BIAS",,,"Data mode"
+readmode,s,h,"TIMED",,,"Read mode"
+ccdi0_on,s,h,"Y",,,"CCD I0 on"
+ccdi1_on,s,h,"Y",,,"CCD I1 on"
+ccdi2_on,s,h,"Y",,,"CCD I2 on"
+ccdi3_on,s,h,"Y",,,"CCD I3 on"
+ccds0_on,s,h,"N",,,"CCD S0 on"
+ccds1_on,s,h,"N",,,"CCD S1 on"
+ccds2_on,s,h,"Y",,,"CCD S2 on"
+ccds3_on,s,h,"Y",,,"CCD S3 on"
+ccds4_on,s,h,"N",,,"CCD S4 on"
+ccds5_on,s,h,"N",,,"CCD S5 on"
+onchip_sum,s,h,"N",,,"On-chip summing requested"
+sumrow,i,h,1,,,"On-chip row count"
+sumcol,i,h,1,,,"On-chip column count"
+subarray,s,h,"NONE",,,"Subarray requested"
+startrow,i,h,0,,,"Subarray start row"
+rowcnt,i,h,1024,,,"Subarray row count"
+subarray_frame_time,r,h,3.3,,,"Subarray frame time"
+duty_cycle,s,h,"N",,,"Alternating exposures requested"
+dtycycle,i,h,0,,,"Duty cycle"
+exptimea,r,h,3.3,,,"Primary exposure time"
+exptimeb,r,h,0.0,,,"Secondary exposure time"
+eventfilter,s,h,"N",,,"Event filter requested"
+phamin,r,h,0.0,,,"Event filter minimum"
+pharange,r,h,0.0,,,"Event filter range"
+bias_request,s,h,"N",,,"Force bias requested"
+
+
+

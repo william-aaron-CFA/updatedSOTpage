@@ -1,0 +1,559 @@
+
+
+File naming conventions:
+MTA files use the standard naming convention and are considered the
+same level as the products they monitor:
+
+name:
+{\tt <i><s><t><v>\_[<f>\_]<c><l>[<sl>].<type>}
+where the mnemonics are:
+
+\begin{verse}
+{\tt <i>}     instrument: ``acis'', ``hrci", ``hrcs'', \ldots\\
+{\tt <s>}    data source: ``x'', ``f'', ``t'', ``b'', ``s'', ``u''\\
+{\tt <t>}     TSTART (integer part): ``\#\#\#\#\#\#\#\#\#''\\
+{\tt <v>}     processing run (version): ``N\#\#\#''\\
+{\tt <f>}     optional discriminator (e.g., FEP Id)\\
+{\tt <c>}     contents: ``mon'', ``dose'', ``pht'', ``src'', ``win'', ``bias'', \ldots\\
+{\tt <l>}     processing level: single digit: ``0'', ``1'', ``2''\\
+{\tt<sl>}    sublevel: single lower case letter; e.g., 1.5 is ``1a''\\
+{\tt <type>}  superfluous: usually ``fits''\\
+\end{verse}
+
+
+
+In all cases below: 
+CREATOR = 'MONITOR - Version##'/ Program creating this file
+HDUSPEC = 'MONITOR pipeline spec VX.X'
+HDUDOC  = 'ASC-FITS-1.3: McDowell, Rots: ASC FITS Designers Guide'/
+EXTNAME = 'MONITOR'
+HDUNAME = 'MONITOR'
+HDUCLASS= 'ASC     '
+HDUCLAS1= 'TEMPORALDATA'
+
+     ACIS 
+         ACIS Thermal Control   (both sides)
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERM'
+CONTENT=  'ACISTEMP'
+
+
+acisf#######n###_mta_therm0.fits
+
+         ACIS Electronics (both sides)
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'ELEC'
+CONTENT= 'ACISELEC'
+
+acisf#######N###_mta_elec0.fits
+
+         ACIS Mechanism Controller 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'Mech'
+CONTENT= 'ACISMECH'
+
+acisf#######N###_mta_mech0.fits
+
+
+
+         ACIS Source Counting Rates  (moved to L2_mon)
+         ACIS Background Counting Rates (moved to L2 mon)
+
+     EPH 
+         EPHIN Housekeeping 
+HDUCLAS2= 'HKP'
+CONTENT= 'EPHHK'
+
+ephinf#######N###_mta_hkp0.fits
+
+         EPHIN Temperatures and Voltages 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERMAL'
+CONTENT= 'EPHTV'
+
+ephinf#######N###_mta_therm0.fits
+
+
+         EPHIN Rates 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'RATES'
+CONTENT= 'EPHRATE'
+
+ephinf#######N###_mta_rate0.fits
+
+
+     GRAD 
+         HRMA CAP thermister gradients  HRMAf#######N###_mta_cap_grad0.fits
+         HRMA FAP thermister gradients  HRMAf#######N###_mta_fap_grad0.fits
+         HRMA Hyp. Shell 1 thermister gradients HRMAf#######N###_mta_S1_grad0.fits
+         HRMA Hyp. Shell 3 thermister gradients HRMAf#######N###_mta_S3_grad0.fits
+         HRMA Hyp. Shell 4 thermister gradients HRMAf#######N###_mta_S4_grad0.fits
+         HRMA Hyp. Shell 6 thermister gradients HRMAf#######N###_mta_S6_grad0.fits
+         HRMA Par. Shell 1 thermister gradients HRMAf#######N###_mta_P1_grad0.fits
+         HRMA Par. Shell 3 thermister gradients HRMAf#######N###_mta_P3_grad0.fits
+         HRMA Par. Shell 4 thermister gradients HRMAf#######N###_mta_P4_grad0.fits
+         HRMA Par. Shell 6 thermister gradients HRMAf#######N###_mta_P6_grad0.fits
+
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'GRADP1'(S1 etc)
+
+
+CONTENT = 'GRADCAP'
+          'GRADFAP'
+          'GRADSH1'
+          'GRADSH3'
+          'GRADSH4'
+          'GRADSH6'
+          'GRADSP1'
+          'GRADSP3'
+          'GRADSP4'
+          'GRADSP6'
+
+     GRAT 
+         Grating Voltages and Rotation Angles 
+HDUCLAS2= 'HKP
+HDUCLAS3= 'ELEC
+CONTENT= 'GRATGEN'
+
+gratf#######N###_mta_elec0.fits
+
+
+
+     HRC 
+         HRC Temperatures 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERM'
+CONTENT= 'HRCTEMP'
+
+hrcf#######N###_mta_therm0.fits
+
+         HRC Electronics 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'ELEC'
+CONTENT= 'HRCELEC'
+
+hrcf#######N###_mta_elec0.fits
+
+         HRC Veto Counting Rates 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'VETO'
+CONTENT= 'HRCVETO'
+
+hrcf#######N###_mta_veto0.fits
+
+         HRC Source Counting Rates  (L2_mon)
+         HRC Background Counting Rates (L2_mon)
+         HRC PSF (L2_mon)
+         HRC Houskeeping 
+
+HDUCLAS2= 'HKP'
+CONTENT= 'HRCHK'
+hrcf#######N###_mta_hkp0.fits
+
+
+
+     PCAD 
+         Aspect Level 1 Centroids 
+
+HDUCLAS2= 'image'
+HDUCLAS3= 'CENTROIDS'
+CONTENT='MTA_PCAD_CENTROIDS'
+
+pcadf#######N###_mta_cent1.fits
+
+        ACA Thermal 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERM'
+CONTENT = 'PCADTEMP'
+
+pcadf#######N###_mta_therm0.fits
+
+         IRU Configuration 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'IRUCONFIG'
+CONTENT = 'PCADICONF'
+
+pcadf#######N###_mta_iruconf0.fits
+
+
+         IRU Temperatures and Electronics 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERM'
+CONTENT = 'PCADITV'
+
+pcadf#######N###_mta_iruthem0.fits
+
+         PCAD Gyro Rates
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'GYRORATE'
+CONTENT = 'PCADGRATE'
+
+pcadf#######N###_mta_gyrorate0.fits
+
+         PCAD Temperatures and Electronics 
+
+HDUCLAS2= 'HKP'
+CONTENT = 'PCADPTV'
+pcadf#######N###_mta_hk_0.fits
+
+         PCAD FID Light Magnitude (ACA_MON)
+         Aspect Quality Solution  (ACA_MON)
+         Drift rate updates to gyros 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'GYRODRIFT'
+CONTENT = 'PCADDRIFT'
+pcadf#######N###_mta_gyrodrift0.fits
+
+         PCAD reaction wheel Rates 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'WHEELRATES'
+CONTENT = 'PCADRWRATE'
+pcadf#######N###_mta_wheelrates0.fits
+
+         PCAD electronics 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'ELEC'
+CONTENT= 'PCADELEC'
+pcadf#######N###_mta_elec0.fits
+
+         FTS temp & gradient 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'FTS'
+CONTENT = 'PCADFTSGRAD'
+pcadf#######N###_mta_fts0.fits
+
+
+     SIM 
+         SIM Thermal 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERM'
+CONTENT = 'SIMTEMP'
+simf#######N###_mta_therm0.fits
+
+         SIM Electronics 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'ELEC'
+CONTENT = 'SIMELEC'
+simf#######N###_mta_elec0.fits
+
+         SIM Actuator Use 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'MOTOR_USE'
+CONTENT = 'SIMACTU'
+simf#######N###_mta_use0.fits
+
+
+     SUB 
+         OBC State 
+
+HDUCLAS2= 'HKP'
+CONTENT = 'SUBOBC'
+obcf#######N###_mta_hkp0.fits
+       
+
+         Spacecraft Temperatures 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERM'
+CONTENT= 'SUBSCT'
+Spcf#######N###_mta_therm0.fits
+
+
+         Spacecraft electronics (both sides)
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'ELEC'
+CONTENT= 'SUBELEC'
+Spcf#######N###_mta_elec0.fits
+
+
+       
+	  Battery Usage 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'BATTS'
+CONTENT = 'SUBBATTS'
+telescopef#######N###_mta_batts0.fits
+
+
+     TEL 
+         Telescope Thermistor Data
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERM'
+CONTENT = 'TELOBA'
+obaf#######N###_mta_therm0.fits
+ 
+         HRMA Temperatures 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'MTA_HRMA_THERM'
+CONTENT = 'TELHRMA'
+hrmaf#######N###_mta_therm0.fits
+
+
+TRENDING
+
+
+In all cases below: 
+CREATOR = 'DATA SEEKER  - Version##'/ Program creating this file
+HDUSPEC = 'DATA SEEKER pipeline spec VX.X'
+HDUDOC  = 'ASC-FITS-1.4: McDowell, Rots: ASC FITS Designers Guide'/
+EXTNAME = 'DATASEEKER'
+HDUNAME = 'DATASEEKER'
+HDUCLASS= 'ASC     '
+HDUCLAS1= 'TEMPORALDATA'
+
+     ACIS 
+         ACIS Thermal Control 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERM'
+CONTENT=  'ACISTEMPTR'
+
+
+acisf#######n###_trd_therm0.fits
+
+         ACIS Electronics 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'ELEC'
+CONTENT= 'ACISELECTR'
+
+acisf#######N###_trd_elec0.fits
+
+         ACIS Mechanism Controller 
+         ACIS Source Counting Rates  (moved to L2_mon)
+         ACIS Background Counting Rates (moved to L2 mon)
+
+     EPH 
+         EPHIN Housekeeping 
+HDUCLAS2= 'HKP'
+CONTENT= 'EPHHKTR'
+
+ephinf#######N###_trd_hkp0.fits
+
+         EPHIN Temperatures and Voltages 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERMAL'
+CONTENT= 'EPHTVTR'
+
+ephinf#######N###_trd_therm0.fits
+
+
+         EPHIN Rates 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'RATES'
+CONTENT= 'EPHRATETR'
+
+ephinf#######N###_trd_rate0.fits
+
+
+     GRAD 
+         HRMA CAP thermister gradients  HRMAf#######N###_trd_cap_grad0.fits
+         HRMA FAP thermister gradients  HRMAf#######N###_trd_fap_grad0.fits
+         HRMA Hyp. Shell 1 thermister gradients HRMAf#######N###_trd_S1_grad0.fits
+         HRMA Hyp. Shell 3 thermister gradients HRMAf#######N###_trd_S3_grad0.fits
+         HRMA Hyp. Shell 4 thermister gradients HRMAf#######N###_trd_S4_grad0.fits
+         HRMA Hyp. Shell 6 thermister gradients HRMAf#######N###_trd_S6_grad0.fits
+         HRMA Par. Shell 1 thermister gradients HRMAf#######N###_trd_P1_grad0.fits
+         HRMA Par. Shell 3 thermister gradients HRMAf#######N###_trd_P3_grad0.fits
+         HRMA Par. Shell 4 thermister gradients HRMAf#######N###_trd_P4_grad0.fits
+         HRMA Par. Shell 6 thermister gradients HRMAf#######N###_trd_P6_grad0.fits
+
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'GRADP1'(S1 etc)
+
+
+CONTENT = 'GRADCAPTR'
+          'GRADFAPTR'
+          'GRADSH1TR'
+          'GRADSH3TR'
+          'GRADSH4TR'
+          'GRADSH6TR'
+          'GRADSP1TR'
+          'GRADSP3TR'
+          'GRADSP4TR'
+          'GRADSP6TR'
+
+     GRAT 
+         Grating Voltages and Rotation Angles 
+HDUCLAS2= 'HKP
+HDUCLAS3= 'ELEC
+CONTENT= 'GRATGENTR'
+
+gratf#######N###_trd_elec0.fits
+
+
+
+     HRC 
+         HRC Temperatures 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERM'
+CONTENT= 'HRCTEMPTR'
+
+hrcf#######N###_trd_therm0.fits
+
+         HRC Electronics 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'ELEC'
+CONTENT= 'HRCELECTR'
+
+hrcf#######N###_trd_elec0.fits
+
+         HRC Veto Counting Rates 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'VETO'
+CONTENT= 'HRCVETOTR'
+
+hrcf#######N###_trd_veto0.fits
+
+         HRC Source Counting Rates  (L2_mon)
+         HRC Background Counting Rates (L2_mon)
+         HRC PSF (L2_mon)
+         HRC Houskeeping 
+
+HDUCLAS2= 'HKP'
+CONTENT= 'HRCHKTR'
+hrcf#######N###_trd_hkp0.fits
+
+
+
+     PCAD 
+         Aspect Level 1 Centroids 
+
+HDUCLAS2= 'image'
+HDUCLAS3= 'CENTROIDS'
+CONTENT='PCAD_CENTROIDSTR'
+
+pcadf#######N###_trd_cent1.fits
+
+        ACA Thermal 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERM'
+CONTENT = 'PCADTEMPTR'
+
+pcadf#######N###_trd_therm0.fits
+
+         IRU Configuration 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'IRUCONFIG'
+CONTENT = 'PCADICONFTR'
+
+pcadf#######N###_trd_iruconf0.fits
+
+
+         IRU Temperatures and Electronics 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERM'
+CONTENT = 'PCADITVTR'
+
+pcadf#######N###_trd_iruthem0.fits
+
+         PCAD Gyro Rates
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'GYRORATE'
+CONTENT = 'PCADGRATETR'
+
+pcadf#######N###_trd_gyrorate0.fits
+
+         PCAD Temperatures and Electronics 
+
+HDUCLAS2= 'HKP'
+CONTENT = 'PCADPTVTR'
+pcadf#######N###_trd_hk_0.fits
+
+         PCAD FID Light Magnitude (ACA_MON)
+         Aspect Quality Solution  (ACA_MON)
+         Drift rate updates to gyros 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'GYRODRIFT'
+CONTENT = 'PCADDRIFTTR'
+pcadf#######N###_trd_gyrodrift0.fits
+
+         PCAD reaction wheel Rates 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'WHEELRATES'
+CONTENT = 'PCADRWRATETR'
+pcadf#######N###_trd_wheelrates0.fits
+
+
+         FTS temp & gradient 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'FTS'
+CONTENT = 'PCADFTSGRADTR'
+pcadf#######N###_trd_fts0.fits
+
+
+     SIM 
+         SIM Thermal 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERM'
+CONTENT = 'SIMTEMPTR'
+simf#######N###_trd_therm0.fits
+
+         SIM Electronics 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'ELEC'
+CONTENT = 'SIMELECTR'
+simf#######N###_trd_elec0.fits
+
+         SIM Actuator Use 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'MOTOR_USE'
+CONTENT = 'SIMACTUTR'
+simf#######N###_trd_use0.fits
+
+
+     SUB 
+         OBC State 
+
+HDUCLAS2= 'HKP'
+CONTENT = 'SUBOBCTR'
+obcf#######N###_trd_hkp0.fits
+       
+
+         Spacecraft Temperatures 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERM'
+CONTENT= 'SUBSCTTR'
+Spcf#######N###_trd_therm_0.fits
+       
+	  Battery Usage 
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'BATTS'
+CONTENT = 'SUBBATTSTR'
+telescopef#######N###_trd_batts0.fits
+
+
+     TEL 
+         Telescope Thermistor Data
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'THERM'
+CONTENT = 'TELOBATR'
+obaf#######N###_trd_therm0.fits
+ 
+         HRMA Temperatures 
+
+HDUCLAS2= 'HKP'
+HDUCLAS3= 'MTA_HRMA_THERM'
+CONTENT = 'TELHRMATR'
+hrmaf#######N###_trd_therm0.fits
+

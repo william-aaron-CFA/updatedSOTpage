@@ -1,0 +1,174 @@
+;; @T(#) @T(#)
+;;
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; ENG Telemetry Template File  -  Data Product Grouping information  -  Part 7 of 8
+;;
+;; This information is based on attributes associated with the structure of 
+;; a FITS data file.
+;;
+;;
+;; 	File id (valid values >= 1, 0 = n/a)
+;;	|
+;;	|	Group id (valid values >= 1)
+;;	|	|
+;;	|	|	Orientation  (ROW, COL)
+;;	|	|	|
+;;	|	|	|	Group type (BINARY, ASCII, IMAGE)
+;;	|	|	|	|
+;;	|	|	|	|		        Group short name (max 8 characters)
+;;	|	|	|	|		        |
+;;	|	|	|	|		        |		Descriptive short comment (max 50 characters)
+;;	|	|	|	|		        |		|
+;;	|	|	|	|		        |		|
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;
+;;
+;; GENERATE_EDE_TEMPLATES version 2.35 (June 3, 1999)
+;; PREPROCESS_1949_DATABASE version 2.3 (June 3, 1999)
+;;
+;;
+;;
+;;ACIS engineering telemetry - group definitions
+;;
+;;
+	50102	102	COL	BINTABLE	AXAF_ACIS	"ACIS2ENG engineering telemetry "
+	50103	103	COL	BINTABLE	AXAF_ACIS	"ACIS3ENG engineering telemetry "
+	50104	104	COL	BINTABLE	AXAF_ACIS	"ACIS4ENG engineering telemetry "
+;;
+;;
+;;MISC engineering telemetry - group definitions
+;;
+;;
+	50201	201	COL	BINTABLE	AXAF_MISC	"MISC1ENG engineering telemetry "
+	50202	202	COL	BINTABLE	AXAF_MISC	"MISC2ENG engineering telemetry "
+	50203	203	COL	BINTABLE	AXAF_MISC	"MISC3ENG engineering telemetry "
+	50204	204	COL	BINTABLE	AXAF_MISC	"MISC4ENG engineering telemetry "
+	50205	205	COL	BINTABLE	AXAF_MISC	"MISC5ENG engineering telemetry "
+	50206	206	COL	BINTABLE	AXAF_MISC	"MISC6ENG engineering telemetry "
+	50207	207	COL	BINTABLE	AXAF_MISC	"MISC7ENG engineering telemetry "
+	50208	208	COL	BINTABLE	AXAF_MISC	"MISC8ENG engineering telemetry "
+;;
+;;
+;;CCDM engineering telemetry - group definitions
+;;
+;;
+	50301	301	COL	BINTABLE	AXAF_CCDM	"CCDM1ENG engineering telemetry "
+	50302	302	COL	BINTABLE	AXAF_CCDM	"CCDM2ENG engineering telemetry "
+	50303	303	COL	BINTABLE	AXAF_CCDM	"CCDM3ENG engineering telemetry "
+	50304	304	COL	BINTABLE	AXAF_CCDM	"CCDM4ENG engineering telemetry "
+	50305	305	COL	BINTABLE	AXAF_CCDM	"CCDM5ENG engineering telemetry "
+	50307	307	COL	BINTABLE	AXAF_CCDM	"CCDM7ENG engineering telemetry "
+	50308	308	COL	BINTABLE	AXAF_CCDM	"CCDM8ENG engineering telemetry "
+	50310	310	COL	BINTABLE	AXAF_CCDM	"CCDM10ENG engineering telemetry "
+	50311	311	COL	BINTABLE	AXAF_CCDM	"CCDM11ENG engineering telemetry "
+	50312	312	COL	BINTABLE	AXAF_CCDM	"CCDM12ENG engineering telemetry "
+	50313	313	COL	BINTABLE	AXAF_CCDM	"CCDM13ENG engineering telemetry "
+;;
+;;
+;;CPE engineering telemetry - group definitions
+;;
+;;
+	50401	401	COL	BINTABLE	AXAF_CPE	"CPE1ENG engineering telemetry "
+;;
+;;
+;;EPHIN engineering telemetry - group definitions
+;;
+;;
+	50501	501	COL	BINTABLE	AXAF_EPHIN	"EPHIN1ENG engineering telemetry "
+	50502	502	COL	BINTABLE	AXAF_EPHIN	"EPHIN2ENG engineering telemetry "
+;;
+;;
+;;EPS engineering telemetry - group definitions
+;;
+;;
+	50601	601	COL	BINTABLE	AXAF_EPS	"EPS1ENG engineering telemetry "
+	50602	602	COL	BINTABLE	AXAF_EPS	"EPS2ENG engineering telemetry "
+	50603	603	COL	BINTABLE	AXAF_EPS	"EPS3ENG engineering telemetry "
+	50604	604	COL	BINTABLE	AXAF_EPS	"EPS4ENG engineering telemetry "
+	50605	605	COL	BINTABLE	AXAF_EPS	"EPS5ENG engineering telemetry "
+	50606	606	COL	BINTABLE	AXAF_EPS	"EPS6ENG engineering telemetry "
+	50607	607	COL	BINTABLE	AXAF_EPS	"EPS7ENG engineering telemetry "
+	50609	609	COL	BINTABLE	AXAF_EPS	"EPS9ENG engineering telemetry "
+	50610	610	COL	BINTABLE	AXAF_EPS	"EPS10ENG engineering telemetry "
+;;
+;;
+;;HRC engineering telemetry - group definitions
+;;
+;;
+	50702	702	COL	BINTABLE	AXAF_HRC	"HRC2ENG engineering telemetry "
+	50704	704	COL	BINTABLE	AXAF_HRC	"HRC4ENG engineering telemetry "
+	50705	705	COL	BINTABLE	AXAF_HRC	"HRC5ENG engineering telemetry "
+	50707	707	COL	BINTABLE	AXAF_HRC	"HRC7ENG engineering telemetry "
+;;
+;;
+;;OBC engineering telemetry - group definitions
+;;
+;;
+	50801	801	COL	BINTABLE	AXAF_OBC	"OBC1ENG engineering telemetry "
+	50802	802	COL	BINTABLE	AXAF_OBC	"OBC2ENG engineering telemetry "
+	50803	803	COL	BINTABLE	AXAF_OBC	"OBC3ENG engineering telemetry "
+	50804	804	COL	BINTABLE	AXAF_OBC	"OBC4ENG engineering telemetry "
+	50805	805	COL	BINTABLE	AXAF_OBC	"OBC5ENG engineering telemetry "
+;;
+;;
+;;PCAD engineering telemetry - group definitions
+;;
+;;
+	50903	903	COL	BINTABLE	AXAF_PCAD	"PCAD3ENG engineering telemetry "
+	50904	904	COL	BINTABLE	AXAF_PCAD	"PCAD4ENG engineering telemetry "
+	50905	905	COL	BINTABLE	AXAF_PCAD	"PCAD5ENG engineering telemetry "
+	50906	906	COL	BINTABLE	AXAF_PCAD	"PCAD6ENG engineering telemetry "
+	50907	907	COL	BINTABLE	AXAF_PCAD	"PCAD7ENG engineering telemetry "
+	50908	908	COL	BINTABLE	AXAF_PCAD	"PCAD8ENG engineering telemetry "
+	50910	910	COL	BINTABLE	AXAF_PCAD	"PCAD10ENG engineering telemetry "
+	50911	911	COL	BINTABLE	AXAF_PCAD	"PCAD11ENG engineering telemetry "
+	50912	912	COL	BINTABLE	AXAF_PCAD	"PCAD12ENG engineering telemetry "
+	50913	913	COL	BINTABLE	AXAF_PCAD	"PCAD13ENG engineering telemetry "
+	50914	914	COL	BINTABLE	AXAF_PCAD	"PCAD14ENG engineering telemetry "
+	50915	915	COL	BINTABLE	AXAF_PCAD	"PCAD15ENG engineering telemetry "
+;;
+;;
+;;PROP engineering telemetry - group definitions
+;;
+;;
+	51001	1001	COL	BINTABLE	AXAF_PROP	"PROP1ENG engineering telemetry "
+	51002	1002	COL	BINTABLE	AXAF_PROP	"PROP2ENG engineering telemetry "
+;;
+;;
+;;SIM engineering telemetry - group definitions
+;;
+;;
+	51101	1101	COL	BINTABLE	AXAF_SIM	"SIM1ENG engineering telemetry "
+	51102	1102	COL	BINTABLE	AXAF_SIM	"SIM2ENG engineering telemetry "
+	51103	1103	COL	BINTABLE	AXAF_SIM	"SIM3ENG engineering telemetry "
+;;
+;;
+;;SIM2 engineering telemetry - group definitions
+;;
+;;
+	51201	1201	COL	BINTABLE	AXAF_SIM2	"SIM21ENG engineering telemetry "
+;;
+;;
+;;SMS engineering telemetry - group definitions
+;;
+;;
+	51301	1301	COL	BINTABLE	AXAF_SMS	"SMS1ENG engineering telemetry "
+	51302	1302	COL	BINTABLE	AXAF_SMS	"SMS2ENG engineering telemetry "
+;;
+;;
+;;TEL engineering telemetry - group definitions
+;;
+;;
+	51401	1401	COL	BINTABLE	AXAF_TEL	"TEL1ENG engineering telemetry "
+	51402	1402	COL	BINTABLE	AXAF_TEL	"TEL2ENG engineering telemetry "
+	51403	1403	COL	BINTABLE	AXAF_TEL	"TEL3ENG engineering telemetry "
+;;
+;;
+;;THM engineering telemetry - group definitions
+;;
+;;
+	51501	1501	COL	BINTABLE	AXAF_THM	"THM1ENG engineering telemetry "
+	51502	1502	COL	BINTABLE	AXAF_THM	"THM2ENG engineering telemetry "
+	51503	1503	COL	BINTABLE	AXAF_THM	"THM3ENG engineering telemetry "

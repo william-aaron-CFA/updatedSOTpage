@@ -1,0 +1,140 @@
+#######################################################################
+#
+#		Thermal Visualizar Definition file
+#
+#######################################################################
+#
+# Group:  SciOps MTA
+#
+# Thermal Subsystem:   OBA CONE Assembly
+#
+# Purpose:
+#
+#   This file contains the index, x_pos, y_pos, type, and mnemonic
+# that are required to properly draw the thermal subystem.  The
+# x_pos, and y_pos are in normalized (to 1) units. The type is
+# a signal for thermal/gradient type:
+#    0 = temp
+#    1 = radial gradient
+#    2 = circular gradient
+#
+#
+#index   x_pos   y_pos   Type	Mnemonic 
+#------   -----   -----   ----	--------
+  1	 0.205	 0.523	 0	OOBTHR08
+  2	 0.191	 0.420	 0	OOBTHR09
+  3	 0.198	 0.335	 0	OOBTHR10
+  4	 0.203	 0.257	 0	OOBTHR11
+  5	 0.200	 0.153	 0	OOBTHR12
+  6	 0.239	 0.923	 0	OOBTHR13
+  7	 0.203	 0.853	 0	OOBTHR14
+  8	 0.191	 0.788	 0	OOBTHR15
+  9	 0.191	 0.702	 0	OOBTHR17
+ 10	 0.211	 0.622	 0	OOBTHR18
+ 11	 0.378	 0.520	 0	OOBTHR19
+ 12	 0.381	 0.428	 0	OOBTHR20
+ 13	 0.430   0.345	 0	OOBTHR21
+ 14	 0.431	 0.225	 0	OOBTHR22
+ 15	 0.423	 0.843	 0	OOBTHR23
+ 16	 0.394	 0.717	 0	OOBTHR24
+ 17	 0.383	 0.600	 0	OOBTHR25
+ 18	 0.694	 0.502	 0	OOBTHR26
+ 19	 0.695	 0.425	 0	OOBTHR27
+ 20	 0.706	 0.275	 0	OOBTHR28
+ 21	 0.714	 0.751	 0	OOBTHR29
+ 22	 0.702	 0.617	 0	OOBTHR30
+ 23	 0.102	 0.535   0	4RT575T
+ 24	 0.120	 0.113 	 0	4RT576T
+ 25	 0.653	 0.521	 0	4RT577T
+ 26	 0.666	 0.621	 0	4RT578T
+ 27	 0.909	 0.356	 0	4RT579T
+ 28	 0.920	 0.680	 0	4RT580T
+ 29	 0.925	 0.288	 0	4RT581T
+ 30	 0.879	 0.496	 0	OOBTHR57
+ 31	 0.084	 0.416	 0	OOBTHR58
+ 32	 0.085	 0.593	 0	OOBTHR59
+ 33	 0.501	 0.496	 0	OOBTHR60
+ 34	 0.540	 0.170	 0	OOBTHR61
+ 35	 0.253	 0.461   1	HCONEGRD1 
+ 36	 0.364	 0.498   1	HCONEGRD2 
+ 37	 0.255	 0.363   1	HCONEGRD3 
+ 38	 0.369	 0.406   1	HCONEGRD4 
+ 39	 0.245	 0.295   1	HCONEGRD5 
+ 40	 0.372	 0.343   1	HCONEGRD6 
+ 41	 0.266	 0.200   1	HCONEGRD7 
+ 42	 0.379	 0.273   1	HCONEGRD8 
+ 43	 0.314	 0.128   1	HCONEGRD9 
+ 44	 0.393	 0.176   1	HCONEGRD10
+ 45	 0.318	 0.875   1	HCONEGRD11
+ 46	 0.398	 0.825   1	HCONEGRD12
+ 47	 0.296	 0.796   1	HCONEGRD13
+ 48	 0.381	 0.731   1	HCONEGRD14
+ 49	 0.300	 0.705   1	HCONEGRD15
+ 50	 0.375	 0.655   1	HCONEGRD16
+ 51	 0.300	 0.638   1	HCONEGRD17
+ 52	 0.370	 0.588   1	HCONEGRD18
+ 53	 0.279	 0.543   1	HCONEGRD19
+ 54	 0.515	 0.460   1	HCONEGRD20
+ 55	 0.670	 0.431   1	HCONEGRD21
+ 56	 0.539	 0.385   1	HCONEGRD22
+ 57	 0.678	 0.358   1	HCONEGRD23
+ 58	 0.556	 0.273   1	HCONEGRD24
+ 59	 0.692	 0.248   1	HCONEGRD25
+ 60	 0.582	 0.163   1	HCONEGRD26
+ 61	 0.576	 0.720   1	HCONEGRD27
+ 62	 0.696	 0.746   1	HCONEGRD28
+ 63	 0.556	 0.611   1	HCONEGRD29
+ 64	 0.678	 0.633   1	HCONEGRD30
+ 65	 0.550	 0.533   1	HCONEGRD31
+ 66	 0.668	 0.560   1	HCONEGRD32
+ 67	 0.706	 0.463   1	HCONEGRD33
+ 68	 0.859	 0.493   1	HCONEGRD34
+ 69	 0.723	 0.336   1	HCONEGRD35
+ 70	 0.871	 0.328   1	HCONEGRD36
+ 71	 0.784	 0.218   1	HCONEGRD37
+ 72	 0.725	 0.660   1	HCONEGRD38
+ 73	 0.875	 0.668   1	HCONEGRD39
+ 74	 0.710	 0.528   1	HCONEGRD40
+ 75 	 0.887	 0.521   1	HCONEGRD41
+ 76	 0.915	 0.578   1	HCONEGRD42
+ 77	 0.918	 0.408   1	HCONEGRD43
+ 78	 0.939	 0.258   1	HCONEGRD44
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

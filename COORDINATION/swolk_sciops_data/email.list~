@@ -1,0 +1,65 @@
+# This file contains the information needed to generate
+# email list of people to notify of alerts in the
+# various instruments.
+#
+#This version of the list is only for OAC
+#and was generated 7/9/99 by SJW
+#
+# The Column definitions are as follows:
+#
+#       Instr: Instrument catagory
+#    Resp_Sci: Scientist Responsible for this Instrument.
+#       Email: Recipient email address
+#       Pager: Flag if address is a pager
+#
+# The columns MUST be TAB delimited!
+#
+#Instr  Resp_Sci                Email Address                   Pager
+#-----  -------------------     -------------------------       -----
+tel	Dr. Daniel Schwartz	mta@head-cfa.harvard.edu
+tel	Dr. Daniel Schwartz	mta@head-cfa.harvard.edu	Y
+tel	Dr. Daniel Schwartz	mtadude@head-cfa.harvard.edu
+tel 	Dr. Daniel Schwartz	mtadude@cfa.harvard.edu         Y
+#
+grad	Dr. Daniel Schwartz	mta@head-cfa.harvard.edu
+grad	Dr. Daniel Schwartz	mta@head-cfa.harvard.edu	Y
+grad	Dr. Daniel Schwartz	mtadude@head-cfa.harvard.edu
+grad	Dr. Daniel Schwartz	mtadude@cfa.harvard.edu		Y
+#
+pcad	Dr. Tom Aldcroft	mta@head-cfa.harvard.edu
+pcad	Dr. Tom Aldcroft	mta@head-cfa.harvard.edu	Y
+pcad	Dr. Tom Aldcroft	mtadude@head-cfa.harvard.edu
+pcad	Dr. Tom Aldcroft	mtadude@cfa.harvard.edu		Y
+#
+hrc	Dr. Michael Juda	mta@head-cfa.harvard.edu
+hrc	Dr. Michael Juda	mta@head-cfa.harvard.edu	Y
+hrc	Dr. Michael Juda	mtadude@head-cfa.harvard.edu
+hrc	Dr. Michael Juda	mtadude@cfa.harvard.edu		Y
+#
+acis	Dr. Paul Plucinsky	mta@head-cfa.harvard.edu
+acis	Dr. Paul Plucinsky	mta@head-cfa.harvard.edu	Y
+acis	Dr. Paul Plucinsky	mtadude@head-cfa.harvard.edu
+acis	Dr. Paul Plucinsky	mtadude@cfa.harvard.edu		Y
+#
+grat	Dr. Dan Dewey		mta@head-cfa.harvard.edu
+grat	Dr. Dan Dewey		mta@head-cfa.harvard.edu	Y
+grat	Dr. Dan Dewey		mtadude@head-cfa.harvard.edu
+grat	Dr. Dan Dewey		mtadude@cfa.harvard.edu         Y
+#
+sim	Dr. Robert Cameron	mta@head-cfa.harvard.edu
+sim	Dr. Robert Cameron	mta@head-cfa.harvard.edu	Y
+sim	Dr. Robert Cameron	mtadude@head-cfa.harvard.edu
+sim	Dr. Robert Cameron	mtadude@cfa.harvard.edu		Y
+#
+sub	Dr. Scott Wolk		mta@head-cfa.harvard.edu
+sub	Dr. Scott Wolk		mta@head-cfa.harvard.edu	Y
+sub	Dr. Scott Wolk		mtadude@head-cfa.harvard.edu
+sub	Dr. Scott Wolk		mtadude@cfa.harvard.edu		Y
+#
+eph	Dr. Michael Juda	mta@head-cfa.harvard.edu
+eph	Dr. Michael Juda	mta@head-cfa.harvard.edu	Y
+eph	Dr. Michael Juda	mtadude@head-cfa.harvard.edu
+eph	Dr. Michael Juda	mtadude@cfa.harvard.edu		Y
+#
+monitor	Dr. Scott Wolk		swolk@head-cfa.harvard.edu
+monitor	Dr. Takashi Isobe	isobe@head-cfa.harvard.edu

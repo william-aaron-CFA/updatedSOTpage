@@ -1,0 +1,436 @@
+
+
+Procedures for monitoring realtime data with multimon and acorn
+NOT FINAL!
+
+Goal: Maintain and monitor realtime data so that occurance of safe modes
+alerts appropriate personnel via page and email.  
+
+JSN; 11/21/00
+SJW; 02/26/01
+JLL; 03/12/01   
+
+I. Normal operations configuration
+
+   Normally, multimon runs on psicorp using the remotely accessible version.  
+   This implementation of multimon is the primary implementation
+   in nominal operations.  The remotely accessible version can be started and
+   monitored from any workstation or from a remote site.
+   The processes are monitored in realtime by
+   the operators during normal shift hours.  The primary version
+   of multimon is run under the account cxcds_rt.  
+   
+   Psicorp listens to realtime telemetry through port 11149.  Acorn
+   WITH alarms is also run on this machine.
+   
+ 1. To bring up multimon on psicorp:
+ 
+     cxcds_rt on psicorp>setascds
+     cxcds_rt on psicorp>cd /dsops/baseline/RT_raw #primary directory
+     cxcds_rt on psicorp>multimon 15000 &
+     cxcds_rt on psicorp>
+    
+     Now get back into multimon:
+
+     cxcds_rt on psicorp>telnet psicorp 15000
+     Multimon Login: cxcds_rt 
+     Multimon Password: > ????? 
+     multimon> stats 
+     multimon> stats 
+
+ Verify we are receiving packets. Idle time should be < 5 seconds. Packets in 
+ and out should be increasing. 
+
+     multimon> logout  
+
+ This frees the port so you can check in again whenever you like.  
+
+
+ You can use any port between 15000 and 15100.  Ports can get locked up if 
+ multimon is brought down abruptly; it appears to take about 10 minutes for a
+ port to become free again.  If you start up multimon and then are unable to 
+ log in, it's possible that a lock-up has occurred--data is not being 
+ distributed.  If that's the case, kill multimon and then start it again with
+ the next higher port.   
+
+     Make sure you are receiving data if we are AOS.  The realtime data
+     will be written to /dsops/baseline/RT_raw, and L0 processing
+     will automatically take place on psicorp.  Verify the file size
+     of the most recent file is increasing
+
+ In addition to checking the file size in /dsops/baseline/RT_raw, check 
+ that the run directory in /dsops/GOT/realtime/L0/yyyymmdd is updating. If
+ we're AOS, files should be written to that directory.  If we're LOS, only
+ the systemlog should have a changing timestamp.  
+
+ Should you need to add a port to multimon, use
+     
+	 add_udp_client <IP address> <port> <description>
+
+     All new ports should be cleared with Joy first.   
+
+
+ 1.5  L0 decomm on psicorp: 
+
+     realtime L0 data is sent to us from the GOT; we decomm it as it comes in 
+     house.  To do this, run L0 on psicorp.  
+
+	ssh2 -l ascdsops psicorp
+	setascds
+	mkdir  /dsops/GOT/realtime/L0/yyyymmdd	
+	cd /dsops/GOT/realtime/L0/yyyymmdd
+    	setenv ASCDS_TELEM_MSGRCVR_PORT 11110
+	mkdir run
+	cd run
+	cp ~/huffstrip.ap .
+	cd ..
+	
+     Check to make sure no other L0s are running on psicorp (there shouldn't be)
+	
+	ps -auxwww | grep "pi2" | egrep -v grep 
+
+     Release the shared memory if necessary:
+
+	ipcs -a
+	rmipc -msq 
+
+     Start up L0
+
+	start_telem_proc -flight -udp -pi2Not -pi2r
+
+     To stop, use stop_telem_proc.  Directories are switched every three days
+     on average.  
+	
+
+ 2. To bring up acorn with alarms:
+
+ NOTE: Lisa would like this to be moved from the /tmp area, in case it
+ fills up.  
+     
+     In another window, under the account cxcds_rt,
+     
+     # check whether there are files in /tmp/mtamail/in/*
+     # If so, move them to /data/mta/MTA/mail_yyyymmdd/.
+
+     cxcds_rt on psicorp> mv /tmp/mtamail/in/* /data/mta/MTA/mail_yyyymmdd
+
+     # If not, make dir
+     cxcds_rt on psicorp> mkdir -p /tmp/mtamail/in
+
+     cxcds_rt on psicorp> setascds
+     cxcds_rt on psicorp> start_mtaprs 300 # check once per 5 minutes
+     cxcds_rt on psicorp> acorn -a -u 11100
+
+ NOTE: When start_mtaprs is on, DO NOT RUN MTA_MONITOR_STATIC ON THAT MACHINE.
+	NEVER RUN MTA_MONITOR_STATIC ON PSICORP.  This requirement should 
+     eventually go away with a software update.   
+
+ 3. Safety net cron job
+  
+   If the multimon and/or acorn process goes down for any reason on
+   psicorp, a cron job detects the absense of the process and immediately
+   tries to restart it.  Note that if multimon goes down, another
+   remotely accessible version of multimon will be automatically brought up in
+   its place. When the cron job detects multimon and/or acorn have gone
+   down and tries to restart them, an e-mail alert is generated to the
+   CXCDS Ops staff.  Since the software is run on a remote machine
+   (not psicorp) the email alert will be given if psicorp goes down.  The
+   safety-net version of multimon is brought up under the account cxcds_rt.  
+   
+   A primary version of multimon should be brought back up at the first
+   available time, when we are LOS.  The safety net version of
+   multimon brought up autonomously may have trouble accepting logins.
+
+   To kill the safety net version of multimon, 
+
+
+   cxcds_rt on psicorp> telnet psicorp 15010 
+   Multimon Login: cscds_rt
+   Multimon Password: > *****
+   multimon> shutdown
+
+   It is also possible to kill it using kill -9 
+
+   To turn off the cron job for a software update, 
+	
+	cxcds_rt on psicorp> crontab -e
+
+   Find the line in this file that runs the cron job, and comment it out using
+   '#'.  Save the file and exit the editor.  To turn it back on, remove the
+   '#'.  
+   
+
+II. Hot backup 
+
+    A hot backup of multimon is running constantly on forbin under the
+    account cxcds_rt_bu.  This
+    hot backup is configured identically to the multimon configuration
+    on psicorp, with the following exception. The realtime data can be
+    written to /dsops/GOT/baseline/rt_raw and the L0 processing can
+    take place on forbin.  If psicorp goes down, and while 
+    psicorp is up, all of psicorps services are mirriored (except data
+    logging).  
+
+    The only changes that have to take place if multimon is switched to
+    the hot backup are:
+    
+    1. realtime data needs to be processed through L0.  If Ops is unable to 
+       bring up L0 on forbin due to processing conflicts, L0 data can either
+       be processed on another machine or simply stored to be processed later.  
+	
+    
+    2. CXCDS Ops staff members insure no MTA_MONITOR_STATIC processes 
+       are running on forbin (normally no MTA processing is run on this 
+       machine).
+         
+    3. mtaprs needs to be started 
+	(/home/cxcds_rt_bu/ACORN/acorn -au 11110 is running by default) 
+       >mv /tmp/mtamail/in/* /data/mta/MTA/mail_yyyymmdd (clear out
+		any alerts) 	
+       >start_mtaprs 300 # check once per 5 minutes
+
+!## We'd like this one to be automatic as part of the machine monitor 
+!## software. 
+
+    Once mtaprs is running on forbin, all MTA pipes should be brought down.  
+    This requirement should eventually become redundant once the software fix
+    is in place.  
+       
+    When the staff becomes aware that psicorp is down via the e-mail
+    alert, the switch to forbin will take place immediately.  They then
+    send e-mail to the realtime alias notifying everyone of the situation, 
+    and contact the GOT to have the firewalls checked.  
+       
+    At the next LOS during staffed hours, the primary version of multimon
+    is restarted on psicorp.  The switch should not been made unless there
+    are at least six hours of LOS, to deal with possible start up problems.  
+    Operations should make the switch from forbin to psicorp as soon as is
+    feasible; there is no hot backup while we run realtime on forbin.  
+
+    Mta_prs should be switched off on forbin when Ops transfers back to 
+    psicorp.   
+    
+    If the switch from psicorp to forbin is triggered because firewall 1
+    (OCCA) goes down, CXCDS Ops must wait for the firewall to be repaired
+    before switching back to psicorp.  In this case OCCB may be
+    recieving telemetry cold backups are available for this.
+    
+III. Cold backups  
+
+    In addition the hot backup (forbin), there are two machines that can
+    be used as cold backups (gamera and crosby).  Both of these machines
+    have been configured to run as a multimon backup under the cxcds_rt_bu
+    account, but multimon is NOT kept active on these machines under
+    normal circumstances.  The only times the cold backups would be activated
+    are :
+    
+    1. connection from OCCA to forbin and psicorp is down.
+    2. both forbin and psicorp are down.
+ 
+   If scenerio 1 is the case, we need to change the input port to
+        multimon. Input ports should be PSICORP 11249  FORBIN  11251 (OCCB)
+
+	procedure: 
+ any account any machine > telnet psicorp 15000 #or whatever number was
+						#typed after multimon above 
+     Multimon Login: cxcds_rt 
+     Multimon Password: >??????
+     multimon> set_in_port 11249
+     multimon> save
+     multimon> shutdown
+
+  (wait 10 minutes for the port to time out--this should no longer be a problem
+  after the appropriate software fix is in place.)   
+
+     cxcds_rt on psicorp> setascds
+     cxcds_rt on psicorp> cd /dsops/baseline/RT_raw #primary directory
+     cxcds_rt on psicorp> multimon 15000 &
+     cxcds_rt on psicorp>
+    
+     Now get back in to multimon:
+
+     cxcds_rt on psicorp>telnet psicorp 15000
+     Multimon Login: cxcds_rt 
+     Multimon Password: >??????
+     multimon> stats 
+     multimon> stats 
+
+    verify we are receiving packets. Idle time should be < 5 seconds.  Packets
+    in and out should be increasing.   
+
+    multimon> logout  #this frees the port you can check in again
+			whenever you like
+
+   Do the same thing on forbin:
+	
+	> telnet forbin 15020
+	Multimon Login: cxcds_rt_bu
+	Multimon Password: > *****
+	multimon> set_in_port 11251
+	multimon> save
+	multimon> shutdown
+
+   Wait 10 minutes for the port to time out
+
+	>cd /dsops/baseline/GOT/RT_raw
+	>multimon 15020 &
+	>telnet forbin 15020
+	Multimon Login: cxcds_rt_bu
+	Multimon Password: >*****
+	multimon> stats
+	multimon> stats
+
+   Make sure we are receiving packets from OCCB
+	
+	multimon> logout
+
+   Remember to undo this procedure when OCCA comes back on line. 
+
+
+   If scenerio 2 is the case we need to run services with Gamera and
+   Crosby sustituting for forbin and psicorp respectively.
+   Input ports should be  Gamera  11153, CROSBY  11155. 
+
+	crosby> cd /dsops/baseline/RT_raw
+	crosby> multimon 15030 &
+	crosby> telnet crosby 15030 
+	Multimon Login: cxcds_rt
+	Mutlimon Password: >*****
+	multimon> stats
+	multimon> stats
+
+   Verify data is coming in on port 11155 on crosby.  
+
+   Set up mta_prs and acorn with alarms on crosby:
+	crosby> ls /tmp/mtamail/in/*
+        #! if there are files present, move them to 
+	/data/mta/MTA/mail_yyyymmdd.  If not, make the directory:
+
+	crosby> mkdir -p /tmp/mtamail/in
+	crosby> setascds
+	crosby> start_mtaprs 300
+	crosby> acorn -a -u 11100
+
+   Once mta_prs is running, DO NOT RUN MTA ON CROSBY.  This will require that
+   AutoMAP be either shut down or modified for the duration of the incident,
+   since MTA is kicked off automatically using this software.  The requirement
+   will be let go once the needed software update is in place.   
+
+
+	gamera> cd /dsops/GOT/baseline/RT_raw
+	gamera> multimon 15040 &  
+        gamera> telnet gamera 15040
+	Multimon Login: cxcds_rt_bu
+	Multimon Password: > *****
+	multimon> stats
+	multimon> stats
+
+   Verify data is coming in on port 11153 on gamera.  
+
+   If scenerios 1 & 2 are both active need to run services with Gamera and
+         Crosby sustituting for forbin and psicorp respectively.
+         Input ports should be  Gamera  11253, CROSBY  11255
+
+	crosby> cd /dsops/baseline/RT_raw
+	crosby> multimon 15030 &
+	crosby> telnet crosby 15030
+	Multimon Login: cxcds_rt
+	Multimon Password:> ***
+	multimon> set_in_port 11255
+	multimon> save
+	multimon> shutdown
+
+   Wait ten minutes for the port to time out, and then
+
+	crosby> cd /dsops/baseline/RT_raw
+	crosby> multimon 15030 &
+	crosby> telnet crosby 15030
+	Multimon Login: cxcds_rt
+	Multimon Password:> ****
+	multimon> stats
+	multimon> stats 
+
+   Make sure the number of packets in is increasing.  
+
+   Set up acorn with alarms on crosby:
+
+	crosby> ls /tmp/mtamail/in/*
+        #! if there are files present, move them to
+        /data/mta/MTA/mail_yyyymmdd.  If not, make the directory:
+
+        crosby> mkdir -p /tmp/mtamail/in
+        crosby> setascds
+        crosby> start_mtaprs 300
+        crosby> acorn -a -u 11100
+
+   Once mtaprs is running on crosby, DO NOT RUN MTA ON CROSBY.  
+
+   Also set up gamera:
+
+	gamera> cd /dsops/GOT/baseline/RT_raw
+	gamera> multimon 15040 &
+	gamera> telnet gamera 15040
+	Multimon Login: cxcds_rt_bu
+	Multimon Password:> *****
+	multimon> set_in_port 11253
+	multimon> save
+	multimon> shutdown
+
+   Wait ten minutes until the port times out, and then
+
+	gamera> cd /dsops/GOT/baseline/RT_raw
+	gamera> multimon 15040 &
+	gamera> telnet gamera 15040
+	Multimon Login: cxcds_rt_bu	
+	Multimon Password:> *****
+	multimon> stats
+	multimon> stats 
+
+
+   There should be no software collision between realtime and regular processing
+   once MTA_STATIC is modified to read from another directory, as has been 
+   discussed.  When either the hot or cold backups are activated, it not 
+   not necessary to run L0 on the realtime data from those machines.  
+    
+   Obviously, the switch to one of the cold backups is expected to be
+   very rare and would require an unusual set of circumstances.  
+
+
+
+------------------------------------------------------------------------------
+   Should it be necessary to set up multimon from scratch, here are a list
+   of ports we currently maintain on psicorp:
+
+multimon_rt> clients
+No.    Protocol IP Address     Port      Description                 State  Connection
+---    -------- ----------     ----      -----------                   -----  ----------
+1      UDP      131.142.56.229 11110     PSICORP (R/T DECOMM)        On     n/a       
+2      UDP      131.142.56.232 11110     Crosby (DSOPS ACORN with AlaOn     n/a       
+3      UDP      131.142.56.233 11111     Stills (DSOPS)              On     n/a       
+4      UDP      131.142.56.234 11111     Nash (DSOPS)                On     n/a       
+5      UDP      131.142.52.214 11111     CFA246 (Dong-Woo Kim)       On     n/a       
+6      UDP      131.142.52.101 11150     Scott's Machine Scrapper    On     n/a       
+7      UDP      131.142.52.110 11150     Paul's machine nesvig       On     n/a       
+8      UDP      131.142.52.102 11150     Mike's machine tribble      On     n/a       
+9      UDP      131.142.42.183 11150     Rob's machine drongo        On     n/a       
+10     UDP      131.142.52.104 11150     Tom's machine garth         On     n/a       
+11     UDP      131.142.42.104 11150     Dan's machine cfa259        On     n/a       
+12     UDP      131.142.56.229 11350     acisdude-ACIS               On     n/a       
+13     UDP      131.142.56.229 11351     rac Snapshot                On     n/a       
+14     UDP      131.142.56.229 11352     acisdude-HRC                On     n/a       
+15     UDP      131.142.56.241 11149     SOT Lead on colossus        On     n/a       
+16     UDP      131.142.56.241 11150     extra colossus hookup       On     n/a       
+17     UDP      131.142.56.241 11151     extra colossus hookup       On     n/a       
+18     TCP-SERV localhost      11359     HRC backup                  On     None      
+19     TCP-SERV 131.142.56.229 11360     HRC PORT                    On     Connected to 131.142.44.150
+20     TCP-SERV localhost      11459     ACIS PORT                   On     None      
+21     TCP-SERV localhost      11460     ACIS backup                 On     None      
+22     UDP      131.142.56.249 11160     sagan                       On     n/a       
+23     UDP      131.142.56.232 11111     Crosby (DSOPS ACORN without On     n/a       
+24     UDP      131.142.56.229 11100     PSICORP (DSOPS ACORN with A On     n/a       
+25     UDP      131.142.56.213 11111     gamera (DSOPS)              On     n/a       
+26     UDP      131.142.56.241 11363     colossus PGF                On     n/a       
+27     UDP      131.142.56.217 11111     ENO-snapshot                On     n/a       
+28     UDP      131.142.42.185 11111     Shanil's xcanuck            On     n/a       
+
+

@@ -1,0 +1,25 @@
+<html>
+<head><title>Chandra radiation monitoring flow chart</title></head>
+<body>
+
+/data/mta4/space_weather<br>
+cronjob runs every 5 minutes.<br>
+
+<pre>
+SEC data -> calculate.csh - process_ace.nawk,proc_ace_wap.nawk - idl mta_plot_ace --> <a href="http://cxc.harvard.edu/mta/ace.html">http://cxc.harvard.edu/mta/ace.html</a>
+</pre>
+<br>
+<font color="0000CC">process_ace.nawk</font> checks for limit violations and calls <font color="0000CC">ace_violation.csh</font> to send an alert if necessary.
+<br><br>
+It can also send an alert if no valid data is seen for more than 2 hours by calling <font color="0000CC">ace_invalid_data.csh</font>
+
+<br><br><br>
+<font color="0000CC">G10_calc.csh</font> - collects data from SEC and formats web page.  Plots come from Rob Cameron.
+<br><br>
+<font color="0000CC">G11_calc.csh</font> - same, except GOES 11 is used for limit checking.  G11_calc.csh calls
+<font color="0000CC">G11_viol.pl</font> which checks for violations and sends alert if 
+necessary.
+<br><br>
+<font color="0000CC">G12_calc.csh</font> - same, no limit checks.
+</body>
+</html>

@@ -1,0 +1,6 @@
+2,"T","VCDU","ACS",,1,"N","AXAF","For ACIS Science data";
+4,"T","VCDU","ENG",,1,"N","AXAF","For Engr telemetry with OBC data";
+1,"T","VCDU","HRC",,1,"N","AXAF","For HRC science data";
+3,"T","VCDU","OBC",,1,"N","AXAF","For OBC memory dump";
+5,"T","VCDU","PRG",,1,"N","AXAF","For Programmable telemetry format";
+6,"T","STS","STS",,1,"N","AXAF","For STS deployment and checkout format";

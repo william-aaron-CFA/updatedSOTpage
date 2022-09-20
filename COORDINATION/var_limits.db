@@ -1,0 +1,289 @@
+#
+#****** 	acis1_4_02	******
+#
+# Name		State	Yel_Lower	Yel_Upper	Red_Lower	Red_Upper	Time_Valid	Comments
+#-----		-------	----------	---------	----------	---------	----------	---------
+RAD_CNT		XXX1XXX	-99999.99	50	-99999.99	60	0	radiation monitor count rate
+RAD_CNT		XXX0XXX	-99999.99	50	-99999.99	60	0	radiation monitor count rate
+#
+#******	acis1_4_03	******
+#
+# Name		State	Yel_Lower	Yel_Upper	Red_Lower	Red_Upper	Time_Valid	Comments
+#-----		-------	----------	---------	----------	---------	----------	---------
+VAROCLKH	XXX1XXX	-99999.99	7	-99999.99	8	0	VarianceOverclockHigh
+VAROCLKH	XXX0XXX	-99999.99	7	-99999.99	8	0	VarianceOverclockHigh
+#
+#******	acis1_4_07	******
+#
+# Name		State	Yel_Lower	Yel_Upper	Red_Lower	Red_Upper	Time_Valid	Comments
+#-----		-------	----------	---------	----------	---------	----------	---------
+1CBAT		XXX1XXX	214.0		296.0		212.0		298.0		0
+1CBAT		XXX0XXX	0.0		296.0		0.0		298.0		0
+1CBBT		XXX1XXX	214.0		296.0		212.0		298.0		0
+1CBBT		XXX0XXX	0.0		296.0		0.0		298.0		0
+1CRAT		XXX1XXX	145.0		296.0		143.0		298.0		0
+1CRAT		XXX0XXX	0.0		296.0		0.0		298.0		0
+1CRBT		XXX1XXX	145.0		296.0		143.0		298.0		0
+1CRBT		XXX0XXX	0.0		296.0		0.0		298.0		0
+1DACTAT		XXX1XXX	249.0		296.0		247.0		298.0		0
+1DACTAT		XXX0XXX	0.0		296.0		0.0		298.0		0
+1DACTBT		XXX1XXX	249.0		296.0		247.0		298.0		0
+1DACTBT		XXX0XXX	0.0		296.0		0.0		298.0		0
+1DAHAT		XXX1XXX	n/a		n/a		n/a		n/a		0
+1DAHAT		XXX0XXX	n/a		n/a		n/a		n/a		0
+1DAHBT		XXX1XXX	n/a		n/a		n/a		n/a		0
+1DAHBT		XXX0XXX	n/a		n/a		n/a		n/a		0
+1DEAMZT		XXX1XXX	255.0		309.0		253.0		311.0		0
+1DEAMZT		XXX0XXX	0.0		309.0		0.0		311.0		0
+1DPAMYT		XXX1XXX	255.0		314.0		253.0		316.0		0
+1DPAMYT		XXX0XXX	0.0		314.0		0.0		316.0		0
+1DPAMZT		XXX1XXX	255.0		314.0		253.0		316.0		0
+1DPAMZT		XXX0XXX	0.0		314.0		0.0		316.0		0
+1PDEAAT		XXX1XXX	250.0		333.0		248.0		335.0		0
+1PDEAAT		XXX0XXX	0.0		333.0		0.0		335.0		0
+1PDEABT		XXX1XXX	250.0		333.0		248.0		335.0		0
+1PDEABT		XXX0XXX	0.0		333.0		0.0		335.0		0
+1PIN1AT		XXX1XXX	250.0		311.0		248.0		313.0		0
+1PIN1AT		XXX0XXX	0.0		311.0		0.0		313.0		0
+1WRAT		XXX1XXX	185.0		296.0		183.0		298.0		0
+1WRAT		XXX0XXX	0.0		296.0		0.0		298.0		0
+1WRBT		XXX1XXX	185.0		296.0		183.0		298.0		0
+1WRBT		XXX0XXX	0.0		296.0		0.0		298.0		0
+1SSMYT		XXX1XXX	255.0		314.0		253.0		316.0		0
+1SSMYT		XXX0XXX	0.0		314.0		0.0		316.0		0
+1SSPYT		XXX1XXX	255.0		314.0		253.0		316.0		0
+1SSPYT		XXX0XXX	0.0		314.0		0.0		316.0		0
+1DAHACU		XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DAHACU		XXX0XXX	2.0		+2.0		-2.3		+2.3		0
+1DAHBCU		XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DAHBCU		XXX0XXX	2.0		+2.0		-2.3		+2.3		0
+1DAHAVO		XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DAHAVO		XXX0XXX	0		+20		0		+25		0
+1DAHBVO		XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DAHBVO		XXX0XXX	0		+20		0		+25		0
+1DAHHAVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DAHHAVO	XXX0XXX	0.0		+33		-26		+35		0
+1DAHHBVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DAHHBVO	XXX0XXX	0.0		+33		-26		+35		0
+#
+#******	acis1_4_08	******
+#
+# Name		State	Yel_Lower	Yel_Upper	Red_Lower	Red_Upper	Time_Valid	Comments
+#-----		-------	----------	---------	----------	---------	----------	---------
+1DE28AVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DE28AVO	XXX0XXX	0.0		+15.0		-8.0		+18.0		0
+1DE28BVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DE28BVO	XXX0XXX	0.0		+15.0		-8.0		+18.0		0
+1DEN0AVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DEN0AVO	XXX0XXX	0.0		+15.0		-8.0		+18.0		0
+1DEN0BVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DEN0BVO	XXX0XXX	0.0		+15.0		-8.0		+18.0		0
+1DEN1AVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DEN1AVO	XXX0XXX	0.0		+15.0		-8.0		+18.0		0
+1DEN1BVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DEN1BVO	XXX0XXX	0.0		+15.0		-8.0		+18.0		0
+1DEP0AVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DEP0AVO	XXX0XXX	0.0		+15.0		-8.0		+18.0		0
+1DEP0BVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DEP0BVO	XXX0XXX	0.0		+15.0		-8.0		+18.0		0
+1DEP1AVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DEP1AVO	XXX0XXX	0.0		+15.0		-8.0		+18.0		0
+1DEP1BVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DEP1BVO	XXX0XXX	0.0		+15.0		-8.0		+18.0		0
+1DEP2AVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DEP2AVO	XXX0XXX	0.0		+33		-26		+35		0
+1DEP2BVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DEP2BVO	XXX0XXX	0.0		+33		-26		+35		0
+1DEP3AVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DEP3AVO	XXX0XXX	0.0		+33		-26		+35		0
+1DEP3BVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DEP3BVO	XXX0XXX	0.0		+33		-26		+35		0
+1DP28AVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DP28AVO	XXX0XXX	0.0		+32		-27		+34		0
+1DP28BVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DP28BVO	XXX0XXX	0.0		+32		-27		+34		0
+1DPP0AVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DPP0AVO	XXX0XXX	16.83		+16.83		-18.83		+18.83		0
+1DPP0BVO	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DPP0BVO	XXX0XXX	16.83		+16.83		-18.83		+18.83		0
+1DEICACU	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DEICACU	XXX0XXX	1.5		+1.5		-2.0		+2.0		0
+1DEICBCU	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DEICBCU	XXX0XXX	1.5		+1.5		-2.0		+2.0		0
+1DPICACU	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DPICACU	XXX0XXX	1.0		+1.0		-1.5		+1.5		0
+1DPICBCU	XXX1XXX	0.1		0.1		-0.1		0.1		0
+1DPICBCU	XXX0XXX	1.0		+1.0		-1.5		+1.5		0
+#
+#******	acis1_4_10	******
+#
+# Name		State	Yel_Lower	Yel_Upper	Red_Lower	Red_Upper	Time_Valid	Comments
+#-----		-------	----------	---------	----------	---------	----------	---------
+1MAHCAT		XXX1XXX	237.0		401.0		235.0		403.0		0	no curve
+1MAHCAT		XXX0XXX	0.0		401.0		0.0		403.0		0	no curve
+1MAHCBT		XXX1XXX	237.0		401.0		235.0		403.0		0	no curve
+1MAHCBT		XXX0XXX	0.0		401.0		0.0		403.0		0	no curve
+1MAHOAT		XXX1XXX	237.0		401.0		235.0		403.0		0	no curve
+1MAHOAT		XXX0XXX	0.0		401.0		0.0		403.0		0	no curve
+1MAHOBT		XXX1XXX	237.0		401.0		235.0		403.0		0	no curve
+1MAHOBT		XXX0XXX	0.0		401.0		0.0		403.0		0	no curve
+1OAHAT		XXX1XXX	237.0		296.0		235.0		298.0		0
+1OAHAT		XXX0XXX	0.0		296.0		0.0		298.0		0
+1OAHBT		XXX1XXX	237.0		296.0		235.0		298.0		0
+1OAHBT		XXX0XXX	0.0		296.0		0.0		298.0		0
+1VAHCAT		XXX1XXX	237.0		401.0		235.0		403.0		0	no curve
+1VAHCAT		XXX0XXX	0.0		401.0		0.0		403.0		0	no curve
+1VAHCBT		XXX1XXX	237.0		401.0		235.0		403.0		0	no curve
+1VAHCBT		XXX0XXX	0.0		401.0		0.0		403.0		0	no curve
+1VAHOAT		XXX1XXX	237.0		401.0		235.0		403.0		0	no curve
+1VAHOAT		XXX0XXX	0.0		401.0		0.0		403.0		0	no curve
+1VAHOBT		XXX1XXX	237.0		401.0		235.0		403.0		0	no curve
+1VAHOBT		XXX0XXX	0.0		401.0		0.0		403.0		0	no curve
+1HOPRAPR	XXX1XXX	n/a		n/a		n/a		n/a		0
+1HOPRAPR	XXX0XXX	n/a		n/a		n/a		n/a		0
+1HOPRBPR	XXX1XXX	n/a		n/a		n/a		n/a		0
+1HOPRBPR	XXX0XXX	n/a		n/a		n/a		n/a		0
+#
+#******	hrc1_3_01	******
+#
+# Name		State	Yel_Lower	Yel_Upper	Red_Lower	Red_Upper	Time_Valid	Comments
+#-----		-------	----------	---------	----------	---------	----------	---------
+BKGRATE		1XXXXXX	-99999.99	30		-99999.99	50		0
+BKGRATE		0XXXXXX	-99999.99	30		-99999.99	50		0
+#
+#******	hrc1_3_05	******
+#
+# Name		State	Yel_Lower	Yel_Upper	Red_Lower	Red_Upper	Time_Valid	Comments
+#-----		-------	----------	---------	----------	---------	----------	---------
+VETORT		1XXXXXX	-99999.99	30		-99999.99	50		0
+VETORT		0XXXXXX	-99999.99	30		-99999.99	50		0
+#
+#******	hrc1_3_08	******
+#
+# Name		State	Yel_Lower	Yel_Upper	Red_Lower	Red_Upper	Time_Valid	Comments
+#-----		-------	----------	---------	----------	---------	----------	---------
+CE00ATM		1XXXXXX	253.0		303.0		251.0		305.0		0
+CE00ATM		0XXXXXX	5.0		260.0		0.0		265.0		0
+CE01ATM		1XXXXXX	253.0		303.0		251.0		305.0		0
+CE01ATM		0XXXXXX	5.0		260.0		0.0		265.0		0
+FE00ATM		1XXXXXX	253.0		303.0		251.0		305.0		0
+FE00ATM		0XXXXXX	5.0		260.0		0.0		265.0		0
+FEPRATM		1XXXXXX	253.0		303.0		251.0		305.0		0
+FEPRATM		0XXXXXX	5.0		260.0		0.0		265.0		0
+IMINATM		1XXXXXX	273.0		293.0		271.0		295.0		0
+IMINATM		0XXXXXX	5.0		260.0		0.0		265.0		0
+IMHVATM		1XXXXXX	273.0		293.0		271.0		295.0		0
+IMHVATM		0XXXXXX	5.0		260.0		0.0		265.0		0
+LVPLATM		1XXXXXX	273.0		293.0		271.0		295.0		0
+LVPLATM		0XXXXXX	5.0		260.0		0.0		265.0		0
+2PMT1T		1XXXXXX	253.0		303.0		251.0		305.0		0
+2PMT1T		0XXXXXX	5.0		260.0		0.0		265.0		0
+2PMT2T		1XXXXXX	253.0		303.0		251.0		305.0		0
+2PMT2T		0XXXXXX	5.0		260.0		0.0		265.0		0
+SMTRATM		1XXXXXX	271.0		293.0		269.0		295.0		0
+SMTRATM		0XXXXXX	5.0		260.0		0.0		265.0		0
+SPHVATM		1XXXXXX	271.0		293.0		269.0		295.0		0
+SPHVATM		0XXXXXX	5.0		260.0		0.0		265.0		0
+SPINATM		1XXXXXX	271.0		293.0		269.0		295.0		0
+SPINATM		0XXXXXX	5.0		260.0		0.0		265.0		0
+PBPWRA		1XXXXXX	0.1		0.1		-0.1		0.1		0
+PBPWRA		0XXXXXX	10		40		8		50		0
+PBPWRB		1XXXXXX	0.1		0.1		-0.1		0.1		0
+PBPWRB		0XXXXXX	10		40		8		50		0
+PRBSPWR		1XXXXXX	0.1		0.1		-0.1		0.1		0
+PRBSPWR		0XXXXXX	10		40		8		50		0
+#
+#******	hrc1_3_09	******
+#
+# Name		State	Yel_Lower	Yel_Upper	Red_Lower	Red_Upper	Time_Valid	Comments
+#-----		-------	----------	---------	----------	---------	----------	---------
+2C05PALV	1XXXXXX	0.1		0.1		-0.1		0.1		0	no curve
+2C05PALV	0XXXXXX	0		260.0		0		270.0		0	no curve
+2C15NALV	1XXXXXX	0.1		0.1		-0.1		0.1		0	no curve
+2C15NALV	0XXXXXX	0		260.0		0		270.0		0	no curve
+2C15PALV	1XXXXXX	0.1		0.1		-0.1		0.1		0	no curve
+2C15PALV	0XXXXXX	0		260.0		0		270.0		0	no curve
+2C24PALV	1XXXXXX	0.1		0.1		-0.1		0.1		0	no curve
+2C24PALV	0XXXXXX	0		260.0		0		270.0		0	no curve
+2N15VAVL	1XXXXXX	0.1		0.1		-0.1		0.1		0	no curve
+2N15VAVL	0XXXXXX	12		0		-13		0		0	no curve
+2N15VBVL	1XXXXXX	0.1		0.1		-0.1		0.1		0	no curve
+2N15VBVL	0XXXXXX	12		0		-13		0		0	no curve
+2P05VAVL	1XXXXXX	0.1		0.1		-0.1		0.1		0	no curve
+2P05VAVL	0XXXXXX	0		+3.25		0		+3.5		0	no curve
+2P05VBVL	1XXXXXX	0.1		0.1		-0.1		0.1		0	no curve
+2P05VBVL	0XXXXXX	0		+3.25		0		+3.5		0	no curve
+2P15VAVL	1XXXXXX	0.1		0.1		-0.1		0.1		0	no curve
+2P15VAVL	0XXXXXX	0		+12		0		+13		0	no curve
+2P15VBVL	1XXXXXX	0.1		0.1		-0.1		0.1		0	no curve
+2P15VBVL	0XXXXXX	0		+12		0		+13		0	no curve
+2P24VAVL	1XXXXXX	0.1		0.1		-0.1		0.1		0	no curve
+2P24VAVL	0XXXXXX	0		+22		0		+23		0	no curve
+2P24VBVL	1XXXXXX	0.1		0.1		-0.1		0.1		0	no curve
+2P24VBVL	0XXXXXX	0		+22		0		+23		0	no curve
+2PBVOLTA	1XXXXXX	0.1		0.1		-0.1		0.1		0	(not in v6.0)
+2PBVOLTA	0XXXXXX	0		+3.0		0		+3.25		0	(not in v6.0)	
+2PBVOLTB	1XXXXXX	0.1		0.1		-0.1		0.1		0	(not in v6.0)	
+2PBVOLTB	0XXXXXX	0		+3.0		0		+3.25		0	(not in v6.0)	
+PRBSVL		1XXXXXX	0.1		0.1		-0.1		0.1		0	no curve
+PRBSVL		0XXXXXX	0		256		0		270		0	no curve
+ULDIALV		1XXXXXX	0.1		0.1		-0.1		0.1		0	no curve
+ULDIALV		0XXXXXX	0		4.0		0		5.0		0	no curve
+2PBCURTA	1XXXXXX	0.1		0.1		-0.1		0.1		0	(not in v6.0)
+2PBCURTA	0XXXXXX	0		+1.3		0		+1.5		0	(not in v6.0)
+2PBCURTB	1XXXXXX	0.1		0.1		-0.1		0.1		0	(not in v6.0)
+2PBCURTB	0XXXXXX	0		+1.3		0		+1.5		0	(not in v6.0)
+PRBSCR		1XXXXXX	0.1		0.1		-0.1		0.1		0
+PRBSCR		0XXXXXX	0		256		0		270		0
+CALPALV		1XXXXXX	n/a		n/a		n/a		n/a		0
+CALPALV		0XXXXXX	0		260		0		270		0
+2CBHUAST	1XXXXXX	n/a		n/a		n/a		n/a		0
+2CBHUAST	0XXXXXX	0		260		0		270		0
+2CBHVAST	1XXXXXX	n/a		n/a		n/a		n/a		0
+2CBHVAST	0XXXXXX	0		260		0		270		0
+2CBLUAST	1XXXXXX	n/a		n/a		n/a		n/a		0
+2CBLUAST	0XXXXXX	0		260		0		270		0
+2CBLVAST	1XXXXXX	n/a		n/a		n/a		n/a		0
+2CBLVAST	0XXXXXX	0		260		0		270		0
+2FCPUAST	1XXXXXX	n/a		n/a		n/a		n/a		0
+2FCPUAST	0XXXXXX	0		260		0		270		0
+2FCPVAST	1XXXXXX	n/a		n/a		n/a		n/a		0
+2FCPVAST	0XXXXXX	0		260		0		270		0
+2IMBPAST	1XXXXXX	n/a		n/a		n/a		n/a		0
+2IMBPAST	0XXXXXX	0		260		0		270		0
+IMHBLV		1XXXXXX	n/a		n/a		n/a		n/a		0
+IMHBLV		0XXXXXX	0		260		0		270		0
+IMHVLV		1XXXXXX	n/a		n/a		n/a		n/a		0
+IMHVLV		0XXXXXX	0		260		0		270		0
+2IMTPAST	1XXXXXX	n/a		n/a		n/a		n/a		0
+2IMTPAST	0XXXXXX	0		260		0		270		0
+LLDIALV		1XXXXXX	n/a		n/a		n/a		n/a		0
+LLDIALV		0XXXXXX	0		260		0		270		0
+RSRFALV		1XXXXXX	n/a		n/a		n/a		n/a		0
+RSRFALV		0XXXXXX	0		260		0		270		0
+S1HVLV		1XXXXXX	n/a		n/a		n/a		n/a		0
+S1HVLV		0XXXXXX	0		260		0		270		0
+2S1HVST		1XXXXXX	n/a		n/a		n/a		n/a		0
+2S1HVST		0XXXXXX	0		260		0		270		0
+S2HVLV		1XXXXXX	n/a		n/a		n/a		n/a		0
+S2HVLV		0XXXXXX	0		260		0		270		0
+2S2HVST		1XXXXXX	n/a		n/a		n/a		n/a		0
+2S2HVST		0XXXXXX	0		260		0		270		0
+2SPBPAST	1XXXXXX	n/a		n/a		n/a		n/a		0
+2SPBPAST	0XXXXXX	0		260		0		270		0
+SPHBLV		1XXXXXX	n/a		n/a		n/a		n/a		0
+SPHBLV		0XXXXXX	0		260		0		270		0
+SPHVLV		1XXXXXX	n/a		n/a		n/a		n/a		0
+SPHVLV		0XXXXXX	0		260		0		270		0
+2SPTPAST	1XXXXXX	n/a		n/a		n/a		n/a		0
+2SPTPAST	0XXXXXX	0		260		0		270		0
+2ULDIAVR	1XXXXXX	n/a		n/a		n/a		n/a		0
+2ULDIAVR	0XXXXXX	0		260		0		270		0
+2WDTHAST	1XXXXXX	n/a		n/a		n/a		n/a		0
+2WDTHAST	0XXXXXX	0		260		0		270		0
+2DETART		1XXXXXX	n/a		n/a		n/a		n/a		0
+2DETART		0XXXXXX	50		150		45		155		0
+2DETBRT		1XXXXXX	n/a		n/a		n/a		n/a		0
+2DETBRT		0XXXXXX	50		150		45		155		0
+2SCTHAST	1XXXXXX	n/a		n/a		n/a		n/a		0
+2SCTHAST	0XXXXXX	50		256		45		260		0

@@ -1,0 +1,179 @@
+<HTML>
+<HEAD>
+   <TITLE>Realtime</TITLE>
+<!-- Changed by: Scott J. Wolk, 22-Apr-1998 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; I; SunOS 5.5 sun4m) [Ne
+tscape]">
+</HEAD>
+<BODY TEXT="#DDDDDD" BGCOLOR="#000000" LINK="#FF0000" VLINK="#FFFF22" 
+ALINK="#7500FF" background="stars.jpg">
+
+<h1> This is the M&TA Realtime page </h1>
+
+First web addition: 2/16/2001:<br>
+updated to reflect changes to static system: 5/11/2001:<br>
+
+
+
+Current/Revised Realtime system:<br>
+
+Reason for modifications: <br>
+Real time web pages have become flight critical
+Outages have been suffered due to depencies on Remote software
+(DS.relase and other disks) and specific hardware subject to failure
+(remus servers).  
+multimon is also not being run in a remotely accesable form, so
+situation monitroing is difficult in the middle of the night.<p>
+
+Solution: Assure at least 2 independant pathways with independant data
+sources, hardware and web servers.  Have watcher software installed to
+<p>
+
+Side issue: 1 account can only run multimon once.
+<p>
+
+Outline - see <a href="./RTdataflow2.ps"> figure.</a><br>
+
+<IMG SRC="RTdataflow2.jpg"> 
+
+<ol>
+<li> redsitribute psicorp inputs to multiple platforms
+<li>  Run critical RT-elements on 2 platforms (requires 2 accounts)
+<li>  enable watcher software to fail over to non-DS.release 
+		versions. If DS.release fails and notify responsible
+		operators.
+<li>  distrubution of data goes to systems on either side of the
+		HEAD/ops LAN (prime=HEAD) to deal with failure of
+		either subsystem.  SOT home pages points to functional mirror.
+	
+
+
+Details:
+<pre>
+       1- 4 feeds to psicorp (2 RT/ 2 ASVT) need to be disributed among more
+        machines.
+        
+        
+        Currently (2/16/2001) 
+        RT	        ASVT/SIM
+        PSICORP 11149   PSICORP 11249
+        Gamera  11153   Gamera  11253
+        FORBIN  11151   FORBIN  11251
+        CROSBY	11155   CROSBY  11255
+        
+        
+        
+        1 account runs on psicorp prime (CXCDS_RT)
+        	The account runs all the former system run by ascdsops
+
+        multimon_rt>
+        UDP 131.142.56.229 11110 On PSICORP (R/T DECOMM)*
+        UDP 131.142.56.232 11110 On Crosby (DSOPS ACORN with Ala*
+        UDP 131.142.56.233 11111 Off Stills (DSOPS) 
+        UDP 131.142.56.234 11111 On Nash (DSOPS) 
+        UDP 131.142.52.214 11111 Off CFA246 (Dong-Woo Kim) 
+        UDP 131.142.52.101 11150 On Scott's Machine Scrapper
+        UDP 131.142.52.110 11150 Off Paul's machine nesvig
+        UDP 131.142.52.102 11150 Off Mike's machine tribble
+        UDP 131.142.42.183 11150 On Rob's machine drongo
+        UDP 131.142.52.104 11150 On Tom's machine garth
+        UDP 131.142.42.104 11150 Off Dan's machine cfa259
+        UDP 131.142.56.229 11350 On acisdude-ACIS*
+        UDP 131.142.56.229 11351 On rac Snapshot*
+        UDP 131.142.56.229 11352 On acisdude-HRC*
+        UDP 131.142.56.241 11149 On SOT Lead on colossus
+        UDP 131.142.56.241 11150 On extra colossus hookup
+        UDP 131.142.56.241 11151 On extra colossus hookup
+        TCP-SERV localhost 11359 On HRC backup*
+        TCP-SERV localhost 11360 On HRC PORT*
+        TCP-SERV localhost 11459 Off ACIS PORT
+        TCP-SERV localhost 11460 Off ACIS backup
+        UDP 131.142.56.249 11160 Off sagan
+        UDP 131.142.56.232 11111 Off Crosby (DSOPS ACORN without 
+        UDP 131.142.56.229 11100 On PSICORP (DSOPS ACORN with Al
+        UDP 131.142.56.213 11111 Off gamera (DSOPS) 
+        UDP 131.142.56.241 11363 On colossus PGF*
+        UDP 131.142.56.217 11111 On ENO-snapshot 
+        UDP 131.142.42.185 11111 On Shanil's xcanuck 
+        UDP 131.142.56.229 11112 On Chandra snapshot*
+        UDP 131.142.56.229 11120 On Chandra snapshot*
+        UDP 131.142.56.229 11122 On Chandra snapshot*
+        UDP 131.142.56.229 11121 On Chandra snapshot*
+        TCP-SERV 131.142.56.229 11361 On GRETA*
+        
+
+		
+
+        1 account runs on forbin prime (CXCDS_RT_BU)
+        	This account runs redundant and non critical systems:
+        
+        multimon_cxcds_BU>
+        UDP 131.142.56.241 11351 On Col. Chandra Snap BU*
+        UDP 131.142.56.241 11350 On Col. ACIS/HW BU*
+        UDP 131.142.56.241 11352 On Col. HRC RT BU* 
+        UDP 131.142.56.241 11364 On Col. ACIS/SW BU*
+        TCP-SERV localhost 11459 On HRC Feed BU    
+        UDP 131.142.52.214 11111 Off CFA246 (Dong-Woo Kim)
+        UDP 131.142.56.233 11111 Off Stills (DSOPS)
+        UDP 131.142.56.234 11111 Off Nash (DSOPS)  
+        UDP 131.142.56.174 11111 On Ionize (JSN)   
+        UDP 131.142.56.241 11111 On Colossus Reserve 
+        UDP 131.142.56.241 11363 Off ACIS RT/SW (Prime)
+	UDP 131.142.56.229 11111 On PSICORP - Spare (for RAC) 
+	UDP 131.142.52.101 11111 On Scrapper - liveness test
+	UDP 131.142.42.185 11112 On xcanuck (redundant)
+        UDP 131.142.56.241 11365 On ACIS RT/SW (BU)
+        TCP-SERV localhost 11361 On GRETA*
+
+		Critcal systems marked with (*)
+
+
+2- Run critical RT-elements on 2 platforms (requires 2 accounts)
+	Created cxcds_rt & cxcds_rt_bu to handle RT ops.
+	new procedure in place to run multimon remotrly
+
+3- enable watcher software to fail over to non-DS.release 
+	versions. If DS.release fails and notify responsible
+	operators.
+
+	This was initially meant to be the run_task.pl software 
+	in /home/cxcds_rt(_bu)/MAINTAINANCE.  This does run 
+	on cxcds_rt_bu.  Points to local versions of acorn and 
+	multimon ~/MULTIMON ~/ACORN for autorestart, not for
+	primary use. 
+	
+	ISSUE:Unclear on watcher status on cxcds_rt
+	ISSUE:As run_task.pl is requires the hardware to be up.  We
+		should also have watcher/notifier software to assue
+		the psicorp and forbin are up (checks once per 5 minutes).  
+
+4- distrubution of data goes to systems on either side of the
+	HEAD/ops LAN (prime=HEAD) to deal with failure of
+	either subsystem.  SOT home pages points to functional mirror.
+	
+
+critical Web pages 
+on head LAN
+Chandra Snapshot             GOT/CXCconduit        proc. & data store
+     State of Chandra (SOH)  psicorp------------------>psicorp
+     ACIS - Hardware         psicorp------------------>psicorp
+     ACIS -Software          psicorp------------------>colossus
+     HRC		     psicorp------------------>psicorp
+     ACE                                               scrapper*
+     Other radiation information  scrapper+remote hosts 
+
+*this has been identified as a weak link and is being picked up as
+part of a general critical software condensation project initiated by
+the flight director.
+
+
+on ops LAN
+REALTIME DATA 
+
+     Chandra Snapshot		Forbin -----------------> colossus
+     State of Chandra(SOH)      Forbin -----------------> colossus
+     ACIS (HW)                  Forbin -----------------> colossus
+     HRC                        Forbin -----------------> colossus 
+     ACE                                                  colossus
+     GOES 10			                          colossus
+</pre>

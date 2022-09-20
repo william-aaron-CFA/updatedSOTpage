@@ -1,0 +1,42 @@
+<html>
+<head><title>Chandra Snapshot flow chart</title></head>
+<body>
+The Chandra Snapshot creation is controlled by <font color="0000CC">tlogr.pl</font>.  It takes 
+tracelogs of real-time telemetry values output from ACORN and
+produces a text version, web version, and wml version of
+selected values, while doing some limit checking. Tlogr first
+checks for new telemetry.  If any tracelogs have been updated in the past 3 
+minutes, we will produce an updated web page.  If there is no new
+data flowing, we check the comm schedule to confirm that there should be
+no data, then update the radiation values (top line of snapshot) in the
+text version and exit.  If data, should be flowing but is not, a flag is set.
+If no data is seen on neither the primary or redundant site after a certain
+amount of time an alert is sent.  tlogr.pl controls the alert sending, while
+subroutine check_comm in snap.pm does the actual checking.<br>
+<br>
+If data is flowing tlogr makes calls to procedures in <font color="0000CC">snap.pm</font> to collect
+the data into an associative array.  There are some computations such as 
+EPHIN rates to be performed
+next, see <font color="0000CC">comps.pm</font>.  Then limits are checked by procedures defined by
+<font color="0000CC">check_state.pm</font>.  We also incorporate the <font color="0000CC">Chex.pm</font> module from Tom Aldcroft
+to check configuration dependent values like SIM position, RA, Dec, and Roll.
+The parameter file <font color="0000CC">snaps2.par</font> defines which mnemonics are checked and how 
+there are checked.<br>
+<br>
+Finally,  <font color="0000CC">snap_format.pm</font> contains the instructions to write output.<br>
+<br>
+<font color="0000CC">snap.cgi</font> displays the web page.
+It collects the current data for the top line displayed (ACE, Alt., etc.)
+and reads in the stored archive of telemetry values (snarc* files).
+The cgi allows browsing to previous real-time epochs (back to three days).
+<br>
+<br>
+The State of Health Pages operate on similar principles with 2 ACORN feeds
+and a tlogr for each page (Top, CCDM,PCAD,...).  They create static web pages,
+overwriting the previous version.  There is no cgi to access previous
+pages.
+<br>
+<hr>
+<img src="snapshot_flow.png">
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<head><title>Chandra Trending flow chart</title></head>
+<body>
+/data/mta/Script/Deriv<br>
+also uses extensively IDL library /home/mta/IDL<br><br>
+Trending is accomplished with IDL packages run by cronjob, one section
+each night.  The commanding batch scripts are <font color="0000CC">run_sun.pro</font> ... <font color="0000CC">run_sat.pro</font>.
+They call other batch scripts for each subsystem to be run that day (<font color="0000CC">ed_acis.pro</font> etc.)
+<br><br>
+There are basically two steps for each subsystem.  Data retrieval is done by
+<font color="0000CC">mta_db_get_add.pro</font>, which is wrapper
+around CXCDS's <font color="ff9900">DataSeeker</font> tool.  We save a local copy of one hour averages 
+for each table, so the retrieve gets any newly ingested data and merges
+with the local copy.<br><br>
+Then <font color="0000CC">dtrend.pro</font> does the calculation and
+ compilation of plots and statistics starting with <font color="0000CC">
+dtrend_read.pro</font> ...
+
+
+</body>
+</html>

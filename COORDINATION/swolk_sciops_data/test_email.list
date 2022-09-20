@@ -1,0 +1,54 @@
+# This file contains the information needed to generate
+# email list of people to notify of alerts in the 
+# various instruments.
+#
+# The Column definitions are as follows:
+#
+#       Instr: Instrument catagory
+#    Resp_Sci: Scientist Responsible for this Instrument.
+#       Email: Recipient email address
+#       Pager: Flag if address is a pager
+#
+# The columns MUST be TAB delimited!
+#
+#Instr	Resp_Sci		Email Address			Pager
+#-----	-------------------	-------------------------	-----
+hrma	Dr. Daniel Schwartz	swolk@head-cfa.harvard.edu
+hrma	Dr. Daniel Schwartz	1636500@skytel.com		 Y
+hrma	Dr. Daniel Schwartz	rtb@head-cfa.harvard.edu
+hrma	Dr. Daniel Schwartz	mtadude@head-cfa.harvard.edu
+#
+pcad	Dr. Robert Cameron	swolk@head-cfa.harvard.edu
+pcad	Dr. Robert Cameron	1636500@skytel.com		 Y
+pcad	Dr. Robert Cameron	rtb@head-cfa.harvard.edu
+pcad	Dr. Robert Cameron	mtadude@head-cfa.harvard.edu
+#
+hrc	Dr. Michael Juda	swolk@head-cfa.harvard.edu
+hrc	Dr. Michael Juda	1636500@skytel.com		 Y
+hrc	Dr. Michael Juda	rtb@head-cfa.harvard.edu
+hrc	Dr. Michael Juda	mtadude@head-cfa.harvard.edu
+#
+acis	Dr. Paul Plucinsky	swolk@head-cfa.harvard.edu
+acis	Dr. Paul Plucinsky	1636500@skytel.com		 Y
+acis	Dr. Paul Plucinsky	rtb@head-cfa.harvard.edu
+acis	Dr. Paul Plucinsky	mtadude@head-cfa.harvard.edu
+#
+grat	Dr. Michael Juda	swolk@head-cfa.harvard.edu
+grat	Dr. Michael Juda	1636500@skytel.com		 Y
+grat	Dr. Michael Juda	rtb@head-cfa.harvard.edu
+grat	Dr. Michael Juda	mtadude@head-cfa.harvard.edu
+#
+sim	Dr. Daniel Schwartz	swolk@head-cfa.harvard.edu
+sim	Dr. Daniel Schwartz	1636500@skytel.com		 Y
+sim	Dr. Daniel Schwartz	rtb@head-cfa.harvard.edu
+sim	Dr. Daniel Schwartz	mtadude@head-cfa.harvard.edu
+#
+sub	Dr. Scott Wolk		swolk@head-cfa.harvard.edu
+sub	Dr. Scott Wolk		1636500@skytel.com		 Y
+sub	Dr. Scott Wolk		rtb@head-cfa.harvard.edu
+sub	Dr. Scott Wolk		mtadude@head-cfa.harvard.edu
+#
+eph	Dr. Michael Juda	swolk@head-cfa.harvard.edu
+eph	Dr. Michael Juda	1636500@skytel.com		 Y
+eph	Dr. Michael Juda	rtb@head-cfa.harvard.edu
+eph	Dr. Michael Juda	mtadude@head-cfa.harvard.edu

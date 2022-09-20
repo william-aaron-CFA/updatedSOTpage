@@ -1,0 +1,256 @@
+
+
+                          SAMPLE MTA Binary table header
+
+                           Primary header keywords
+
+
+SIMPLE  =                    T / HDU 0========================================
+BITPIX  =                    8 / Number of bits per data pixel
+NAXIS   =                    0 / Number of data axes
+EXTEND  =                    T / FITS dataset may include extensions
+                               / Configuration control------------------------
+ORIGIN  = 'ASC     '
+CREATOR = 'MONITOR - Version 0.0'
+CHECKSUM= '0000000000000000'   / ASCII encoded HDU checksum
+DATASUM = '         0'         / Data unit checksum written in ASCII
+                               / Time information block-----------------------
+DATE    = '1998-01-01T00:00:00'  / Date and time of file creation (UTC)
+DATE-OBS= '1998-01-01T00:00:00'  / TT, with clock correction if CLOCKAPP
+DATE-END= '1998-01-01T00:00:00'  / TT, with clock correction if CLOCKAPP
+TIMESYS = 'TT      '           / CHANDRA time will be TT (Terrestrial Time)
+CLOCKAPP=                    T / Clock correction applied (if false)
+TIMEZERO=                  0.0 / Clock correction (if not zero)
+TIMEUNIT= 's       '
+MJDREF  =                50814 / 1998-01-01T00:00:00 (TT) expressed in MJD (TT)
+TSTART  =                  0.0 / As in the "TIME" column: raw space craft clock;
+TSTOP   =                  0.0 /   add TIMEZERO and MJDREF for absolute TT
+                               / Observation information block----------------
+MISSION = 'AXAF   '           / Mission is AXAF
+TELESCOP= 'AXAF   '           / Telescope is AXAF
+INSTRUME= 'HRC   '             / HRC, ACIS, EPHIN, S/C subsystems
+#Detname = 'HRC-I   '           / HRC-I or HRC-S  (only if relevent)
+END
+
+
+
+
+		Principal header keywords if binary table
+ 
+
+ XTENSION= 'BINTABLE'           / HDU 
+1==============================================
+ BITPIX  =                    8 / 8-bit bytes
+ NAXIS   =                    2 / 2-dimensional Binary Table
+ NAXIS1  =                    # / Number of bytes per row
+ NAXIS2  =                    # / Number of rows
+ PCOUNT  =                    0 / No group parameters (required keyword)
+ GCOUNT  =                    1 / One data group (required keyword)
+ TFIELDS =                    # / number of columns
+ EXTNAME = '          '         / Name of this binary table extension
+                                / Comment for MTA  
+---------------------------------
+ COMMENT  M&TA HRMA THERMAL STATUS DATA (or appropriate)
+ COMMENT   HRMA1.1.1/2                   (or appropriate)
+ COMMENT
+ COMMENT   MTA status
+ COMMENT         0 - green (acceptable)
+ COMMENT         1 - blue (unchecked)
+ COMMENT         4 - yellow (high)
+ COMMENT         5 - yellow (low)
+ COMMENT         8 - red  (low)
+ COMMENT         9 - red  (high)
+ COMMENT
+ COMMENT                                           +------------------+   
+ COMMENT                                           | ASC FITS File    |  
+ COMMENT                                           +------------------+
+ COMMENT          ********************************************************* 
+ COMMENT          >    This file is written following certain    AXAF-ASC <
+ COMMENT          >    conventions which are documented in ASC-FITS-1.3   <
+ COMMENT          *********************************************************    
+-----------------------
+ ORIGIN  = 'ASC       '         / Organization creating this file
+ CREATOR = 'MONITOR - Version##'/ Program creating this file
+ ASCDSVER= '          '         / ASC-DS processing system revision
+ TLMVER  = '########'           / Telemetry revision number (IP&CL) 
+ REVISION=                    # / Processing version of data
+ CHECKSUM= '                '   / ASCII encoded HDU checksum
+ DATASUM = '          '         / Data unit checksum written in ASCII
+ CONTENT = '          '         / What data product
+ HDUNAME = '          '         / Dataset name; usually identical to EXTNAME
+ HDUDOC  = 'ASC-FITS-1.3: McDowell, Rots: ASC FITS File Designers Guide'
+ HDUVERS = '1.0.0     '
+ HDUCLASS= 'ASC       '
+ HDUCLAS1= 'TEMPORALDATA'       / 
+ HDUCLAS2= 'HKP'
+ HDUCLAS3= 'MTA_HRMA_THERM'
+ MTAGROUP= 'hrmatherm'MTAGROP
+ LONGSTRN= 'OGIP 1.0  '         / The OGIP long string convention may be used.
+                                / Time information block (short T) 
+-----------------
+ DATE    = '1999-01-01T01:01:01'/ Date and time of file creation (UTC)
+ DATE-OBS= '1999-01-01T01:01:01'/ TT, with clock correction if CLOCKAP
+ DATE-END= '1999-01-01T01:01:01'/ TT, with clock correction if CLOCKAP
+ TIMESYS = 'TT        '         / AXAF time will be TT (Terrestrial Time)
+ MJDREF  =                50814 / 1998-01-01T00:00:00 (TT) expressed in MJD (TT)
+ TIMEZERO=                    # / Clock correction (if not zero)
+ TIMEUNIT= 's         '         
+ TIMEREF = 'LOCAL     '         / No pathlength corrections
+ CLOCKAPP=                    T / Clock correction applied (if false)
+ TIERRELA=                    # / Short-term clock stability
+ TIERABSO=                    # / Absolute precision of clock correction
+ TIMVERSN= 'ACS-FITS-1.3'       / CHANDRA FITS design document
+ TSTART  =                    # / As in the "TIME" column: raw space craft clock
+ TSTOP  =                    # / Add TIMEZERO and MJDREF for absolute TT
+                                / Observation information block 
+ OBS_ID  = '          '         / ObsID/Sequence number (if appropriate) 
+ MISSION = 'AXAF      '         / Mission is AXAF
+ TELESCOP= 'AXAF     '         / Telescope is AXAF
+ INSTRUME= 'HRC       '         / HRC, acis, ephin, S/C, subsystems
+                                / HDU1 
+---------------------------------------------
+ TTYPEn  = '          '         / Label for field   n
+ TFORMn  = '          '         / Data format of field
+ TUNITn  = '          '         / Physical unit of field
+ TLMINn  =                      / Minimum field value (optional)
+ TLMAXn  =                      / Maximum field value (optional)
+ 
+ END
+ 
+
+
+                      Principal HEADER keywords if IMAGE
+
+SIMPLE  =                    T / Fits standard    
+BITPIX  =                  -32 / Bits per pixel
+NAXIS   =                    2 / Number of axes                                 
+NAXIS1  =                 X TLMAX/4 / Axis length                              
+NAXIS2  =                 Y TLMAX/4 / Axis length                                    
+COMMENT                                           +------------------+
+COMMENT                                           | ASC  FITS   File |
+COMMENT                                           +------------------+
+COMMENT              *********************************************************
+COMMENT              >    This file is written following certain AXAF-ASC    <
+COMMENT              >    conventions which are documented in ASC-FITS-1.3   <
+COMMENT              *********************************************************
+ORIGIN  = 'ASC     '
+CREATOR = 'hrc_dose - Version 0.0'
+REVISION=                    0 / Processing system revision number
+CHECKSUM= '0000000000000000'   / ASCII encoded HDU checksum
+DATASUM = '         0'         / Data unit checksum written in ASCII
+CONTENT = 'HRC_DOSE'           / Data product identification  
+HDUNAME = 'HRC_DOSE'           / Dataset name; usually identical to EXTNAME
+HDUSPEC = 'HRC_DOSE specification Revision 0.1'
+HDUDOC  = 'ASC-FITS-1.2: McDowell, Rots: ASC FITS File Designers Guide'
+HDUVERS = '1.0.0   '
+HDUCLASS= 'ASC    '
+HDUCLAS1= 'MTA   '
+HDUCLAS2= 'DOSE '
+COMMENT                       / Time information block-------------------------
+DATE    = '1998-01-01T00:00:00'  / Date and time of file creation (UTC)
+DATE-OBS= '1998-01-01T00:00:00'  / TT, with clock correction if CLOCKAPP
+DATE-END= '1998-01-01T00:00:00'  / TT, with clock correction if CLOCKAPP
+TIMESYS = 'TT      '           / CHANDRA time will be TT (Terrestrial Time)
+MJDREF  =                50814 / 1998-01-01T00:00:00 (TT) expressed in MJD (TT)
+COMMENT                        / MJD = JD - 2400000.5
+TIMEZERO=                  0.0 / 0.0 is the cumulative clock correction
+TIMEUNIT= 's       '           /
+BTIMNULL=                  0.0 / Basic Time offset (s)
+BTIMRATE=                 0.25 / Basic Time clock rate (s / VCDUcount)
+BTIMDRFT=                  0.0 / Basic Time clock drift (s / VCDUcount^2)
+BTIMCORR=                  0.0 / Correction applied to Basic Time rate (s)
+TIMEREF = 'LOCAL   '           / No pathlength corrections
+TASSIGN = 'SATELLITE'          / Spacecraft clock
+CLOCKAPP=                    T / Clock correction applied
+TIERRELA=               1.0E-9 / Short-term clock stability
+TIERABSO=               1.0E-4 / Absolute precision of clock correction
+TIMVERSN= 'ASC-FITS-1.1'       / CHANDRA FITS design document
+TSTART  =                  0.0 / As in the "TIME" column: raw space craft clock;
+TSTOP   =                  0.0 /   add TIMEZERO and MJDREF for absolute TT
+STARTMJF=                    0 / Major frame count at start
+STARTMNF=                    0 / Minor frame count at start
+STARTOBT=                    0 / On-Board MET close to STARTMJF and STARTMNF
+STOPMJF =                    0 / Major frame count at stop
+STOPMNF =                    0 / Minor frame count at stop
+TIMEPIXR=                  0.0 / Time stamp reference as bin fraction
+TIMEDEL =             604800.0 / Time resolution of data (in seconds)
+DATAMIN =          -2.253469E0 / Minimum data value                             
+DATAMAX =           6.627805E4 / Maximum data value                             
+END
+
+
+
+
+ 
+ HDUCLASS= 'ASC     '
+ HDUCLAS1= 'TEMPORALDATA'   | 'IMAGE   '
+ HDUCLAS2= 'HKP     '       | 'DOSE    '
+ HDUCLAS3= 'THERMAL ', 'ELECTRONICS', 'RATES   ', 'VETO    ', ...
+ 
+ 
+CONTENT = 'MTA_<ss>_<c>'
+ 
+ where <ss> is one one the approved subsystems:
+  acis      AXAF CCD Imaging Spectrometer subsystem
+  hrc       High Resolution Camera subsystem
+  ephin     Electron-Proton-Helium INstrument subsystem
+  pcad      Pointing Control and Attitude Determination subsystem
+  tel       Telescope subsystem
+  sim       Science Instrument Module subsystem
+  obc       On-Board Computer software subsystem
+  ccdm      Communications Command and Data Management subsystem
+  cpe       CPE hardware and software subsystem
+  eps       Electrical Power Subystem
+  thm       Thermal control subsystem
+  sms       Structure subsystem
+  prop      Propulsion and pyro subsystems
+  misc      Other AXAF signals
+  orbit     Orbit ephemeris
+  sun       Solar ephemeris
+  moon      Lunar ephemeris
+  angles    Viewing angles
+  clock     Clock measurements
+  axaf      Certain mission-level items
+ (I believe the gratings are part of the TEL subsystem, as is HRMA)
+ 
+ and <c> can be one of the following (pretty much HDUCLAS3):
+    THERM
+    ELEC
+    DOSE
+    RATES
+    HKP
+    CENTR
+    DRIFT
+    MOTOR
+    GRAD
+    GRADC
+    GRADF
+    GRADS1
+    CONFIG
+ 
+
+HDUCLAS2=  HRC' or ACIS or HRMA or PCAD or GRATINGS or SIM or
+Alignments or EPHIN 
+
+
+File naming conventions:
+MTA files use the standard naming convention and are considered the
+same level as the products they monitor:
+
+name:
+{\tt <i><s><t><v>\_[<f>\_]<c><l>[<sl>].<type>}
+where the mnemonics are:
+
+\begin{verse}
+{\tt <i>}     instrument: ``acis'', ``hrci", ``hrcs'', \ldots\\
+{\tt <s>}    data source: ``x'', ``f'', ``t'', ``b'', ``s'', ``u''\\
+{\tt <t>}     TSTART (integer part): ``\#\#\#\#\#\#\#\#\#''\\
+{\tt <v>}     processing run (version): ``N\#\#\#''\\
+{\tt <f>}     optional discriminator (e.g., FEP Id)\\
+{\tt <c>}     contents: ``mon'', ``dose'', ``pht'', ``src'', ``win'', ``bias'', \ldots\\
+{\tt <l>}     processing level: single digit: ``0'', ``1'', ``2''\\
+{\tt<sl>}    sublevel: single lower case letter; e.g., 1.5 is ``1a''\\
+{\tt <type>}  superfluous: usually ``fits''\\
+\end{verse}
+
+

@@ -1,0 +1,88 @@
+# This file contains the complete listing of MTA monitoring catagories.
+# The combination of the subsystem and catagory columns map to group 
+# columns in the process lists. 
+#
+#  (i.e.  hrc   temp -> hrctemp )
+#
+# NOTE: The columns in this file MUST be TAB delimited.
+#----------------------------------------------------------------------
+#
+#subsyst catagory description                   problem ID      severity urgency
+#------- -------- -----------                   ----------      -------- -------
+#
+#HRC Science Instrument
+hrc	temp	HRC Temperatures			13.8	4
+hrc	elec	HRC Electronics				13.9	4
+hrc	veto	HRC Veto Counting Rates			13.5	3
+hrc	hk	HRC Housekeeping			13.9	4
+#hrc	psf	HRC PSF
+#hrc	scnt	HRC Source Counting Rates		13.2	3
+#hrc	bcnt	HRC Background Counting Rates		13.1	3
+#
+#ACIS Science Instrument
+acis	temp	ACIS Thermal Control			14.70	4
+#acis	tempa	ACIS Thermal Control Side A		14.71	4
+acis	eleca	ACIS Electronics Side A			14.81	4
+#acis	tempb	ACIS Thermal Control Side B		14.72	4
+acis	elecb	ACIS Electronics Side B			14.82	4
+#acis	da	ACIS Detector Assembly			14.83	4
+#acis	dea	ACIS DEA				14.84	4
+#acis	dpa	ACIS DPA				14.85	4
+acis	mech	ACIS Mechanism Controller		14.92	4
+#acis	scnt	ACIS Source Counting Rates
+#acis	bcnt	ACIS Background Counting Rates
+#
+#PCAD - Pointing Control and Aspect Determination
+pcad	temp	ACA Thermal				12.2	5
+#pcad	iconf	IRU Configuration			12.3	3
+pcad	itv	IRU Temperatures and Electronics	12.10	5
+pcad	grate	PCAD Gyro Rates				12.11	5
+#pcad	ptv	PCAD Temperatures and Electronics		5
+#pcad	fid	PCAD FID Light Magnitude		12.5	3
+pcad	qual	Aspect Quality Solution			12.19	3
+pcad	ftsgrad	FTS temp & gradient			12.8	5
+pcad	rwrate	PCAD reaction wheel Rates		12.14	3
+pcad	drift	Drift rate updates to gyros		12.12	3
+#
+#EPHIN subsystem
+eph	hk	EPHIN Housekeeping			19.1	4
+eph	tv	EPHIN Temperatures and Voltages		19.2	4
+eph	rate	EPHIN Rates				19.3	2
+eph	key	EPHIN Key Rates				19.4	2
+#
+#Gradients
+grad	cap	axial, radial, diametral gradients HRMA CAP	11.37	4
+grad	fap	axial, radial, diametral gradients HRMA FAP	11.30	4
+grad	ahet	axial, radial, diametral gradients HRMA AFT Heater Plt.	11.33	4
+grad	hhflex	axial, radial, diametral gradients HRMA H-Flexure	11.33	4
+grad	hpflex	axial, radial, diametral gradients HRMA P-Flexure	11.33	4
+grad	pcolb	axial, radial, diametral gradients HRMA PreCol. Baffle Plt 	11.33	4
+grad	hstrut	axial, radial, diametral gradients HRMA Struts	11.33	5
+grad	ocyl	axial, radial, diametral gradients HSA Outer Cylinder	11.33	4
+grad	aincyl	axial, radial, diametral gradients OBA AFT Inner Cyl.	11.33	4
+grad	ablk	axial, radial, diametral gradients OBA AFT Bulkhead	11.33	4
+grad	hcone	axial, radial, diametral gradients OBA Cone	11.33	5
+grad	fblk	axial, radial, diametral gradients OBA FWD Bulkhead	11.33	4
+grad	peri	axial, radial, diametral gradients Periscope	11.33	4
+grad	sstrut	axial, radial, diametral gradients Spacecraft Struts	11.33	5
+grad	tfte	axial, radial, diametral gradients TFTE	11.33	4
+#
+#Telescope (TEL)
+tel	therm	OBA thermal				11.1	4
+tel	hrma	HRMA Thermal				11.0	4
+#
+#Gratings (GRAT)
+grat	gen	Grating Voltages and Rotation Angles	15.0	3
+#
+#SIM - Science Instrument Module
+sim	temp	SIM Thermal				16.3	4
+sim	elec	SIM Electronics				16.9	4
+sim	actu	SIM Actuator Use			16.1	3
+#
+#Other subsystems
+sub	obc	OBC State				18.2	3
+sub	sct	Spacecraft Temperatures			18.4	5
+sub	batt	Battery Usage				18.5	4
+sub	elec	Spacecraft Electronics			26.90	4
+sub	eleca	Spacecraft Electronics Side A		26.91	4
+sub	elecb	Spacecraft Electronics Side B		26.92	4

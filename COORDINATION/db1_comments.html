@@ -1,0 +1,577 @@
+<HTML>
+<HEAD>
+   <TITLE>M&TA database test report I</TITLE>
+<!-- Changed by: Scott J. Wolk, 22-Apr-1998 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; I; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#DDDDDD" BGCOLOR="#000000" LINK="#FF0000" VLINK="#FFFF22" 
+ALINK="#7500FF" background="stars.jpg">
+
+<h1> Report on MTA databases </h1>
+<h2>Goals:</h2>
+The Memos is prepared March 3, 2001,  as a summary of the results of testing the
+"3day" database.  In this memo I summarize our analysis process,
+present the results of the evaluation and make specific
+recommendations for moving forward.
+
+An executive summary of this report is:<br>
+
+The data bases look fine except for the known timing problems.
+Some databases are missing.  There were some edge effects
+in the databases which are not considered significant.
+The dataseeker is a great interface, but needs thorough testing.
+Changes/enhancements are requested to the timing scheme and data
+seeker.  A parallel development/deployment is proposed. 
+
+As an appendix the outline of additional database has been attached.
+
+
+
+<h2>Process</h2>
+We employed a multi-pronged approach to the analysis:
+<ul>
+<li>We dumped each database directly to ascertain content and
+completeness
+
+<li>We used the dataseeker to dump each table into a fits file and
+compare to the input MTA_STATIC files.
+
+<li> We used the trends tool graphically compare the contents of the
+database to the input data.
+
+<li>A fourth approach, compared the databases to the raw spacecraft,
+data had to be abandoned as the spacecraft units and usually not
+acceptable its units.  We also compared databases against those describe in 
+<a href="http://hea-www.harvard.edu/~estes/mta_schedule.html"> spec. </a> by Alesha
+this living document is a direct descendant of the original
+specification.  The mapping of MTA data products to databases is most
+clearly made here.
+
+<li>What We did not do was to check that each element was in the requested 
+database. In other words we have not gone through with a check list that 
+the database match one to one with the input files on an msid by msid basis.
+That process will be carried out this week (March 3-10 2001 - 
+dependent on the weather this week)
+
+</ul>
+
+<h2>Evaluation</h2>
+<p>
+Database data from dataseeker was compared with re-run daily report data.
+Timing is such that at time n, average is given for the  data points
+within the next n+300s.  Data gap in all tables: 88936800 - 88938300s,
+other gaps in  individual tables appear below.
+Average and standard deviation and limits have been spot checked
+for all tables/columns - no problems.
+
+<p>
+Permission/system problems seem prevalent. SQL calls which work at
+on time return permission errors at others.  Part of the problem is
+that the databases seem to contain many obsolete tables.
+
+<ul>
+<li> The DATABASES
+<pre> 
+Database mtasim
+  Table _simactu_avg
+    *** - oddities
+      faedge, fatabwid, mrmdest, tscedge, tsctabwid
+        original data resolution ~1050 s.
+        _lim alternates 0 to 1
+  Table _simtemp_avg - no problems
+  Table _simelec_avg - no problems
+
+Database mtahrc
+  Table _hrctemp_avg - no problems
+  Table _hrcelec_avg - 0 values in first row
+  Table _hrcveto_avg - no problems
+  Table _hrcchk_avg - no problems 
+
+Database mtasubsys
+  Table _subbatt_avg NO DATA  (superseded?)       
+  Table _subelec_avg NO DATA   (superseded?)            
+  subeleca_avg         permission denied   (superseded?)             
+  subelecb_avg         permission denied   (superseded?)             
+  batt_temp_avg       - no problems            
+  sc_anc_temp_avg     - no problems            
+  sc_main_temp_avg    - no problems            
+  spcelecb_avg        - no problems            
+  spceleca_avg        - no problems            
+  epsbatt_avg         - no problems            
+  spcelec_avg         - no problems            
+
+Database mtaephin      
+ ephkey_avg  - no problems 
+ ephrate_avg - no problems 
+ ephtv_avg   - no problems 
+ ephhk_avg   - no problems 
+
+Database mtaacis
+ aciseleca_avg - no problems    
+ aciselecb_avg - no problems             
+ acismech_avg  - no problems             
+ acistemp_avg  - no problems             
+
+Database mtatel
+ gratgen_avg           - no problems                 
+ hrmagrad_avg          - NO DATA                     
+ hrmaheaters_avg       - NO DATA                 
+ hrmastruts_avg        - no problems               
+ hrmatherm_avg         - no problems               
+ obagrad_avg           - NO DATA                   
+ obaheaters_avg        - NO DATA                   
+ obfwdbulkhead_avg     - no problems              
+ precoll_avg           - no problems              
+
+Database mtapcad
+ pcaddrift_avg           appeared redundant w/pcadgdrift but missing Navg 
+ pcadgdrift_avg          - no problems  
+ pcadftsgrad_avg         - no problems    
+ pcadtemp_avg            - no problems   
+ pcadrwrate_avg          - no problems  
+ pcadgrate_avg           - no problems  
+ pcaditv_avg             - no problems  
+</pre>
+
+
+<li> CONFIGURATION DATABASES<br>
+Database data was compared with archived eng0 files.
+Timing is such that at time n, configuration at time n+300s is shown.
+These database also contained mismatched data from March 2000, these
+were ignored.  
+
+<pre>
+Database mtaconfig
+  Table ccdm_config           - no problems
+  Table hrc_config
+     - occasional NULL rows like @ 89039700
+     - also 2ohiradf and 2oloradf have NULL sometimes
+     - other transitions check
+  Table tel_config           - no problems
+  Table mta_sim_config       - no problems         
+  Table mta_pcad_config      - no problems         
+  Table mta_acis_config      - no problems         
+ 
+</pre>
+
+<li> EPHEMERIS DATABASES<br>
+<ul>
+<li> mtacriteria not found
+<li>there is a table mta_sc_criteria under mtaconfig DB,
+   but it's not 5-minute averaged. 
+</ul>
+
+<p>
+<li> THE DATASEEKER<br>
+The Dataseeker received heavy usage during this period. 
+if proved the validity of design and seemed easy to improve and debug
+on the fly. The primary search criteria were not interfaced with the
+ephemeris data in  mta_sc_criteria.
+Queries on primary criteria other than time were slow.  This search is
+a perl search of an RDB table.  Both PERL and RDB. Can cause the 
+slowness.
+Many other smaller defects have been noted in Dataseeker. These are
+too numerous and miniscule to note here and are being dealt with
+directly by the programmer.
+
+Here I list some particular issues many were addressed in near 
+real-time, kudos to Ryan for that,
+<ul>
+<li> Could not demonstrate Primary search criteria other than time (bug)
+<li> Could not demonstrate Secondary search criteria (bug)
+<li> Dataseeker was missing certain tertiary tables.
+<li> fits headers should capture query -enhancement & done
+<li> Several tertiary enhancements done 
+</ul>
+<p>
+<li>TRENDS tool did not receive heavy usage.  This is primarily because it
+is designed to look at long time slices of data.  However it did
+function correctly with the data bases and demonstrated its value.<br>
+
+
+<b>COMMENTS:</b>
+
+<ol>
+<li> TRENDS TOOL will need a top page at some point as described on page
+7 of the monitor spec.  I believe this exists and a minor bug prevented 
+correct function 
+
+<li> TRENDS TOOL will also require middle level pages (i.e. the intent 
+is that the  links referred to above link to page like 
+file:/data/mta1/TRD_TEST/report/20001026/aciselecb/html/aciselecb.html
+which represent the entire (week, month, year, mission).  Again I believe
+this exists, but was disabled via a minor bug.
+
+<li>-the database has renamed all out msids as _oldmsid_avg
+
+We need to translate this back to oldmsid so we can pick up current limits 
+and the description.  is this best handled by the code stripping of the 
+extraneous characters or a look up table? This table can be produced  
+by Science, Takashi is working on a smaller scale version for the comps 
+tool (comma delimited).
+
+</ol>
+</ul>
+
+
+<h2>Recommendations</h2>
+
+These databases stand to be a tremendous boon to investigation of
+spacecraft performance and may well be able to serve in science
+investigations as well.  There are a few issues that need to be
+addressed though.
+
+<ul>
+<li>Enhancement request:<br>
+
+Timing:
+
+The timing, as stands, is inconsistent and inappropriate. 
+This is as much an error of oversight than anything else.
+
+Change the 300 second time step requirement to 328 seconds (exactly 10MF).
+more properly the timing of the bins should be a parameter.  Changing
+the parameter may cause re-populating the databases from Time 0, but
+more likely only be a forward moving effect in the database.<br>
+
+	Presumed impact:
+At this point is is only an impact on 2 existing DBs.  
+The config and the SIB. The timing needs to be adjusted in the config
+databases.  The other 16DBs can be dealt with in the new MTA code.<br> 
+
+
+<li>CONFIGURATION DATABASES:<br>
+
+The configuration at any given database time, should be the spacecraft 
+configuration at that time (currently the spacecraft configuration is given at
+the endtime of the window.  This is confusing to the user.<br>
+ 
+<pre>
+> example (assume scenario 1 above...I prefer it).  We could TS for
+> this database at 328 if parametriaztion is too much of a hit. 
+> 
+> time   config     DB_time  DB_config
+> 0         A          0         A
+> 100       A   
+> 200       A
+> TS        A
+> 400       B  
+> 500       B
+> 2TS       B         656          B
+> 700       C 
+> 800       D
+> 3TS       D         984          D
+> 1000      A
+> 1100      B
+> 4TS       A         1212         A
+> 1400      A
+> 
+  Note I there is no need for a record at time 328 as it is still 
+config A
+
+  Note II- Determining a new configuration with bad quality.
+This note is changed from email versions based on input received 
+from  MCD. Bad quality data DOES represent a new state.  But The 
+unknown datum should be stored as a Tnull (or NAN as appropriate) 
+
+ consider 3 configurations a,b & c   100011 a 
+                                     100X11 b
+  and                                100X01 c
+ Where "X" represents bad quality data.  They should represent 3
+ separate DB entries.
+
+</pre>
+
+
+<li>Gaps:
+Properly the database has no knowledge of gaps.
+Data base correctly leave X*328 second gaps.
+Since table map to files. There should be no partial rows only 
+non-existence rows.
+If the tables do merge data from different input files,
+the database table need a  NaN or TNULL  as appropriate,
+in the place of the nonexistent data in the row.  This is a DB
+responsibility. <br>
+
+Merging tables is also an issue.  The data time must be held to 
+religiously.
+gaps in one table which correspond to data in a merging partner
+need to be filled with NaN or TNULL  as appropriate.  The
+responsibility here is on the DATASEEKER. <br>
+
+
+<br>
+<li><B>Next Steps</B><br>
+
+I declare this test successful, there were no show stopping surprises
+and no errors in segments of the code not already scheduled for
+revamp.  I suggest we proceed as follows: (All steps and dates negotiable).
+
+<ul>
+
+<li>Begin population of current databases starting with Jan 1, 2001.
+Original population for entire month of January.
+
+<li>Hand off ingestion procedures to CXCDSops.  CXCDSops work to ingest 
+February and March data by March 31. April data by April 30.  and so
+on until parallel development complete.  <i> I understand that this is a
+lot of labor, even if it is once a month.  But the development track to
+automation seems to be about 3 months minimum.  Meaning July before
+meaningful databases were available.  This way meaningful databases
+could exist as within 2 weeks and continue to be meaningful until the
+final databases are ready.</i>
+
+<li>In parallel, Science will continue testing on larger data base, 
+this test will involve all DOSS.  Report due by April 14.
+
+<li>Also in parallel SCIOPS should work on new averaging pipeline.
+INTEG should work ingestion into OPUS.
+</ul>
+</ul>
+<h2>LONG TERM-NEW DATA BASES:</h2>
+ 
+There have always been a second set of tables in the offing.
+It looks like development could start soon.
+Here is a level B specification.  I expect 2 or 3 rounds of back and 
+forth between myself and the programmers until these are finalized.
+Specifically I expect a revision of these in the April 15 report.
+<p>
+NEW TABLES:<br>
+
+Executive listing of new DBTs in priority order
+
+<ol>
+<li> - Level 2 sources* 
+<li> Primary data
+<li> Gratings (3) 
+<li> ACIS Background (should move up to 2 when the SIB is done)
+<li>HRC BACKGROUND  (should move up to 3 when the SIB is done)
+<li> EPHIN L1
+<li> ACA
+</ol>
+
+*An RDB form of this exists and should be brought into dataseeker as
+soon as possible. <br>
+
+The priorities may not reflect the state of code.  For example the \
+relevant ACA codes are done, so table creation may be strait forward.
+There is no new code requirement for the Level 2 database table so this is expected to be relatively easy.<br>
+
+details:<pre>
+
+PRIMARY DATA
+
+These data are currently provided by SCIENCE to dataseeker.
+As such they exist in RDB format, this slows the operation of the 
+dataseeker, SI-mode is also not captured. Primary data are essentially 
+the observational criteria of each observation and so could probably 
+be gleaned from the obspar, so long as we can insure that these 
+are "as flown."
+
+Primary data include:
+Tstart, tstop, RA, DEC,OBSID, SI, Grating, SI-mode
+
+
+timestart = last TS time before the first photon
+timestart = first TS time after the last photon
+
+
+EPHIN L1
+
+the binning time on this can be 4 ST (1312 seconds instead of 328 seconds)
+These are level 1 data Not L0 as in the other database.
+
+ARCHIVE SPACE ESTIMATE 1 record of ~20 COLUMNS/20 MINUTES
+
+This could supersede the other one (EPKEY) though 
+
+ SCP4GM          Hz      1E   sci coincidence counter P4GM rate
+ SCP8GM          Hz      1E   sci coincidence counter P8GM rate
+ SCH4GM          Hz      1E   sci coincidence counter H4GM rate
+ SCH8GM          Hz      1E   sci coincidence counter H8GM rate
+ SCCT0           Hz      1E   sci coincidence counter CT0 rate
+ SCE150          Hz      1E   sci coincidence counter E150 rate
+ SCE300          Hz      1E   sci coincidence counter E300 rate
+ SCE1300         Hz      1E   sci coincidence counter E1300 rate
+ SCE3000         Hz      1E   sci coincidence counter E3000 rate
+ SCINT           Hz      1E   sci coincidence counter INT rate
+ SCP25GM         Hz      1E   sci coincidence counter P25GM rate
+ SCP41GM         Hz      1E   sci coincidence counter P41GM rate
+ SCH25GM         Hz      1E   sci coincidence counter H25GM rate
+ SCH41GM         Hz      1E   sci coincidence counter H41GM rate
+
+
+ACA
+This is the input to ACA trend. and was in ACA_TRD spec.
+
+The following are the appropriate entries for the database table.
+
+
+FROM FIDROPS: 
+time slot_ID, ID_num,id_status, OBS_ID,mag_i_avg,
+mag_i_min, mag_i_max for each time interval in FIDPROPS.
+
+FROM GSPROPS: 
+time slot_ID, agasc_id ,id_status, OBS_ID, mag_aca_avg,
+mag_aca_min, mag_aca_max, for each time interval in GSPROPS.
+
+FROM ACACENT 
+
+time angynea(1-8), angznea(1-8) this is a total of 16
+elements for  each time interval in ACACENT.  This is a low priority data base 
+as it is
+quite large
+
+ Other notes for the data base: id\_status (0= good,5=marginal 9=bad)
+time = (tstop+tstart)/2, dt = tstop -tstart if there is only one entry
+and no time is specified (I can't tell from the ICD if that is the case).
+
+
+
+</pre>
+ACIS Background<br>
+<a href = "http://cxc.harvard.edu/mta/COORDINATION/specs/SIB.spec"> 
+ALL SIB output</a><br>
+
+HRC BACKGROUND<br>
+<a href = "http://cxc.harvard.edu/mta/COORDINATION/specs/SIB.spec"> 
+ALL SIB output</a>
+<pre>
+ARCHIVE SPACE ESTIMATE 1 record of ~20 COLUMNS/1 SECOND OF OBSERVING TIME
+(WE MAY NEED TO USE a COARSE RA/DEC HERE, THE ABOVE ASSUMES 1' resolution,
+We lower are archive usage by a factor of 16 if we go to 4' resolution
+i.e. per node.  I think this latter choice is the way to go.
+ 
+
+Level 1.5
+Gratings
+These require an improvement to the current grate_mon code
+being run by AP.  namely, it should only be run on L1.5 files and needs to
+use the source location from the file to make it's guess on the location of 
+zero
+order. SOT has been manually running these to date. 
+So the source data exists from which to populate the databases.
+Note, timing should be to the nearest 300 interval, just like the discretes.
+
+3 data bases are required:
+general grating data  L1.5 gratings data and line data.
+
+ARCHIVE SPACE ESTIMATE 1 record of ~75 COLUMNS/ gratings observation 
+(~200/year)
+ARCHIVE SPACE ESTIMATE 1 record of ~10 COLUMNS/ gratings observation 
+(~200/year)
+ARCHIVE SPACE ESTIMATE 10 records of ~9 COLUMNS/ gratings observation 
+(~200/year)
+
+general grating data
+this should be a copy of the output parameter file produced by grat_mon:
+1 file maps to 1 record.
+Here is a sample output file.
+1 record per observation.
+
+ # 
+ # rdb parameter file ("rpf") format
+ # 
+ S     rpf_creation_time : "Mon Nov 20 09:39:02 2000"                          
+ S              filename : "acisf00644_000N001_evt1a.fits"                     
+ S              detector : "ACIS-S"                                            
+ S               grating : "HETG"                                              
+ N           file_events :  1910749.0 +/- 0.0000000                            
+ N        abs_start_time :  90628038. +/- 0.0000000 second                     
+ N     interval_duration :  57401.546 +/- 0.0000000 second                     
+ N        ave_event_rate :  33.287414 +/- 0.024081206 event/second             
+ S           proc_method : "Sky"                                               
+ N        expnos_ratio_0 :  0.0000000 +/- 0.0000000                            
+ N        expnos_ratio_1 :  0.0000000 +/- 0.0000000                            
+ N        expnos_ratio_2 :  0.0000000 +/- 0.0000000                            
+ N        expnos_ratio_3 :  0.0000000 +/- 0.0000000                            
+ N        expnos_ratio_4 :  0.93644834 +/- 0.0000000                           
+ N        expnos_ratio_5 :  1.0046040 +/- 0.0000000                            
+ N        expnos_ratio_6 :  0.97997612 +/- 0.0000000                           
+ N        expnos_ratio_7 :  0.99704790 +/- 0.0000000                           
+ N        expnos_ratio_8 :  0.68658620 +/- 0.0000000                           
+ N        expnos_ratio_9 :  0.97340453 +/- 0.0000000                           
+ N         live_interval :  57401.546 +/- 0.0000000 second                     
+ N       live_event_rate :  4.6695607 +/- 0.0090193698 event/second            
+ N         zo_det_events :  10873.000 +/- 0.0000000                            
+ N          zo_live_rate :  0.18941999 +/- 0.0018165657 event/second           
+ S          x_coord_name : "SkyX"                                              
+ S          y_coord_name : "-SkyY"                                             
+ N              zo_loc_x :  4116.8389 +/- 0.0000000 pixel                      
+ N              zo_loc_y :  -4105.1914 +/- 0.0000000 pixel                     
+ N       zo_det_fwtenthm :  4.0000000 +/- 0.0000000 pixel                      
+ N           zo_det_fwhm :  2.0000000 +/- 0.0000000 pixel                      
+ N             roll_axay :  -78.270645 +/- 0.0000000 degrees                   
+ N             zo_chip_x :  207.03865 +/- 0.0000000 pixel                      
+ N             zo_chip_y :  373.82413 +/- 0.0000000 pixel                      
+ N        det_rms_radius :  13.889139 +/- 0.0000000 pixel                      
+ N            zo_loc_fit :  2.3640544 +/- 0.0085596079 pixel                   
+ N           zo_fwhm_fit :  40.662022 +/- 0.38683730 micron                    
+ N                zo_acf :  0.034153013 +/- 0.00087427217 fraction in pixel/10 
+ N      zo_detail_events :  7841.0000 +/- 0.0000000                            
+ N        zo_detail_rate :  0.13659911 +/- 0.0015426313 event/second           
+ N          strk_loc_fit :  26.163422 +/- 6.0589576 pixel                      
+ N         strk_fwhm_fit :  408.91910 +/- 293.44986 micron                     
+ N              strk_acf :  0.00097127842 +/- 2.6852255e-05 fraction in pixel/5
+ N           strk_events :  6009.0000 +/- 0.0000000                            
+ N             strk_rate :  0.10468359 +/- 0.0013504469 event/second           
+ N             zo_loc_ax :  4119.2031 +/- 0.0000000 pixel                      
+ N             zo_loc_ay :  -4105.1914 +/- 0.0000000 pixel                     
+ N      heg_minus_events :  3499.0000 +/- 0.0000000                            
+ N       heg_minus_angle :  -5.2510018 +/- 0.0000000 degree                    
+ N       meg_plus_events :  5063.0000 +/- 0.0000000                            
+ N        meg_plus_angle :  4.7232814 +/- 0.0000000 degree                     
+ N      meg_minus_events :  6793.0000 +/- 0.0000000                            
+ N       meg_minus_angle :  4.7415104 +/- 0.0000000 degree                     
+ N       heg_plus_events :  3033.0000 +/- 0.0000000                            
+ N        heg_plus_angle :  -5.1984057 +/- 0.0000000 degree                    
+ N        heg_all_events :  6532.0000 +/- 0.0000000                            
+ N         heg_all_angle :  -5.2342334 +/- 0.0000000 degree                    
+ N        meg_all_events :  11856.000 +/- 0.0000000                            
+ N         meg_all_angle :  4.7173090 +/- 0.0000000 degree                     
+ N         MEGm1_Res1keV :  247.98160 +/- 0.0000000                            
+ N         MEGp1_Res1keV :  0.0000000 +/- 0.0000000                            
+ N         HEGm1_Res1keV :  0.0000000 +/- 0.0000000                            
+ N         HEGp1_Res1keV :  0.0000000 +/- 0.0000000                            
+ N     L1a_MEGm1_Res1keV :  0.0000000 +/- 0.0000000                            
+ N     L1a_MEGp1_Res1keV :  0.0000000 +/- 0.0000000                            
+ N     L1a_HEGm1_Res1keV :  0.0000000 +/- 0.0000000                            
+ N     L1a_HEGp1_Res1keV :  0.0000000 +/- 0.0000000                            
+
+
+General observation (II) 
+
+timestart = last TS time before the first photon
+timestart = first TS time after the last photon
+
+>From the L1.5 file
+1 record/ spectrum observed.
+TIMESTART TIMESTOP DET GRAT Shape X Y R ROTANG COMP SOURCE 
+
+Line data
+Take directly from L2
+1 record for each line
+
+TIMESTART TIMESTOP DET GRAT INDEX   POS.  FWHM   AMP.   CONT.  CONT.SLOP.
+
+
+
+Level 2 sources - We have a prototype available, the data seeker could
+be hooked into this immediately.  How we want to handle time is a
+question for L1.5 and L2 data products.  I think each one should come
+with Tstart and Tstop which are the DB times preceding and following
+the Tstart and Tstop in the datafile.
+
+for each source
+(still need Hardness numbers The tool which would create this 
+is not in the pipeline.
+) 
+again take directly from L2 data 
+ARCHIVE SPACE ESTIMATE 20 records of ~15 COLUMNS/ observation (~1000/year)  
+
+timestart  Timestop RA DEC X Y NET_COUNTS BKG_COUNTS NET_RATE BKG_RATE SNR THETA EE50_OBS 
+PSF50_OBS EXT
+
+
+
+ 

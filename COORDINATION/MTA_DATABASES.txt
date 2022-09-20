@@ -1,0 +1,1135 @@
+MTA DATA BASES  ORDERED BY DEVELOPMENT PRIORITY
+
+DATABASE 1 was ACIS THERMAL
+
+All these data bases are of the form:
+MSID    time       Value1 variance1  status1
+MSID    time+300   Value2 variance2  status2 
+
+WITH THE EXCEPTION OF THE CONFIGURATION DATABASE:
+which only gets a new record when one of the values in the 
+database changes.  At which time all values are replicated.
+all time indexes are the 300 second time increment after the 
+change occurs (This allows for several changes to occur within 
+5 minutes as well as keeping the records in sync.)
+
+
+Other data bases coming  - Not flight critical
+L2 sources
+L1 ASPECT ?
+ACIS DEA - ADDED (3/23/99)
+PCAD ATTITUDE and OBSID added (7/1/99) if obsid violated rules for
+discreets DB then put in PCAD ATTITUDE
+
+
+1 ACIS THERMAL  CONTENT=ACISTEMP  
+
+1CBAT           CAMERA BODY TEMP. A                     K        
+1CBBT           CAMERA BODY TEMP. B                     K        
+1CRAT           COLD RADIATOR TEMP. A                   K        
+1CRBT           COLD RADIATOR TEMP. B                   K        
+1DACTBT         DA COLLIMATOR TEMP. B                   K        
+1DAHAT          DA HOUSING TEMP. OFFSET A               K        
+1DAHBT          DA HOUSING TEMP. OFFSET B               K        
+1DEAMZT         DEA -Z PANEL TEMP                       K        
+1DPAMYT         DPA -Y PANEL TEMP                       K        
+1DPAMZT         DPA -Z PANEL TEMP                       K        
+1PDEAAT         PSMC DEA PS A TEMP                      K        
+1PDEABT         PSMC DEA PS B TEMP                      K        
+1PIN1AT         PSMC TEMP 1A                            K        
+1SSMYT          SUPPORT STRUCTURE -Y PANEL TEMP         K        
+1SSPYT          SUPPORT STRUCTURE +Y PANEL TEMP         K        
+1WRAT           WARM RADIATOR TEMP. A                   K        
+1WRBT           WARM RADIATOR TEMP. B                   K        
+
+
+1DAHACU         DA HEATER CURRENT A                     AMP      
+1DAHBCU         DA HEATER CURRENT B                     AMP      
+1DAHAVO         DA HEATER VOLTAGE A                     V        
+1DAHBVO         DA HEATER VOLTAGE B                     V        
+1DAHHAVO        DA HOUSING HEATER INPUT VOLTAGE A       V        
+1DAHHBVO        DA HOUSING HEATER INPUT VOLTAGE B       V       
+
+
+
+
+**************************************
+2
+# HRC Electronics (1.3.9)  Major edits by SJW (3/1/99)
+
+HRC ELECTRONIC DB  CONTENT=HRCTEMP
+
+
+From hrcu**SThrcelec_static_hk.fits
+ 'SPTPAST '           / Spect Det Top Plate HV Step
+ 'SPBPAST '           / Spect Det Bottom Plate HV Step
+ 'IMTPAST '           / Imaging Det Top Plate HV Step
+ 'IMBPAST '           / Imaging Det Bottom Plate HV Step
+ 'MTRITMP '           / Motor Over-Current/Temp
+ 'FCPUAST '           / Forced Coarse Position - U
+ 'FCPVAST '           / Forced Coarse Position - V
+ 'CBHUAST '           / Blanking High Limit - U
+ 'CBLUAST '           / Blanking Low Limit - U
+ 'CBHVAST '           / Blanking High Limit - V
+ 'CBLVAST '           / Blanking Low Limit - V
+ 'WDTHAST '           / Width Threshold Setting
+ 'S1HVST  '           / Shield PMT 1 HV Setting
+ 'S2HVST  '           / Shield PMT 2 HV Setting
+ 'IMHVLV  '           / Imaging Bot MCP HV Monitor
+ 'IMHBLV  '           / Imaging Bot & Top MCP HV Monitor
+ 'SPHVLV  '           / Spect Bot MCP HV Monitor
+ 'SPHBLV  '           / Spect Bot & Top MCP HV Monitor
+ 'S1HVLV  '           / Shield PMT 1 HV Monitor
+ 'S2HVLV  '           / Shield PMT 2 HV Monitor
+ 'LLDIALV '           / Lower Level Disc Setting
+ 'CALPALV '           / Cal Pulser Amplitude
+ 'RSRFALV '           / Range Switch Setting
+
+
+from hrcsu****_SThrchk_static_hk0.fits
+ 'C05PALV '           / +5V Bus Monitor
+ 'C15PALV '           / +15V Bus Monitor
+ 'C15NALV '           / -15V Bus Monitor
+ 'C24PALV '           / +24V Bus Monitor
+ 'PRBSCR  '           / Primary Bus Current
+ 'PRBSVL  '           / Primary Bus Voltage
+
+
+**************************************
+
+#
+3 THE CONFIGURATION DATA BASE (DISCREETS)
+NO CONTENT KEYWORD
+
+1DABOAEN        ACIS2ENG     {'DISA'|'ENAB'}
+1DABOAON        ACIS2ENG     {'OFF'|'ON'}
+1DABOBEN        ACIS2ENG     {'DISA'|'ENAB'}
+1DABOBON        ACIS2ENG     {'OFF'|'ON'}
+1DAHTAEN        ACIS2ENG     {'DISA'|'ENAB'}
+1DAHTAON        ACIS2ENG     {'OFF'|'ON'}
+1DAHTBEN        ACIS2ENG     {'DISA'|'ENAB'}
+1DAHTBON        ACIS2ENG     {'OFF'|'ON'}
+1DE28AOC        ACIS2ENG     {'NOVR'|'OVER'}
+1DE28BOC        ACIS2ENG     {'NOVR'|'OVER'}
+1DEDBAON        ACIS2ENG     {'OFF'|'ON'}
+1DEDBBON        ACIS2ENG     {'OFF'|'ON'}
+1DEPSA          ACIS2ENG     {'OFF'|'ON'}
+1DEPSAX         ACIS2ENG     {'DISA'|'ENAB'}
+1DEPSB          ACIS2ENG     {'OFF'|'ON'}
+1DEPSBX         ACIS2ENG     {'DISA'|'ENAB'}
+1DPDBAON        ACIS2ENG     {'OFF'|'ON'}
+1DPDBBON        ACIS2ENG     {'OFF'|'ON'}
+1DPPSA          ACIS2ENG     {'OFF'|'ON'}
+1DPPSAX         ACIS2ENG     {'DISA'|'ENAB'}
+1DPPSB          ACIS2ENG     {'OFF'|'ON'}
+1DPPSBX         ACIS2ENG     {'DISA'|'ENAB'}
+1OHIRADF        ACIS2ENG     {'FALS'|'TRUE'}
+1OLORADF        ACIS2ENG     {'FALS'|'TRUE'}
+2PS5AON         HRC2ENG      {'OFF'|'ON'}
+2PREADS         HRC2ENG      {'IMAG'|'SPEC'}
+2PS5BON         HRC2ENG      {'OFF'|'ON'}
+2PREBDS         HRC2ENG      {'IMAG'|'SPEC'}
+2ELEASS         HRC2ENG         1 2 3 4 5                       {'PMT1'|'PMT2'}
+2ELEBSS         HRC2ENG         1 2 3 4 5                       {'PMT1'|'PMT2'}
+2C1LVBS         HRC2ENG         1 2 3 4 5                       {'BUSA'|'BUSB'}
+2C2LVBS         HRC2ENG         1 2 3 4 5                       {'BUSA'|'BUSB'}
+2IMHVBS         HRC2ENG         1 2 3 4 5                       {'BUSA'|'BUSB'}
+2S1HVBS         HRC2ENG         1 2 3 4 5                       {'BUSA'|'BUSB'}
+2S2HVBS         HRC2ENG         1 2 3 4 5                       {'BUSA'|'BUSB'}
+2SPHVBS         HRC2ENG         1 2 3 4 5                       {'BUSA'|'BUSB'}
+2OHIRADF        HRC6ENG      {'FALS'|'TRUE'}
+2OLORADF        HRC6ENG      {'FALS'|'TRUE'}
+3SEAPENA        SIM1ENG      {'OFF'|'ON'}
+3SEAPENB        SIM1ENG      {'OFF'|'ON'}
+3SEAPSMA        SIM1ENG      {'OFF'|'ON'}
+3SEAPSMB        SIM1ENG      {'OFF'|'ON'}
+4HILSA          TEL1ENG      {'INSR'|'NINS'}
+4HRLSA          TEL1ENG      {'NRET'|'RETR'}
+4HILSB          TEL1ENG      {'INSR'|'NINS'}
+4HRLSB          TEL1ENG      {'NRET'|'RETR'}
+4LILSA          TEL1ENG      {'INSR'|'NINS'}
+4LRLSA          TEL1ENG      {'NRET'|'RETR'}
+4LILSBD         TEL1ENG      {'INSR'|'NINS'}
+4LRLSBD         TEL1ENG      {'NRET'|'RETR'}
+4M5IRAX         TEL1ENG      {'DISA'|'ENAB'}
+4M5IRBX         TEL1ENG      {'DISA'|'ENAB'}
+AACA1CAL        PCAD4ENG        1 2 3 4 5                       {'OFF'|'ON'}
+AACA1PWR        PCAD4ENG        1 2 3 4 5                       {'OFF'|'ON'}
+AACA2PWR        PCAD4ENG        1 2 3 4 5                       {'OFF'|'ON'}
+AAMPPEA1        PCAD4ENG        1 2 3 4 5                       {'NO'|'YES'}
+AAMPPEA2        PCAD4ENG        1 2 3 4 5                       {'NO'|'YES'}
+AAMRPEA1        PCAD4ENG        1 2 3 4 5                       {'NO'|'YES'}
+AAMRPEA2        PCAD4ENG        1 2 3 4 5                       {'NO'|'YES'}
+APEA1X          PCAD5ENG        1 2 3 4 5                       {'OFF'|'ON'}
+APEA2X          PCAD5ENG        1 2 3 4 5                       {'OFF'|'ON'}
+AAPEA1DP        PCAD4ENG        1 2 3 4 5                       {'DISA'|'ENAB'}
+CFMTID          CCDM4ENG	{'0'|'1'|'2'|'3'|'4'|'5'}
+CTUFMTSL        CCDM3ENG       {'ERR7'|'ERR8'|'FMT1'|'FMT2'|'FMT3'|'FMT4'|'FMT5'|'FMT6'}
+COBSRQID	CCDM11ENG	1-65K  
++7 more
+
+
+**************************************
+
+
+
+4) ACA/PCAD Maintainance
+DOES not only have one content keyword
+Uses data from  keywords 
+PCADATV
+PCADPTV
+PCADFTSGRAD
+PCADRWRATE
+PCADDRIFT
+PCADELEC
+
+from xe00000000_aca_img_*.fits
+10      TEMPCCD         K       1E                      temp 1 - CCD
+11      TEMPHOUS        K       1E                      temp 2 - AC housing
+12      TEMPPRIM        K       1E                      temp 3 - lens cell
+13      TEMPSEC         K       1E                      temp 4 - secondary mirr
+Engineering data file
+OHRTHR27        K       16      RT 20 : PERISCOPE
+OHRTHR42        K       16      RT 133: PERISCOPE
+OHRTHR43        K       16      RT 134: PERISCOPE
+OOBAGRD3        K       16      RT 505 TO RT 504: PERISCOPE GRADIENT MONITOR
+OOBAGRD6        K       16      RT 507 TO RT 506: PERISCOPE GRADIENT MONITOR
+Engineering data file
+AIRU1BT         IRU-1 BASE TEMP                              K       8
+AIRU1G1T        IRU-1 GYRO #1 TEMP                           K       8      
+AIRU1G2T        IRU-1 GYRO #2 TEMP                           K       8       
+AIRU1VFT        IRU-1 VFC TEMP                               K       8       
+AIRU2BT         IRU-2 BASE TEMP                              K       8       
+AIRU2G1T        IRU-2 GYRO #1 TEMP                           K       8       
+AIRU2G2T        IRU-2 GYRO #2 TEMP                           K       8       
+AIRU2VFT        IRU-2 VFC TEMP                               K       8       
+Engineering data file
+AGWS1V          GYRO WHEEL SUPPLY 1 INPUT VOLTAGE            V       8
+AGWS2V          GYRO WHEEL SUPPLY 2 INPUT VOLTAGE            V       8
+AIRU1G1I        IRU-1 GYRO #1 CURRENT                       MAMP     8
+AIRU1G2I        IRU-1 GYRO #2 CURRENT                       MAMP     8
+AIRU2G1I        IRU-2 GYRO #1 CURRENT                       MAMP     8
+AIRU2G2I        IRU-2 GYRO #2 CURRENT                       MAMP     8
+AFSSPC1V        PCAD    V       8       FSS POWER CONV 1 VOLTAGE
+AFSSPC2V        PCAD    V       8       FSS POWER CONV 2 VOLTAGE
+AOCSSI1         PCAD    MAMP    16      CSSA1 A/D DATA
+AOCSSI2         PCAD    MAMP    16      CSSA2 A/D DATA
+AOCSSI3         PCAD    MAMP    16      CSSA3 A/D DATA
+AOCSSI4         PCAD    MAMP    16      CSSA4 A/D DATA
+AOSUNSA1        PCAD    ND      32      CSSA DERIVED UNIT VECTOR TO THE SUN IN SA FRAME
+AOSUNSA2        PCAD    ND      32      CSSA DERIVED UNIT VECTOR TO THE SUN IN SA FRAME
+AOSUNSA3        PCAD    ND      32      CSSA DERIVED UNIT VECTOR TO THE SUN IN SA FRAME
+AOALPANG        PCAD    DEG     15      FSS ALPHA ANGLE MEAS
+AOBETANG        PCAD    DEG     15      FSS BETA ANGLE MEAS
+
+
+4B) Spacecraft attitude
+NO CONTENT keyword from MTA, 
+All are pure L0 data products
+
+AOATTQT1	PCAD3ENG	48 FMIL no units
+AOATTQT2	PCAD3ENG	48 FMIL no units
+AOATTQT3	PCAD3ENG	48 FMIL no units
+AOATTQT4	PCAD3ENG	48 FMIL no units
+AOCMDQT1	PCAD8ENG	48 FMIL no units
+AOCMDQT2	PCAD8ENG	48 FMIL no units
+AOCMDQT3	PCAD8ENG	48 FMIL no units
+AOTARQT1	PCAD12ENG	8 FMIL no units
+AOTARQT2	PCAD12ENG	 FMIL no units
+AOTARQT3	PCAD12ENG	FMIL no units
+AOSCPOS1	PCAD8ENG
+AOSCPOS2	PCAD8ENG
+AOSCPOS3	PCAD8ENG
+AOSCVEL1	PCAD8ENG
+AOSCVEL2	PCAD8ENG
+AOSCVEL3	PCAD8ENG
+AOSUNEC1	PCAD8ENG
+AOSUNEC2	PCAD8ENG
+AOSUNEC3	PCAD8ENG
+
+
+**************************************
+
+
+5)HRMA
+input groups 
+CONTENT: TELOBA, TELHRMA
+
+
+4OAVHRMT        K       16      AVERAGE TEMPERATURE OF HRMA SYSTEM
+4OAVOBAT        K       16      AVERAGE TEMPERATURE OF OBA SYSTEM
+
+4PRT1AT         K       8       IP A: PRE-COLLIMATOR PRT 1 TEMPERATURE
+4PRT1BT         K       8       IP B: PRE-COLLIMATOR PRT 1 TEMPERATURE
+4PRT2AT         K       8       IP A: PRE-COLLIMATOR PRT 2 TEMPERATURE
+4PRT2BT         K       8       IP B: PRE-COLLIMATOR PRT 2 TEMPERATURE
+4PRT3AT         K       8       IP A: PRE-COLLIMATOR PRT 3 TEMPERATURE
+4PRT3BT         K       8       IP B: PRE-COLLIMATOR PRT 3 TEMPERATURE
+4PRT4AT         K       8       IP A: PRE-COLLIMATOR PRT 4 TEMPERATURE
+4PRT4BT         K       8       IP B: PRE-COLLIMATOR PRT 4 TEMPERATURE
+4PRT5AT         K       8       IP A: PRE-COLLIMATOR PRT 5 TEMPERATURE
+4PRT5BT         K       8       IP B: PRE-COLLIMATOR PRT 5 TEMPERATURE
+
+OHRTHR23        K       8       RT 8: HRMA PRECOLLIMATOR PLATE 10
+OHRTHR04        K       8       RT 9: HRMA PRECOLLIMATOR PLATE 10
+OHRTHR47        K       8       RT 10: HRMA PRECOLLIMATOR PLATE 10
+OHRTHR59        K       16      RT 119: HRMA PRECOLLIMATOR PLATE 10
+
+OHRTHR38        K       16      RT 120: HRMA AFT COLLIMATOR OUTER CYLINDER
+
+4RT555T         K       8       RT 555 - HRMA TEMP
+4RT556T         K       8       RT 556 - HRMA TEMP
+4RT557T         K       8       RT 557 - HRMA TEMP
+4RT558T         K       8       RT 558 - HRMA TEMP
+4RT559T         K       8       RT 559 - HRMA TEMP
+4RT560T         K       8       RT 560 - HRMA TEMP
+4RT561T         K       8       RT 561 - HRMA TEMP
+4RT562T         K       8       RT 562 - HRMA TEMP
+4RT563T         K       8       RT 563 - HRMA TEMP
+4RT564T         K       8       RT 564 - HRMA TEMP
+4RT565T         K       8       RT 565 - HRMA TEMP
+4RT567T         K       8       RT 567 - HRMA TEMP
+4RT568T         K       8       RT 568 - HRMA TEMP
+4RT569T         K       8       RT 569 - HRMA TEMP
+4RT570T         K       8       RT 570 - HRMA TEMP
+
+4RT575T         K       8       RT 575 - OB CONE TEMP
+4RT576T         K       8       RT 576 - OB CONE TEMP
+4RT577T         K       8       RT 577 - OB CONE TEMP
+4RT578T         K       8       RT 578 - OB CONE TEMP
+4RT579T         K       8       RT 579 - OB CONE TEMP
+4RT580T         K       8       RT 580 - OB CONE TEMP
+4RT581T         K       8       RT 581 - OB CONE TEMP
+
+OOBTHR08        K       16      RT 31: OBA CONE
+OOBTHR09        K       16      RT 32: OBA CONE
+OOBTHR10        K       16      RT 33: OBA CONE
+OOBTHR11        K       16      RT 34: OBA CONE
+OOBTHR12        K       16      RT 35: OBA CONE
+OOBTHR13        K       16      RT 36: OBA CONE
+OOBTHR14        K       16      RT 37: OBA CONE
+OOBTHR15        K       16      RT 38: OBA CONE
+OOBTHR17        K       16      RT 39: OBA CONE
+OOBTHR18        K       16      RT 40: OBA CONE
+OOBTHR19        K       16      RT 41: OBA CONE
+OOBTHR20        K       16      RT 42: OBA CONE
+OOBTHR21        K       16      RT 43: OBA CONE
+OOBTHR22        K       16      RT 44: OBA CONE
+OOBTHR23        K       16      RT 45: OBA CONE
+OOBTHR24        K       16      RT 46: OBA CONE
+OOBTHR25        K       16      RT 47: OBA CONE
+OOBTHR26        K       16      RT 48: OBA CONE
+OOBTHR27        K       16      RT 49: OBA CONE
+OOBTHR28        K       16      RT 50: OBA CONE
+OOBTHR29        K       16      RT 51: OBA CONE
+OOBTHR30        K       16      RT 52: OBA CONE
+OOBTHR55        K       16      RT 157: OBA CONE
+OOBTHR56        K       16      RT 158: OBA CONE
+OOBTHR57        K       16      RT 150: OBA CONE
+OOBTHR58        K       16      RT 151: OBA CONE
+OOBTHR59        K       16      RT 152: OBA CONE
+OOBTHR60        K       16      RT 153: OBA CONE
+OOBTHR61        K       16      RT 154: OBA CONE
+
+4RT700T         K       8       RT 700 - OB BULKHEAD TEMP
+4RT701T         K       8       RT 701 - OB BULKHEAD TEMP
+4RT702T         K       8       RT 702 - OB BULKHEAD TEMP
+4RT703T         K       8       RT 703 - OB BULKHEAD TEMP
+4RT704T         K       8       RT 704 - OB BULKHEAD TEMP
+4RT705T         K       8       RT 705 - OB BULKHEAD TEMP
+4RT706T         K       8       RT 706 - OB BULKHEAD TEMP
+4RT707T         K       8       RT 707 - OB BULKHEAD TEMP
+4RT708T         K       8       RT 708 - OB BULKHEAD TEMP
+4RT709T         K       8       RT 709 - OB BULKHEAD TEMP
+4RT710T         K       8       RT 710 - OB BULKHEAD TEMP
+4RT711T         K       8       RT 711 - OB BULKHEAD TEMP
+
+OOBTHR62        K       16      RT 155: OBA FWD BULKHEAD
+OOBTHR63        K       16      RT 156: OBA FWD BULKHEAD
+
+OOBTHR31        K       16      RT 53: OBA AFT BULKHEAD
+OOBTHR33        K       16      RT 54: OBA AFT BULKHEAD
+OOBTHR34        K       16      RT 55: OBA AFT BULKHEAD
+OOBTHR35        K       16      RT 57: OBA AFT BULKHEAD
+
+4RT582T         K       8       RT 582 - STRUT TEMP
+4RT583T         K       8       RT 583 - STRUT TEMP
+4RT584T         K       8       RT 584 - STRUT TEMP
+4RT585T         K       8       RT 585 - STRUT TEMP
+4RT586T         K       8       RT 586 - STRUT TEMP
+4RT587T         K       8       RT 587 - STRUT TEMP
+4RT588T         K       8       RT 588 - STRUT TEMP
+4RT589T         K       8       RT 589 - STRUT TEMP
+4RT590T         K       8       RT 590 - STRUT TEMP
+4RT591T         K       8       RT 591 - STRUT TEMP
+4RT592T         K       8       RT 592 - STRUT TEMP
+4RT593T         K       8       RT 593 - STRUT TEMP
+
+4RT594T         K       8       RT 594 - TFTE TEMP
+4RT595T         K       8       RT 595 - TFTE TEMP
+4RT596T         K       8       RT 596 - TFTE TEMP
+4RT597T         K       8       RT 597 - TFTE TEMP
+4RT598T         K       8       RT 598 - TFTE TEMP
+
+OHRTHR02        K       8       RT 2: HRMA FORWARD APERTURE PLATE
+OHRTHR03        K       8       RT 5: HRMA FORWARD APERTURE PLATE
+OHRTHR21        K       8       RT 3: HRMA FOWARD APERTURE PLATE
+OHRTHR22        K       8       RT 6: HRMA FOWARD APERTURE PLATE
+OHRTHR44        K       8       RT 1: HRMA FORWARD APERTURE PLATE
+OHRTHR45        K       8       RT 4: HRMA FORWARD APERTURE PLATE
+OHRTHR46        K       8       RT 7: HRMA FORWARD APERTURE PLATE
+OHRTHR63        K       16      RT 131: HRMA FORWARD APERTURE PLATE
+
+OHRTHR05        K       8       RT 13: HRMA AFT HEATER PLATE
+OHRTHR19        K       16      RT 132: HRMA AFT HEATER PLATE
+OHRTHR24        K       8       RT 12: HRMA AFT HEATER PLATE
+OHRTHR49        K       8       RT 11: HRMA AFT HEATER PLATE
+
+OHRTHR06        K       8       RT 14: HRMA MOUNT
+OHRTHR15        K       16      RT 122: HRMA MOUNT
+OHRTHR25        K       8       RT 15: HRMA MOUNT
+OHRTHR40        K       16      RT 124: HRMA MOUNT
+OHRTHR50        K       8       RT 16: HRMA MOUNT
+OHRTHR60        K       16      RT 126: HRMA MOUNT
+
+OHRTHR07        K       8       RT 18: HSA OUTER CYLINDER
+OHRTHR17        K       16      RT 125: HSA OUTER CYNLINDER
+OHRTHR26        K       8       RT 19: HSA OUTER CYLINDER
+OHRTHR39        K       16      RT 123: HSA OUTER CYLINDER
+OHRTHR51        K       8       RT 17: HSA OUTER CYLINDER
+OHRTHR61        K       16      RT 127: HSA OUTER CYLINDER
+
+OHRTHR08        K       16      RT 103: HRMA CAP
+OHRTHR09        K       16      RT 105: HRMA CAP
+OHRTHR31        K       16      RT 101: HRMA CAP
+OHRTHR33        K       16      RT 102: HRMA CAP
+OHRTHR52        K       16      RT 100: HRMA CAP
+OHRTHR53        K       16      RT 104: HRMA CAP
+OHRTHR54        K       16      RT 106: HRMA CAP
+
+OHRTHR10        K       16      RT 107: HRMA P1 FLEXURE
+OHRTHR11        K       16      RT 108: HRMA P4 FLEXURE
+OHRTHR12        K       16      RT 115: HRMA H1 FLEXURE
+OHRTHR13        K       16      RT 116: HRMA H6 FLEXURE
+OHRTHR34        K       16      RT 109: HRMA P1 FLEXURE
+OHRTHR35        K       16      RT 110: HRMA P4 FLEXURE
+OHRTHR36        K       16      RT 113: HRMA H1 FLEXURE
+OHRTHR37        K       16      RT 114: HRMA H4 FLEXURE
+OHRTHR55        K       16      RT 111: HRMA P1 FLEXURE
+OHRTHR56        K       16      RT 112: HRMA P4 FLEXURE
+OHRTHR57        K       16      RT 117: HRMA H1 FLEXURE
+OHRTHR58        K       16      RT 118: HRMA H4 FLEXURE
+
+OOBTHR02        K       16      RT 25: HRMA STRUT
+OOBTHR03        K       16      RT 26: HRMA STRUT
+OOBTHR04        K       16      RT 27: HRMA STRUT
+OOBTHR05        K       16      RT 28: HRMA STRUT
+OOBTHR06        K       16      RT 29: HRMA STRUT
+OOBTHR07        K       16      RT 30: HRMA STRUT
+
+OOBTHR36        K       16      RT 58: TFTE CONE
+OOBTHR37        K       16      RT 59: TFTE CONE
+OOBTHR38        K       16      RT 60: TFTE CONE
+OOBTHR39        K       16      RT 61: TFTE CONE
+OOBTHR40        K       16      RT 62: TFTE CONE
+OOBTHR41        K       16      RT 63: TFTE CONE
+
+OOBTHR42        K       16      RT 64: TFTE COVER
+OOBTHR43        K       16      RT 65: TFTE COVER
+OOBTHR44        K       16      RT 66: TFTE COVER
+OOBTHR45        K       16      RT 67: TFTE COVER
+OOBTHR46        K       16      RT 68: TFTE COVER
+OOBTHR47        K       16      RT 69: TFTE COVER
+
+OOBTHR49        K       16      RT 75: S/C STRUT
+OOBTHR50        K       16      RT 76: S/C STRUT
+OOBTHR51        K       16      RT 77: S/C STRUT
+OOBTHR52        K       16      RT 78: S/C STRUT
+OOBTHR53        K       16      RT 79: S/C STRUT
+OOBTHR54        K       16      RT 80: S/C STRUT
+
+OHRTHR14        K       16      RT 121: HSA AFT INNER CYLINDER
+OHRTHR29        K       16      RT 23: HSA AFT INNER CYLINDER
+OHRTHR30        K       16      RT 24 : HSA AFT INNER CYLINDER
+
+OHRTHR18        K       16      RT 130: FHS INNER CYLINDER
+OHRTHR62        K       16      RT 128: FHS OUTER CYLINDER
+OHRTHR41        K       16      RT 129: AHS OUTER CYLINDER
+
+OHRTHR20        K       8       RT 135: RRCA MOUNT
+
+OHRTHR27        K       16      RT 20 : PERISCOPE
+OHRTHR42        K       16      RT 133: PERISCOPE
+OHRTHR43        K       16      RT 134: PERISCOPE
+
+
+**************************************
+
+
+
+
+6)SIM
+input CONTENT = SIMELEC
+input CONTENT = SIMTEMP 
+
+from SIM L0 files
+12      FAPOS           mm      1D      FA position
+13      TSCPOS          mm      1D      TSC position
+17      LDRTRELPOS      mm      1D      last detected reference tab relative position
+18      FLEXATEMP       K       1E      flexure A temperature
+19      FLEXBTEMP       K       1E      flexure B temperature
+20      FLEXCTEMP       K       1E      flexure C temperature
+21      TSCMTRTEMP      K       1E      TSC motor temperature
+22      FAMTRTEMP       K       1E      FA motor temperature
+23      PSUTEMP         K       1E      SEA power supply temperature
+24      BOXTEMP         K       1E      SEA box temperature
+33      FLEXATSET       K       1E      Flexure A temperature setpoint
+34      FLEXBTSET       K       1E      Flexure B temperature setpoint
+35      FLEXCTSET       K       1E      Flexure C temperature setpoint
+2       DEVX            mm      1E              deviation from expected x axis position
+3       DEVZ            mm      1E              deviation from expected z axis position
+FROM SIMENG FILES
+3BTU_BPT        K       8       BTU BASEPLATE (+X)), ABORT HTR TSC2
+3FABRAAT        K       8       FA STRUCTURE +X FACE AT +Y+Z END ABORT HTR. FA6 TEMP
+3FABRCAT        K       8       FA STRUCTURE +X FACE AT -Y-Z END ABORT HTR. FA6 TEMP
+3FAMYZAT        K       8       FA STRUCTURE AT BEARING C ABORT HTR. FA6 TEMP
+3FAPYZAT        K       8       FA STRUCTURE AT BEARING A ABORT HTR. FA6 TEMP
+3FARALAT        K       8       FA STRUCTURE AT RAIL -Z, ABORT HEATER FA6 TEMP
+3FLCABPT        K       8       FLCA BASEPLATE (+X)
+3RCTUBPT        K       8       RCTU BASEPLATE (+X)
+3TSMXCET        K       8       -X TURTLE SHELL NR HRC CEA
+3TSMXSPT        K       8       -X TURTLE SHELL NR ACIS SS
+3TSMYDPT        K       8       -Y TURTLE SHELL NR ACIS DPA
+3TSPYFET        K       8       +Y TURTLE SHELL NR HRC FEA
+3TSPZDET        K       8       +Z TURTLE SHELL NR ACIS DEA
+3TSPZSPT        K       8       +Z TURTLE SHELL NR ACIS SS
+3TTACS1T        K       8       TT AT ACIS ATTACH #1, ABORT HTR TSC1
+3TTACS2T        K       8       TT AT ACIS ATTACH #2, ABORT HTR TSC1
+3TTACS3T        K       8       TT AT ACIS ATTACH #3, ABORT HTR TSC1
+3TTBRGBT        K       8       TT AT BEARING B, ABORT HTR TSC4
+3TTHRC1T        K       8       TT AT HRC BIPOD ATTACH #1
+3TTHRC2T        K       8       TT AT HRC BIPOD ATTACH #2
+3TTHRC3T        K       8       TT AT HRC BIPOD ATTACH #3 & ACIS #4
+3TTRALAT        K       8       TT AT RAIL A, ABORT HTR TSC3
+3TTRALCT        K       8       TT AT RAIL C, ABORT HTR TSC5
+3TTVALVT        K       8       TT AT VENT VALVE, ABORT HTR TSC7
+
+
+**************************************
+
+
+7
+ACIS ELECTRONICS
+CONTENT ACISELEC
+
+1DAHACU         AMP     8       DETECTOR ASSY. HTR CURRENT A    
+1DAHAVO         V       8       DETECTOR ASSY. HTR VOLTAGE A    
+1DAHBCU         AMP     8       DETECTOR ASSY. HTR CURRENT B    
+1DAHBVO         V       8       DETECTOR ASSY. HTR VOLTAGE B    
+1DAHHAVO        V       8       DA HOUSING HTR +28V INPUT A     
+1DAHHBVO        V       8       DA HOUSING HTR +28V INPUT B     
+1DE28AVO        V       8       DEA +28V INPUT A        
+1DE28BVO        V       8       DEA +28V INPUT B        
+1DEICACU        AMP     8       DEA INPUT CURRENT A     
+1DEICBCU        AMP     8       DEA INPUT CURRENT B     
+1DEN0AVO        V       8       DEA -6V VOLTAGE A       
+1DEN0BVO        V       8       DEA -6V VOLTAGE B       
+1DEN1AVO        V       8       DEA -15V VOLTAGE A      
+1DEN1BVO        V       8       DEA -15V VOLTAGE B      
+1DEP0AVO        V       8       DEA +6V VOLTAGE A       
+1DEP0BVO        V       8       DEA +6V VOLTAGE B       
+1DEP1AVO        V       8       DEA +15V ANALOG A       
+1DEP1BVO        V       8       DEA +15V ANALOG B       
+1DEP2AVO        V       8       DEA +24V ANALOG A       
+1DEP2BVO        V       8       DEA +24V ANALOG B       
+1DEP3AVO        V       8       DEA +28V ANALOG A       
+1DEP3BVO        V       8       DEA +28V ANALOG B       
+1DP28AVO        V       8       DPA +28V INPUT A        
+1DP28BVO        V       8       DPA +28V INPUT B        
+1DPICACU        AMP     8       DPA INPUT CURRENT A     
+1DPICBCU        AMP     8       DPA INPUT CURRENT B     
+1DPP0AVO        V       8       DPA +5V ANALOG A        
+1DPP0BVO        V       8       DPA +5V ANALOG B        
+
+
+
+**************************************
+
+
+
+
+
+
+
+8
+# HRC Temperatures (1.3.8)
+ HRC Temperatures (1.3.8)
+CONTENT=HRCTEMP
+
+2TM09TM         hrctemp
+2TM10TM         hrctemp
+2CEBXTM         hrctemp
+2TM08TM         hrctemp
+2DTH1TM         hrctemp
+2DTH2TM         hrctemp
+2FEBXTM         hrctemp
+2TM07TM         hrctemp
+2UVLSPXT        hrctemp	HRC3ENG		1 2 3 4 5	K		
+2CHTRPZT        hrctemp	HRC4ENG		1 2 3 4 5	K		
+2CONDMXT        hrctemp	HRC4ENG		1 2 3 4 5	K		
+2DCENTRT        hrctemp	HRC4ENG		1 2 3 4 5	K		
+2DTSTATT        hrctemp	HRC4ENG		1 2 3 4 5	K		
+2FHTRMZT        hrctemp	HRC4ENG		1 2 3 4 5	K		
+2FRADPYT        hrctemp	HRC4ENG		1 2 3 4 5	K		
+2PMT1T	        hrctemp	HRC4ENG		1 2 3 4 5	K		
+2PMT2T	        hrctemp	HRC4ENG		1 2 3 4 5	K	
+2CEAHVPT
+from hrcsu****_SThrchk_static_hk0.fits
+ 'FEPRATM '           / FE Preamp Card Temperature
+ 'SPINATM '           / Spect Det Temperature
+ 'IMINATM '           / Imaging Det Temperature
+ 'LVPLATM '           / LVPS plate Temperature
+ 'SPHVATM '           / Spect Det HVPS Temperature
+ 'IMHVATM '           / Imaging Det HVPS Temperature
+ 'SMTRATM '           / Selected Motor Temperature
+ 'FE00ATM '           / Front End Temperature
+ 'CE00ATM '           / CE Temp - Bottom Center Wall
+ 'CE01ATM '           / CE Temp - Top Center Wall
+
+
+**************************************
+
+
+
+
+9)
+CONTENT=GRATGEN
+
+GRATING ELECTRONICS
+4MP28AV         VDC     8       MCE A: +28 VOLT MONITOR
+4MP28BV         VDC     8       MCE B: +28 VOLT MONITOR
+4MP5AV          VDC     8       MCE A: +5 VOLT MONITOR
+4MP5BV          VDC     8       MCE B: +5 VOLT MONITOR
+4LPOSARO        DEG     8       LETG ROTATION ANGLE POSITION MONITOR A
+4LPOSBRO        DEG     8       LETG ROTATION ANGLE POSITION MONITOR B
+4HPOSARO        DEG     8       HETG ROTATION ANGLE POSITION MONITOR A
+4HPOSBRO        DEG     8       HETG ROTATION ANGLE POSITION MONITOR B
+
+
+
+**************************************
+
+
+
+
+
+10) EPHIN - the binning time on this can be 20 minutes instead of 5
+CONTENT=EPHRATE  
+
+
+
+4       SCP4GM          Hz      1E              sci coincidence counter P4GM rate
+5       SCP8GM          Hz      1E              sci coincidence counter P8GM rate
+6       SCH4GM          Hz      1E              sci coincidence counter H4GM rate
+7       SCH8GM          Hz      1E              sci coincidence counter H8GM rate
+1       SCCT0           Hz      1E              sci coincidence counter CT0 rate
+8       SCE150          Hz      1E              sci coincidence counter E150 rate
+9       SCE300          Hz      1E              sci coincidence counter E300 rate
+10      SCE1300         Hz      1E              sci coincidence counter E1300 rate
+11      SCE3000         Hz      1E              sci coincidence counter E3000 rate
+12      SCINT           Hz      1E              sci coincidence counter INT rate
+13      SCP25GM         Hz      1E              sci coincidence counter P25GM rate
+14      SCP41GM         Hz      1E              sci coincidence counter P41GM rate
+15      SCH25GM         Hz      1E              sci coincidence counter H25GMate
+16      SCH41GM         Hz      1E              sci coincidence counter H41GM ate
+
+10a) EPHIN HK - the binning time on this can be 20 minutes instead of 5
+CONTENT=EPHHK
+CONTENT=EPHTV
+20      HKP5V           V       1E              HK 5 Volts Rail - Voltage
+21      HKP5I           mA      1E              HK 5 Volts Rail - Current
+22      HK27V           V       1E              HK 27 Volts Rail - Voltage
+23      HKP27I          mA      1E              HK 27 Volts Rail - Current
+24      HK6V            V       1E              HK 6 Volts Rail - Voltage
+25      HKP6I           mA      1E              HK 6 Volts Rail - Current
+26      HKN6V           V       1E              HK -6 Volts Rail - Voltage
+27      HKN6I           mA      1E              HK 6 Volts Rail - Current
+28      HKEBOXTEMP      K       1E              HK EBOX Tempreture
+29      HKABIASLEAKI    uA      1E              HK A Bias leakage current
+30      HKBBIASLEAKI    uA      1E              HK B Bias leakage current
+31      HKCBIASLEAKI    uA      1E              HK C Bias leakage current
+32      HKDBIASLEAKI    uA      1E              HK D Bias leakage current
+33      HKEBIASLEAKI    uA      1E              HK E Bias leakage current
+34      HKFBIASLEAKI    uA      1E              HK F Bias leakage current
+35      HKGHIV          V       1E              HK G High Voltage
+
+
+**************************************
+
+
+11) S/C Thermal
+PCAD
+CONTENT=SPCTEMP
+
+RACH1T02        K       8       PEA2 AC HOUSING TEMPERATURE IMAGE 0
+RACH1T12        K       8       PEA2 AC HOUSING TEMPERATURE IMAGE 1
+RACH1T22        K       8       PEA2 AC HOUSING TEMPERATURE IMAGE 2
+RACH1T32        K       8       PEA2 AC HOUSING TEMPERATURE IMAGE 3
+RACH1T42        K       8       PEA2 AC HOUSING TEMPERATURE IMAGE 4
+RACH1T52        K       8       PEA2 AC HOUSING TEMPERATURE IMAGE 5
+RACH1T62        K       8       PEA2 AC HOUSING TEMPERATURE IMAGE 6
+RACH1T72        K       8       PEA2 AC HOUSING TEMPERATURE IMAGE 7
+RC__CCDT        K       16      PEA2 CCD DETECTOR THERMISTOR
+RC_A_DT         K       16      PEA2 A/D CONVERTER THERMISTOR READING
+RC_AC_HT        K       16      PEA2 AC HOUSING TEMP HRMA SIDE
+RC_AC_OT        K       16      PEA2 AC HOUSING TEMP OUTBOARD SIDE
+RC_LENST        K       16      PEA2 AC LENS TEMPERATURE
+RC_PM_HT        K       16      PEA2 PRIMARY MIRROR TEMP HRMA SIDE
+RC_PM_OT        K       16      PEA2 PRIMARY MIRROR TEMP OUTBOARD SIDE
+RC_SM_HT        K       16      PEA2 SECONDARY MIRROR TEMP HRMA SIDE
+RC_SM_OT        K       16      PEA2 SECONDARY MIRROR TEMP OUTBOARD SIDE
+RC32CCDA        K       16      PEA2 16 MSBS OF 32BIT CCD TEMP MEASUREMENT
+RC32CCDB        K       16      PEA2 16 LSBS OF 32BIT CCD TEMP MEASUREMENT
+RCBASE1T        K       16      PEA2 CCD MOLYBASE THERMISTOR NO 1
+RCBASE2T        K       16      PEA2 CCD MOLYBASE THERMISTOR NO 2
+RCCCDSP         K       16      PEA2 CCD TEMPERATURE SET POINT
+RCCDPT02        K       8       PEA2 AC CCD TEMPERATURE IMAGE 0
+RCCDPT12        K       8       PEA2 AC CCD TEMPERATURE IMAGE 1
+RCCDPT22        K       8       PEA2 AC CCD TEMPERATURE IMAGE 2
+RCCDPT32        K       8       PEA2 AC CCD TEMPERATURE IMAGE 3
+RCCDPT42        K       8       PEA2 AC CCD TEMPERATURE IMAGE 4
+RCCDPT52        K       8       PEA2 AC CCD TEMPERATURE IMAGE 5
+RCCDPT62        K       8       PEA2 AC CCD TEMPERATURE IMAGE 6
+RCCDPT72        K       8       PEA2 AC CCD TEMPERATURE IMAGE 7
+RQTAPMT0        K       8       PEA2 AC PRIMARY MIRROR/LENS CELL TEMP IMAGE 0
+RQTAPMT1        K       8       PEA2 AC PRIMARY MIRROR/LENS CELL TEMP IMAGE 1
+RQTAPMT2        K       8       PEA2 AC PRIMARY MIRROR/LENS CELL TEMP IMAGE 2
+RQTAPMT3        K       8       PEA2 AC PRIMARY MIRROR/LENS CELL TEMP IMAGE 3
+RQTAPMT4        K       8       PEA2 AC PRIMARY MIRROR/LENS CELL TEMP IMAGE 4
+RQTAPMT5        K       8       PEA2 AC PRIMARY MIRROR/LENS CELL TEMP IMAGE 5
+RQTAPMT6        K       8       PEA2 AC PRIMARY MIRROR/LENS CELL TEMP IMAGE 6
+RQTAPMT7        K       8       PEA2 AC PRIMARY MIRROR/LENS CELL TEMP IMAGE 7
+RQTH2MT0        K       8       PEA2 AC SECONDARY MIRROR TEMPERATURE IMAGE 0
+RQTH2MT1        K       8       PEA2 AC SECONDARY MIRROR TEMPERATURE IMAGE 1
+RQTH2MT2        K       8       PEA2 AC SECONDARY MIRROR TEMPERATURE IMAGE 2
+RQTH2MT3        K       8       PEA2 AC SECONDARY MIRROR TEMPERATURE IMAGE 3
+RQTH2MT4        K       8       PEA2 AC SECONDARY MIRROR TEMPERATURE IMAGE 4
+RQTH2MT5        K       8       PEA2 AC SECONDARY MIRROR TEMPERATURE IMAGE 5
+RQTH2MT6        K       8       PEA2 AC SECONDARY MIRROR TEMPERATURE IMAGE 6
+RQTH2MT7        K       8       PEA2 AC SECONDARY MIRROR TEMPERATURE IMAGE 7
+
+**************************************
+
+
+12) BATTERIES
+CONTENT=EPSBATT
+
+EB1CI           AMP     8       BATT 1 CHARGE CURRENT
+EB1DI           AMP     8       BATT 1 DISCHARGE CURRENT
+EB1V            V       8       BATT 1 VOLTAGE
+EB2CI           AMP     8       BATT 2 CHARGE CURRENT
+EB2DI           AMP     8       BATT 2 DISCHARGE CURRENT
+EB2V            V       8       BATT 2 VOLTAGE
+EB3CI           AMP     8       BATT 3 CHARGE CURRENT
+EB3DI           AMP     8       BATT 3 DISCHARGE CURRENT
+EB3V            V       8       BATT 3 VOLTAGE
+ECNV1V          V       8       CONV 1 +15V OUTPUT
+ECNV2V          V       8       CONV 2 +15V OUTPUT
+ECNV3V          V       8       CONV 3 +15V OUTPUT
+EEPA5V          V       8       +5V RCTU_EP A
+EEPB5V          V       8       +5V RCTU_EP B
+EOEB1CIC                8       BATTERY 1 CHARGE CURRENT - COUNTS ( EB1CI)
+EOEB1DIC                8       BATTERY 1 DISCHARGE CURRENT - COUNTS (EB1DI)
+EOEB1VC                 8       BATTERY 1 VOLTAGE - COUNTS
+EOEB2CIC                8       BATTERY 2 CHARGE CURRENT - COUNTS ( EB2CI)
+EOEB2D2C                8       BATTERY 2 DISCHARGE CURRENT - COUNTS (EB2DI)
+EOEB2D3C                8       BATTERY 3 DISCHARGE CURRENT - COUNTS (EB3DI)
+EOEB2VC                 8       BATTERY 2 VOLTAGE - COUNTS
+EOEB3CIC                8       BATTERY 3 CHARGE CURRENT - COUNTS ( EB3CI)
+EOEB3VC                 8       BATTERY 3 VOLTAGE - COUNTS
+EOECNV1C                8       PCU CONVERTER 1: +15V OUTPUT - ANALOG ( ECNV1V)
+EOECNV2C                8       PCU CONVERTER 2: +15V OUTPUT - ANALOG (ECNV2V)
+EOECNV3C                8       PCU CONVERTER 3: +15V OUTPUT - ANALOG (ECNV3V)
+EOESAC1C                8       -Y SOLAR ARRAY CURRENT - COUNTS (ESAMYI)
+EOESAC2C                8       +Y SOLAR ARRAY CURRENT - COUNTS (ESAPYI)
+EPA15V          V       8       +15V RCTU_EP A
+EPB15V          V       8       +15V RCTU_EP B
+ES1P5CV         V       8       ES-1 +5V CONVERTER VOLTAGE
+ES2P5CV         V       8       ES-2 +5V CONVERTER VOLTAGE
+ESAMYI          AMP     8       S/A -Y CURRENT
+ESAPYI          AMP     8       S/A +Y CURRENT
+
+
+**************************************
+13) HRC SSD
+
+
+
+**************************************
+
+
+13) S/C Thermal
+CONTENT=SPCTEMP 
+
+THE REST
+"CCDM"
+CPA1BPT         K       8       POWER AMP-1 BASEPLATE TEMPERATURE       
+CPA2BPT         K       8       POWER AMP-2 BASEPLATE TEMPERATURE       
+CUSOAIT         K       8       USO A INNER OVEN TEMP   
+CUSOBIT         K       8       USO B INNER OVEN TEMP   
+CXPNAIT         K       8       TRANSPONDER-A INTERNAL TEMP     
+CXPNBIT         K       8       TRANSPONDER-B INTERNAL TEMP     
+"PROP"
+PCM01T          K       8       PCM TEMP 01
+PCM02T          K       8       PCM TEMP 02
+PCM03T          K       8       PCM TEMP 03
+PCM04T          K       8       PCM TEMP 04
+PFDM101T        K       8       FDM1 TEMP 01
+PFDM102T        K       8       FDM1 TEMP 02
+PFDM201T        K       8       FDM2 TEMP 01
+PFDM202T        K       8       FDM2 TEMP 02
+PFFP01T         K       8       FFP TEMP 1
+PFTANK1T        K       8       FUEL TANK TEMP 01
+PFTANK2T        K       8       FUEL TANK TEMP 02
+PHETANKT        K       8       HE TANK OUTLET TEMP
+PHOFP1T         K       8       HE/OX FILL PANEL TEMP 1
+PLAED1AT        K       8       LAE DOME 1A TEMP IPS
+PLAED1BT        K       8       LAE DOME 1B TEMP IPS
+PLAED1CT        K       8       LAE DOME 1C TEMP IPS
+PLAED1DT        K       8       LAE DOME 1D TEMP IPS
+PLAED1ET        K       8       LAE DOME 1E TEMP IPS
+PLAED1FT        K       8       LAE DOME 1F TEMP IPS
+PLAED1GT        K       8       LAE DOME 1G TEMP IPS
+PLAED1HT        K       8       LAE DOME 1H TEMP IPS
+PLAED1IT        K       8       LAE DOME 1I TEMP IPS
+PLAED2AT        K       8       LAE DOME 2A TEMP IPS
+PLAED2BT        K       8       LAE DOME 2B TEMP IPS
+PLAED2CT        K       8       LAE DOME 2C TEMP IPS
+PLAED2DT        K       8       LAE DOME 2D TEMP IPS
+PLAED2ET        K       8       LAE DOME 2E TEMP IPS
+PLAED2FT        K       8       LAE DOME 2F TEMP IPS
+PLAED2GT        K       8       LAE DOME 2G TEMP IPS
+PLAED2HT        K       8       LAE DOME 2H TEMP IPS
+PLAED2IT        K       8       LAE DOME 2I TEMP IPS
+PLAED3AT        K       8       LAE DOME 3A TEMP IPS
+PLAED3BT        K       8       LAE DOME 3B TEMP IPS
+PLAED3CT        K       8       LAE DOME 3C TEMP IPS
+PLAED3DT        K       8       LAE DOME 3D TEMP IPS
+PLAED3ET        K       8       LAE DOME 3E TEMP IPS
+PLAED3FT        K       8       LAE DOME 3F TEMP IPS
+PLAED3GT        K       8       LAE DOME 3G TEMP IPS
+PLAED3HT        K       8       LAE DOME 3H TEMP IPS
+PLAED3IT        K       8       LAE DOME 3I TEMP IPS
+PLAED4AT        K       8       LAE DOME 4A TEMP IPS
+PLAED4BT        K       8       LAE DOME 4B TEMP IPS
+PLAED4CT        K       8       LAE DOME 4C TEMP IPS
+PLAED4DT        K       8       LAE DOME 4D TEMP IPS
+PLAED4ET        K       8       LAE DOME 4E TEMP IPS
+PLAED4FT        K       8       LAE DOME 4F TEMP IPS
+PLAED4GT        K       8       LAE DOME 4G TEMP IPS
+PLAED4HT        K       8       LAE DOME 4H TEMP IPS
+PLAED4IT        K       8       LAE DOME 4I TEMP IPS
+PLAEV1AT        K       8       LAE VALVE 1A TEMP IPS
+PLAEV1BT        K       8       LAE VALVE 1B TEMP IPS
+PLAEV2AT        K       8       LAE VALVE 2A TEMP IPS
+PLAEV2BT        K       8       LAE VALVE 2B TEMP IPS
+PLAEV3AT        K       8       LAE VALVE 3A TEMP IPS
+PLAEV3BT        K       8       LAE VALVE 3B TEMP IPS
+PLAEV4AT        K       8       LAE VALVE 4A TEMP IPS
+PLAEV4BT        K       8       LAE VALVE 4B TEMP IPS
+PLINE01T        K       8       PROP LINE TEMP 01
+PLINE02T        K       8       PROP LINE TEMP 02
+PLINE03T        K       8       PROP LINE TEMP 03
+PLINE04T        K       8       PROP LINE TEMP 04
+PLINE05T        K       8       PROP LINE TEMP 05
+PLINE06T        K       8       PROP LINE TEMP 06
+PLINE07T        K       8       PROP LINE TEMP 07
+PLINE08T        K       8       PROP LINE TEMP 08
+PLINE09T        K       8       PROP LINE TEMP 09
+PLINE10T        K       8       PROP LINE TEMP 10
+PLINE11T        K       8       PROP LINE TEMP 11
+PLINE12T        K       8       PROP LINE TEMP 12
+PLINE13T        K       8       PROP LINE TEMP 13
+PLINE14T        K       8       PROP LINE TEMP 14
+PLINE15T        K       8       PROP LINE TEMP 15
+PLINE16T        K       8       PROP LINE TEMP 16
+PM1THV1T        K       8       MUPS 1 THRUSTER VALVE 01 TEMP
+PM1THV2T        K       8       MUPS 1 THRUSTER VALVE 02 TEMP
+PM2THV1T        K       8       MUPS 2 THRUSTER VALVE 01 TEMP
+PM2THV2T        K       8       MUPS 2 THRUSTER VALVE 02 TEMP
+PM3THV1T        K       8       MUPS 3 THRUSTER VALVE 01 TEMP
+PM3THV2T        K       8       MUPS 3 THRUSTER VALVE 02 TEMP
+PM4THV1T        K       8       MUPS 4 THRUSTER VALVE 01 TEMP
+PM4THV2T        K       8       MUPS 4 THRUSTER VALVE 02 TEMP
+PMFP01T         K       8       MFP TEMP 1
+PMTANK1T        K       8       MUPS TANK TEMP 1
+PMTANK2T        K       8       MUPS TANK TEMP 2
+PMTANK3T        K       8       MUPS TANK TEMP 3
+PR1TV01T        K       8       RCS 1 THRUSTER VALVE 01 TEMP
+PR1TV02T        K       8       RCS 1 THRUSTER VALVE 02 TEMP
+PR2TV01T        K       8       RCS 2 THRUSTER VALVE 01 TEMP
+PR2TV02T        K       8       RCS 2 THRUSTER VALVE 02 TEMP
+PR3TV01T        K       8       RCS 3 THRUSTER VALVE 01 TEMP
+PR3TV02T        K       8       RCS 3 THRUSTER VALVE 02 TEMP
+PR4TV01T        K       8       RCS 4 THRUSTER VALVE 01 TEMP
+PR4TV02T        K       8       RCS 4 THRUSTER VALVE 02 TEMP
+PXDM01T         K       8       ODM TEMP 01
+PXDM02T         K       8       ODM TEMP 02
+PXTANK1T        K       8       OX TANK TEMP 01
+PXTANK2T        K       8       OX TANK TEMP 02
+"THM"
+TAPE1PST        K       8       PEA-1 POWER SUPPLY TEMP
+TAPE2PST        K       8       PEA-2 POWER SUPPLY TEMP
+TAPEA1T         K       8       PEA-1 CASE TEMP
+TAPEA2T         K       8       PEA-2 CASE TEMP
+TASPPCM         K       8       AFT SHEAR PANEL TEMP:-Z PCAD COMP
+TASPPCP         K       8       AFT SHEAR PANEL TEMP:+Z PCAD COMP
+TASPPCU         K       8       AFT SHEAR PANEL TEMP:PCU COMP
+TASPRWC         K       8       AFT SHEAR PANEL TEMP:RWA CRNR COMP
+TATECDPT        K       8       TEC DRIVER PRI TEMP
+TATECDRT        K       8       TEC DRIVER RDNT TEMP
+TB1T1           K       8       BATT 1 TEMP 1
+TB1T2           K       8       BATT 1 TEMP 2
+TB1T3           K       8       BATT 1 TEMP 3
+TB2T1           K       8       BATT 2 TEMP 1
+TB2T2           K       8       BATT 2 TEMP 2
+TB2T3           K       8       BATT 2 TEMP 3
+TB3T1           K       8       BATT 3 TEMP 1
+TB3T2           K       8       BATT 3 TEMP 2
+TB3T3           K       8       BATT 3 TEMP 3
+TBOLTCUT        K       8       DOOR BOLT-CUTTER TEMP
+TCM_CTU         K       8       CTU TEMP
+TCM_IFU         K       8       IU TEMP
+TCM_OBC         K       8       OBC TEMP
+TCM_PA1         K       8       RF POWER AMP-1 EXT BPL TEMP
+TCM_PA2         K       8       RF POWER AMP-2 EXT BPL TEMP
+TCM_PAN         K       8       CCDM PNL TEMP (+Z EDGE OF PNL)
+TCM_RFAS        K       8       RF ASSEMBLY TEMP
+TCM_SSR1        K       8       SS RECORDER-1 TEMP
+TCM_SSR2        K       8       SS RECORDER-2 TEMP
+TCM_TX1         K       8       TRANSPONDER-1 EXT BPL TEMP
+TCM_TX2         K       8       TRANSPONDER-2 EXT BPL TEMP
+TCM_USO         K       8       USO TEMP
+TCNR_BRM        K       8       -Y/+Z PANEL CORNER PANEL TEMP (BRM)
+TCYLAFT1        K       8       CNT CYL TEMP:16-IN FWD OF SC-TS FIT-1
+TCYLAFT2        K       8       CNT CYL TEMP:16-IN FWD OF SC-TS FIT-2
+TCYLAFT3        K       8       CNT CYL TEMP:16-IN FWD OF SC-TS FIT-3
+TCYLAFT4        K       8       CNT CYL TEMP:16-IN FWD OF SC-TS FIT-4
+TCYLAFT5        K       8       CNT CYL TEMP:16-IN FWD OF SC-TS FIT-5
+TCYLAFT6        K       8       CNT CYL TEMP:16-IN FWD OF SC-TS FIT-6
+TCYLCMM         K       8       CNT CYL TEMP: -Z CCDM COMP
+TCYLFMZM        K       8       CNT CYL TEMP:-Z SIDE UNDER LAE-1
+TCYLFMZP        K       8       CNT CYL TEMP:-Z SIDE UNDER LAE-2
+TCYLPCM         K       8       CNT CYL TEMP:-Z PCAD COMP
+TCYLPCP         K       8       CNT CYL TEMP:+Z PCAD COMP
+TCYLRWC         K       8       CNT CYL TEMP:RWA CRNR COMP
+TCYZ_RW1        K       8       RWA -1 TEMP (RWA CRNR COMP)
+TCYZ_RW6        K       8       RWA -6 TEMP (RWA CRNR COMP)
+TEIO            K       8       EPHIN ELECTRONICS HOUSING TEMP
+TEP_BPAN        K       8       BATT PNL TEMP OPPOSITE TEP_PPAN
+TEP_EIA         K       8       EIA TEMP
+TEP_PCU         K       8       PCU TEMP
+TEP_PPAN        K       8       PCU PNL TEMP OPPOSITE TEP_BPAN
+TEP_PSU1        K       8       PSU-1 TEMP
+TEP_PSU2        K       8       PSU-2 TEMP
+TEP_RCTU        K       8       RCTU-EP TEMP
+TEPHIN          K       8       EPHIN SENSOR HOUSING TEMP
+TESH1           K       8       EARTH SENSOR-1 HOUSING TEMP (+Y)
+TESH2           K       8       EARTH SENSOR-2 HOUSING TEMP (-Y)
+TFSPCMM         K       8       FWD SHEAR PANEL TEMP: - Z CCDM COMP
+TFSPCMP         K       8       FWD SHEAR PANEL TEMP: +Z CCDM COMP
+TFSPPCM         K       8       FWD SHEAR PANEL TEMP: -Z PCAD COMP
+TFSPPCP         K       8       FWD SHEAR PANEL TEMP: +Z PCAD COMP
+TFSPPCU         K       8       FWD SHEAR PANEL: PCU COMP
+TFSPRWC         K       8       FWD SHEAR PANEL: RWA CRNR COMP
+TFSSBKT1        K       8       FSS BRACKET-1 TEMP (+Y)
+TFSSBKT2        K       8       FSS BRACKET-2 TEMP (-Y)
+TFUTSUPN        K       8       FUEL TANK SUPPORT PNL TEMP: +Y/-Z CRNR
+TMYHNG          K       8       SUNSHADE DOOR HINGE BEAM TEMP (-Y SIDE)
+TMYSADA         K       8       -Y SADA TEMP
+TMZLGABM        K       8       -Z LOW-GAIN ANTENNA BOOM TEMP
+TMZP_CNT        K       8       -Z PNL TEMP:CENTER
+TMZP_MY         K       8       -Z PNL TEMP:-Y SIDE
+TMZP_PY         K       8       -Z PNL TEMP:+Y SIDE
+TOXTSUPN        K       8       OX-TANK SUPPORT PNL TEMP:-Y/+Z CRNR
+TPC_CEA         K       8       CEA TEMP
+TPC_DEA         K       8       DEA TEMP
+TPC_ESE         K       8       ESE TEMP
+TPC_FSSE        K       8       FSSE TEMP (BTWN UNITS)
+TPC_PAN         K       8       PCAD PNL TEMP (NEAR +X/+Z SA TIE-DOWN)
+TPC_RCTU        K       8       RCTU-PC TEMP
+TPC_WDA         K       8       WDA TEMP
+TPCM_RW4        K       8       RWA -4 TEMP (-Z PCAD COMP)
+TPCM_RW5        K       8       RWA -5 TEMP (-Z PCAD COMP)
+TPCP_RW2        K       8       RWA -2 TEMP (+Z PCAD COMP)
+TPCP_RW3        K       8       RWA -3 TEMP (+Z PCAD COMP)
+TPYSADA         K       8       +Y SADA TEMP
+TPZLGABM        K       8       +Z LOW-GAIN ANTENNA BOOM TEMP
+TRSPMTPC        K       8       RAD SHR PNL TEMP:TTWN MUPS AND PCAD
+TRSPOTEP        K       8       RAD SHR PNL TEMP:BTWN PCU AND OX-TANK
+TRSPOTEX        K       8       RAD SHR PNL TEMP:BTWN OX-TANK AND LAE
+TRSPOTPC        K       8       RAD SHR PNL TEMP:BTWN OX-TANK AND PCAD
+TRSPRWBB        K       8       RAD SHR PNL TEMP:BTWN RWA CRNR AND BATB
+TRSPRWBC        K       8       RAD SHR PNL TEMP:RWA CRNR AND BATC
+TRSPRWCM        K       8       RAD SHR PNL TEP:BTWN CCDM AND RWA CRNR
+TSAMYT          K       8       -Y WING SOLAR ARRAY TEMP
+TSAPYT          K       8       +Y WING SOLAR ARRAY TEMP
+TSCIUSF1        K       8       SC-IUS FITTING-1 TEMP
+TSCIUSF2        K       8       SC-IUS FITTING-2 TEMP
+TSCIUSF5        K       8       SC-IUS FITTING-5 TEMP
+TSCIUSF8        K       8       SC-IUS FITTING-8 TEMP
+TSCTSF1         K       8       SC-TS FITTING -1 TEMP
+TSCTSF2         K       8       SC-TS FITTING -2 TEMP
+TSCTSF3         K       8       SC-TS FITTING -3 TEMP
+TSCTSF4         K       8       SC-TS FITTING -4 TEMP
+TSCTSF5         K       8       SC-TS FITTING -5 TEMP
+TSCTSF6         K       8       SC-TS FITTING -6 TEMP
+
+
+
+**************************************
+
+ 
+
+
+
+14)
+CONTENT=PCADGRATE 
+CONTENT=PCADGDRIFT
+CONTENT=PCADWRATE 
+
+IRU/GYRO
+AI1AX1X                 8       IRU-1 AXIS 1X ANALOG RATE
+AI1AX1Y                 8       IRU-1 AXIS 1Y ANALOG RATE
+AI1AX2X                 8       IRU-1 AXIS 2X ANALOG RATE
+AI1AX2Y                 8       IRU-1 AXIS 2Y ANALOG RATE
+AI2AX1X                 8       IRU-2 AXIS 1X ANALOG RATE
+AI2AX1Y                 8       IRU-2 AXIS 1Y ANALOG RATE
+AI2AX2X                 8       IRU-2 AXIS 2X ANALOG RATE
+AI2AX2Y                 8       IRU-2 AXIS 2Y ANALOG RATE
+AOGYRCT1        CNTS    16      SELECTED ACCUMULATED GYRO 0 COUNTS
+AOGYRCT2        CNTS    16      SELECTED ACCUMULATED GYRO 1 COUNTS
+AOGYRCT3        CNTS    16      SELECTED ACCUMULATED GYRO 2 COUNTS
+AOGYRCT4        CNTS    16      SELECTED ACCUMULATED GYRO 3 COUNTS
+AOGBIAS1        RPS     32      GYRO DRIFT RATE ESTIMATE (ROLL).
+AOGBIAS2        RPS     32      GYRO DRIFT RATE ESTIMATE (PITCH).
+AOGBIAS3        RPS     32      GYRO DRIFT RATE ESTIMATE (YAW).
+ORADCT01                4       ORADCT01 AVERAGE RADIATION COUNTS FOR SYSTEM 
+ORADCT02                4       ORADCT02 AVERAGE RADIATION COUNTS FOR SYSTEM 
+ORADCT03                4       ORADCT03 AVERAGE RADIATION COUNTS FOR SYSTEM 
+ORADCT04                4       ORADCT04 AVERAGE RADIATION COUNTS FOR SYSTEM 
+ORADCT05                4       ORADCT05 AVERAGE RADIATION COUNTS FOR SYSTEM 
+ORADCT06                4       ORADCT06 AVERAGE RADIATION COUNTS FOR SYSTEM 
+ORADCT07                4       ORADCT07 AVERAGE RADIATION COUNTS FOR SYSTEM 
+ORADCT08                4       ORADCT08 AVERAGE RADIATION COUNTS FOR SYSTEM 
+ORADCT09                4       ORADCT09 AVERAGE RADIATION COUNTS FOR SYSTEM 
+ORADCT10                4       ORADCT10 AVERAGE RADIATION COUNTS FOR SYSTEM 
+ORADCT11                4       ORADCT11 AVERAGE RADIATION COUNTS FOR SYSTEM 
+ORADCT12                4       ORADCT12 AVERAGE RADIATION COUNTS FOR SYSTEM 
+ORADCT13                4       ORADCT13 AVERAGE RADIATION COUNTS FOR SYSTEM 
+AORWCMD1        FTLB    32      REACTION WHEEL TORQUE COMMANDS 1
+AORWCMD2        FTLB    32      REACTION WHEEL TORQUE COMMANDS 2
+AORWCMD3        FTLB    32      REACTION WHEEL TORQUE COMMANDS 3
+AORWCMD4        FTLB    32      REACTION WHEEL TORQUE COMMANDS 4
+AORWCMD5        FTLB    32      REACTION WHEEL TORQUE COMMANDS 5
+AORWCMD6        FTLB    4       REACTION WHEEL TORQUE COMMANDS 6
+AORWCNT1        ND      16      TACH PULSE COUNT 1 (2S COMPLEMENT)
+AORWCNT2        ND      16      TACH PULSE COUNT 2 (2S COMPLEMENT)
+AORWCNT3        ND      16      TACH PULSE COUNT 3 (2S COMPLEMENT)
+AORWCNT4        ND      16      TACH PULSE COUNT 4 (2S COMPLEMENT)
+AORWCNT5        ND      16      TACH PULSE COUNT 5 (2S COMPLEMENT)
+AORWCNT6        ND      16      TACH PULSE COUNT 6 (2S COMPLEMENT)
+AORWMC1                 48      COMMANDED REACTION WHEEL ANGULAR MOMENTUM (1)
+AORWMC4                 48      COMMANDED REACTION WHEEL ANGULAR MOMENTUM (4)
+AORWMC5                 48      COMMANDED REACTION WHEEL ANGULAR MOMENTUM (5)
+AORWSPD1        RPS     32      REACTION WHEEL RATES -- AORWSPD1
+AORWSPD2        RPS     32      REACTION WHEEL RATES -- AORWSPD2
+AORWSPD3        RPS     32      REACTION WHEEL RATES -- AORWSPD3
+AORWSPD4        RPS     32      REACTION WHEEL RATES -- AORWSPD4
+AORWSPD5        RPS     32      REACTION WHEEL RATES -- AORWSPD5
+AORWSPD6        RPS     32      REACTION WHEEL RATES -- AORWSPD6
+
+
+
+**************************************
+15 ACIS DEA
+
+DATA BASED DIRECTLY FROM acis...sw.fits Level 0 file:
+
+For this file MSIDS are written as Quartets:
+TIME QUERY_NAME, QUERY_VAL_TU, QUERY_VAL : 
+instead of the normal rows:
+TIME, MSID1, MSID2, MSID3.
+
+NO MTA CONTENT KEYWORD
+
+DEAHOUSE_CNTL_RELAY 
+DEAHOUSE_CNTL_ADC_TMP_BEP_PCB 
+DEAHOUSE_CNTL_ADC_TMP_BEP_OSC 
+DEAHOUSE_CNTL_ADC_TMP_FEP0_MONG 
+DEAHOUSE_CNTL_ADC_TMP_FEP0_PCB 
+DEAHOUSE_CNTL_ADC_TMP_FEP0_ACTEL 
+DEAHOUSE_CNTL_ADC_TMP_FEP0_RAM 
+DEAHOUSE_CNTL_ADC_TMP_FEP0_FB 
+DEAHOUSE_CNTL_ADC_TMP_FEP1_MONG 
+DEAHOUSE_CNTL_ADC_TMP_FEP1_PCB 
+DEAHOUSE_CNTL_ADC_TMP_FEP1_ACTEL 
+DEAHOUSE_CNTL_ADC_TMP_FEP1_RAM 
+DEAHOUSE_CNTL_ADC_TMP_FEP1_FB 
+DEAHOUSE_CNTL_ADC_FPTEMP_12 
+DEAHOUSE_CNTL_ADC_FPTEMP_11 
+DEAHOUSE_CNTL_ADC_DPAGNDREF1 
+DEAHOUSE_CNTL_ADC_DPA5VHKA 
+DEAHOUSE_CNTL_ADC_DPAGNDREF2 
+DEAHOUSE_CNTL_ADC_DPA5VHKB 
+DEAHOUSE_CNTL_ADC_DEA28VDCA 
+DEAHOUSE_CNTL_ADC_DEA24VDCA 
+DEAHOUSE_CNTL_ADC_DEAM15VDCA 
+DEAHOUSE_CNTL_ADC_DEAP15VDCA 
+DEAHOUSE_CNTL_ADC_DEAM6VDCA 
+DEAHOUSE_CNTL_ADC_DEAP6VDCA 
+DEAHOUSE_CNTL_ADC_RAD_PCB_A 
+DEAHOUSE_CNTL_ADC_GND_1 
+DEAHOUSE_CNTL_ADC_DEA28VDCB 
+DEAHOUSE_CNTL_ADC_DEA24VDCB 
+DEAHOUSE_CNTL_ADC_DEAM15VDCB 
+DEAHOUSE_CNTL_ADC_DEAP15VDCB 
+DEAHOUSE_CNTL_ADC_DEAM6VDCB 
+DEAHOUSE_CNTL_ADC_DEAP6VDCB 
+DEAHOUSE_CNTL_ADC_RAD_PCB_B 
+DEAHOUSE_CNTL_ADC_GND_2 
+**************************************
+
+19
+#
+#
+# HRC Bilevels (1.3.12) SJW (3/1)
+2C1LVBS		hrcbielec
+2C2LVBS		hrcbielec
+2CSLSHM		hrcbielec
+2CSLSMX		hrcbielec
+2DRLSCL		hrcbielec
+2DRLSOP		hrcbielec
+2ELEASS		hrcbielec
+2ELEBSS		hrcbielec
+2FSCAST		hrcbielec
+2FSMRST		hrcbielec
+2FSNYST		hrcbielec
+2FSPYST		hrcbielec
+2IMHVBS		hrcbielec
+2MYLSHM		hrcbielec
+2MYLSMX		hrcbielec
+2PREADS		hrcbielec
+2PREBDS		hrcbielec
+2PS5AON		hrcbielec
+2PS5BON		hrcbielec
+2PYLSHM		hrcbielec
+2PYLSMX		hrcbielec
+2S1HVBS		hrcbielec
+2S2HVBS		hrcbielec
+2SPHVBS		hrcbielec
+
+ 'MTRSELCT'           / Selected Motor
+ 'MTRSTATR'           / Motor Status Register
+ 'MTRCMNDR'           / Motor Command Register
+ 'SCTHAST '           / Last Motor Step Load

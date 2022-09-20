@@ -1,0 +1,91 @@
+# This file contains the information needed to generate
+# email list of people to notify of alerts in the 
+# various instruments.
+#
+# The Column definitions are as follows:
+#
+#       Instr: Instrument catagory
+#    Resp_Sci: Scientist Responsible for this Instrument.
+#       Email: Recipient email address
+#       Pager: Flag if address is a pager
+#
+# The columns MUST be TAB delimited!
+#
+#Instr  Resp_Sci                Email Address                   Pager
+#-----  -------------------     -------------------------       -----
+tel	Dr. Daniel Schwartz	das@head-cfa.harvard.edu
+tel	Dr. Daniel Schwartz	das@head-cfa.harvard.edu	Y
+tel 	Dr. Daniel Schwartz	1636502@skytel.com		Y
+tel 	Dr. Daniel Schwartz	swolk@head-cfa.harvard.edu
+tel 	Dr. Daniel Schwartz	1636500@skytel.com		Y
+tel 	Dr. Daniel Schwartz	wjackson@head-cfa.harvard.edu
+tel 	Dr. Daniel Schwartz	mtadude@head-cfa.harvard.edu
+#
+grad	Dr. Daniel Schwartz	das@head-cfa.harvard.edu
+grad	Dr. Daniel Schwartz	das@head-cfa.harvard.edu	Y
+grad	Dr. Daniel Schwartz	1636502@skytel.com		Y
+grad	Dr. Daniel Schwartz	swolk@head-cfa.harvard.edu
+grad	Dr. Daniel Schwartz	1636500@skytel.com		Y
+grad	Dr. Daniel Schwartz	wjackson@head-cfa.harvard.edu
+grad	Dr. Daniel Schwartz	mtadude@head-cfa.harvard.edu
+#
+pcad	Dr. Robert Cameron	rac@head-cfa.harvard.edu
+pcad	Dr. Robert Cameron	7723038@skytel.com		Y
+pcad	Dr. Robert Cameron	taldcroft@head-cfa.harvard.edu
+pcad	Dr. Robert Cameron	7723035@skytel.com		Y
+pcad	Dr. Robert Cameron	swolk@head-cfa.harvard.edu
+pcad	Dr. Robert Cameron	1636500@skytel.com		Y
+pcad	Dr. Robert Cameron	emartin@head-cfa.harvard.edu
+pcad	Dr. Robert Cameron	mtadude@head-cfa.harvard.edu
+#
+hrc	Dr. Michael Juda	juda@head-cfa.harvard.edu
+hrc	Dr. Michael Juda	juda@head-cfa.harvard.edu	Y
+hrc	Dr. Michael Juda	1636490@skytel.com		Y
+hrc	Dr. Michael Juda	swolk@head-cfa.harvard.edu
+hrc	Dr. Michael Juda	1636500@skytel.com		Y
+hrc	Dr. Michael Juda	anorthrup@head-cfa.harvard.edu
+hrc	Dr. Michael Juda	mtadude@head-cfa.harvard.edu
+#
+acis	Dr. Paul Plucinsky	plucinsk@head-cfa.harvard.edu
+acis	Dr. Paul Plucinsky	1636493@skytel.com		Y
+acis	Dr. Paul Plucinsky	ybutt@head-cfa.harvard.edu
+acis	Dr. Paul Plucinsky	1636449@skytel.com		Y
+acis	Dr. Paul Plucinsky	swolk@head-cfa.harvard.edu
+acis	Dr. Paul Plucinsky	1636500@skytel.com		Y
+acis	Dr. Paul Plucinsky	anorthrup@head-cfa.harvard.edu
+acis	Dr. Paul Plucinsky	mtadude@head-cfa.harvard.edu
+#
+grat	Dr. Michael Juda	juda@head-cfa.harvard.edu
+grat	Dr. Michael Juda	juda@head-cfa.harvard.edu	Y
+grat	Dr. Michael Juda	1636490@skytel.com		Y
+grat	Dr. Michael Juda	swolk@head-cfa.harvard.edu
+grat	Dr. Michael Juda	1636500@skytel.com		Y
+grat	Dr. Michael Juda	anorthrup@head-cfa.harvard.edu
+grat	Dr. Michael Juda	mtadude@head-cfa.harvard.edu
+#
+sim	Dr. Daniel Schwartz	das@head-cfa.harvard.edu
+sim	Dr. Daniel Schwartz	das@head-cfa.harvard.edu	Y
+sim	Dr. Daniel Schwartz	1636502@skytel.com		Y
+sim	Dr. Daniel Schwartz	swolk@head-cfa.harvard.edu
+sim	Dr. Daniel Schwartz	1636500@skytel.com		Y
+sim	Dr. Daniel Schwartz	mtadude@head-cfa.harvard.edu
+sim	Dr. Daniel Schwartz	wpodgorski@head-cfa.harvard.edu
+sim	Dr. Daniel Schwartz	emartin@head-cfa.harvard.edu
+#
+sub	Dr. Scott Wolk		swolk@head-cfa.harvard.edu
+sub	Dr. Scott Wolk		swolk@head-cfa.harvard.edu	Y
+sub	Dr. Scott Wolk		1636500@skytel.com		Y
+sub	Dr. Scott Wolk		mtadude@head-cfa.harvard.edu
+sub	Dr. Scott Wolk		btwambly@head-cfa.harvard.edu
+#
+eph	Dr. Michael Juda	juda@head-cfa.harvard.edu
+eph	Dr. Michael Juda	juda@head-cfa.harvard.edu	Y
+eph	Dr. Michael Juda	1636490@skytel.com		Y
+eph	Dr. Michael Juda	swolk@head-cfa.harvard.edu
+eph	Dr. Michael Juda	1636500@skytel.com		Y
+eph	Dr. Michael Juda	mtadude@head-cfa.harvard.edu
+eph	Dr. Michael Juda	anorthrup@head-cfa.harvard.edu
+#
+monitor	Dr. Scott Wolk		swolk@head-cfa.harvard.edu
+monitor	Dr. Takashi Isobe	isobe@head-cfa.harvard.edu
+

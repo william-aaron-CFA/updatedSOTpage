@@ -1,0 +1,297 @@
+This is a list of the highest priority M&TA tasks. 
+There is no prioritization given within the list because I feel that
+this list give the minimum that we must be capable of by September in
+order to demonstrate that we have a basic understanding of the overall
+spacecraft and the data flow.  The are 39 tasks in the list, not
+including 5 HRC tasks which will probably be done but won't be needed
+nor several ACIS tasks which require ground commanding and are not
+relevant to the first set of test.  My biggest concern is still
+databases.   Many of the PCAD tools take
+their limits from the OCAT, others rely on limits from the CAL
+database. I am willing to ``stub'' these values for September.  
+But we must be able
+to access our own database.  I still feel June is the deadline for
+seeing how this will work.  So this means we must learn how to do it
+in April.
+
+It may appear from this list that we are
+simply duplicating what is already being done at OCC.  That is not
+true.  The selected item were chosen because of there straightforward
+nature.  None of the ACIS tasks, and none of the HRC or PCAD imaging
+tasks is capable of being performed at the OCC.  Also the data at the
+OCC are not under ASC control.  As the lessons of XRCF have taught us,
+control of our data is critical to understanding its meaning. Finally,
+none of the 90 or so additional tasks, required by flight are covered
+by the OCC.  Where there is overlap in the monitoring it is needed to
+cover a flight trending need.The corollary is that the ~80 tasks to be written in the 6 months
+from Sept. through Feb.  are far more complex than the 39 being written in
+the six months between now and September.
+
+
+This is very much a minimum list.  The fact of the matter remains that
+ASC is required to deliver fully functional software capable of monitoring and
+trending all items in the Carilli book by the February end to end test.
+We expect to spend from February through August putting the software
+through its paces, fully understanding it, identifying and correcting
+weaknesses, and making it flight worthy.
+
+-Scott
+
+
+
+ACIS  -
+
+Most of the ACIS tasks are done by the ACIS as it can be directed via
+ground based commands.  Operationally a command is issued to collect
+the data.  M&TA simply receives and checks the data.  These tasks may
+not be commanded during I&T in September but certainly will be in
+February.  All but 241, 247 and 2410 could  be put at slightly lower
+priority. (that leaves 39 at top priority).
+
+==> monitor_241.txt <==
+ACIS MONITORING and TRENDS ANALYSIS
+1.4.1 Verify ACIS configuration, operational status, flight software status, 
+
+==> monitor_242.txt <==
+ACIS MONITORING AND TRENDS ANALYSIS
+1.4.2 Determine ACIS Background Rates
+
+==> monitor_243.txt <==
+ACIS TRENDS ANALYSIS
+1.4.3 Compute electronic readout noise
+
+==> monitor_245.txt <==
+ACIS MONITORING ANALYSIS
+1.4.5 Generate Image in Detector Coordinates NRT
+
+==> monitor_247.txt <==
+ACIS Monitoring Example
+1.4.7 Check ACIS thermal control
+
+==> monitor_248.txt <==
+ACIS Monitoring Example
+1.4.8 Monitor ACIS electronics
+
+==> monitor_249.txt <==
+ACIS TRENDS ANALYSIS
+1.4.9  Check DEA operating values and system operating conditions
+ statistics 
+
+==> monitor_2410.txt <==
+ACIS Monitoring
+1.4.10 Check ACIS mechanism controller status
+
+
+ALIGNMENTS
+none in first 52.
+
+HRC
+All the task here are part of the trial development thread.
+So I expect them to exist soon. However, 3.1-3.4 concern the detector
+which is not to be exposed in the first test.  So they are NOT needed
+in September.
+
+==> monitor_task.3.1 <==
+5.6.2.1.3.1 Determine HRC background event counting rates, and check
+	against limits.
+requires pipeline output  - Not needed by Sept
+
+==> monitor_task.3.2 <==
+5.6.2.1.3.2 Determine X-ray target source counting rates
+requires pipeline output  - Not needed by Sept
+
+
+==> monitor_task.3.3 <==
+5.6.2.1.3.3 Construct pulse height distributions for background
+	events, and for target or other source events when sufficient
+requires pipeline output  - Not needed by Sept
+
+==> monitor_task.3.4 <==
+5.6.2.1.3.4 Construct an image in detector coordinates (without aspect 
+	correction). Compare with expected template of hot spots and dead 
+requires pipeline output  - Not needed by Sept
+
+
+==> monitor_task.3.5 <==
+5.6.2.1.3.5 Determine Veto Counting Rates
+
+
+==> monitor_task.3.6 <==
+5.6.2.1.3.6 Utilize next-in-line mode data to infer background rates and 
+            proper functional state
+
+==> monitor_task.3.7 <==
+5.6.2.1.3.7 Update total amount of charge extracted from MCP image,
+	check against limits, create advisory for science operation of
+
+- Not needed by Sept
+
+==> monitor_task.3.8 <==
+5.6.2.1.3.8 Check HRC temperatures
+
+
+==> monitor_task.3.9 <==
+5.6.2.1.3.8 Monitor HRC electronics for expected functional states, voltages,
+            currents
+
+
+==> monitor_task.3.12 <==
+Determine HRC state vector.
+
+
+HRMA
+==> hrma_mon.1.1 <==
+
+5.6.2.1.1.1 and .2  Retrieve HRMA temperature readouts and convert digital 
+                    readouts to degrees
+
+==> hrma_mon.1.3 <==
+
+5.6.2.1.1.3  Calculate axial, radial, diametral gradients for the CAP,  other 
+	     HRMA structural elements, and the HRMA thermal control zones
+
+==> hrma_mon.1.4 <==
+
+
+5.6.2.1.1.4  Perform limit checks on the absolute temperatures, and on each 
+             gradient
+5.6.2.1.1.5  Compute temperature status and flags
+	     
+
+==> hrma_mon.1.6 <==
+
+5.6.2.1.1.6  Format temperature readings, and inferred HRMA temperatures
+             and gradients, and prepare data for the status data base, and 
+             status reports for the trends data base
+
+
+==> hrma_mon.2.1 <==
+
+5.6.2.1.2.1 and .2  Retrieve HRMA thermal control system housekeeping
+                    data and convert digital readouts to voltages and 
+                    current units
+
+
+==> hrma_mon.2.3 <==
+
+5.6.2.1.2.3  Format HRMA thermal control status, and prepare entries for 
+             the status and trends databases
+
+PCAD - Many of the PCAD monitoring tasks require the OCAT.  
+We need to know its availability and how to access it very soon.
+June at the latest.
+
+==> PCAD_mon.2.1 <==
+    SE03   Sept 1995     5.6.2.1.2.1   Check on-board quaternion vs. expected pointing
+
+==> PCAD_mon.2.2 <==
+    SE03  Sept 1995      5.6.2.1.2.2    Determine Aspect Camera Assembly temperatures
+
+==> PCAD_mon.2.3 <==
+    SE03 Sept. 1995      5.6.2.1.2.3    Check ACA configuration
+
+
+==> PCAD_mon.2.5.1 <==
+
+    SE03  Sept 1995      5.6.2.1.2.5.1   Check expected position of each fid light
+
+==> PCAD_mon.2.5.2 <==
+
+    SE03   Sept 1995     5.6.2.1.2.5.2   Check expected pattern consistency of
+
+==> PCAD_mon.2.5.3 <==
+
+    SE03  Sept 1995      5.6.2.1.2.5.3   Check magnitudes of fid lights
+
+==> PCAD_mon.2.5.4 <==
+
+    SE03 Sept 1995       5.6.2.1.2.5.4   Check PRF of each FID light
+
+==> PCAD_mon.2.7 <==
+Function: 
+    SE03 Sept. 1995      5.6.2.1.2.7   Check CCD camera dark current, readout
+
+==> PCAD_mon.2.8 <==
+    SE03  Sept 1995      5.6.2.1.2.8    Check temperatures of, and  
+					temperature gradient across, the
+                                        periscope, and other FTS components
+==> PCAD_mon.2.9 <==
+    SE03 Sept. 1995      5.6.2.1.2.9   Check IRU configuration status
+
+==> PCAD_mon.2.10 <==
+    SE03  Sept 1995      5.6.2.1.2.10   Determine IRU temperatures and voltages
+
+==> PCAD_mon.2.11 <==
+    SE03  Sept 1995      5.6.2.1.2.11  Check for gyro rate data within limits
+
+==> PCAD_mon.2.12 <==
+    SE03  Sept 1995      5.6.2.1.2.12  Monitor drift rate updates to gyros
+
+==> PCAD_mon.2.14 <==
+    SE03  Sept 1995      5.6.2.1.2.14  Determine reaction wheel rates
+
+==> PCAD_mon.2.15 <==
+    SE03  Sept 1995      5.6.2.1.2.15   Determine RCS gas usage, and amount in tanks
+
+
+SIM
+
+==> SIM_mon.6.1 <==
+Function: 
+    SE03  Sept 1995      5.6.2.1.6.1   Determine X-axis position, compare with
+                                       expectation
+                         5.6.2.1.6.2   Determine Z-axis position, compare with
+                                       expectation
+
+==> SIM_mon.6.3 <==
+Function: 
+    SE03  Sept 1995      5.6.2.1.6.3    Determine SIM temperatures and voltages
+
+
+==> SIM_mon.6.4 <==
+Function: 
+    SE03  Sept 1995      5.6.2.1.6.4   Monitor SIM actuator use (number of
+                                       maneuvers and distance moved)
+==> SIM_mon.6.6 <==
+Function: 
+    SE03 4/95            5.6.2.1.6.6  Format SIM status and parameters, and
+                                      prepare entries for the status and
+                                      trends databases.
+
+
+==> SUBSYS_mon.8.1 <==
+Function: 
+    SE03   Sept 1995     5.6.2.1.8.1   Error Statistics Compilation: provide
+ 				       capability to compile the bit error
+				       statistics and summary of bit fixes
+
+
+==> SUBSYS_mon.8.2 <==
+Function: 
+    SE03   Sept 1995     5.6.2.1.8.2   Monitor OBC State
+
+
+==> SUBSYS_mon.8.3 <==
+Function: 
+    SE03   Sept 1995     5.6.2.1.8.3  Monitor spacecraft equipment 
+                                      configuration, compiling A/B side 
+                                      redundancy usage
+
+==> SUBSYS_mon.8.4 <==
+Function: 
+    SE03   Sept 1995     5.6.2.1.8.4  Monitor spacecraft temperatures
+
+
+==> SUBSYS_mon.8.5 <==
+Function: 
+    SE03   Sept 1995     5.6.2.1.8.5  Monitor power usage and availability
+
+==> SUBSYS_mon.8.6 <==
+Function: 
+    SE03   Sept 1995     5.6.2.1.8.6   Monitor radiation detector readings
+                                   6.1 Convert Radiation detector telemetry
+                                       into counting rates and calculate errors
+                                   6.2 Perform limit checks: if over threshold
+
+
+

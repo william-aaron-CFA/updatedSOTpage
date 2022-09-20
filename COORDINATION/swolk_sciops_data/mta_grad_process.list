@@ -1,0 +1,174 @@
+# This file contains the information needed to monitor Gradient mnemonics
+#
+# The file consists of two columns. 
+#   1) Column = Column name of data element to be monitored
+#   2) Group  = Monitoring group assignment.
+#                 this field must correspond to a record in the master group list
+#                 and be the concatenation of "subsyst" and "catagory"
+#
+# The columns MUST be TAB delimited! 
+#
+#Column		group
+# name		
+#------		-----
+#
+# HRMA gradradients (CAP)
+HCAPGRD1	gradcap
+HCAPGRD2	gradcap
+HCAPGRD3	gradcap
+HCAPGRD4	gradcap
+HCAPGRD5	gradcap
+HCAPGRD6	gradcap
+HCAPGRD7	gradcap
+HCAPGRD8	gradcap
+#
+# HRMA gradradients (FAP)
+HFAPGRD1	gradfap
+HFAPGRD2	gradfap
+HFAPGRD3	gradfap
+HFAPGRD4	gradfap
+HFAPGRD5	gradfap
+HFAPGRD6	gradfap
+HFAPGRD7	gradfap
+HFAPGRD8	gradfap
+HFAPGRD9	gradfap
+#
+#
+HPFLXGRD1	gradhpflex
+HPFLXGRD2	gradhpflex
+HPFLXGRD3	gradhpflex
+HPFLXGRD4	gradhpflex
+HPFLXGRD5	gradhpflex
+HPFLXGRD6	gradhpflex
+HPFLXGRD7	gradhpflex
+HPFLXGRD8	gradhpflex
+HPFLXGRD9	gradhpflex
+#
+#
+HHFLXGRD1	gradhhflex
+HHFLXGRD2	gradhhflex
+HHFLXGRD3	gradhhflex
+HHFLXGRD4	gradhhflex
+HHFLXGRD5	gradhhflex
+HHFLXGRD6	gradhhflex
+HHFLXGRD7	gradhhflex
+HHFLXGRD8	gradhhflex
+HHFLXGRD9	gradhhflex
+#
+#
+HSTRTGRD1	gradhstrut
+HSTRTGRD2	gradhstrut
+HSTRTGRD3	gradhstrut
+HSTRTGRD4	gradhstrut
+HSTRTGRD5	gradhstrut
+HSTRTGRD6	gradhstrut
+#
+#
+HPCOLBGRD1	gradpcolb
+HPCOLBGRD2	gradpcolb
+#
+#
+HAHEATGRD1	gradahet
+HAHEATGRD2	gradahet
+HAHEATGRD3	gradahet
+#
+#
+HOCYLGRD1	gradocyl
+HOCYLGRD2	gradocyl
+HOCYLGRD3	gradocyl
+HOCYLGRD4	gradocyl
+HOCYLGRD5	gradocyl
+HOCYLGRD6	gradocyl
+#
+#
+HAICYLGRD	gradaincyl
+#
+#
+HCONEGRD1	gradhcone
+HCONEGRD2	gradhcone
+HCONEGRD3	gradhcone
+HCONEGRD4	gradhcone
+HCONEGRD5	gradhcone
+HCONEGRD6	gradhcone
+HCONEGRD7	gradhcone
+HCONEGRD8	gradhcone
+HCONEGRD9	gradhcone
+HCONEGRD10	gradhcone
+HCONEGRD11	gradhcone
+HCONEGRD12	gradhcone
+HCONEGRD13	gradhcone
+HCONEGRD14	gradhcone
+HCONEGRD15	gradhcone
+HCONEGRD16	gradhcone
+HCONEGRD17	gradhcone
+HCONEGRD18	gradhcone
+HCONEGRD19	gradhcone
+HCONEGRD20	gradhcone
+HCONEGRD21	gradhcone
+HCONEGRD22	gradhcone
+HCONEGRD23	gradhcone
+HCONEGRD24	gradhcone
+HCONEGRD25	gradhcone
+HCONEGRD26	gradhcone
+HCONEGRD27	gradhcone
+HCONEGRD28	gradhcone
+HCONEGRD29	gradhcone
+HCONEGRD30	gradhcone
+HCONEGRD31	gradhcone
+HCONEGRD32	gradhcone
+HCONEGRD33	gradhcone
+HCONEGRD34	gradhcone
+HCONEGRD35	gradhcone
+HCONEGRD36	gradhcone
+HCONEGRD37	gradhcone
+HCONEGRD38	gradhcone
+HCONEGRD39	gradhcone
+HCONEGRD40	gradhcone
+HCONEGRD41	gradhcone
+HCONEGRD42	gradhcone
+HCONEGRD43	gradhcone
+HCONEGRD44	gradhcone
+#
+#
+HAFTBGRD1	gradablk
+HAFTBGRD2	gradablk
+HAFTBGRD3	gradablk
+#
+#
+HFRDBGRD1	gradfblk
+HFRDBGRD2	gradfblk
+HFRDBGRD3	gradfblk
+HFRDBGRD4	gradfblk
+HFRDBGRD5	gradfblk
+HFRDBGRD7	gradfblk
+HFRDBGRD8	gradfblk
+HFRDBGRD10	gradfblk
+HFRDBGRD11	gradfblk
+HFRDBGRD12	gradfblk
+HFRDBGRD13	gradfblk
+HFRDBGRD14	gradfblk
+#
+#
+HPRIGRD	gradperi
+#
+#
+HSSTRTGRD1	gradsstrut
+HSSTRTGRD2	gradsstrut
+HSSTRTGRD3	gradsstrut
+HSSTRTGRD4	gradsstrut
+HSSTRTGRD5	gradsstrut
+HSSTRTGRD6	gradsstrut
+#
+#
+HTFTEGRD1	gradtfte
+HTFTEGRD2	gradtfte
+HTFTEGRD3	gradtfte
+HTFTEGRD4	gradtfte
+HTFTEGRD5	gradtfte
+HTFTEGRD6	gradtfte
+HTFTEGRD7	gradtfte
+HTFTEGRD8	gradtfte
+HTFTEGRD9	gradtfte
+HTFTEGRD10	gradtfte
+HTFTEGRD11	gradtfte
+HTFTEGRD12	gradtfte

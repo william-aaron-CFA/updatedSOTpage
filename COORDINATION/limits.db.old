@@ -1,0 +1,93 @@
+# name		yel_lower	yel_upper	red_lower	red_upper	date_valid	comments
+#-----		----------	---------	----------	---------	----------	----------
+# HRC Temperatures
+2SPHVATM        30.0            45		10              50		0		GMC
+2SPINATM        30.0            85		10              80		0		GMC
+2IMINATM        30.0            85		10              80		0		GMC
+2LVPLATM        30.0            65		10              80		0		GMC
+2FEPRATM        30.0            85		10              80		0		GMC
+2IMHVATM        30.0            65		10              80		0		GMC
+2SMTRATM        30.0            200		10              220		0		GMC
+2FE00ATM        30.0            65		10              80		0		GMC
+2CE00ATM        30.0            85		10              80		0		GMC
+2CE01ATM        30.0            85		10              80		0		GMC
+#
+# name		yel_lower	yel_upper	red_lower	red_upper	date_valid	comments
+#-----		----------	---------	----------	---------	----------	--------
+# HRC Electronics words
+2C05PALV        0		235		0		240		0		GMC
+2C15PALV        0		235		0		240		0		GMC
+2C15NALV        0		90		0		100		0		GMC
+2C24PALV        0		235		0		240		0		GMC
+2IMTPAST        0		90		0		100		0		GMC
+2S2HVLV         0		235		0		240		0		GMC
+2S2HVST         0		90		0		100		0		GMC
+215NCAST        0		90		0		100		0		GMC
+215PCAST        0		90		0		100		0		GMC
+224PCAST        0		90		0		100		0		GMC
+2SPTPAST        0		90		0		100		0		GMC
+2SPBPAST        0		110		0		150		0		GMC
+2IMHBLV         0		110		0		120		0		GMC
+2IMHVLV         0		140		0		150		0		GMC
+2IMBPAST        0		90		0		100		0		GMC
+#
+# name		yel_lower	yel_upper	red_lower	red_upper	date_valid	comments
+#-----		----------	---------	----------	---------	----------	--------
+# HRMA Thermal (Temperature) words
+4RT01TM         55		75		20		150		0		GMC
+4RT02TM         55		75		20		150		0		GMC
+4RT03TM         55		75		20		150		0		GMC
+4RT04TM         55		75		20		150		0		GMC
+4RT05TM         55		75		20		150		0		GMC
+4RT06TM         55		75		20		150		0		GMC
+4RT07TM         55		75		20		150		0		GMC
+4RT08TM         55		75		20		150		0		GMC
+4RT09TM         55		75		20		150		0		GMC
+4RT10TM         55		75		20		150		0		GMC
+4RT11TM         55		75		20		150		0		GMC
+4RT12TM         55		75		20		150		0		GMC
+4RT13TM         55		75		20		150		0		GMC
+4RT14TM         55		75		20		150		0		GMC
+4RT15TM         55		75		20		150		0		GMC
+4RT16TM         55		75		20		150		0		GMC
+4RT17TM         55		75		20		150		0		GMC
+4RT18TM         55		75		20		150		0		GMC
+4RT19TM         55		75		20		150		0		GMC
+4RT20TM         55		75		20		150		0		GMC
+4RT21TM         55		75		20		150		0		GMC
+4RT22TM         55		75		20		150		0		GMC
+4RT23TM         55		75		20		150		0		GMC
+4RT24TM         55		75		20		150		0		GMC
+4RT25TM         55		75		20		150		0		GMC
+4RT26TM         55		75		20		150		0		GMC
+4RT27TM         55		75		20		150		0		GMC
+4RT28TM         55		75		20		150		0		GMC
+4RT29TM         55		75		20		150		0		GMC
+4RT30TM         55		75		20		150		0		GMC
+4RT31TM         55		75		20		150		0		GMC
+4RT32TM         55		75		20		150		0		GMC
+4RT33TM         55		75		20		150		0		GMC
+4RT34TM         55		75		20		150		0		GMC
+4RT35TM         55		75		20		150		0		GMC
+4RT36TM         55		75		20		150		0		GMC
+4RT37TM         55		75		20		150		0		GMC
+4RT38TM         55		75		20		150		0		GMC
+4RT39TM         55		75		20		150		0		GMC
+4RT40TM         55		75		20		150		0		GMC
+4RT41TM         55		75		20		150		0		GMC
+4RT42TM         55		75		20		150		0		GMC
+4RT43TM         55		75		20		150		0		GMC
+4RT44TM         55		75		20		150		0		GMC
+4RT45TM         55		75		20		150		0		GMC
+4RT46TM         55		75		20		150		0		GMC
+4RT47TM         55		75		20		150		0		GMC
+4RT48TM         55		75		20		150		0		GMC
+4RT49TM         55		75		20		150		0		GMC
+4RT50TM         55		75		20		150		0		GMC
+4RT51TM         55		75		20		150		0		GMC
+4RT52TM         55		75		20		150		0		GMC
+4RT53TM         55		75		20		150		0		GMC
+4RT54TM         55		75		20		150		0		GMC
+4RT55TM         55		75		20		150		0		GMC
+4RT56TM         55		75		20		150		0		GMC
+4RT57TM         55		75		20		150		0		GMC

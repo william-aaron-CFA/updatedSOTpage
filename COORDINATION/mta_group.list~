@@ -1,0 +1,66 @@
+# This file contains the complete listing of MTA monitoring catagories.
+# The combination of the subsystem and catagory columns map to group 
+# columns in the process lists. 
+#
+#  (i.e.  hrc	temp -> hrctemp )
+#
+# NOTE: The columns in this file MUST be TAB delimited.
+#----------------------------------------------------------------------
+#
+#subsyst catagory description
+#------- -------- -----------
+#
+#HRC Science Instrument
+hrc	temp	HRC Temperatures
+hrc	elec	HRC Electronics
+hrc	veto	HRC Veto Counting Rates
+hrc	scnt	HRC Source Counting Rates
+hrc	bcnt	HRC Background Counting Rates
+hrc	psf	HRC PSF
+#
+#ACIS Science Instrument
+acis	temp	ACIS Thermal Control
+acis	elec	ACIS Electronics
+acis	mech	ACIS Mechanism Controller
+acis	veto	ACIS Veto Counting Rates
+acis	scnt	ACIS Source Counting Rates
+acis	bcnt	ACIS Background Counting Rates
+#
+#PCAD - Pointing Control and Aspect Determination
+pcad	temp	ACA Thermal
+pcad	iconf	IRU Configuration
+pcad	itv	IRU Temperatures and Electronics
+pcad	grate	PCAD Gyro Rates
+pcad	ptv	PCAD Temperatures and Electronics
+pcad	fid	PCAD FID Light Magnitude
+pcad	qual	Aspect Quality Solution
+#
+#EPHIN subsystem
+eph	hk	EPHIN Housekeeping
+eph	tv	EPHIN Temperatures and Voltages
+eph	rate	EPHIN Rates
+#
+#Gradients
+grad	cap	HRMA CAP thermister gradients
+grad	fap	HRMA FAP thermister gradients
+grad	sh1	HRMA Hyp. Shell 1 thermister gradients
+grad	sh3	HRMA Hyp. Shell 3 thermister gradients
+grad	sh4	HRMA Hyp. Shell 4 thermister gradients
+grad	sh6	HRMA Hyp. Shell 6 thermister gradients
+grad	sp1	HRMA Par. Shell 1 thermister gradients
+grad	sp3	HRMA Par. Shell 3 thermister gradients
+grad	sp4	HRMA Par. Shell 4 thermister gradients
+grad	sp6	HRMA Par. Shell 6 thermister gradients
+#
+#Telescope (TEL)
+tel	therm	Telescope Thermistor Data
+tel	hrma	HRMA Temperatures
+#
+#SIM - Science Instrument Module
+sim	temp	SIM Thermal
+sim	elec	SIM Electronics
+sim	actu	SIM Actuator Use
+#
+#Other subsystems
+sub	obc	OBC State
+sub	sct	Spacecraft Temperatures

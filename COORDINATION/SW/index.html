@@ -1,0 +1,80 @@
+<html>
+<head><title>MTA Software Packages</title></head>
+<body>
+<pre>
+Real-time jobs:		criticality
+- <a href="snapshot_flow.html">Snapshot/SOH</a>		5
+  (includes text and web displays, alerts and watchdogs)
+  /data/mta4/www/Snapshot/tlogr.pl  - main snapshot creator
+  /data/mta4/www/SOH/*/*tlogr.pl - do the work, but are controlled by:
+   /data/mta4/www/SOH/rt_checker.pl and
+   rt_checker_ccdm.pl rt_checker_pcad.pl rt_checker_safe.pl
+  web page cgi: /data/mta4/www/Snapshot/snap.cgi
+  all of this relies on 3 copies of ACORN running on rhodes.
+
+  There are live backups run with 4 acorns on colossus at:
+  /data/mta_www/MIRROR/Snap
+  /data/mta_www/MIRROR/SOH
+
+- <a href="ace_flow.html">Radiation monitoring/alerts</a>	5
+   ACE,GOES,Kp
+  /data/mta4/space_weather/
+    G10_calc.csh
+    G11_calc.csh
+    G12_calc.csh
+    calculate.csh (ACE)
+    KPII/kpalert.pl
+  Backups at: /home/mta/SPACE_WEATHER
+
+- <a href="snapshot_flow.html">Wireless snapshot/Rad</a>	4
+  /data/mta4/www/WL/snap.cgi
+  (data files created by main snapshot's tlogr.pl)
+  /data/mta4/www/WL/bin/rad_sum_wml.pl and rad_sum_txt.pl create Rad pages,
+    but are controlled by /data/mta4/www/WL/bin/update
+
+- Level 0 RT browser	1
+  /data/mta/www/mta_telem/mta_rt/cp_cxcds_prod.pl
+
+Daily trending jobs:
+- <a href="dtrend_flow.html">Comprehensive trends</a>  4
+    dtrend
+  /data/mta/Script/Deriv/run_sun ... run_sat
+  relies on MTADB, DataSeeker, IDL
+
+- Radiation trending/	4
+    Correlations
+  /data/mta4/www/DAILY/mta_rad/run
+  /data/mta4/www/RADIATION/run_plot.pro
+- ACA trending		3
+  /data/mta4/www/DAILY/mta_pcad/ACA/update
+- IRU trending		3
+  /data/mta4/www/DAILY/mta_pcad/IRU/run_update
+- SIM trending		3
+  /data/mta/www/mta_sim/Scripts/update
+- Corner pixels		2
+  /data/mta/www/mta_acis_sci_run/Corner_pix/update
+- Rejected events	2
+  /data/mta/www/mta_acis_sci_run/Events_rej/update
+- Grating obs.          2
+  /data/mta_www/mta_grat (run manually, see README)
+- Point source trending	1
+  /data/mta4/www/DAILY/mta_src/run.pro and run_txt.pro (run manually)
+
+Other processing:
+- Dumps monitoring	5
+  (detects new dumps, decomms, creates rdb files (DB supplements), passes
+   data to be checked to dumps_mon):
+  /data/mta/Script/Dumps/filters
+  (limit checks selected values. Pointing, config, ephin temp, etc.):
+  /data/mta/Script/Dumps/Dumps_mon/mta_run 
+      (calls current version dumps_mon_2.4.pl)
+  
+- Other wireless	4
+  (schedules, phone book)
+  /data/mta4/www/WL/Sts_dat/awkscr  (run manually each week)
+  /data/mta4/www/WL/Contacts
+  http://calendar.yahoo.com/chandra_sot
+  
+</pre>
+</body>
+</html>

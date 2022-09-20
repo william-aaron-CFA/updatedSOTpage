@@ -1,0 +1,37 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; EDE strip template
+;;
+;;
+;; EDE strip template is constructed as follows:
+;;
+;; The first column is a key :
+;;
+;; key = 1  - Minor frame group start . For this key the next two columns
+;;            start minor frame; number of minor frames.
+;;
+;; key = 2  - Fragment field record for the above minor frame group.
+;;            For this key the next two columns are byte offset
+;;            from begining of minor frame number of bytes in this fragment.
+;;
+;;
+;;   key   startmnf/  num_mnfs/
+;;      |  startbyte  num_bytes
+;;      |       |       |
+;;      |       |       |
+;;      V       V       V
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;
+;; @T(#) @T(#)
+;;
+;; GENERATE_EDE_TEMPLATES version 2.35 (June 3, 1999)
+;; PREPROCESS_1949_DATABASE version 2.3 (June 3, 1999)
+;;
+;;
+;;
+;;Engineering telemetry: format id 5 - strip template
+;;
+;;
+	1	0	128
+	2	0	1025

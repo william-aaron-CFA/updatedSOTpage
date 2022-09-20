@@ -1,0 +1,46 @@
+Hi guys,
+it is time to start up MTA alerts.
+The plan is to to this SLOWLY!
+
+QUESTION:
+who moves this process through data system?
+who moves this process through CCB?
+
+
+
+Phase A)
+Only send alerts for safe mode entry detected by realtime.
+
+step 1 patch MTA software with:
+new ARD
+
+acorn_pipe_group.list
+acorn_pipe_process.list 
+email.list
+
+(these are currently in /proj/ascds/swolk/www/swolk_sciops_data)
+
+Step 2 add the following to the flight release 
+tlmt.txt file in the IPCL
+
+"CCSDSTMF,1,-30.0,4.1,-20.0,4.5.,,5,"A";
+
+i.e any thing above format 4(.5) is a red violation.
+
+
+
+step 4
+on the machine runing the realtime version of acorn -a
+bring down acorn
+>start_mtaprs
+>acorn -a -uXXXXX (no other flags)
+
+
+PHASE 2 
+Bring well behaved on line via REALTIME
+
+
+PHASE 3 
+Bring well behaved systems on line via AP.
+
+PHASE4....

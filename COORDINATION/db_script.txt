@@ -1,0 +1,87 @@
+description of Launch_MTA_DB.ksh script.
+
+#!#######################
+#!### Goal and Intro ####
+#!#######################
+
+This script was written as a wrapper around the
+run_mta_[config/average]_[#].sh scripts
+
+The script will set up and run the data for a specified month and year
+(or specified days of a month) through the MTA DataBase ingest procedures.
+This is a modification to the original script used to run the Jan 2001
+test data so that any part of the process can be run on any month (or
+part of).
+
+Due to the time involved in this processing this script maintained the
+"process one day at a time" configuration to allow isolation of any problems
+(hardware or software) to one day as opposed to a weeks or months
+worth of data.
+
+There are 3 steps to run one day's worth of data through MTA DataBase
+ingest process.
+	1) Retrieve data from the archive.
+	2) Create time specific processing scripts.
+	3) Run the processing scripts.
+
+The script will check for previous output and skip if found.
+
+Error checks consist of checking logs for success/failure syntax
+and/or existance of output files if applicable.
+
+#######################
+#!### Command Line ####
+#######################
+-----
+   Example command lines:
+>Launch_MTA_DB.ksh -ave 1 -setup -m Jan
+   This will create directory structure, retrieve data, and create
+   processing scripts for Jan 1-31 of the current year
+>Launch_MTA_DB.ksh -ave 1 -setup -m Jan
+   This will process the already setup average scripts for Jan 1-31
+   of the current year
+-----
+Required command line arguements include:
+-ave [#]	run average data type for task number [#] (1,2,3,4)
+or -con [#]	run config data type for task number [#] (1,2)
+-m		month (Jan or 01 or 1)
+-setup		RETRIEVE data and CREATE time specific processing scripts
+or -process	RUN processing scripts
+-----
+Optional command line arguements:
+-d		day(s) (multiple days must be quoted -> "01 02 05 28"
+		or 03 Default behavior is all days in the specified month )
+-y		year (defaults to current)
+-topdir		Directory (defaults to /dsops/current/MTA_DB_ingest_test)
+-----
+
+#!#####################
+#!### Intended use ####
+#######################
+
+Launch_MTA_DB.ksh was intended to be run simultaneously on multiple
+machines for each task.
+
+This script should first be run with the -setup option for the time
+period to be processed. Next run a copy simultaneously for each task
+of the processing type (4 for average, 2 for config).
+
+Example: To run Feb 2000 through both config and average in
+/dsops/current/TEST
+
+A)
+m1>Launch_MTA_DB.ksh -ave 1 -setup -m Feb -y 2000 -topdir /dsops/current/TEST
+m1>Launch_MTA_DB.ksh -con 1 -setup -m Feb -y 2000 -topdir /dsops/current/TEST
+
+once A) is completed:
+B)
+m1>Launch_MTA_DB.ksh -ave 1 -process -m Feb -y 2000 -topdir /dsops/current/TEST
+m1>Launch_MTA_DB.ksh -ave 2 -process -m Feb -y 2000 -topdir /dsops/current/TEST
+m2>Launch_MTA_DB.ksh -ave 3 -process -m Feb -y 2000 -topdir /dsops/current/TEST
+m2>Launch_MTA_DB.ksh -ave 4 -process -m Feb -y 2000 -topdir /dsops/current/TEST
+
+once B) is completed:
+m1>Launch_MTA_DB.ksh -con 1 -process -m Feb -y 2000 -topdir /dsops/current/TEST
+m2>Launch_MTA_DB.ksh -con 2 -process -m Feb -y 2000 -topdir /dsops/current/TEST
+
+

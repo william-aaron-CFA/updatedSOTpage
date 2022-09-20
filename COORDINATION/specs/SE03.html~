@@ -1,0 +1,784 @@
+Status of SE03 requirement 4/13/99.
+
+Status of integration always unknown
+
+      
+Monitoring               HRMA PCAD HRC ACIS TGS SIM ALIGN SUB EPHIN Total
+COMPLETED		  7    6    4   4    2   1    0    3    3     30
+DATA SEEKER (6/1)         1    1    0   0    0   0    0    0    0      2
+ACA_MON     (6/1)         0    11   0   0    0   0    1    0    0     11
+ACORN       (6/1)         0    2    0   0    0   0    0    2    0      4
+other	    (6/1)         0    0    1   1    3+  0    1    0    0      6 
+other	    (9/1)         2    0    3   3    0   0    1    0    0      9
+other	    (Jan 2000)    0    0    1   1    0   1    0    0    0      3
+other	    (Jun 2000)    0    1    0   0    0   0    4    1    0      6
+deleted                   0    2    1   1    0   0    0    0    0      4 
+open                      0    1    0   0    0   2    0    0    0      3
+total                    10    24   10  10   5   4    7    6    3     79
+
+Trending                HRMA  PCAD HRC ACIS TGS SIM ALIGN SUB EPHIN Total
+COMPLETED                 0    0    0   0    0   0    0    0    0      0
+DATA SEEKER (6/1)         5    7    0   1    3+  4    8~   3    3     34
+ACA_TRD     (6/1)         0    7    0   0    0   0    0    0    0      7
+other	    (6/1)         0    0    0   0    0   0    0    0    0      0
+other	    (9/1)         2    0    0   1    0   0    0    0    0      1
+other	    (Jan 2000)    0    0    0   6*   0   0    0    0    0      6
+other	    (Jun 2000)    2    1    2   1    0   0    0    0    0      6
+other	    (Jan 2001)    0    0    4   0    1   0    0    0    0      5
+deleted                   2    0    0   0    0   0    0    0    0      2
+open                      0    0    0   0    0   0    0    0    0      0
+total                    11   15    6   9    4   4    8    3    3     61
+
+
+All data seeker functions require databases.
+* - 5 of these are part of the enhanced ACIS_CCD_MON
++ - All done by Grat_mon, except for data seeker tasks which require
+	database which are not expected untill 9/1
+~ - Requires databased not scheduled untill Jan 2000
+
+==> hrma_mon.1.1 <==
+Function: COMPLETED
+5.6.2.1.1.1 and .2  Retrieve HRMA temperature readouts and convert digital 
+                    readouts to degrees
+
+
+
+==> hrma_mon.1.3 <==
+Function: COMPLETED
+5.6.2.1.1.3  Calculate axial, radial, diametral gradients for the CAP,  other 
+	     HRMA structural elements, and the HRMA thermal control zones
+
+==> hrma_mon.1.4 <==
+Function: COMPLETED
+
+5.6.2.1.1.4  Perform limit checks on the absolute temperatures, and on each 
+             gradient
+5.6.2.1.1.5  Compute temperature status and flags
+	     
+
+==> hrma_mon.1.6 <==
+Function: COMPLETED
+5.6.2.1.1.6  Format temperature readings, and inferred HRMA temperatures
+             and gradients, and prepare data for the status data base, and 
+             status reports for the trends data base
+
+
+==> hrma_mon.2.1 <==
+Function: COMPLETED
+5.6.2.1.2.1 and .2  Retrieve HRMA thermal control system housekeeping
+                    data and convert digital readouts to voltages and 
+                    current units
+
+
+==> hrma_mon.2.3 <==
+Function:  COMPLETED
+5.6.2.1.2.3  Format HRMA thermal control status, and prepare entries for 
+             the status and trends databases
+
+==> hrma_mon.3.1 <==
+Function: Spec required - release sceheuled 9/1
+5.6.2.1.3.1  Retrieve point source images and aspect solution from data 
+             products, and characterize HRMA imaging performance, by comparing
+             FWHM, encircle energy, and other parameters TBD against 
+             tabulated nominal standards
+
+==> hrma_mon.3.2 <==
+Function: Spec required - release sceheuled 9/1
+5.6.2.1.3.2  Format HRMA on-axis imaging quality summary prepare
+             entries for the status and trends databases
+
+
+==> hrma_tr.1.1 <==
+Function:  pending database (6/1?)  
+5.6.2.2.1.1   Update the mission history of the limit check status of the
+              HRMA temperatures and gradients
+
+==> hrma_tr.1.2 <==
+Function:  to be speced  by Jan 2000 - MTA DI doed these tasks interactivly
+5.6.2.2.1.2   Perform non-parametric correlations of out-of-limit 
+              conditions versus TBD spacecraft and mission parameters 
+
+==> hrma_tr.1.3 <==
+Function:  pending database (6/1?)  
+5.6.2.2.1.3   Forecast out-of-limit frequency based on detected correlations,
+              or based on extrapolation (linear, plus other methods TBD), of
+              temporal behavior, or behavior vs other parameters
+
+
+==> hrma_tr.1.4 <==
+Function:   DELETED 
+5.6.2.2.1.4  Analyze HRMA thermistor reliability
+
+
+==> hrma_tr.2.1 <== 
+Function:   MTA DS does these tasks interactivly
+5.6.2.2.2.1  Utilize standard data products and results from calibration 
+             processing to determine changes in imaging performance 
+             both on-axis and off-axis, including but not limited to changes
+             in the encircled energy function versus X-ray energy
+
+==> hrma_tr.2.2 <==
+Function:  pending data base (9/1?)
+5.6.2.2.2.2  Compare the deduced imaging performance change with that
+             previously forecast from previous observations of change
+
+5.6.2.2.2.3  Perform a prediction (linear plus other TBD) to forecast
+
+==> hrma_tr.2.4 <==
+Function:  DELETED - Not an CXCDS function
+5.6.2.2.2.4  Compare image defects with model predictions, including model
+             predictions for: HRMA element alignments and tilts, thermal 
+             effects, epoxy creep, and material instabilities
+
+
+==> hrma_tr.3.1 <==
+Function:    To be speced  by Jun 2000 - Cal does this interactivly
+5.6.2.2.3.1  Utilize standard data products from the calibration function 
+             to derive changes in HRMA effective area as a function of
+             energy (note: this information may be fundamentally degenerate
+             between changes in throughput and changes in SI quantum 
+
+==> hrma_tr.4.1 <==
+Function:  To be speced  by Jun 2000 - Cal does this interactivly
+5.6.2.2.4.1  Use the results of the imaging and throughput trends 
+             analyses with the distinctive signatures of dust scattering 
+             and absorption. Provide the capability to use grating
+             observations of continuum sources to look for signatures of
+
+==> hrma_tr.4.4 <==
+Function:  Data seeker does this Given data bases (6/1)
+5.6.2.2.4.4 Perform correlation analyses of changes in the contamination with
+            mission events, including but not limited to, time since
+            launch (linear, exponential, other methods TBD); RCS gas firings,
+            orbital position, use of mechanisms, angle of optics to ram 
+
+
+==> PCAD_mon.2.1 <==
+Function:  Part of V&V (not released)
+5.6.2.1.2.1   Check on-board quaternion vs. expected pointing
+
+==> PCAD_mon.2.2 <==
+Function: COMPLETED
+5.6.2.1.2.2    Determine Aspect Camera Assembly temperatures
+
+==> PCAD_mon.2.3 <==
+Function: Part of ACORN (6/11)
+5.6.2.1.2.3   Check ACA configuration
+
+==> PCAD_mon.2.4.1 <==
+Function: ACA_MON 6/1
+5.6.2.1.2.4.1   Check expected position of each star
+
+==> PCAD_mon.2.4.2 <==
+Function: ACA_MON 6/1
+5.6.2.1.2.4.2   Check expected pattern consistency of
+
+==> PCAD_mon.2.4.3 <==
+Function: ACA_MON 6/1
+5.6.2.1.2.4.3   Check magnitudes of stars
+
+==> PCAD_mon.2.4.4 <==
+Function: ACA_MON 6/1
+5.6.2.1.2.4.4   Check PRF of each star
+
+==> PCAD_mon.2.5.1 <==
+Function: ACA_MON 6/1
+5.6.2.1.2.5.1   Check expected position of each fid light
+
+==> PCAD_mon.2.5.2 <==
+Function: ACA_MON 6/1
+5.6.2.1.2.5.2   Check expected pattern consistency of
+
+==> PCAD_mon.2.5.3 <==
+Function: ACA_MON 6/1
+5.6.2.1.2.5.3   Check magnitudes of fid lights
+
+==> PCAD_mon.2.5.4 <==
+Function: ACA_MON 6/1
+5.6.2.1.2.5.4   Check PRF of each FID light
+
+==> PCAD_mon.2.6 <==
+Function:ACA_MON 6/1 
+5.6.2.1.2.6   Check for detection of optical monitor star, 
+
+==> PCAD_mon.2.7 <==
+Function:  to be Speced by Jan 2000 expected Jun 2000.
+5.6.2.1.2.7   Check CCD camera dark current, readout
+
+==> PCAD_mon.2.8 <==
+Function: COMPLETED
+5.6.2.1.2.8    Check temperatures of, and Gradient across FTS
+
+==> PCAD_mon.2.9 <==
+Function: ACORN 6/11
+5.6.2.1.2.9   Check IRU configuration status
+
+==> PCAD_mon.2.10 <==
+Function: COMPLETED
+5.6.2.1.2.10   Determine IRU temperatures and voltages
+
+==> PCAD_mon.2.11 <==
+Function: COMPLETED
+5.6.2.1.2.11  Check for gyro rate data within limits
+
+==> PCAD_mon.2.12 <==
+Function: COMPLETED 
+5.6.2.1.2.12  Monitor drift rate updates to gyros
+
+==> PCAD_mon.2.13 <==
+Function: ACA_MON 6/1
+5.6.2.1.2.13  Check for motion stability within limits,
+
+==> PCAD_mon.2.14 <==
+Function: COMPLETED
+5.6.2.1.2.14  Determine reaction wheel rates
+
+==> PCAD_mon.2.15 <==
+Function: Part of data seeker - needs databases (6/1)
+5.6.2.1.2.15   Determine RCS gas usage, and amount in tanks
+
+==> PCAD_mon.2.16 <==
+Function: ACA_MON 6/1
+5.6.2.1.2.16   Determine Absolute maneuver accuracy
+
+==> PCAD_mon.2.17 <==
+Function:  DELETED 
+5.6.2.1.2.17  Check sun sensor readings against expected
+
+==> PCAD_mon.2.18 <==
+Function:  DELETED
+5.6.2.1.2.18  Format status and parameters of the aspect
+
+
+==> PCAD_tr.2.1 <==
+Function: ACA_TRD 6/1
+ 5.6.2.2.2.1   Analyse rates of change of the aspect solution
+
+
+==> PCAD_tr.2.10 <==
+Function: ACA_TRD 6/1
+ 5.6.2.2.2.10  Analyse trends in aspect solution  accuracy 
+
+Function:   to be speced  by Jan 2000 - MTA DS does these tasks interactivly
+5.6.2.2.2.16  Analyze trends in aspect solution
+              accuracy versus reaction wheel rates 
+
+==> PCAD_tr.2.11 <==
+Function: To be speced by Jan 2000 expected Jun 2000.
+5.6.2.2.2.11    Analyze photometric capabilities for optical
+                 monitoring of a star versus apparent ACA magnitude of the star
+
+
+==> PCAD_tr.2.12 <==
+Function:  to be speced  by Jan 2000 - MTA DS does these tasks interactivly
+5.6.2.2.2.12 Analyze trends in the gyro noise model, including but not limited
+             to, analysis of effects of temperature
+             and wheel speed on bias rate and noise
+
+==> PCAD_tr.2.13 <==
+Function:  to be speced  by Jan 2000 - MTA DS does these tasks interactivly
+5.6.2.2.2.13 Analyze gyro drift rate updates vs. solar flare 
+	activity and radiation monitor rate.
+
+
+==> PCAD_tr.2.14 <==
+Function:  to be speced  by Jan 2000 - MTA DS does these tasks interactivly
+ 5.6.2.2.2.14  Analyze changes in gyro angular rate pulse scale factor
+
+
+
+==> PCAD_tr.2.17 <==
+Function:  to be speced  by Jan 2000 - MTA DS does these tasks interactivly
+5.6.2.2.2.17  Analyse trends in RCS gas use and amount remaining. 
+              Predict expected lifetime of gas supply, based on past usage 
+              and predictions for future usage
+
+==> PCAD_tr.2.18 <==
+Function:  to be speced  by Jan 2000 - MTA DS does these tasks interactivly
+5.6.2.2.2.18  Analyse changes in maneuver control capability
+
+
+
+==> PCAD_tr.2.2 <==
+Function:   to be Speced by Jan 2000 expected Jun 2000. (part of 1.7)
+5.6.2.2.2.2   Analyse temporal noise in aspect camera
+
+
+==> PCAD_tr.2.3 <==
+Function: DataSeeker 6/1
+5.6.2.2.2.3   Analyse trends in aspect solution 
+                                       accuracy due to temperature changes of,
+                                       and temperature gradients across, the
+                                       periscope, and other FTS components
+
+==> PCAD_tr.2.4.1 <==
+Function:  ACA_TRD 6/1
+5.6.2.2.2.4.1   Determine trends in the star camera
+                                         electronic magnitudes for detected
+                                         stars vs. cataloges magnitudes, 
+                                         correcting the latter for the expected
+
+==> PCAD_tr.2.4.4 <==
+Function:  ACA_TRD 6/1
+5.6.2.2.2.4.4   Determine trends in the star camera
+                                         electronic magnitudes for FID lights
+                                         vs. expected magnitudes, correcting 
+                                         the latter for star camera response
+
+==> PCAD_tr.2.4.5 <==
+Function:  ACA_TRD 6/1
+5.6.2.2.2.4.5   Provide notification of possible
+                                         need for aspect solution changes due
+                                         to changed camera sensitivities, 
+                                         and fiducial light settings
+
+==> PCAD_tr.2.5 <==
+Function:  ACA_TRD 6/1
+   5.6.2.2.2.5  Analyze aspect camera assemply  
+                                        system point response for a star
+
+
+
+==> PCAD_tr.2.6 <==
+Function:  ACA_TRD 6/1
+  5.6.2.2.2.6  Analyze aspect camera assemply  
+                                        system point response for a FID light
+
+
+
+==> PCAD_tr.2.7 <==
+Function:  ACA_TRD 6/1
+  5.6.2.2.2.2.7  Analyze trends in position noise for 
+                                        stars and FID lights vs. magnitude
+==> PCAD_tr.2.8 <==
+Function:  to be speced by Jan 2000  released Jun 2000
+5.6.2.2.2.2.8  Analyze spatial dependence of  position
+
+
+HRC 
+
+
+==> monitor_task.3.1 <==
+Function: scheduled 9/1
+5.6.2.1.3.1 Determine HRC background event counting rates, and check
+        against limits.
+
+
+==> monitor_task.3.2 <==
+Function: scheduled 9/1
+5.6.2.1.3.2 Determine X-ray target source counting rates
+
+ 
+==> monitor_task.3.3 <==
+Function: scheduled 9/1
+5.6.2.1.3.3 Construct pulse height distributions for background
+        events, and for target or other source events when sufficient
+
+
+==> monitor_task.3.4 <==
+Function: COMPLETED
+5.6.2.1.3.4 Construct an image in detector coordinates (without aspect 
+        correction). Compare with expected template of hot spots and dead 
+        zones
+
+==> monitor_task.3.5 <==
+Function: COMPLETED
+5.6.2.1.3.5 Determine Veto Counting Rates
+
+
+==> monitor_task.3.6 <==
+Function: Deleted 
+5.6.2.1.3.6 Utilize next-in-line mode data to infer background rates and 
+            proper functional state
+
+
+==> monitor_task.3.7 <==
+Function: HRC DOSE 6/1
+5.6.2.1.3.7 Update total amount of charge extracted from MCP image,
+        check against limits, create advisory for science operation of
+
+
+==> monitor_task.3.8 <==
+Function: COMPLETED 
+5.6.2.1.3.8 Check HRC temperatures
+
+
+==> monitor_task.3.9 <==
+Function: COMPLETED 
+5.6.2.1.3.9 Monitor HRC electronics for expected functional states, voltages,
+            currents
+
+
+
+==> monitor_task.3.11 <==
+Function: Scheduled for Jan 2000
+5.6.2.1.3.11 Monitor HRC Shutter Position
+
+
+
+==> trends_task_3.2 <==
+Function: Jan 2001- currently a cal task 
+5.6.2.2.3.2 Analyze energy discrimination capabilities
+
+
+==> trends_task_3.3 <==
+Function: Jan 2001- currently a cal task 
+5.6.2.2.3.3 Analyze changes in throughput of UV/Ion Shield filters
+
+
+==> trends_task_3.4 <==
+Function: Jan 2001 - currently a cal task 
+5.6.2.2.3.4  Analyze changes in the templates of the hot spots and dead zones
+
+
+==> trends_task_3.5 <==
+Function: Jan 2001- currently a cal task 
+5.6.2.2.3.5 Analyze changes in dead time corrections and maximum count rate for
+            bright point sources
+
+
+==> trends_task_3.6 <==
+Function: Jan 2000- currently a cal task 
+5.6.2.2.3.6 Forecast changes in background counting rates, using both focal
+            plane and next-in-line mode data, and limit check rate of change
+
+==> trends_task_3.7 <==
+Function: Jan 2000- currently a cal task 
+5.6.2.2.3.7 Track local changes in MCP gain with total amount of charge
+        extracted from the region of the MCP
+
+
+ACIS
+
+
+==> monitor_241.txt <==
+Function: Jan 2000
+1.4.1 Verify ACIS configuration, operational status, flight software status, 
+
+==> monitor_242.txt <==
+Function: lightcurve tool 9/1
+1.4.2 Determine ACIS Background Rates
+
+==> monitor_243.txt <==
+Function Bias tool  9/1
+1.4.3 Compute electronic readout noise
+
+==> monitor_244.txt <==
+Function: L2 MON    9/1
+1.4.4 Determine X-ray target source counting rates
+
+==> monitor_245.txt <==
+Function: Photon Mon: Completed
+1.4.5 Generate Image in Detector Coordinates
+
+==> monitor_246.txt <==
+Function deleted
+1.4.6 Utilize next-in-line mode
+
+==> monitor_247.txt <==
+Function Completed
+1.4.7 Check ACIS thermal control
+
+==> monitor_248.txt <==
+Function Completed
+1.4.8 Monitor ACIS electronics
+
+==> monitor_249.txt <==
+Function: 6/1
+1.4.9  Check DEA operating values and system operating conditions
+statistics 
+
+==> monitor_2410.txt <==
+Function Completed
+1.4.10 Check ACIS mechanism controller status
+
+
+==> trends_3411.txt <==
+Function bias tool 9/1
+2.4.1.1 Analyze changes in zero level and responsivity.
+
+==> trends_3412.txt <=
+Function:  Jan 2000
+2.4.1.2 Locate and study bad pixels
+
+==> trends_3413.txt <==
+Function: Enhanced ACIS_CCD_MON Jan 2000
+2.4.1.3 Analyze quantum efficiency and energy resolution as a function of
+	energy
+==> trends_3414.txt <==
+Function:Enhanced ACIS_CCD_MON Jan 2000
+2.4.1.4 Analyze change in split-event characteristics,...
+
+==> trends_342.txt <==
+Function: Enhanced ACIS_CCD_MON Jan 2000
+2.4.2  Analyze quantum efficiency and energy resolution versus
+
+==> trends_3431.txt <==
+Function: Enhanced ACIS_CCD_MON Jan 2000
+2.4.3.1 Assess CTI for each CCD chip
+
+==> trends_3432.txt <==
+Function: Enhanced ACIS_CCD_MON Jan 2000
+2.4.3.2 Assess ability to correct for CTI for each CCD chip
+
+==> trends_344.txt <==
+Function: DataSeeker 
+2.4.4 Analyze all above CCD properties versus radiation dosage
+
+==> trends_345.txt <==
+Function:  Jun 2000
+2.4.5 Measure change in QE around carbon and oxygen edges
+
+
+
+***************************************************
+
+TRANSMISSION GRATINGS
+
+==> monitor_task_5.1 <==
+FUNCTION: COMPLETED (Editted from Jun 1995)
+5.6.2.1.5.1 Check Grating electronic environment 
+
+
+==> monitor_task_5.2 <==
+FUNCTION Grat_mon 6/1
+5.6.2.1.5.2 Locate zero-order image centroid position
+
+==> monitor_task_5.4 <==
+FUNCTION Grat_mon 6/1
+5.6.2.1.5.4 Characterize line widths, transform to grating resolution
+
+
+==> monitor_task_5.5 <==
+FUNCTION Grat_mon 6/1
+5.6.2.1.5.5 From identified lines and instrument edges, calculate grating
+        dispersion constant, and dispersion angle(s) with respect to
+        the detector
+
+==> monitor_task_5.6 <==
+FUNCTION  completed 
+5.6.2.1.5.6         Use HRMA post-collimator, optical bench, and grating yoke 
+            temperature monitors to evaluate the grating thermal environment
+
+==> trends_task_5.1 <==
+Function Data Seeker (9/1 databases)
+5.6.2.2.5.1  Analyze grating dispersion constants, resolving power, and
+        dispersion angles vs. the temperatures of and alignments of
+        the grating, SIM, optical bench, ACIS, and HRC
+
+==> trends_task_5.3 <==
+Function Data Seeker (9/1 databases)
+5.6.2.2.5.3 Analyze change in quantum efficiency versus energy
+
+==> trends_task_5.4 <==
+Function Jan 2001
+5.6.2.2.5.4 Analyze for contamination via changes in scattering properties 
+    or throughput
+
+==> trends_task_5.5 <==
+Function Data Seeker (9/1 databases)
+5.6.2.2.5.5 Analyze trends in total intensity ratio between zero and first order
+
+
+
+***************************************************
+
+ SCIENCE INSTRUMENT MODULE 
+
+==> SIM_mon.6.1 <==
+Function: V&V 
+5.6.2.1.6.1   Determine X-axis position, compare with
+                                       expectation
+                         5.6.2.1.6.2   Determine Z-axis position, compare with
+                                       expectation
+
+==> SIM_mon.6.3 <==
+Function: COMPLETED 
+5.6.2.1.6.3    Determine SIM temperatures and voltages
+
+
+==> SIM_mon.6.4 <==
+Function: Jan 2000
+5.6.2.1.6.4   Monitor SIM actuator use (number of
+                                       maneuvers and distance moved)
+==> SIM_mon.6.6 <==
+Function: 6/1 database group
+5.6.2.1.6.6  Format SIM status and parameters, and
+                                      prepare entries for the status and
+                                      trends databases.
+
+==> SIM_tr.6.1 <==
+Function: Data Seeker
+5.6.2.2.6.1   Analyze Z-axis position adjustment accuracy
+5.6.2.2.6.2   Analyze X-axis position adjustment accuracy
+
+==> SIM_tr.6.3a <==
+Function: Data Seeker
+    SE03  Sept 1995      5.6.2.2.6.3   Analyze changes in adjustment settling
+                                       times including, but not limited to the
+                                       following: 
+                                        Assess any difference in the different ==> SIM_tr.6.4 <==
+Function: Dataseeker + MTADIT
+    SE03  Sept 1995      5.6.2.2.6.4   Correlate trends in the actuator 
+                                       voltages and SIM temperatures with time
+
+****************************************************
+ALIGNMENTS
+This is the leaset developed, most of the work is currently done 
+interactivly by RAC/DOSS
+
+
+==> ALIN_mon.7.1 <==
+Function: Jan 2000
+ 5.6.2.1.7.1   Determine absolute pointing offsets
+
+
+==> ALIN_mon.7.2 <==
+Function: ACA_MON 6/1
+ 5.6.2.1.7.2   Determine fiducial light shifts
+
+
+==> ALIN_mon.7.3 <==
+Function: L2 Mon 9/1
+      5.6.2.1.7.3   Determine focus quality
+
+
+==> ALIN_mon.7.5 <==
+Function: Jan 2000
+  5.6.2.1.7.5  Monitor HRC MCP tilts
+ 5.6.2.1.7.4  Monitor ACIS CCD tilts
+
+
+
+==> ALIN_mon.7.6 <==
+Function: Jan 2000
+ 5.6.2.1.7.6   Monitor SIM tilts
+
+
+==> ALIN_mon.7.7 <==
+Function: Grat_mon
+  5.6.2.1.7.7  Determine Grating Image Orientations
+
+
+==> ALIN_tr.7.1 <==
+Function:
+ 5.6.2.2.7.1   Analyze line of sight control capability 
+                                  vs trends in the offset of the absolute
+                                  pointing position from the desired position.
+                                  Forecast changes in the need for the next
+                                  boresight calibration. 
+
+==> ALIN_tr.7.2 <==
+Function:
+ 5.6.2.2.7.2   Analyze stability of apparent fiducial
+                                  light motions; model the fiducial light
+                                  motions versus SI, SIM temperatures
+
+
+==> ALIN_tr.7.3 <==
+Function:
+ 5.6.2.2.7.3   Retrieve the focus position history
+                                  from the trends database, and analyze
+                                  its stability relative to an exponential
+                                  (it time) model of optical bench desorption.
+
+==> ALIN_tr.7.4 <==
+Function:
+ 5.6.2.2.7.4   Analyze trends in SIM tilts vs. actuator
+                                  use and SIM temperature and temperature 
+                                  gradients
+
+
+==> ALIN_tr.7.5 <==
+Function:
+ 5.6.2.2.7.5   Analyze trends in HRC and ACIS tilts vs. 
+                                  temperature and temperature gradients
+
+
+==> ALIN_tr.7.6 <==
+5.6.2.2.7.6 Analyze grating dispersion constants, resolving power, and
+        dispersion angles vs. the temperatures of and alignments of
+
+==> ALIN_tr.7.7 <==
+Function:
+SE03 Sept 15 1995   5.6.2.2.7.7   Analyze grating motions, repeatability,
+                                  settling times and effects on spacecraft
+                                  stability
+
+
+==> ALIN_tr.7.8 <==
+Function:
+   5.6.2.2.7.8   Analyze gyro alignment changes via the 
+                                  component of change in error angle after
+                                  maneuvers which depends on the angular 
+                                  distance of slew
+
+=> SUBSYS_mon.8.1 <==
+Function:  Jun 2000
+    5.6.2.1.8.1   Error Statistics Compilation: provide
+                                       capability to compile the bit error
+                                       statistics and summary of bit fixes
+
+
+==> SUBSYS_mon.8.2 <==
+Function: ACORN 6/11
+ 5.6.2.1.8.2   Monitor OBC State
+
+
+==> SUBSYS_mon.8.3 <==
+Function:   ACORN 6/11
+  5.6.2.1.8.3  Monitor spacecraft equipment 
+                                      configuration, compiling A/B side 
+                                      redundancy usage
+
+
+==> SUBSYS_mon.8.4 <==
+Function: COMPLETED
+    SE03   Sept 1995     5.6.2.1.8.4  Monitor spacecraft temperatures
+
+
+==> SUBSYS_mon.8.5 <==
+Function: COMPLETED
+    SE03   Sept 1995     5.6.2.1.8.5  Monitor power usage and availability
+
+==> SUBSYS_mon.8.6 <==
+Function: COMPLETED 
+    SE03   Sept 1995     5.6.2.1.8.6   Monitor radiation detector readings
+                                   6.1 Convert Radiation detector telemetry
+                                       into counting rates and calculate errors
+                                   6.2 Perform limit checks: if over threshold
+
+==> SUBSYS_tr.8.1 <==
+Function:DATA SEEKER + MTADIT
+SE03 Sept 15 1995   5.6.2.2.8.1   Analyze telemetry quality. Test hypotheses
+                                  that occurances of bad quality are randomly
+                                  variable in time, that they are correlated 
+                                  with too near and too distant lines of sight 
+
+==> SUBSYS_tr.8.2 <==
+Function: DATA SEEKER
+    SE03   Sept 1995     5.6.2.1.8.2   Analyze trends in solid state recorder
+                                       bit error rate as a function of 
+                                       radiation level, including soft errors
+                                       as a function of instantaneous radiation
+
+==> SUBSYS_tr.8.4 <==
+Function: DATA SEEKER
+    SE03   Sept 1995     5.6.2.1.8.4   Analyze radiation monitor trends vs.
+                                       spacecraft position and attitude
+
+
+
+EPHIN 
+All monitoring completed
+all trending requires data seeker
+
+ 5.6.2.1.9.1          Check ephin housekeeping status
+ 5.6.2.1.9.2          Check ephin temperatures and voltages
+ 5.6.2.1.9.3          Check ephin Rates
+
+
+ 5.6.2.2.9.1          Trend EPHIN housekeeping status
+ 5.6.2.2.9.2          Trend EPHIN temperatures and voltages
+ 5.6.2.2.9.3          Trend EPHIN Rates
+

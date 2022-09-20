@@ -1,0 +1,741 @@
+;; @T(#) @T(#)
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Engineering Telemetry Template File  -  File information  -  Part 8 of 8
+;;
+;;
+;; 	File id (valid values >= 1, 0 = n/a)
+;;	|
+;;	|	Max file size (in bytes)
+;;	|	|
+;;	|	|		File name (max 30 characters)
+;;	|	|		|
+;;	|	|		|				Level 0 product name (max 30 characters)
+;;	|	|		|				|
+;;	|	|		|				|
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;
+;;
+;; GENERATE_EDE_TEMPLATES version 2.35 (June 3, 1999)
+;; PREPROCESS_1949_DATABASE version 2.3 (June 3, 1999)
+;;
+;;
+;;
+;;ACIS engineering telemetry: format id 1 - file definitions
+;;
+;;
+	10102	     3618560		1acis2				ACIS_1ENG2_DATA_L0
+	10103	     3618560		1acis3				ACIS_1ENG3_DATA_L0
+	10104	     3618560		1acis4				ACIS_1ENG4_DATA_L0
+;;
+;;
+;;MISC engineering telemetry: format id 1 - file definitions
+;;
+;;
+	10201	     3618560		1misc1				MISC_1ENG1_DATA_L0
+	10202	     3618560		1misc2				MISC_1ENG2_DATA_L0
+	10203	     3618560		1misc3				MISC_1ENG3_DATA_L0
+	10204	     3618560		1misc4				MISC_1ENG4_DATA_L0
+	10205	     3618560		1misc5				MISC_1ENG5_DATA_L0
+	10206	     3618560		1misc6				MISC_1ENG6_DATA_L0
+	10207	     3618560		1misc7				MISC_1ENG7_DATA_L0
+	10208	     3618560		1misc8				MISC_1ENG8_DATA_L0
+;;
+;;
+;;CCDM engineering telemetry: format id 1 - file definitions
+;;
+;;
+	10301	     3618560		1ccdm1				CCDM_1ENG1_DATA_L0
+	10302	     3618560		1ccdm2				CCDM_1ENG2_DATA_L0
+	10303	     3618560		1ccdm3				CCDM_1ENG3_DATA_L0
+	10304	     3618560		1ccdm4				CCDM_1ENG4_DATA_L0
+	10305	     3618560		1ccdm5				CCDM_1ENG5_DATA_L0
+	10307	     3618560		1ccdm7				CCDM_1ENG7_DATA_L0
+	10308	     3618560		1ccdm8				CCDM_1ENG8_DATA_L0
+	10310	     3618560		1ccdm10				CCDM_1ENG10_DATA_L0
+	10311	     3618560		1ccdm11				CCDM_1ENG11_DATA_L0
+	10312	     3618560		1ccdm12				CCDM_1ENG12_DATA_L0
+	10313	     3618560		1ccdm13				CCDM_1ENG13_DATA_L0
+;;
+;;
+;;CPE engineering telemetry: format id 1 - file definitions
+;;
+;;
+;;
+;;
+;;EPHIN engineering telemetry: format id 1 - file definitions
+;;
+;;
+	10501	     3618560		1ephin1				EPHIN_1ENG1_DATA_L0
+	10502	     3618560		1ephin2				EPHIN_1ENG2_DATA_L0
+;;
+;;
+;;EPS engineering telemetry: format id 1 - file definitions
+;;
+;;
+	10601	     3618560		1eps1				EPS_1ENG1_DATA_L0
+	10602	     3618560		1eps2				EPS_1ENG2_DATA_L0
+	10603	     3618560		1eps3				EPS_1ENG3_DATA_L0
+	10604	     3618560		1eps4				EPS_1ENG4_DATA_L0
+	10605	     3618560		1eps5				EPS_1ENG5_DATA_L0
+	10606	     3618560		1eps6				EPS_1ENG6_DATA_L0
+	10607	     3618560		1eps7				EPS_1ENG7_DATA_L0
+	10609	     3618560		1eps9				EPS_1ENG9_DATA_L0
+	10610	     3618560		1eps10				EPS_1ENG10_DATA_L0
+;;
+;;
+;;HRC engineering telemetry: format id 1 - file definitions
+;;
+;;
+	10702	     3618560		1hrc2				HRC_1ENG2_DATA_L0
+	10704	     3618560		1hrc4				HRC_1ENG4_DATA_L0
+	10705	     3618560		1hrc5				HRC_1ENG5_DATA_L0
+	10707	     3618560		1hrc7				HRC_1ENG7_DATA_L0
+;;
+;;
+;;OBC engineering telemetry: format id 1 - file definitions
+;;
+;;
+	10801	     3618560		1obc1				OBC_1ENG1_DATA_L0
+	10802	     3618560		1obc2				OBC_1ENG2_DATA_L0
+	10803	     3618560		1obc3				OBC_1ENG3_DATA_L0
+	10804	     3618560		1obc4				OBC_1ENG4_DATA_L0
+	10805	     3618560		1obc5				OBC_1ENG5_DATA_L0
+;;
+;;
+;;PCAD engineering telemetry: format id 1 - file definitions
+;;
+;;
+	10903	     3618560		1pcad3				PCAD_1ENG3_DATA_L0
+	10904	     3618560		1pcad4				PCAD_1ENG4_DATA_L0
+	10905	     3618560		1pcad5				PCAD_1ENG5_DATA_L0
+	10906	     3618560		1pcad6				PCAD_1ENG6_DATA_L0
+	10907	     3618560		1pcad7				PCAD_1ENG7_DATA_L0
+	10908	     3618560		1pcad8				PCAD_1ENG8_DATA_L0
+	10910	     3618560		1pcad10				PCAD_1ENG10_DATA_L0
+	10911	     3618560		1pcad11				PCAD_1ENG11_DATA_L0
+	10912	     3618560		1pcad12				PCAD_1ENG12_DATA_L0
+	10913	     3618560		1pcad13				PCAD_1ENG13_DATA_L0
+	10914	     3618560		1pcad14				PCAD_1ENG14_DATA_L0
+	10915	     3618560		1pcad15				PCAD_1ENG15_DATA_L0
+;;
+;;
+;;PROP engineering telemetry: format id 1 - file definitions
+;;
+;;
+	11001	     3618560		1prop1				PROP_1ENG1_DATA_L0
+	11002	     3618560		1prop2				PROP_1ENG2_DATA_L0
+;;
+;;
+;;SIM engineering telemetry: format id 1 - file definitions
+;;
+;;
+	11101	     3618560		1sim1				SIM_1ENG1_DATA_L0
+	11102	     3618560		1sim2				SIM_1ENG2_DATA_L0
+	11103	     3618560		1sim3				SIM_1ENG3_DATA_L0
+;;
+;;
+;;SIM2 engineering telemetry: format id 1 - file definitions
+;;
+;;
+	11201	     3618560		1sim21				SIM2_1ENG1_DATA_L0
+;;
+;;
+;;SMS engineering telemetry: format id 1 - file definitions
+;;
+;;
+	11301	     3618560		1sms1				SMS_1ENG1_DATA_L0
+	11302	     3618560		1sms2				SMS_1ENG2_DATA_L0
+;;
+;;
+;;TEL engineering telemetry: format id 1 - file definitions
+;;
+;;
+	11401	     3618560		1tel1				TEL_1ENG1_DATA_L0
+	11402	     3618560		1tel2				TEL_1ENG2_DATA_L0
+	11403	     3618560		1tel3				TEL_1ENG3_DATA_L0
+;;
+;;
+;;THM engineering telemetry: format id 1 - file definitions
+;;
+;;
+	11501	     3618560		1thm1				THM_1ENG1_DATA_L0
+	11502	     3618560		1thm2				THM_1ENG2_DATA_L0
+	11503	     3618560		1thm3				THM_1ENG3_DATA_L0
+;;
+;;
+;;ACIS engineering telemetry: format id 2 - file definitions
+;;
+;;
+	20102	     3618560		2acis2				ACIS_2ENG2_DATA_L0
+	20103	     3618560		2acis3				ACIS_2ENG3_DATA_L0
+	20104	     3618560		2acis4				ACIS_2ENG4_DATA_L0
+;;
+;;
+;;MISC engineering telemetry: format id 2 - file definitions
+;;
+;;
+	20201	     3618560		2misc1				MISC_2ENG1_DATA_L0
+	20202	     3618560		2misc2				MISC_2ENG2_DATA_L0
+	20203	     3618560		2misc3				MISC_2ENG3_DATA_L0
+	20204	     3618560		2misc4				MISC_2ENG4_DATA_L0
+	20205	     3618560		2misc5				MISC_2ENG5_DATA_L0
+	20206	     3618560		2misc6				MISC_2ENG6_DATA_L0
+	20207	     3618560		2misc7				MISC_2ENG7_DATA_L0
+	20208	     3618560		2misc8				MISC_2ENG8_DATA_L0
+;;
+;;
+;;CCDM engineering telemetry: format id 2 - file definitions
+;;
+;;
+	20301	     3618560		2ccdm1				CCDM_2ENG1_DATA_L0
+	20302	     3618560		2ccdm2				CCDM_2ENG2_DATA_L0
+	20303	     3618560		2ccdm3				CCDM_2ENG3_DATA_L0
+	20304	     3618560		2ccdm4				CCDM_2ENG4_DATA_L0
+	20305	     3618560		2ccdm5				CCDM_2ENG5_DATA_L0
+	20307	     3618560		2ccdm7				CCDM_2ENG7_DATA_L0
+	20308	     3618560		2ccdm8				CCDM_2ENG8_DATA_L0
+	20310	     3618560		2ccdm10				CCDM_2ENG10_DATA_L0
+	20311	     3618560		2ccdm11				CCDM_2ENG11_DATA_L0
+	20312	     3618560		2ccdm12				CCDM_2ENG12_DATA_L0
+	20313	     3618560		2ccdm13				CCDM_2ENG13_DATA_L0
+;;
+;;
+;;CPE engineering telemetry: format id 2 - file definitions
+;;
+;;
+;;
+;;
+;;EPHIN engineering telemetry: format id 2 - file definitions
+;;
+;;
+	20501	     3618560		2ephin1				EPHIN_2ENG1_DATA_L0
+	20502	     3618560		2ephin2				EPHIN_2ENG2_DATA_L0
+;;
+;;
+;;EPS engineering telemetry: format id 2 - file definitions
+;;
+;;
+	20601	     3618560		2eps1				EPS_2ENG1_DATA_L0
+	20602	     3618560		2eps2				EPS_2ENG2_DATA_L0
+	20603	     3618560		2eps3				EPS_2ENG3_DATA_L0
+	20604	     3618560		2eps4				EPS_2ENG4_DATA_L0
+	20605	     3618560		2eps5				EPS_2ENG5_DATA_L0
+	20606	     3618560		2eps6				EPS_2ENG6_DATA_L0
+	20607	     3618560		2eps7				EPS_2ENG7_DATA_L0
+	20609	     3618560		2eps9				EPS_2ENG9_DATA_L0
+	20610	     3618560		2eps10				EPS_2ENG10_DATA_L0
+;;
+;;
+;;HRC engineering telemetry: format id 2 - file definitions
+;;
+;;
+	20702	     3618560		2hrc2				HRC_2ENG2_DATA_L0
+	20704	     3618560		2hrc4				HRC_2ENG4_DATA_L0
+	20705	     3618560		2hrc5				HRC_2ENG5_DATA_L0
+	20707	     3618560		2hrc7				HRC_2ENG7_DATA_L0
+;;
+;;
+;;OBC engineering telemetry: format id 2 - file definitions
+;;
+;;
+	20801	     3618560		2obc1				OBC_2ENG1_DATA_L0
+	20802	     3618560		2obc2				OBC_2ENG2_DATA_L0
+	20803	     3618560		2obc3				OBC_2ENG3_DATA_L0
+	20804	     3618560		2obc4				OBC_2ENG4_DATA_L0
+	20805	     3618560		2obc5				OBC_2ENG5_DATA_L0
+;;
+;;
+;;PCAD engineering telemetry: format id 2 - file definitions
+;;
+;;
+	20903	     3618560		2pcad3				PCAD_2ENG3_DATA_L0
+	20904	     3618560		2pcad4				PCAD_2ENG4_DATA_L0
+	20905	     3618560		2pcad5				PCAD_2ENG5_DATA_L0
+	20906	     3618560		2pcad6				PCAD_2ENG6_DATA_L0
+	20907	     3618560		2pcad7				PCAD_2ENG7_DATA_L0
+	20908	     3618560		2pcad8				PCAD_2ENG8_DATA_L0
+	20910	     3618560		2pcad10				PCAD_2ENG10_DATA_L0
+	20911	     3618560		2pcad11				PCAD_2ENG11_DATA_L0
+	20912	     3618560		2pcad12				PCAD_2ENG12_DATA_L0
+	20913	     3618560		2pcad13				PCAD_2ENG13_DATA_L0
+	20914	     3618560		2pcad14				PCAD_2ENG14_DATA_L0
+	20915	     3618560		2pcad15				PCAD_2ENG15_DATA_L0
+;;
+;;
+;;PROP engineering telemetry: format id 2 - file definitions
+;;
+;;
+	21001	     3618560		2prop1				PROP_2ENG1_DATA_L0
+	21002	     3618560		2prop2				PROP_2ENG2_DATA_L0
+;;
+;;
+;;SIM engineering telemetry: format id 2 - file definitions
+;;
+;;
+	21101	     3618560		2sim1				SIM_2ENG1_DATA_L0
+	21102	     3618560		2sim2				SIM_2ENG2_DATA_L0
+	21103	     3618560		2sim3				SIM_2ENG3_DATA_L0
+;;
+;;
+;;SIM2 engineering telemetry: format id 2 - file definitions
+;;
+;;
+	21201	     3618560		2sim21				SIM2_2ENG1_DATA_L0
+;;
+;;
+;;SMS engineering telemetry: format id 2 - file definitions
+;;
+;;
+	21301	     3618560		2sms1				SMS_2ENG1_DATA_L0
+	21302	     3618560		2sms2				SMS_2ENG2_DATA_L0
+;;
+;;
+;;TEL engineering telemetry: format id 2 - file definitions
+;;
+;;
+	21401	     3618560		2tel1				TEL_2ENG1_DATA_L0
+	21402	     3618560		2tel2				TEL_2ENG2_DATA_L0
+	21403	     3618560		2tel3				TEL_2ENG3_DATA_L0
+;;
+;;
+;;THM engineering telemetry: format id 2 - file definitions
+;;
+;;
+	21501	     3618560		2thm1				THM_2ENG1_DATA_L0
+	21502	     3618560		2thm2				THM_2ENG2_DATA_L0
+	21503	     3618560		2thm3				THM_2ENG3_DATA_L0
+;;
+;;
+;;ACIS engineering telemetry: format id 3 - file definitions
+;;
+;;
+	30102	     3618560		3acis2				ACIS_3ENG2_DATA_L0
+	30103	     3618560		3acis3				ACIS_3ENG3_DATA_L0
+	30104	     3618560		3acis4				ACIS_3ENG4_DATA_L0
+;;
+;;
+;;MISC engineering telemetry: format id 3 - file definitions
+;;
+;;
+	30201	     3618560		3misc1				MISC_3ENG1_DATA_L0
+	30202	     3618560		3misc2				MISC_3ENG2_DATA_L0
+	30203	     3618560		3misc3				MISC_3ENG3_DATA_L0
+	30204	     3618560		3misc4				MISC_3ENG4_DATA_L0
+	30205	     3618560		3misc5				MISC_3ENG5_DATA_L0
+	30206	     3618560		3misc6				MISC_3ENG6_DATA_L0
+	30207	     3618560		3misc7				MISC_3ENG7_DATA_L0
+	30208	     3618560		3misc8				MISC_3ENG8_DATA_L0
+;;
+;;
+;;CCDM engineering telemetry: format id 3 - file definitions
+;;
+;;
+	30301	     3618560		3ccdm1				CCDM_3ENG1_DATA_L0
+	30302	     3618560		3ccdm2				CCDM_3ENG2_DATA_L0
+	30303	     3618560		3ccdm3				CCDM_3ENG3_DATA_L0
+	30304	     3618560		3ccdm4				CCDM_3ENG4_DATA_L0
+	30305	     3618560		3ccdm5				CCDM_3ENG5_DATA_L0
+	30307	     3618560		3ccdm7				CCDM_3ENG7_DATA_L0
+	30308	     3618560		3ccdm8				CCDM_3ENG8_DATA_L0
+	30309	     3618560		3ccdm9				CCDM_3ENG9_DATA_L0
+	30310	     3618560		3ccdm10				CCDM_3ENG10_DATA_L0
+	30311	     3618560		3ccdm11				CCDM_3ENG11_DATA_L0
+	30312	     3618560		3ccdm12				CCDM_3ENG12_DATA_L0
+	30313	     3618560		3ccdm13				CCDM_3ENG13_DATA_L0
+;;
+;;
+;;CPE engineering telemetry: format id 3 - file definitions
+;;
+;;
+;;
+;;
+;;EPHIN engineering telemetry: format id 3 - file definitions
+;;
+;;
+	30501	     3618560		3ephin1				EPHIN_3ENG1_DATA_L0
+	30502	     3618560		3ephin2				EPHIN_3ENG2_DATA_L0
+;;
+;;
+;;EPS engineering telemetry: format id 3 - file definitions
+;;
+;;
+	30601	     3618560		3eps1				EPS_3ENG1_DATA_L0
+	30602	     3618560		3eps2				EPS_3ENG2_DATA_L0
+	30603	     3618560		3eps3				EPS_3ENG3_DATA_L0
+	30604	     3618560		3eps4				EPS_3ENG4_DATA_L0
+	30605	     3618560		3eps5				EPS_3ENG5_DATA_L0
+	30606	     3618560		3eps6				EPS_3ENG6_DATA_L0
+	30607	     3618560		3eps7				EPS_3ENG7_DATA_L0
+	30609	     3618560		3eps9				EPS_3ENG9_DATA_L0
+	30610	     3618560		3eps10				EPS_3ENG10_DATA_L0
+;;
+;;
+;;HRC engineering telemetry: format id 3 - file definitions
+;;
+;;
+	30702	     3618560		3hrc2				HRC_3ENG2_DATA_L0
+	30704	     3618560		3hrc4				HRC_3ENG4_DATA_L0
+	30705	     3618560		3hrc5				HRC_3ENG5_DATA_L0
+	30707	     3618560		3hrc7				HRC_3ENG7_DATA_L0
+;;
+;;
+;;OBC engineering telemetry: format id 3 - file definitions
+;;
+;;
+	30801	     3618560		3obc1				OBC_3ENG1_DATA_L0
+	30802	     3618560		3obc2				OBC_3ENG2_DATA_L0
+	30803	     3618560		3obc3				OBC_3ENG3_DATA_L0
+	30804	     3618560		3obc4				OBC_3ENG4_DATA_L0
+	30805	     3618560		3obc5				OBC_3ENG5_DATA_L0
+;;
+;;
+;;PCAD engineering telemetry: format id 3 - file definitions
+;;
+;;
+	30903	     3618560		3pcad3				PCAD_3ENG3_DATA_L0
+	30904	     3618560		3pcad4				PCAD_3ENG4_DATA_L0
+	30905	     3618560		3pcad5				PCAD_3ENG5_DATA_L0
+	30906	     3618560		3pcad6				PCAD_3ENG6_DATA_L0
+	30907	     3618560		3pcad7				PCAD_3ENG7_DATA_L0
+	30908	     3618560		3pcad8				PCAD_3ENG8_DATA_L0
+	30910	     3618560		3pcad10				PCAD_3ENG10_DATA_L0
+	30911	     3618560		3pcad11				PCAD_3ENG11_DATA_L0
+	30912	     3618560		3pcad12				PCAD_3ENG12_DATA_L0
+	30913	     3618560		3pcad13				PCAD_3ENG13_DATA_L0
+	30914	     3618560		3pcad14				PCAD_3ENG14_DATA_L0
+	30915	     3618560		3pcad15				PCAD_3ENG15_DATA_L0
+;;
+;;
+;;PROP engineering telemetry: format id 3 - file definitions
+;;
+;;
+	31001	     3618560		3prop1				PROP_3ENG1_DATA_L0
+	31002	     3618560		3prop2				PROP_3ENG2_DATA_L0
+;;
+;;
+;;SIM engineering telemetry: format id 3 - file definitions
+;;
+;;
+	31101	     3618560		3sim1				SIM_3ENG1_DATA_L0
+	31102	     3618560		3sim2				SIM_3ENG2_DATA_L0
+	31103	     3618560		3sim3				SIM_3ENG3_DATA_L0
+;;
+;;
+;;SIM2 engineering telemetry: format id 3 - file definitions
+;;
+;;
+	31201	     3618560		3sim21				SIM2_3ENG1_DATA_L0
+;;
+;;
+;;SMS engineering telemetry: format id 3 - file definitions
+;;
+;;
+	31301	     3618560		3sms1				SMS_3ENG1_DATA_L0
+	31302	     3618560		3sms2				SMS_3ENG2_DATA_L0
+;;
+;;
+;;TEL engineering telemetry: format id 3 - file definitions
+;;
+;;
+	31401	     3618560		3tel1				TEL_3ENG1_DATA_L0
+	31402	     3618560		3tel2				TEL_3ENG2_DATA_L0
+	31403	     3618560		3tel3				TEL_3ENG3_DATA_L0
+;;
+;;
+;;THM engineering telemetry: format id 3 - file definitions
+;;
+;;
+	31501	     3618560		3thm1				THM_3ENG1_DATA_L0
+	31502	     3618560		3thm2				THM_3ENG2_DATA_L0
+	31503	     3618560		3thm3				THM_3ENG3_DATA_L0
+;;
+;;
+;;ACIS engineering telemetry: format id 4 - file definitions
+;;
+;;
+	40102	     3618560		4acis2				ACIS_4ENG2_DATA_L0
+	40103	     3618560		4acis3				ACIS_4ENG3_DATA_L0
+	40104	     3618560		4acis4				ACIS_4ENG4_DATA_L0
+;;
+;;
+;;MISC engineering telemetry: format id 4 - file definitions
+;;
+;;
+	40201	     3618560		4misc1				MISC_4ENG1_DATA_L0
+	40202	     3618560		4misc2				MISC_4ENG2_DATA_L0
+	40203	     3618560		4misc3				MISC_4ENG3_DATA_L0
+	40204	     3618560		4misc4				MISC_4ENG4_DATA_L0
+	40205	     3618560		4misc5				MISC_4ENG5_DATA_L0
+	40206	     3618560		4misc6				MISC_4ENG6_DATA_L0
+	40207	     3618560		4misc7				MISC_4ENG7_DATA_L0
+	40208	     3618560		4misc8				MISC_4ENG8_DATA_L0
+;;
+;;
+;;CCDM engineering telemetry: format id 4 - file definitions
+;;
+;;
+	40301	     3618560		4ccdm1				CCDM_4ENG1_DATA_L0
+	40302	     3618560		4ccdm2				CCDM_4ENG2_DATA_L0
+	40303	     3618560		4ccdm3				CCDM_4ENG3_DATA_L0
+	40304	     3618560		4ccdm4				CCDM_4ENG4_DATA_L0
+	40305	     3618560		4ccdm5				CCDM_4ENG5_DATA_L0
+	40307	     3618560		4ccdm7				CCDM_4ENG7_DATA_L0
+	40308	     3618560		4ccdm8				CCDM_4ENG8_DATA_L0
+	40310	     3618560		4ccdm10				CCDM_4ENG10_DATA_L0
+	40311	     3618560		4ccdm11				CCDM_4ENG11_DATA_L0
+	40312	     3618560		4ccdm12				CCDM_4ENG12_DATA_L0
+	40313	     3618560		4ccdm13				CCDM_4ENG13_DATA_L0
+;;
+;;
+;;CPE engineering telemetry: format id 4 - file definitions
+;;
+;;
+;;
+;;
+;;EPHIN engineering telemetry: format id 4 - file definitions
+;;
+;;
+	40501	     3618560		4ephin1				EPHIN_4ENG1_DATA_L0
+	40502	     3618560		4ephin2				EPHIN_4ENG2_DATA_L0
+;;
+;;
+;;EPS engineering telemetry: format id 4 - file definitions
+;;
+;;
+	40601	     3618560		4eps1				EPS_4ENG1_DATA_L0
+	40602	     3618560		4eps2				EPS_4ENG2_DATA_L0
+	40603	     3618560		4eps3				EPS_4ENG3_DATA_L0
+	40604	     3618560		4eps4				EPS_4ENG4_DATA_L0
+	40605	     3618560		4eps5				EPS_4ENG5_DATA_L0
+	40606	     3618560		4eps6				EPS_4ENG6_DATA_L0
+	40607	     3618560		4eps7				EPS_4ENG7_DATA_L0
+	40609	     3618560		4eps9				EPS_4ENG9_DATA_L0
+	40610	     3618560		4eps10				EPS_4ENG10_DATA_L0
+;;
+;;
+;;HRC engineering telemetry: format id 4 - file definitions
+;;
+;;
+	40702	     3618560		4hrc2				HRC_4ENG2_DATA_L0
+	40704	     3618560		4hrc4				HRC_4ENG4_DATA_L0
+	40705	     3618560		4hrc5				HRC_4ENG5_DATA_L0
+	40707	     3618560		4hrc7				HRC_4ENG7_DATA_L0
+;;
+;;
+;;OBC engineering telemetry: format id 4 - file definitions
+;;
+;;
+	40801	     3618560		4obc1				OBC_4ENG1_DATA_L0
+	40802	     3618560		4obc2				OBC_4ENG2_DATA_L0
+	40803	     3618560		4obc3				OBC_4ENG3_DATA_L0
+	40804	     3618560		4obc4				OBC_4ENG4_DATA_L0
+	40805	     3618560		4obc5				OBC_4ENG5_DATA_L0
+;;
+;;
+;;PCAD engineering telemetry: format id 4 - file definitions
+;;
+;;
+	40903	     3618560		4pcad3				PCAD_4ENG3_DATA_L0
+	40904	     3618560		4pcad4				PCAD_4ENG4_DATA_L0
+	40905	     3618560		4pcad5				PCAD_4ENG5_DATA_L0
+	40906	     3618560		4pcad6				PCAD_4ENG6_DATA_L0
+	40907	     3618560		4pcad7				PCAD_4ENG7_DATA_L0
+	40908	     3618560		4pcad8				PCAD_4ENG8_DATA_L0
+	40909	     3618560		4pcad9				PCAD_4ENG9_DATA_L0
+	40910	     3618560		4pcad10				PCAD_4ENG10_DATA_L0
+	40911	     3618560		4pcad11				PCAD_4ENG11_DATA_L0
+	40912	     3618560		4pcad12				PCAD_4ENG12_DATA_L0
+	40913	     3618560		4pcad13				PCAD_4ENG13_DATA_L0
+	40914	     3618560		4pcad14				PCAD_4ENG14_DATA_L0
+	40915	     3618560		4pcad15				PCAD_4ENG15_DATA_L0
+;;
+;;
+;;PROP engineering telemetry: format id 4 - file definitions
+;;
+;;
+	41001	     3618560		4prop1				PROP_4ENG1_DATA_L0
+	41002	     3618560		4prop2				PROP_4ENG2_DATA_L0
+;;
+;;
+;;SIM engineering telemetry: format id 4 - file definitions
+;;
+;;
+	41101	     3618560		4sim1				SIM_4ENG1_DATA_L0
+	41102	     3618560		4sim2				SIM_4ENG2_DATA_L0
+	41103	     3618560		4sim3				SIM_4ENG3_DATA_L0
+;;
+;;
+;;SIM2 engineering telemetry: format id 4 - file definitions
+;;
+;;
+	41201	     3618560		4sim21				SIM2_4ENG1_DATA_L0
+;;
+;;
+;;SMS engineering telemetry: format id 4 - file definitions
+;;
+;;
+	41301	     3618560		4sms1				SMS_4ENG1_DATA_L0
+	41302	     3618560		4sms2				SMS_4ENG2_DATA_L0
+;;
+;;
+;;TEL engineering telemetry: format id 4 - file definitions
+;;
+;;
+	41401	     3618560		4tel1				TEL_4ENG1_DATA_L0
+	41402	     3618560		4tel2				TEL_4ENG2_DATA_L0
+	41403	     3618560		4tel3				TEL_4ENG3_DATA_L0
+;;
+;;
+;;THM engineering telemetry: format id 4 - file definitions
+;;
+;;
+	41501	     3618560		4thm1				THM_4ENG1_DATA_L0
+	41502	     3618560		4thm2				THM_4ENG2_DATA_L0
+	41503	     3618560		4thm3				THM_4ENG3_DATA_L0
+;;
+;;
+;;ACIS engineering telemetry: format id 5 - file definitions
+;;
+;;
+	50102	     3618560		5acis2				ACIS_5ENG2_DATA_L0
+	50103	     3618560		5acis3				ACIS_5ENG3_DATA_L0
+	50104	     3618560		5acis4				ACIS_5ENG4_DATA_L0
+;;
+;;
+;;MISC engineering telemetry: format id 5 - file definitions
+;;
+;;
+	50201	     3618560		5misc1				MISC_5ENG1_DATA_L0
+	50202	     3618560		5misc2				MISC_5ENG2_DATA_L0
+	50203	     3618560		5misc3				MISC_5ENG3_DATA_L0
+	50204	     3618560		5misc4				MISC_5ENG4_DATA_L0
+	50205	     3618560		5misc5				MISC_5ENG5_DATA_L0
+	50206	     3618560		5misc6				MISC_5ENG6_DATA_L0
+	50207	     3618560		5misc7				MISC_5ENG7_DATA_L0
+	50208	     3618560		5misc8				MISC_5ENG8_DATA_L0
+;;
+;;
+;;CCDM engineering telemetry: format id 5 - file definitions
+;;
+;;
+	50301	     3618560		5ccdm1				CCDM_5ENG1_DATA_L0
+	50302	     3618560		5ccdm2				CCDM_5ENG2_DATA_L0
+	50303	     3618560		5ccdm3				CCDM_5ENG3_DATA_L0
+	50304	     3618560		5ccdm4				CCDM_5ENG4_DATA_L0
+	50305	     3618560		5ccdm5				CCDM_5ENG5_DATA_L0
+	50307	     3618560		5ccdm7				CCDM_5ENG7_DATA_L0
+	50308	     3618560		5ccdm8				CCDM_5ENG8_DATA_L0
+	50310	     3618560		5ccdm10				CCDM_5ENG10_DATA_L0
+	50311	     3618560		5ccdm11				CCDM_5ENG11_DATA_L0
+	50312	     3618560		5ccdm12				CCDM_5ENG12_DATA_L0
+	50313	     3618560		5ccdm13				CCDM_5ENG13_DATA_L0
+;;
+;;
+;;CPE engineering telemetry: format id 5 - file definitions
+;;
+;;
+	50401	     3618560		5cpe1				CPE_5ENG1_DATA_L0
+;;
+;;
+;;EPHIN engineering telemetry: format id 5 - file definitions
+;;
+;;
+	50501	     3618560		5ephin1				EPHIN_5ENG1_DATA_L0
+	50502	     3618560		5ephin2				EPHIN_5ENG2_DATA_L0
+;;
+;;
+;;EPS engineering telemetry: format id 5 - file definitions
+;;
+;;
+	50601	     3618560		5eps1				EPS_5ENG1_DATA_L0
+	50602	     3618560		5eps2				EPS_5ENG2_DATA_L0
+	50603	     3618560		5eps3				EPS_5ENG3_DATA_L0
+	50604	     3618560		5eps4				EPS_5ENG4_DATA_L0
+	50605	     3618560		5eps5				EPS_5ENG5_DATA_L0
+	50606	     3618560		5eps6				EPS_5ENG6_DATA_L0
+	50607	     3618560		5eps7				EPS_5ENG7_DATA_L0
+	50609	     3618560		5eps9				EPS_5ENG9_DATA_L0
+	50610	     3618560		5eps10				EPS_5ENG10_DATA_L0
+;;
+;;
+;;HRC engineering telemetry: format id 5 - file definitions
+;;
+;;
+	50702	     3618560		5hrc2				HRC_5ENG2_DATA_L0
+	50704	     3618560		5hrc4				HRC_5ENG4_DATA_L0
+	50705	     3618560		5hrc5				HRC_5ENG5_DATA_L0
+	50707	     3618560		5hrc7				HRC_5ENG7_DATA_L0
+;;
+;;
+;;OBC engineering telemetry: format id 5 - file definitions
+;;
+;;
+	50801	     3618560		5obc1				OBC_5ENG1_DATA_L0
+	50802	     3618560		5obc2				OBC_5ENG2_DATA_L0
+	50803	     3618560		5obc3				OBC_5ENG3_DATA_L0
+	50804	     3618560		5obc4				OBC_5ENG4_DATA_L0
+	50805	     3618560		5obc5				OBC_5ENG5_DATA_L0
+;;
+;;
+;;PCAD engineering telemetry: format id 5 - file definitions
+;;
+;;
+	50903	     3618560		5pcad3				PCAD_5ENG3_DATA_L0
+	50904	     3618560		5pcad4				PCAD_5ENG4_DATA_L0
+	50905	     3618560		5pcad5				PCAD_5ENG5_DATA_L0
+	50906	     3618560		5pcad6				PCAD_5ENG6_DATA_L0
+	50907	     3618560		5pcad7				PCAD_5ENG7_DATA_L0
+	50908	     3618560		5pcad8				PCAD_5ENG8_DATA_L0
+	50910	     3618560		5pcad10				PCAD_5ENG10_DATA_L0
+	50911	     3618560		5pcad11				PCAD_5ENG11_DATA_L0
+	50912	     3618560		5pcad12				PCAD_5ENG12_DATA_L0
+	50913	     3618560		5pcad13				PCAD_5ENG13_DATA_L0
+	50914	     3618560		5pcad14				PCAD_5ENG14_DATA_L0
+	50915	     3618560		5pcad15				PCAD_5ENG15_DATA_L0
+;;
+;;
+;;PROP engineering telemetry: format id 5 - file definitions
+;;
+;;
+	51001	     3618560		5prop1				PROP_5ENG1_DATA_L0
+	51002	     3618560		5prop2				PROP_5ENG2_DATA_L0
+;;
+;;
+;;SIM engineering telemetry: format id 5 - file definitions
+;;
+;;
+	51101	     3618560		5sim1				SIM_5ENG1_DATA_L0
+	51102	     3618560		5sim2				SIM_5ENG2_DATA_L0
+	51103	     3618560		5sim3				SIM_5ENG3_DATA_L0
+;;
+;;
+;;SIM2 engineering telemetry: format id 5 - file definitions
+;;
+;;
+	51201	     3618560		5sim21				SIM2_5ENG1_DATA_L0
+;;
+;;
+;;SMS engineering telemetry: format id 5 - file definitions
+;;
+;;
+	51301	     3618560		5sms1				SMS_5ENG1_DATA_L0
+	51302	     3618560		5sms2				SMS_5ENG2_DATA_L0
+;;
+;;
+;;TEL engineering telemetry: format id 5 - file definitions
+;;
+;;
+	51401	     3618560		5tel1				TEL_5ENG1_DATA_L0
+	51402	     3618560		5tel2				TEL_5ENG2_DATA_L0
+	51403	     3618560		5tel3				TEL_5ENG3_DATA_L0
+;;
+;;
+;;THM engineering telemetry: format id 5 - file definitions
+;;
+;;
+	51501	     3618560		5thm1				THM_5ENG1_DATA_L0
+	51502	     3618560		5thm2				THM_5ENG2_DATA_L0
+	51503	     3618560		5thm3				THM_5ENG3_DATA_L0

@@ -1,0 +1,40 @@
+#######################################################################
+#
+#		Thermal Visualizar Definition file
+#
+#######################################################################
+#
+# Group:  SciOps MTA
+#
+# Thermal Subsystem:   HRMA Forward Aperture Plate
+#
+# Purpose:
+#
+#   This file contains the index, x_pos, y_pos, type, and mnemonic
+# that are required to properly draw the thermal subystem.  The
+# x_pos, and y_pos are in normalized (to 1) units. The type is
+# a signal for thermal/gradient type:
+#    0 = temp
+#    1 = radial gradient
+#    2 = circular gradient
+#
+#
+#index   x_pos   y_pos   Type	Mnemonic 
+#------   -----   -----   ----	--------
+   1     0.498   0.973	 0	OHRTHR44
+   2     0.498   0.840	 0	OHRTHR45
+   3     0.792   0.333	 0	OHRTHR22
+   4     0.908   0.258	 0	OHRTHR21
+   5     0.088   0.253	 0	OHRTHR02
+   6     0.213   0.320	 0	OHRTHR63
+   7     0.183   0.382	 0	OHRTHR03
+   8     0.318   0.603	 0	OHRTHR46
+   9	 0.088   0.737	 2	HFAPGRD1
+  10	 0.500   0.900	 1	HFAPGRD2
+  11	 0.500   0.023	 2	HFAPGRD3
+  12	 0.163   0.303	 1	HFAPGRD4
+  13	 0.898   0.735	 2	HFAPGRD5
+  14	 0.910   0.258	 1	HFAPGRD6
+  15	 0.205   0.665	 2	HFAPGRD7
+  16	 0.502   0.158	 2	HFAPGRD8
+  17	 0.793   0.668	 2	HFAPGRD9

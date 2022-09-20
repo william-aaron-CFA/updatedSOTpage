@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+   <TITLE>MTA ICFs</TITLE>
+<!-- Changed by: Scott J. Wolk, 15-Jun-1998 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; I; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#22FFFF" BGCOLOR="#000000" LINK="#FF0000" VLINK="#00BBFF ALINK="#7500FF">
+
+
+<h1><a name="MONITOR"> Monitoring of Data</h1>
+Goals for Monitoring include processing data through the 
+The following canned gadgets.
+Current interface control files are linked in:<p>
+
+        <h1>HRMA</h1> <p>
+        <a href="rehearsal/hrma1_1_01"> 5.6.2.1.1.1, .2 and .4</a>  Retrieve  HRMA temperature readouts 
+					and each gradient<p>
+
+        <h1>PCAD</h1> <p>
+        <a href="rehearsal/pcad1_2_02">5.6.2.1.2.2 </a>    Determine Aspect Camera Assembly temperatures L0*<p>
+        <a href="rehearsal/pcad1_2_08">5.6.2.1.2.8 </a>    Check temperatures of, and gradient across FTS<p>
+        <a href="rehearsal/pcad1_2_10">5.6.2.1.2.10</a>    Determine IRU temperatures and voltages<p>
+        <a href="rehearsal/pcad1_2_11">5.6.2.1.2.11</a>   Check for gyro rate data within limits<p>
+        <a href="rehearsal/pcad1_2_12">5.6.2.1.2.12</a>   Monitor drift rate updates to gyros<p>
+        <a href="rehearsal/pcad1_2_13">5.6.2.1.2.13</a>   Check for motion stability within limits<p>
+        <a href="rehearsal/pcad1_2_14">5.6.2.1.2.14</a>   Determine reaction wheel rates<p>
+
+        <h1>SIM</h1> <p>
+        <a href="rehearsal/sim1_6_03">5.6.2.1.6.3 </a>   Determine SIM temperatures and voltages<p>
+        <a href="rehearsal/sim1_6_04">5.6.2.1.6.4 </a>   Monitor SIM actuator use<p>
+
+        <h1>SUBSYSTEMS</h1> <p>
+        5.6.2.1.8.2  Monitor OBC State<p>
+        <a href="rehearsal/subsys1_8_04">5.6.2.1.8.4</a>  Monitor spacecraft temperatures<p>
+        <a href="rehearsal/subsys1_8_05">5.6.2.1.8.5</a>  Monitor power usage and availability<p>
+
+        <h1>HRC</h1> <p>
+        <a href="rehearsal/hrc1_3_05">5.6.2.1.3.5</a>      Determine VETO rate <p>          
+        <a href="rehearsal/hrc1_3_08">5.6.2.1.3.8 </a>     Temperatures  <p>          
+
+	<a href="rehearsal/hrc1_3_09">5.6.2.1.3.9 </a>     Electronics  <p>          
+
+5.6.2.1.3.6 Utilize next-in-line mode data to infer background rates and 
+            proper functional state<p> 
+
+5.6.2.1.3.4 Construct an image in detector coordinates (without aspect 
+        correction). Compare with expected template of hot spots and dead 
+        zones<p> 
+
+
+
+<h1>ACIS</h1> <p>
+<a href="rehearsal/acis1_4_01">5.6.2.1.4.1 </a>     ACIS configuration  <p>   
+<a href="rehearsal/acis1_4_07">5.6.2.1.4.7 </a>     ACIS thermal  <p>   
+<a href="rehearsal/acis1_4_08">5.6.2.1.4.8 </a>     ACIS electronics  <p>   
+<a href="rehearsal/acis1_4_09">5.6.2.1.4.9 </a>     ACIS DEA <p>   
+<a href="rehearsal/acis1_4_02">5.6.2.1.4.2</a> Determine ACIS Background Rates <p>
+<a href="acis1_4_03">5.6.2.1.4.3</a> Compute electronic readout noise <p>
+5.6.2.1.4.5 Generate Image in Detector Coordinates <p>
+5.6.2.1.4.6 Utilize next-in-line mode <p>
+
+
+
+<h1>EPHIN</h1> <p>
+<a href="rehearsal/ephin_x_x">5.6.2.1.9.1 </a> Check ephin housekeeping status, detector/ counter status<p>
+<a href="rehearsal/ephin_z_z">5.6.2.1.9.2 </a> Check ephin temperatures and voltages<p>
+
+<hr>
+
+
+
+</BODY>
+</HTML>

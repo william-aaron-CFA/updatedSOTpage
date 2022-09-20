@@ -1,0 +1,35 @@
+#######################################################################
+#
+#		Thermal Visualizar Definition file
+#
+#######################################################################
+#
+# Group:  SciOps MTA
+#
+# Thermal Subsystem:   HRMA Struts
+#
+# Purpose:
+#
+#   This file contains the index, x_pos, y_pos, type, and mnemonic
+# that are required to properly draw the thermal subystem.  The
+# x_pos, and y_pos are in normalized (to 1) units. The type is
+# a signal for thermal/gradient type:
+#    0 = temp
+#    1 = radial gradient
+#    2 = circular gradient
+#
+#
+#index   x_pos   y_pos   Type	Mnemonic 
+#------   -----   -----   ----	--------
+  1	 0.648	 0.178   0      OOBTHR02
+  2	 0.827	 0.520   0      OOBTHR03
+  3	 0.668	 0.822   0      OOBTHR04
+  4	 0.310	 0.823   0      OOBTHR05
+  5	 0.155	 0.528   0      OOBTHR06
+  6	 0.332	 0.203   0      OOBTHR07
+  7	 0.785   0.335   2      HSTRTGRD1
+  8	 0.772   0.707   2      HSTRTGRD2
+  9	 0.475   0.883   2      HSTRTGRD3
+ 10	 0.197   0.688   2      HSTRTGRD4
+ 11	 0.200   0.358   2      HSTRTGRD5
+ 12	 0.495   0.167   2      HSTRTGRD6

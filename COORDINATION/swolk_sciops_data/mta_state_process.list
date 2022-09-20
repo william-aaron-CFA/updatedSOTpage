@@ -1,0 +1,73 @@
+# This file contains the information needed to monitor 
+# elements of AXAF Data whose validity limits depend on the 
+# spacecraft configuration.
+#
+# The file consists of two columns. 
+#   1) Column = Column name of data element to be monitored
+#   2) Group  = Monitoring group assignment.
+#                 this field must correspond to a record in the master group list
+#                 and be the concatenation of "subsyst" and "catagory"
+#
+# The columns MUST be TAB delimited! 
+#
+#Column         group
+# name
+#------         -----
+#
+#******  acis1_4_07  ******
+#
+#
+#******  acis1_4_08  ******
+#
+1DAHACU		aciselec
+1DAHBCU		aciselec
+1DAHAVO		aciselec
+1DAHBVO		aciselec
+1DAHHAVO	aciselec
+1DAHHBVO	aciselec
+1DE28AVO	aciselec
+1DE28BVO	aciselec
+1DEN0AVO	aciselec
+1DEN0BVO	aciselec
+1DEN1AVO	aciselec
+1DEN1BVO	aciselec
+1DEP0AVO	aciselec
+1DEP0BVO	aciselec
+1DEP1AVO	aciselec
+1DEP1BVO	aciselec
+1DEP2AVO	aciselec
+1DEP2BVO	aciselec
+1DEP3AVO	aciselec
+1DEP3BVO	aciselec
+1DP28AVO	aciselec
+1DP28BVO	aciselec
+1DPP0AVO	aciselec
+1DPP0BVO	aciselec
+1DEICACU	aciselec
+1DEICBCU	aciselec
+1DPICACU	aciselec
+1DPICBCU	aciselec
+#
+#******  acis1_4_10  ******
+#
+#
+#******  hrc1_3_08 ******
+#
+#
+#******  hrc1_3_09 ******
+#
+2N15VAVL	hrcelec
+2N15VBVL	hrcelec
+2P05VAVL	hrcelec
+2P05VBVL	hrcelec
+2P15VAVL	hrcelec
+2P15VBVL	hrcelec
+2P24VAVL	hrcelec
+2P24VBVL	hrcelec
+IMHBLV		hrcelec
+IMHVLV		hrcelec
+SPHBLV		hrcelec
+SPHVLV		hrcelec
+GRDVALV		hrcelec
+2GRDVALV	hrcelec
+2PRBSCR		hrcelec

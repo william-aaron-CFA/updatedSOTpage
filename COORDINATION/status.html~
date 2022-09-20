@@ -1,0 +1,806 @@
+
+<HTML>
+<HEAD>
+   <TITLE>M&TA STATUS</TITLE>
+<!-- Changed by: Scott J. Wolk, 22-Apr-1998 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; I; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#DDDDDD" BGCOLOR="#000000" LINK="#FF0000" VLINK="#FFFF22" 
+ALINK="#7500FF" background="stars.jpg">
+
+
+<h1>M&TA STATUS -  (2000-Apr-24)</h1>
+
+<!-- <h4>We have accomplished the major flight critical task.  Monitoring of all L0 data products.
+</h4>
+
+Now we have to more forward on the rest of our charter, monitoring
+higher level data products, trending and fancy analysis.  We also have
+to tighten up what we have done. -->
+
+<hr>
+
+
+<h3>NEW RELEASE CODE SINCE Jan 2000:</h3>
+<pre>
+1) Monitoring EGG (MEG) MTA_MONITOR_PSUEDO
+	- From L1 DATA create
+	  +MTA summary file containing sums/products etc of data from 
+		other files
+	  +A plot of new msids via usual web pages (new links)
+
+	Purpose  create new pseudo MSIDS for monitoring
+	Procedure- take incoming MSIDS, X,/,+-,AVG as needed. 
+		(must be able to function on PMSIDS and MSIDS)
+	Output  new file for input/output to MTA monitor static
+	Status: spec COMPLETE
+	Status: functionality COMPLETE
+	Status: pipeline COMPLETE
+	Status: DB 0%  Science need to send DBDEV 1 new DB table spec.
+	Priority MTA DONE
+	Priority DB, part of second DB set 
+
+</pre>
+
+<h3>CLOSED ISSUES - Since Jan 2000:</h3>
+<ol>
+<li>  <font color=FF00FF>(BUG 1713) </font> MTA_MONITOR_EVENTS - Object name on first page does not carry
+past the space (i.e. NGC 2516 --> NGC) this appears correctly on deeper -->
+--pages.(back in daily)
+
+<li>  <font color=FF00FF>(BUG 1727) </font>MTA_MONITOR_GRATINGS
+file size limitation.
+
+<li> <font color=FF00FF>(BUG 1774) </font>
+  MTA_MONITOR_STATIC bug in the results of 
+TLEVART, VLEVART and SHEVART
+
+<LI> MTA_MONITOR_STATIC Y2K buglet   (Year=100)
+
+<li> cti_main.html
+<font color=FFFF00> DONE</font> The OBSIDS should be arranged more horizontally.  (i.e. start a new row 
+after each 8 OBSIDS, not each 1.
+
+
+<li>  cti_main.html
+<font color=FFFF00> DONE</font> the should be a link at the top of this page to a page of plots
+
+
+<li> cti.html<font color=FFFF00> DONE</font>
+below the array, above time stamp should be a table with S/I summary info
+
+
+<li>   <font color=FFFF00> (ENH 1479) </font><font color=FFFF00> DONE</font>
+ MTA_MONITOR_STATIC -  On summary pages, please arrange items with
+same error score  in alphabetical order.
+
+<li>  <font color=FFFF00> (ENH 1720) </font><font color=FFFF00> DONE</font> MTA_MONITOR_EVENTS - only report event files which contain events.
+(This supersedes the previous request to only Monitor HRC events from 
+format 1)
+
+<li>  <font color=FFFF00> (ENH 1787)  </font> MTA_MONITOR_EVENTS:   Histogram binsize for ACIS fltgrade is too high
+
+
+ <li>   <font color=FFFF00> (ENH 1718)   </font> <font color=FFFF00> DONE</font>  MTA_MONITOR_STATIC - when calculating STDEV, please
+ reject the 5 highest and lowest values before making the calculation,
+ unless there are less than 20 values.
+
+
+
+</ol>
+
+
+
+<h3>CURRENT ISSUES - Released Code:</h3>
+
+<li> <h4>BUGS:</h4>
+
+
+
+<ol>
+<li> priority 1
+
+<ul>
+<li> <font color=FF00FF> (BUG 1765) </font>MTA PERL SCRIPT:   /usr/bin/perl --> /opt/local/bin/perl
+<li> <font color=FF00FF> (BUG 1832) </font> MTA_CHECK_LIMITS:   empty output file created if input file empty
+<li>  <font color=FF00FF>(BUG 1797) </font>  MTA_EVT2IMG:   Empty image created when counts/pixel > 32767
+</ul>
+
+<li> priority 2
+<ul>
+<li> <font color=FF00FF> (BUG 1773) </font> ACORN:  year = 100 on alert messages.
+<LI> <font color=FF00FF>(BUG 1717) </font><font color=FFFF00> Older
+than 4 months</font> ACORN - ACORN does not seem to calibrate EOCHRGBn (n=1,2,3) correctly.
+The uncalibrated value ranges from 1 to 10000, corresponding
+to battery state of charge between 0 and 1.
+
+The ACORN calibrated value is:
+0.84 when the uncalibrated value is 8400
+10000 when the uncalibrated value is 10000.
+
+<li> <font color=FF00FF> (BUG 1768) </font>MTA_MONITOR_GRAD:   mta_calc_grad exit with status 11  pipeline dies
+
+
+<li>  MTA_MONITOR_ACA <font color=FFFF00> Older
+than 4 months</font>- unseen, untested 
+
+<li>  MTA_MERGE_REPORT <font color=FFFF00> Older
+than 4 months</font>- unseen, untested 
+
+<li> <font color=FF00FF>(BUG 1715)</font> <font color=FFFF00> Older
+than 4 months</font> AP - as currently run (in "burst mode") does not support M&TA
+latency requirements.  There has been no progress here in four months
+as emphasis is on reprocessing.
+
+</ul>
+
+
+<li> priority 3
+<ul>
+
+<li> <font color=FF00FF> (BUG 1727) </font> MTA_MONITOR_GRATINGS:  No Gratings Reports generated
+
+<li>  MTA_MONITOR_GRATINGS<font color=FFFF00> Older
+than 4 months</font> we need to update AP registries so this
+runs on all L1 products which don't have gratings + all gratings
+products.  We need to measure aspect w.r.t. X,Y not detx dety.
+
+<li>  MTA_MONITOR_GRATINGS <font color=FFFF00> Older
+than 4 months</font>I haven't seen the current release run so 
+I can't address whether it deals with zero order correctly.  The code
+available to science does.
+
+<li>  MTA_MONITOR_GRATINGS <font color=FFFF00> Older
+than 4 months</font>has a whole series of DB requirements
+currently unmet.
+
+</ul>
+
+
+
+
+
+
+
+</ul>
+
+
+<li> <h4>ENHANCEMENTS: (priority 4)</h4>
+<ul> 
+
+<li>  <font color=FF00FF> (ENH 1711) </font> <font color=FFFF00> Older
+than 4 months</font> ALL - No versioning if FITS header (all read 0.0)
+
+<li> <font color=FF00FF>(ENH 1724)</font> MTA_CTI_MON   
+
+<ol>
+<li>       <font color=FFFF00> DONE</font> Add Start/stop Time to  each page
+<li>      Add Cold radiator temperature to each page
+<li>      <font color=FFFF00> DONE</font> create archival file containing all numeric values on page
+         (including time and temp)
+
+</ol>
+
+
+
+ <li>  <font color=FF00FF>   (ENH 1480)  </font>    MTA_MONITOR_STATIC - On summary pages, please calculate the median, not the average (priority 5).
+
+
+
+
+
+<li>  <font color=FF00FF> (ENH 1719) </font> MTA_MONITOR_EVENTS - zoom items should be recentered.
+
+
+
+
+</ul>
+
+
+<li> <h4> MTA Databases </h4>
+<ul> 
+<li> 15 (check) speced and built being tested 
+<li> Integration to be complete by May 20 (as of April 18) 
+<li> Population to begin June 1 (as of April 18) 
+<li> Specs for 5 additional Databases due June 30
+<li> Final 5 databases due September 30
+<li> Data seeker underdevelopment 
+<ul>
+<li> expected usable by September 1
+<li> First automated trends by October 1
+<li> Note: simple trending already carried out by DOSS direct software.
+</ul>
+</ul>
+
+<li> <h4> MTA Problem Response System: </h4>
+<ul> 
+<li>  REALTIME : safemode
+<li>  AP : OFF
+<li>  the list of monitored values is ready to go SOT has been running
+it for a month on RT with emails going out daily.  The issue is that
+every time ACORN goes down, it "forgets" the spacecraft status and thus
+will re-alert for an existing problem.  We need to devise a way to keep
+the ACORN object alive as much as possible and slip it dump data on an
+as available basis.  This suggest reading dump data into a UDP port.
+</UL>
+
+<li><h4> SDP</h4>
+<ul> 
+<li>  No L1 files marked for MTA_STATIC
+</UL>
+
+
+
+
+
+
+<h3>OVERDUE :</h3>
+<ol>
+<li> ACA_MON - This is the L1 Aspect monitoring and trending. late from
+		3/15/1999 turnover. (underway) (Priority 2)
+<li> ACA_TRD - This is the L1 Aspect monitoring and trending. (priority 3)
+</ol>
+
+
+<h3>FUTURE RELEASES :</h3>
+Priorities (1-highest (up to 3) , 10-lowest (up to 30))<br>
+<pre>
+
+1) Data Seeker MTA_DATA_SEEKER
+	Speced separately
+	Status: needs DBs 15 of 21 are well defined,
+	When 10 are done finish data seeker
+	1 month JGP
+	When 10 are done deliver specs for others as available,
+	ISSUES; logistic, how will this work, crontab? AP?
+
+
+
+
+2) L2 MON (MTA_SOURCE_MON)
+	Speced separately,
+	Priority 5  JGP 1 Month after stable L2 source lists.
+
+
+
+3) SI-Background MTA_SIB
+	- From L2 DATA create a mask of sources
+	  +Remove these regions from the L1 data product.
+	  +create table of  /counts/time (~5 min) /energy bin
+	  +create plot of /counts/time (~5 min) /energy bin vs time
+	Purpose, track the background rate of the SIs and the sky.
+	Procedure- remove all sources from an event List.
+		Calculate /counts/time (~5 min) /energy bin
+		Energy bin and time window are parameters
+	Output: to web: tables, per OBI
+	OUTPUT to DB: RA, DEC, TIME, calculated quantities NEW DB.
+	Status :Abbey's tool almost done, no other code.
+	Priority MTA 7  RO 2 months.
+
+
+
+4) HRC/ACIS_DOSE (MTA_HRC_DOSE)
+
+	Purpose Monitor HRC dosage/pore Alert scientists if problem
+	Procedure-PerOBI make list of events/ pore pair
+		Each week create dose image/list 
+		Use (coadd/ Dmcopy )last 4 weeks to create last month
+		Use last 52 weeks to create last year 
+		Use all weeks to create mission
+	Notes: use chip coords
+	Note:  well developed may have out paced DM tools
+	Note; if cnt/pore GT Y Alert yellow, GT R RED, 
+	Note Y and R are different for the /OBI and the Weekly and the monthly etc.
+	Output Web page Hottest pores table
+	Output DB, dose list/images
+	Output  for all pore GT D, CX,CY, Total dose 
+	Status: spec 80%
+	Status tool 80%
+	Status pipeline 40% understood, not implemented 
+	Status DB 0%
+	Priority MTA 5 JGP 3 weeks
+	Priority DB 5 -AE 2 weeks	
+
+
+
+5) Monitor - DEA HOUSEKEEPING - spec delivered 3/22/99. Being handled
+through Direct DOSS tools.
+
+
+6)MTA_ACIS_CCD_MON-
+	 - From ACIS L1 Event list create
+           + Histograms
+               o pha
+               o pi
+           + Plots
+               o pha histogram
+               o pi histogram
+               o cnts vs time ( per chip )
+
+	purpose: monitor CTI, and general ACIS performance
+	procedure  OPEN ACIS L1 event lists create fixed plots and histograms
+	procedure  Open ACIS BIAS files create fixed plots 
+	output  to web pages: the plots /per obi or per bias
+              output  to DB #G64, #G2, #G8 ,#G16, Node_ID, CCD_ID. Obsid.
+	Output  to DB BIAS data: FWHM, meadn, meadian, mode, min, max,
+		node_id,ccdid, obsid.
+		THE OTHER SUMMARY INFO IN THE SPEC IS LESS IMPORTANT
+			AT THIS TIME.
+	Status: Spec 90%
+	Status: tool 90%
+	Status: Pipeline 10%
+	Status: DB 0% ; Takashi is able to use data though
+	Status; Integ Good, AP can handle this tool.
+	Priority MTA 5  JGP 2 weeks
+	Priority DB     2 AE  2 weeks
+
+
+
+
+7)Configuration tool: MTA_CHANDRA_CONFIG
+	- From RAW DATA create
+	  +tab delimited files 1 new record when each tracked value
+		changes
+	  +A plot of the spacecraft configuration vs. time
+
+	Purpose -create an easy access mission history
+	Procedure- Run ACORN TC on all dumps and associated procedures
+		developed by SJW/TI
+	Traced quantities (HRC- S HV, HRC-I HV, ACIS CR (2) ,GRAT POS
+		(4) SIM POS (2), OBSID, FMT
+	Output- to web pages:- plot of traced quantities
+	Output to DB: single file with all traced quantities throughout
+		mission (RDB and fits)
+	
+	Issue how to we manage the data product, Write the RDB to the 
+		web page and constantly replace/update FITS file.
+	
+	Status: spec 100% 
+	Status tool  100%
+	Status Pipeline  25% defined and working as cron tab
+	Status integ 50% - should be implemented as part of MTA
+		monitor_RAW?  Or as separate version of it RAWII.
+	Priority MTA 5  it works as is  RO/DP 1 month to integrate
+	Priority DB    4  ditto
+        Currently handled through Direct DOSS tools.
+
+
+8)MTA_PRS  REVAMP
+	Prioity MTA 6 RO 1 Month
+
+
+
+	
+9) Integrations Tool (IT)
+ 	Time comps on DB items
+	I.e. RPMs * time = rotations.
+	Status undone I think this is a pure DB app,   DB priority 6.
+
+
+
+
+
+
+
+
+
+
+<h4>Lower priority </h4>
+<!--<hr>-->
+
+<ol>
+<li> FLAG - still unstable, these need to be fixed (Priority 7)
+<li> Processing speed. (priority 9) 
+<li> Bias_Mon         (priority 7)
+<li> Check_ACIS LOAD  (priority 7) spec delivered to ISOBE, 
+Shanil will develop.
+<li> ACIS configuration (priority 7) ibid
+<li> Merged Status files.  (priority 7) <!--is sergey doing this?
+<li> A more difficult issue is dealing with unevenly sampled data.  AS I have
+stated before, by the time the product is filed.  I want eveything grouped
+by science subsystem+group with stale data introduced to handle uneven 
+sampling. I tried to document this approach 
+<a href ="./mta_file_structure.txt" > here </a>
+Does this problem require any more specification from me? -->
+
+<li> Determine pointing offsets - DOSS direct development underway.
+
+<li> MTA DI - string handling. -  PSUEDO code exists (Priority 7)
+<li> Trend HRMA focus (this covers 10 MTA tasks & gets complicated)
+(priority 7) -Scheduled for DOSS development June 2000.
+<li> SIM positional accuracy tool (includes repeatability, settling time
+        and hysteresis.) This is being handled in by DOSS direct right now (priority 8)
+</ol>
+
+</OL>
+<h4>December  2000 </h4>
+<!--<hr>-->
+<ol>
+<li>Other issues  - Highest priority -9
+
+<li> ACIS trending
+<li> HRC trending
+<li> PCAD trending
+
+
+<li>Other issues  - Lower priority -10
+<ul>
+<li> Counting tools  
+<li> Detect flickering pixels on ACIS
+<li> Monitor CCD/HRC/SIM tilts (Part of ACA Mon)
+<li> Determine grating orientation (Part of grate_mon)
+<li> Dump and compare is on indefinite hold.
+</ul>
+</ol>
+<hr>
+
+
+<!--
+<!--
+<!-- <li> Light Curve tool (base spec in) (priority 5)
+<li> integral tool (priority 5)
+(total gyro/wheel motion, total sim motion (isobe)
+<li> L2 Mon Spec due 4/30 (Priority 6)
+
+
+
+<li>Holes in Software
+<ul>
+<li> No context switching  - SCIENCE needs to update databases.- ACORN
+MTA_MONITOR_RAW  QUESTION:is this in AP?  Yes.
+
+<li>No status check are we in the expected state.
+
+<li>ACIS - Serial digital 
+</ul>
+<li> Who is responsible for maintaining MTA ARD-LIKE FILES? (group lists, process
+lists, email lists)
+<font color = 00FFFF> CXCDS </font> 
+<li> How are these files changed? (RCS control, clear case control, ASCDSops, 
+	MTA science staff, MTA program staff?)
+<font color = 00FFFF> Currently this requires a patch to the software 
+</font> <font color = FF0000><B> THIS IS BAD!</B></font>
+
+<li> Science needs to add sources and GRAT_MON to databases.
+<li> What are the current plans for running the separate MTA pipeline
+	for ACIS and HRC sub OBI data?  Fred has a plan to setup a 
+	separate MTA decom and pipeline set to deal with partial OBIs
+	what is the status of this? 
+<font color = 00FFFF> This will be developed from 6/1 to 9/1 </font>
+</ul>
+
+<hr>
+
+
+<h3>ACORN -A Comprehensive Object-oriented Real-time Necessity </h3>
+<ol>
+Release 1.0 Functionality
+<ul>
+ <li>    EHS Bidirectional Minor frame stepping via a Major Frame
+ buffer object.  DONE
+ <li>    Selected use of DSN ERT or EHS OBT time. DONE
+ <li>    Selection of traced MSID groups from MTA list. DONE
+ <li>    Display of Hex and Raw bits of traced values. DONE
+ <li>    Tracing and Display of Calibrated MSID values (based on switch MSID's).
+ <li>    Limit sensing of traced values and generation of notification files.
+ <li>    Creation of tab-delimited ascii files of traced groups.
+</ul>
+Release 2.0 Functionality
+<ul>
+ <li>    Direct Socket Connection instead of MsgRcvrTelem. DONE
+ <li>    Display of additional, user-selected header fields. 40%
+ <li>    Support for Telemetry Level 0 Shared Memory interface. 
+ <li>    Application of OFLS fencepost for time determination.
+ <li>    Seek and Find options.
+ <li>    Strip Charting.
+ <li>    Summary report/gaps list creation / display.
+ <li>  Potential SFDU ot bare VCDU support if required.
+</ul>
+</ol>
+Release 1.0 to be available May 21, 1999<br>
+Release 2.0 to be available June 11, 1999
+
+
+</ul> 
+
+<hr>
+At this point we may be done!
+(except for enhancments, optimizations,...
+
+<hr>
+<h3>CLOSED ISSUES L0 monitoring:</h3>
+<UL>
+<li> All actions specified in The  <a href="./rehearsal/ART.html"> ART
+report </a> (items 1-12) are to be closed.
+
+
+<li> MTA needs to properly handle the incoming quality flag.  i.e. 
+data of bad quality should not be involved in limit checking, nor
+should it be plotted nor should it make it into the final MTA static files.
+UPDATE 1/13/99:         Status: Software updates to mta_check_limits to read and monitor
+                 with quality considered are complete.  An issue
+                 regarding the transfer of QUALITY to the output file is 
+                 being resolved.
+                 Expectations are for this upgrade to be in place for the 
+                 R4CU1C release.
+ 
+                 Software updates for image generation to handle the
+                 quality column are in progress and expected to be in
+                 place for the R4CU1C release.
+
+
+
+<li> Enhancements to to autogenerated GIFs.
+Jim has a short list of minor adjustments. -COMPLETED
+
+<li> I expect to have dynamic limits active for the Dec 21 Rehearsal. If
+we find errors we will have to deal with these.<BR>
+         ISSUE:  Has been "broken" since the engineering data format
+                 change.  Several mnemonics used to determine the system 
+                 state changed name and/or type.<BR>
+ 
+         STATUS:  RTB has modified the code to function with EST2 data.
+                  The pipeline mta_monitor_state has been updated and
+                  run on sample data.  Unit Test results can be found in:
+ 
+<a href ="file:/stage/ascds_extra/staff/UDF/Sciops/mta/monitor/TestData/change030/outdata">                 
+/stage/ascds_extra/staff/UDF/Sciops/mta/monitor/TestData/change030/outdata
+</a>
+ 
+                  The code is being merged to Daily today (1/13/1999).
+                  After that, ops can run sample pipelines to the 
+                  usual directory.
+                  It will be incorporated in the Jan. 15, release
+                  (R4CU1C)
+
+<li> MTA data seeker 1.0 Completed (no arguments)
+
+<li> Currently MTA STATUS files  match up 1 to 1 with engineering files.
+This leads to lot of unmanagable files. 
+It would be best if we could merge like files once 8 hours and  warehouse them 
+to the archive once per day.
+Appearently Kenny's group already has tools to merge and create proper headers.
+So this really shouldn't be too hard.
+
+
+<li> FITS HEADERS: MTA Status file headers are not ASC standard.
+           One notable omission is the CONTENT keyword which is
+           required for data archive/retrieve. SJW has written a
+standardization of the<a href
+="./fits_header.txt"> MTA fits
+header</a> and <a href ="./fits_keywords.txt">file by file
+keywords. </a>
+
+<ul>
+<li> FROM SJW 1/15/99:Now that I have laid out the FITS HEADERS, it would definetly be advantageous
+to archive our status files (the HDU CLASS structure allows a lot of search 
+capability, although it does not preclude the data seeker.)
+The drawing I showed at the meeting Tuesday indicated this via the two arrows, 
+one to warehouse the data and one to file the database tables.<p>
+
+<!--That said, I do not put the Merging of the files on the same level as  
+<!--getting the headers right.
+<!--I expect to see the headers right by 2/15.  I spoke to Richard and he thinks 
+<!--this is doable. I suggest that Richard speak to Kenny about the extant
+<!--fits header library as well as cfitsio.<p>
+<li> <FONT COLOR=#FF00FF> READY TO PUT BACK 2/22/99 </FONT>
+
+</ul>
+
+<li>  Gradient Pipline<BR> Turned over!
+<ul> 
+
+<li>         ISSUES:  A minor issue is that actual gradient definitions
+                  were only recently provided.  Evaluating the sources
+                  of these MSIDs reveals that it is coming from multiple
+                  engineering files, which is not what our original 
+                  design expected ( EXTNAME not constant ).  Also, since
+                  the input is L0 Engineering data, it may be subject
+                  to variablility.
+ 
+<li>         STATUS (1/13/99):  Definitions of gradient mnemonics have been provided. 
+ 
+                  Priorities have not provided the time needed to evaluate
+                  the redesign of the pipeline.  It may be an "execution"
+                  change or code may need to be rewritten.
+ 
+                  Serious memory leaks are causing the code to use
+                  all available virtual memory.  This was not a problem
+                  with the original definitions.  Work is under way to
+                  track down and plug the leaks as time permits.
+ 
+</ul>
+
+<li>Reports from ASCDS indicate that it takes 
+3 hours (!) to process 8 hours worth of Level 0 files. If this is accurate this
+is very bad.
+possible optimizations that I see:
+<ul>
+<li> setting the decom templates larger, I don't know how large they are set 
+now,
+but it could be as high as 30 minutes worth of data / eng file.
+
+<li> opening only selected files.  We know what msids we want, therefore we can 
+use the Xref to know the file names.  Instead of opening each file,
+reading the column heading and comparing against the list, we could only 
+open  files with data we were interested in and extract the data without 
+interigating the file to verify the column's presence. 
+</ul> 
+
+</ol>
+</UL>
+<li> What is the status of running State and Static pipes in parallel?
+<li> What is the status of getting the page times correct? 
+<font color = 00FFFF> I think this is ready to put back</font>
+<li> Who (whose software and whose operation) is responsible
+	for archiving MTA Status files? How about the DB table data?
+<font color = 00FFFF> This is done by AP </font>
+<li> To what extent, can should cron jobs be employed instead of AP?
+<li> What infrastructure tools (archival ingest, ACIS L0) exist, 
+What need to be created?  Who will do it?
+
+<li> How does the MTA DB ingestion occur
+           as part of AP?  When is it kicked off?
+<font color = 00FFFF> Part of ingest of files. </font>
+
+<h3> Expectations for the Jun 1 (FINAL FLIGHT) release</h3>
+
+<li> Gradient Pipline -  Turned over! 
+<li> Monitor - strip chart page. (Priority 4)
+<li> Monitor - VIVID colors. (Priority 4)
+<li> Photon_mon.  The current version is good as for as it goes (which
+	is as far as the spec allows. ) Open issues include:
+<ul>
+<li> Photon_mon can't group L0 and L1 data since it groups by OBSID
+(maybe do it by time? (priority 3)
+<li> on M&TA ACIS/EVENT Event Report Page:<BR>
+below obsid (XXXX) should be a copy of the information in 
+/proj/ascds/swolk/www/internal/xxxx.html (priority 5)
+
+<li> ACIS team wants the L0 PHA plotted per readout node. DONE!
+<li> ACIS team does not prefer  RAW_PHA(5) to be the only PHA plotted, but
+they haven't proposed a more worthwhile alternative. (Priority 10)
+<li> ACIS team wants the L1 EV, not PHA. (Priority 4)
+<li> detect HRC/ACIS  hot spots and dead spots (this works with the dose
+        tools) is not in the current spec (Priority 9)
+<li> Part of photon_mon is photon trend.  The trending involves discussion
+ with the DB team on how to store the photons, we will probably use the
+ same type of daily dose files we used at XRCF. (Priority 9)
+</ul>
+<li>Monitor - replace bad quality data with TNULL (Priority 3) 
+<li> Grating mon Spec delivered 4/6/99 -  psuedocode exists (priority 3)
+<li> Monitor - string handling. - part of ACORN not MONITOR STATIC  (priority 1)
+<li> Science needs to updtae format of database.txt.
+<font color = 00FFFF> Only if AP can't do things on time basis </font>
+<li>  MTA_MONITOR_GRADIENTS - Manual procedure wrong REPORT DIR =
+outdir 
+
+<li>  MTA_MONITOR_STATIC - Statistics don't work are quality falgs
+being handled right?
+<ol>  
+<li> New bug (8/7/99) EPHIN rates given as "green" (wrong) strip
+chart blue (correct) 
+
+<li>  ACORN - Broke when we safed.
+<li>  ACORN - fails to DECOM format 5
+<li>  ACORN - New alerts system has memory leak.
+<li>  MTA_MONITOR_STATIC - Need to upgrade AP registries to handle 
+<ol>
+<LI> ACIS </LI>
+  <UL>
+    <LI>ACIS Thermal Control</LI>
+    <LI>ACIS Electronics Side A</LI>
+    <LI>ACIS Electronics Side B</LI>
+    <LI>ACIS Mechanism Controller</LI>
+  </UL><P>
+<LI> GRAT </LI>
+  <UL>
+    <LI>Grating Voltages and Rotation Angles</LI>
+  </UL><P>
+<LI> HRC </LI>
+  <UL>
+    <LI>HRC Temperatures</LI>
+  </UL><P>
+<LI> PCAD </LI>
+  <UL>
+    <LI>ACA Thermal</LI>
+    <LI>IRU Temperatures and Electronics</LI>
+    <LI>PCAD Gyro Rates</LI>
+    <LI>Aspect Quality Solution</LI>
+    <LI>FTS temp & gradient</LI>
+    <LI>PCAD reaction wheel Rates</LI>
+    <LI>Drift rate updates to gyros</LI>
+  </UL><P>
+<LI> SUB </LI>
+  <UL>
+    <LI>OBC State</LI>
+    <LI>Spacecraft Temperatures</LI>
+    <LI>Battery Usage</LI>
+    <LI>Spacecraft Electronics</LI>
+    <LI>Spacecraft Electronics Side A</LI>
+    <LI>Spacecraft Electronics Side B</LI>
+  </UL><P>
+<LI> TEL </LI>
+  <UL>
+    <LI>OBA thermal</LI>
+    <LI>HRMA Thermal</LI>
+  </UL><P>
+</UL>
+</ol>
+<li>  ACORN - hard wire an alert RED for FMT5.
+
+
+<li>  MTA_MONITOR_STATIC - All mta pages should add a  title = to the
+item currently centered: (done)
+
+
+<li>  MTA_MONITOR_STATIC -An addition request, for uniformity would be that the MTA day pages
+> and the MAIN (mta_days.html) page conform to the MTA color scheme....
+> This should be a simple and quick thing to fix....
+(done)
+
+<li>  MTA_MONITOR_STATIC -  Please remove the link to "all" (done)
+<li>  MTA_MONITOR_EVENTS - - on the "flight grade histogram" the
+x-axis should run 0-255,  not 0-4096
+<li>  MTA_MONITOR_EVENTS - include links to local fits files on the
+local pages.
+
+
+<li>  MTA_MONITOR_EVENTS - return to SOT home page, not MTA HOME.
+
+<li>  MTA_MONITOR_GRADIENTS-
+<li>  ACORN - Needs to flag all state chnages not just good to bad.
+<li>  MULTIMON - needs bkrgd mode
+
+<li>  MTA_MONITOR_STATIC - It would be very useful to have on the 
+MTA_DAYS.html page the latest update time for that page. 
+(<link>  ... <Updates Aug 02, 1999 11:02am>). 
+(done, needs adjustments)
+
+<li>  MTA_MONITOR_STATIC - changes to the ARDs. 
+
+
+<li>  MTA_MONITOR_STATIC -  please reorder most recent at the top,
+oldest at the bottom (done, needs adjustment in daily)
+
+
+<li>      (ENH 1481)    MTA_MONITOR_STATIC - At the top  of each summary page
+below the name, 
+please add a link to ../data (label this "FITS DATA FILES") (priority 5).
+( Bug item 1481 is in the release since R4CU3UPD20.)
+
+
+1)MTA_ACIS_CTI
+	 - From specified ACIS L1 Event list create CTI plots and
+		write to web page	
+	Procedure - Wrap IDL tool delivered by CAL/PSU check SIM
+		position before running.
+	Status: Spec (in form of IDL tool 90%)	
+	Status: Tool (in form of IDL tool 90%)	
+	Status: Pipeline ( 10%)	
+	Priority 1 JGP 2 weeks
+
+<li> <font color=FF00FF>(bug 1723) </font> MTA_CTI_MON:
+The link to the postscript files doesn't appear on the html pages.
+(fixed in daily) 
+
+<li>  <font color=FF00FF>(ENH 1712) </font> MTA_MONITOR_EVENTS - show have most active regions in detector
+page as well as sky page. (back in daily)
+
+<li>  <font color=FF00FF>(BUG 1730) </font> MTA_MONITOR_EVENTS -
+array boundary write error within the mta_gen_doseimage 
+routine.  The cause is the chipy, tdetx values extend into 
+
+<li>  <font color=FF00FF> (ENH 1700) </font> MTA_MONITOR_STATIC -  Can the strip chart be made to raise to
+top?  Currently, when I click for a report, if there is a strip chart 
+window already open, I end up having to
+cycle through a bunch of windows until I can bring the display window to
+the top. (priority 6 - Jim said this is done) 
+
+
+<li>  <font color=FF00FF> (ENH 1716) </font> MTA_MONITOR_EVENTS - sort OBSID table entries in temporal order.
+
+<li> MTA_MONITOR_EVENTS - Web page mta_events.html and events.html
+need titles. (back in daily - in under 1 hour)
+
+-->

@@ -1,0 +1,69 @@
+#######################################################################
+#
+#		Thermal Visualizar Definition file
+#
+#######################################################################
+#
+# SciOps MTA
+#
+# Thermal Subsystem:   OBA Forward Bulkhead
+#
+# Purpose:
+#
+#   This file contains the index, x_pos, y_pos, type, and mnemonic
+# that are required to properly draw the thermal subystem.  The
+# x_pos, and y_pos are in normalized (to 1) units. The type is
+# a signal for thermal/gradient type:
+#    0 = temp
+#    1 = radial gradient
+#    2 = circular gradient
+#  
+#
+#index  x_pos   y_pos   Type	Mnemonic 
+#------  -----   -----   ----	---------
+  1	0.427	0.923	0	4RT700T
+  2	0.743	0.817	0	4RT701T
+  3	0.845	0.772	0	4RT702T
+  4	0.890	0.608	0	4RT703T
+  5	0.902	0.443	0	4RT704T
+  6	0.638	0.102	0	4RT705T
+  7	0.505	0.072	0	4RT706T
+  8	0.363	0.087	0	4RT707T
+  9	0.048	0.415	0	4RT708T
+ 10	0.097	0.572	0	4RT709T
+ 11	0.100	0.775	0	4RT710T
+ 12	0.202	0.802	0	4RT711T
+ 13	0.605	0.893	2	HFRBDGRD1 
+ 14	0.793	0.802	2	HFRBDGRD2 
+ 15	0.877	0.682	2	HFRBDGRD3 
+ 16	0.922	0.512	2	HFRBDGRD4 
+ 17	0.807	0.257	2	HFRBDGRD5 
+ 18	0.572	0.065	2	HFRBDGRD6 
+ 19	0.435	0.063	2	HFRBDGRD7 
+ 20	0.217	0.188	2	HFRBDGRD8 
+ 21	0.078	0.505	2	HFRBDGRD9 
+ 22	0.100	0.685	2	HFRBDGRD10
+ 23	0.167	0.785	2	HFRBDGRD11
+ 24	0.333	0.882	2	HFRBDGRD12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

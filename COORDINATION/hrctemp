@@ -1,0 +1,167 @@
+HRC ELECTRONIC DB
+
+
+From hrcu**SThrcelec_static_hk.fits
+TTYPE4  = 'SPTPAST '           / Spect Det Top Plate HV Step
+TTYPE8  = 'SPBPAST '           / Spect Det Bottom Plate HV Step
+TTYPE12 = 'IMTPAST '           / Imaging Det Top Plate HV Step
+TTYPE14 = 'IMBPAST '           / Imaging Det Bottom Plate HV Step
+TTYPE16 = 'MTRSELCT'           / Selected Motor
+TTYPE18 = 'MTRSTATR'           / Motor Status Register
+TTYPE20 = 'MTRCMNDR'           / Motor Command Register
+TTYPE22 = 'SCTHAST '           / Last Motor Step Load
+TTYPE24 = 'MTRITMP '           / Motor Over-Current/Temp
+TTYPE30 = 'FCPUAST '           / Forced Coarse Position - U
+TTYPE32 = 'FCPVAST '           / Forced Coarse Position - V
+TTYPE34 = 'CBHUAST '           / Blanking High Limit - U
+TTYPE36 = 'CBLUAST '           / Blanking Low Limit - U
+TTYPE38 = 'CBHVAST '           / Blanking High Limit - V
+TTYPE40 = 'CBLVAST '           / Blanking Low Limit - V
+TTYPE42 = 'WDTHAST '           / Width Threshold Setting
+TTYPE48 = 'S1HVST  '           / Shield PMT 1 HV Setting
+TTYPE50 = 'S2HVST  '           / Shield PMT 2 HV Setting
+TTYPE52 = 'IMHVLV  '           / Imaging Bot MCP HV Monitor
+TTYPE54 = 'IMHBLV  '           / Imaging Bot & Top MCP HV Monitor
+TTYPE56 = 'SPHVLV  '           / Spect Bot MCP HV Monitor
+TTYPE58 = 'SPHBLV  '           / Spect Bot & Top MCP HV Monitor
+TTYPE60 = 'S1HVLV  '           / Shield PMT 1 HV Monitor
+TTYPE62 = 'S2HVLV  '           / Shield PMT 2 HV Monitor
+TTYPE64 = 'LLDIALV '           / Lower Level Disc Setting
+TTYPE66 = 'CALPALV '           / Cal Pulser Amplitude
+TTYPE68 = 'RSRFALV '           / Range Switch Setting
+
+
+from hrcsu****_SThrchk_static_hk0.fits
+TTYPE2  = 'C05PALV '           / +5V Bus Monitor
+TTYPE4  = 'C15PALV '           / +15V Bus Monitor
+TTYPE6  = 'C15NALV '           / -15V Bus Monitor
+TTYPE8  = 'C24PALV '           / +24V Bus Monitor
+TTYPE10 = 'PRBSCR  '           / Primary Bus Current
+TTYPE12 = 'PRBSVL  '           / Primary Bus Voltage
+TTYPE14 = 'FEPRATM '           / FE Preamp Card Temperature
+TTYPE16 = 'SPINATM '           / Spect Det Temperature
+TTYPE18 = 'IMINATM '           / Imaging Det Temperature
+TTYPE20 = 'LVPLATM '           / LVPS plate Temperature
+TTYPE22 = 'SPHVATM '           / Spect Det HVPS Temperature
+TTYPE24 = 'IMHVATM '           / Imaging Det HVPS Temperature
+TTYPE26 = 'SMTRATM '           / Selected Motor Temperature
+TTYPE28 = 'FE00ATM '           / Front End Temperature
+TTYPE30 = 'CE00ATM '           / CE Temp - Bottom Center Wall
+TTYPE32 = 'CE01ATM '           / CE Temp - Top Center Wall
+
+
+
+# HRC Electronics (1.3.9)
+2C1LVBS         hrcelec
+2C2LVBS         hrcelec
+2CSLSHM         hrcelec
+2CSLSMX         hrcelec
+2DRLSCL         hrcelec
+2DRLSOP         hrcelec
+2ELEASS         hrcelec
+2ELEBSS         hrcelec
+2FSCAST         hrcelec
+2FSMRST         hrcelec
+2FSNYST         hrcelec
+2FSPYST         hrcelec
+2IMHVBS         hrcelec
+2MYLSHM         hrcelec
+2MYLSMX         hrcelec
+2PREADS         hrcelec
+2PREBDS         hrcelec
+2PS5AON         hrcelec
+2PS5BON         hrcelec
+2PYLSHM         hrcelec
+2PYLSMX         hrcelec
+2S1HVBS         hrcelec
+2S2HVBS         hrcelec
+2SPHVBS         hrcelec
+2DETART         hrcelec
+2DETBRT         hrcelec
+N15CAST         hrcelec
+P15CAST         hrcelec
+P24CAST         hrcelec
+GRNDAST         hrcelec
+CALPALV         hrcelec
+CBHUAST         hrcelec
+CBHVAST         hrcelec
+CBLUAST         hrcelec
+CBLVAST         hrcelec
+PRBSCR          hrcelec
+PRBSVL          hrcelec
+FCPUAST         hrcelec
+FCPVAST         hrcelec
+IMBPAST         hrcelec
+IMHBLV          hrcelec
+IMHVLV          hrcelec
+IMTPAST         hrcelec
+LLDIALV         hrcelec
+RSRFALV         hrcelec
+S1HVLV          hrcelec
+S1HVST          hrcelec
+S2HVLV          hrcelec
+S2HVST          hrcelec
+SCTHAST         hrcelec
+SPBPAST         hrcelec
+SPHBLV          hrcelec
+SPHVLV          hrcelec
+SPTPAST         hrcelec
+WDTHAST         hrcelec
+HVPSSTAT        hrcelec
+MLSWENBL        hrcelec
+MLSWSTAT        hrcelec
+MTRCMNDR        hrcelec
+MTRITMP         hrcelec
+MTRSELCT        hrcelec
+MTRSTATR        hrcelec
+SCIDPREN        hrcelec
+#
+# HRC Housekeeping (1.3.9) SJW (10/20)
+C05PALV         hrchk
+C15PALV         hrchk
+C15NALV         hrchk
+C24PALV         hrchk
+PRBSCR          hrchk
+PRBSVL          hrchk
+FEPRATM         hrchk
+SPINATM         hrchk
+IMINATM         hrchk
+LVPLATM         hrchk
+SPHVATM         hrchk
+IMHVATM         hrchk
+SMTRATM         hrchk
+FE00ATM         hrchk
+CE00ATM         hrchk
+CE01ATM         hrchk
+
+
+
+**************************************
+2
+# HRC Electronics (1.3.9)  Major edits by SJW (3/1/99)
+2N15VAVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2N15VBVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2P05VAVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2P05VBVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2P15VAVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2P15VBVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2P24VAVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2P24VBVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2GRDVALV        hrcelec HRC3ENG         1 2 3 4 5       V       
+C05PALV         hrcelec hrc*_hk0.fits   V       8       +5V BUS MONITOR
+C15NALV         hrcelec hrc*_hk0.fits   V       8       -15V BUS MONITOR
+C15PALV         hrcelec hrc*_hk0.fits   V       8       +15V BUS MONITOR
+C24PALV         hrcelec hrc*_hk0.fits   V       8       +24V BUS MONITOR
+CALPALV         hrcelec hrc*_hk0.fits    V       CAL PULSER AMPLITUDE MONITOR
+RSRFALV         hrcelec hrc*_hk0.fits   V
+S1HVLV          hrcelec hrc*_hk0.fits    V       8       SHIELD A HV MONITOR
+S2HVLV          hrcelec hrc*_hk0.fits    V       8       SHIELD B HV MONITOR
+ULDIALV         hrcelec hrc*_hk0.fits    V   UPPER LEVEL DISCRIMINATOR SETTING
+SPHBLV          hrcelec hrc*_hk0.fits    V SPECTROSCOPY LO& UP MCP HV MONITOR
+SPHVLV          hrcelec hrc*_hk0.fits    V  SPECTROSCOPY LOWER MCP HV MONITOR
+LLDIALV         hrcelec hrc*_hk0.fits   V   TRIGGER LEVEL DISCRIMINATOR MONITOR
+PRBSCR          hrcelec hrc*_hk0.fits   V  Primary bus current
+PRBSVL          hrcelec hrc*_hk0.fits   V  Primary bus voltage
+TLEVART         hrcelec  hrc*_ss.fits   total event rate
+VLEVART         hrcelec  hrc*_ss.fits   valid event rate
+SHEVART         hrcelec  hrc*_ss.fits   sheild event rate

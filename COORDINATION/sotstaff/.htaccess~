@@ -1,0 +1,8 @@
+AuthType Basic
+AuthName PasswordAdmin
+AuthUserFile /data/mta/www/.file_with_passwords
+
+<Limit GET  POST>
+require valid-user
+</Limit>
+

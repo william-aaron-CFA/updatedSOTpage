@@ -1,0 +1,35 @@
+MTA DATABASE
+-----------------------
+MTA database will have a tolerance of 16 seconds.  i.e. all elements
+which occur within +- 16 seconds of a fiducial element will be in the
+same table row. unless otherwise specified (Expect tolerance on Gyros
+to be 0.5seconds. Expect tolerance on Point sources to be +- 3 sec.). 
+----------------
+DB group will provide tools for database compression.
+        Once a month DB group will compress all data over 30 days old
+        to 5 minutes time intervals.
+----------------------
+
+
+a row in the data base should look like this:
+
+MSID    time  dt Value variance  limit  (dt=tolerance)
+
+i.e a nominal entry from Lm would look like this
+
+4RT501  237812.278  16  72  0  5
+
+but after compression
+
+4RT501  237812.278  150  72.21  .21  5(status of 72.21 -if this is too 
+                                        difficult we could make it the
+                                        lowest of all status values 
+                                        involved on the compression)
+
+--------------------------
+All fields in the DB will be searchable.
+I.E. return all Gyro data when the ACIS background was high
+or return all Gyro data when background was high and altitude was
+between 70K and 120K.
+-------------------------
+

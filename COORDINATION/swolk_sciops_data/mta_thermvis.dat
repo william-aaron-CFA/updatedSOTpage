@@ -1,0 +1,45 @@
+#######################################################################
+#
+#		Thermal Visualizar Definitions file
+#
+#
+# SciOps MTA
+#
+# Purpose:
+#
+#	This file contains the subsystem name and the associated
+# definitions file for that subsystem.
+# 
+#  Contents:
+#	Column 1 - Subsystems Therm vis. definitions file
+#	Column 2 - Subsystems gradients definitions file
+#	Column 3 - Subsystem Image file (gif)
+#	Column 4 - System group name (i.e. HRMA, OBA, HSA, etc.)
+#	Column 5 - Subsystem name 
+#		  
+# THESE DO NOT YEY HAVE PROPER DEFINITIONS
+#mta_hrma12_thermvis_defs.dat	mta_hrma12_thermvis.gif		HRMA	Mirror Pair 1&2
+#mta_hrma34_thermvis_defs.dat	mta_hrma34_thermvis.gif		HRMA	Mirror Pair 3&4
+#
+#
+#Mnemonic Definition File	Image Filename			Abbrev	Subsystem	subsystem Name
+#-------------------------	--------------			------	------		--------
+mta_fap_thermvis_defs.dat	mta_fap_thermvis.gif		FAP	OBA		FAP
+mta_cap_thermvis_defs.dat	mta_cap_thermvis.gif		CAP	OBA		CAP
+mta_obaabh_thermvis_defs.dat	mta_obaabh_thermvis.gif		ABLK	OBA		Aft Bulkhead
+mta_obabp10_thermvis_defs.dat	mta_obabp10_thermvis.gif	PCOLB	OBA		Baffle Plate 10
+mta_obafbh_thermvis_defs.dat	mta_obafbh_thermvis.gif		FBLK	OBA		Forward Bulkhead
+mta_obastrts_thermvis_defs.dat	mta_obastrts_thermvis.gif	SSTRUT	OBA		OBA_Struts
+mta_obacone_thermvis_defs.dat	mta_obacone_thermvis.gif	HCONE	OBA		OBA Cone
+mta_obaahp_thermvis_defs.dat	mta_obaahp_thermvis.gif		AHET	OBA		AHP
+mta_pflex_thermvis_defs.dat	mta_pflex_thermvis.gif		PFLEX	HRMA		Parabolic Flexure
+mta_hflex_thermvis_defs.dat	mta_hflex_thermvis.gif		HFLEX	HRMA		Hyperbolic Flexure
+mta_hstruts_thermvis_defs.dat	mta_hstruts_thermvis.gif	HSTRUTS	HRMA		HStruts
+mta_ocyl_thermvis_defs.dat	mta_ocyl_thermvis.gif		OCYL	HSA		Outer Cylinder
+mta_incyl_thermvis_defs.dat	mta_incyl_thermvis.gif		AINCYL	HSA		Inner Cylinder
+mta_rrca_thermvis_defs.dat	mta_rrca_thermvis.gif		PERI	PERISCOPE	RRCA Assembly
+mta_ftm_thermvis_defs.dat	mta_ftm_thermvis.gif		PERI	PERISCOPE	FTM Shield
+mta_prscp_thermvis_defs.dat	mta_prscp_thermvis.gif		PERI	PERISCOPE	Thermal Hardwar
+mta_tc_thermvis_defs.dat	mta_tc_thermvis.gif		TFTE	TFTE		TFTE Cone
+mta_tfc_thermvis_defs.dat	mta_tfc_thermvis.gif		TFTE	TFTE		TFTE Forward Cylinder
+mta_tac_thermvis_defs.dat	mta_tac_thermvis.gif		TFTE	TFTE		TFTE Aft Cylinder

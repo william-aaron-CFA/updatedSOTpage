@@ -1,0 +1,67 @@
+This is a specifiaction for the charge transfer ineffiency (CTI) tool.
+This will measure the CTI in a single observation of the calibration
+source.  Trending invovles an ad hoc correction based and data from 
+the rejct counter during the science run and well as temperature
+corrections based on the foval plane temperature.  Those data will be
+needed outside of this tool but should be gathered in parallel
+
+Input :
+Level 1 acis events file.
+
+
+Process
+for each observation
+  for each FP temperature * (this is not done currently but has been requested)
+    for each CCD
+	For each node
+	    for each line (MnKa, TiKa, AlKa)
+	      1) divide the node in to 4 groups, columns (0:250, 260:510,
+	      520:750,  780-1020)  
+	      2) fit each line in ADU space using a polynomial fit.
+		 MnKa ~ 1250 ADU, TiKa~1000 ADU, AlKa ~300 ADU
+	      3) find Amplitude, centoid, sigma and FWHM of each fit.
+	      4) plot the centiod of each fit as a function of row
+	      number.  fit these 4 points to a line.  return the slope
+	      (m) and the intercept (b).
+	      CTI = m/b*10^(-4)
+
+
+outputs:
+1) Summary results for each run to a file or set of file.
+	For each line
+	    for each chip 
+report the following record for each temperture.
+line      Tstart            Tstop             obsid      OBI CCDID   NODE  m  err  b err CTI err  Cold Radiator**  
+
+**Note the cold raditor is a kludge the real thing we want is the Focal plane temperature.
+FP temp is in housekeeping data.
+
+
+2) CCD MTA ACIS CTI node Analysis Report to web  
+
+this reports the CCD, OBSID, Tstart, Tstop and temperature for 
+each observation and  contains the following plots in png and postscript form
+For each line 
+    for each node
+	a plot showing the fit done in step 4.
+and for each subnode 
+	for each line
+	a plot showing the fit done in step 2 
+	plus the date requested in step 3 for each fit.	
+
+	Run time of the tool should be written at the bottom of the page
+
+
+3) for each obervation MTA ACIS CTI top level Analysis Report to web   
+
+
+this reports the CCD, OBSID, Tstart, Tstop and temperature for 
+each observation 
+
+There should be a box for CTI entries for all 40 nodes.
+The values form this run (usually 24 nodes) should be 
+filled in 
+
+Contains link to each node report
+
+Run time of the tool should be written at the bottom of the page

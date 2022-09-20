@@ -1,0 +1,22 @@
+The will be a limits data base. This will contain all limits at all times 
+
+all entries in the data base should have the following form
+
+MSID Yellow_low yellow_high Red_low Red_high time_effective_start  T_E_STOP
+
+There are three types of limits:
+survival - these come from the IPCL see file tlim.txt (swolk has a
+        copy)  
+operating - These are the same as survival unless otherwise specified.
+                (this data base is expected to be used by V&V as well 
+                  as MTA)
+State dependent - these change often as spacecraft configuration 
+        limits in this data base are the same as survival unless
+        otherwise specified.  (i.e. when no limits are present here
+        the limits default to the survival limits.
+
+
+samples of inputs from science can be found at 
+http://hea-www.harvard.edu/asc/XRCF/mta/rehearsal/hrc1_3_09
+near the bottom, SCIOPS has its own version see MCD for that.
+

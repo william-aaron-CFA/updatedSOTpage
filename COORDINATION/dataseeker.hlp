@@ -1,0 +1,151 @@
+NAME
+     dataseeker.pl - DataSeeker command line tool
+
+SYNOPSIS
+     dataseeker.pl [ -nPbh ] [ -i file input ] < -o output file >
+          [ -s search criteria ] [ -c CCDM lookup file ] 
+          [ -p PCAD lookup file ] [ -f config file ]
+          [ -a config vars ] [ -d DB server ] [ -u DB userid ]
+          [ -w DB password ] [ -r avg DB file ]
+
+DESCRIPTION
+     The dataseeker.pl perl script queries the MTA average databases using
+     user-supplied search criteria to formulate a query.  The output
+     is returned as a FITS file.
+
+OPTIONS
+     The following options are supported:
+
+     -n          Don't prompt for DB userid and password.  Just exit if
+                 they aren't supplied by the -u and -w options.
+
+     -P          Print the output filename to standard output when done.
+                 Could be useful in automated processes using dataseeker.pl.
+
+     -b          Don't clobber.
+
+     -h          Print help then exit.
+
+     -i          Specify input file containing dataseeker search criteria.
+
+     -o          Specify output FITS filename.
+
+     -s          Supply extra search criteria on the command line.
+
+     -c          CCDM lookup file.  Used for DataSeeker primary search.
+                 Default value is set in configuration file.
+
+     -p          PCAD lookup file.  Default value is set in configuration file.
+
+     -f          DataSeeker configuration file.  Default location is
+                 $ASCDS_CONFIG_MTA_DATA/ds.cfg.
+
+     -a          Specify values of DataSeeker configuration variables on 
+                 command line.  Overrides values in configuration file.
+
+     -d          Specify DB server.  Default value is set in configuration
+                 file.
+
+     -u          DB userid.  If unspecified and -n option is NOT set, 
+                 dataseeker will prompt for the userid.
+
+     -w          DB password.  If unspecified and -n option is NOT set,
+                 dataseeker will prompt for the userid.
+
+     -r          Average DB lookup file.  Default value is set in configuration
+                 file.
+
+CONFIGURATION FILE
+     The DataSeeker configuration file contains default values for various
+     dataseeker properties.  
+
+     The following configuration variables can be set within the configuration
+     file:
+
+     CCDMFILE    CCDM lookup file.
+     
+     PCADFILE    PCAD lookup file.
+
+     AVERAGERDB  Average DB lookup file.
+
+     DBSERVER    Database server name.
+
+SEARCH CRITERIA
+     Search criteria can be specified using either a file or using the -a
+     argument on the command line.
+
+     The file format is as:  <MSID>=<VALUE> (no whitespace buffering the '=' 
+     sign).  With each msid/value pair being seperated by a newline.  The 
+     argument format is <MSID>=<VALUE> with each msid/value pair being 
+     seperated by a whitespace.
+
+     Time search range is set using a Time Start/Time Stop pair.  Both
+     ends of the range may be set either as seconds since Jan. 1, 1998 
+     (tstartss and tstopss), or as a date value (tstartdate and tstopdate).
+     The date form is as MM/DD/YYYY hh:mm:ss.  
+
+     There are three levels of search criteria called primary, secondary,
+     and tertiary.  Primary search criteria represents observational status
+     of the observatory.  Seconday search criteria represents physical aspects
+     of the observatory.  And Tertiary search criteria defines the columns
+     in the final output FITS file.  All search criteria (except time criteria)
+     must be prefixed with prim-, sec-, or ter- to notify dataseeker with 
+     which level this criteria belongs.
+
+     Primary Search Criteria is made up of the following:
+
+     obsid    The Observation ID.
+     rafrom   Right ascension.  The lower value of a range.
+     rato     Right ascension.  The upper value of a range. 
+     decfrom  Declination.  The lower value of a range.
+     decto    Declination.  The upper value of a range.
+     rollfrom Roll.  The lower value of a range.
+     rollto   Roll.  The upper value of a range.
+     si       Science Instrument.  Possible values are ACIS-I, ACIS-S, 
+              HRC-I, and HRC-S.
+     grating  Grating.  Possible values are HETG, LETG, and NONE.
+     
+     Secondary search criteria are based on values in the MTA configuration
+     databases.  See configdb.rdb for a description of all mnemonics and 
+     corresponding values.  The format for secondary criteria is 
+     <database>..<table>.<msid>=<value>.  
+     ie.  mtaconfig..mta_ccdm_config._ctufmtsl=FMT3
+     
+     Tertiary criteria maps msids in the MTA average databases to columns in
+     the output FITS file.  The format for tertiary criteria is:
+     columns=<value>, where value is a comma seperated list of mnemonics
+     and/or tables from the MTA average databases.  Mnemonics are specified
+     as <database>..<table>.<msid>, and tables as <database>..<table>.  If 
+     pulling multiple msid's from the same table, you only need to list the
+     full path to that table once.  
+     ie.  columns=mtaacis..aciseleca_avg._1dahacu_avg,_1dahavo_avg
+     will place both _1dahacu_avg and _1dahavo_avg from 
+     mtaacis..aciseleca_avg and put them in the final FITS table.
+     
+EXAMPLES
+     This is an example DataSeeker configuration file:
+
+CCDMFILE        /data/ccdmfilter.out
+PCADFILE        /data/pcadfilter.out
+DBSERVER        sqlocc
+AVERAGERDB      avgdb.rdb
+
+    This is an example DataSeeker criteria specification file:
+
+ter-columns=mtaacis..aciseleca_avg,mtapcad..pcadftsgrad_avg._ohrthr27_avg,_ohrthr42_avg
+sec-mtaconfig..mta_acis_config._1daboaon=on
+sec-mtaconfig..mta_ccdm_config._ctufmtsl=FMT2
+prim-obsid=1635
+tstartss=70000000
+tstopdate=5/15/2001
+
+    Example DataSeeker invocation:
+
+
+dataseeker.pl -i query.txt -P -o myout.fits -s"prim-obsid=1635 sec-mtaconfig..mta_acis_config._1daboaon=on ter-columns=mtaacis..aciseleca_avg,mtapcad..pcadftsgrad_avg._ohrthr27_avg" -p/data/pcadfilter.out
+
+    This invocation of dataseeker will query the average databases
+    using the criteria in query.txt and the extra search criteria specified 
+    with the -s option.  /data/pcadfilter.out will be used as the 
+    PCAD lookup file.  The output filename is myout.fits, and the output 
+    filename will be printed to standard out upon dataseeker's completion.

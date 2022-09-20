@@ -1,0 +1,71 @@
+# This file contains the complete listing of MTA monitoring catagories.
+# The combination of the subsystem and catagory columns map to group 
+# columns in the process lists. 
+#
+#  (i.e.  hrc   temp -> hrctemp )
+#
+# NOTE: The columns in this file MUST be TAB delimited.
+#----------------------------------------------------------------------
+#
+#subsyst catagory description                   problem ID      severity urgency
+#------- -------- -----------                   ----------      -------- -------
+#
+#SIM - Science Instrument Module
+#sim	temp	SIM Thermal				46.3	4
+#sim	elec	SIM Electronics				46.9	4
+#sim	mech	SIM Actuator Use			46.1	3
+#sim	sea	SIM Electronics Assembly                46.91   4
+#
+#HRC Science Instrument
+#hrc	temp	HRC Temperatures			43.8	5
+#hrc	elec	HRC Electronics				43.9	5
+#hrc	veto	HRC Veto Counting Rates			43.5	3
+#hrc	hk	HRC Housekeeping			43.9	4
+#hrc	psf	HRC PSF
+##hrc	scnt	HRC Source Counting Rates		43.2	3
+#hrc	bcnt	HRC Background Counting Rates		43.1	3
+#
+#ACIS Science Instrument
+#acis	tempa	ACIS Thermal Control Side A		44.71	4
+##acis	eleca	ACIS Electronics Side A			44.81	4
+#acis	tempb	ACIS Thermal Control Side B		44.72	4
+##acis	elecb	ACIS Electronics Side B			44.82	4
+#acis	da	ACIS Detector Assembly			44.83	4
+acis	dea	ACIS DEA				44.84	4
+#acis	dpa	ACIS DPA				44.85	4
+#acis	mech	ACIS Mechanism Controller		44.92	4#
+#acis	scnt	ACIS Source Counting Rates
+#acis	bcnt	ACIS Background Counting Rates
+#
+#PCAD - Pointing Control and Aspect Determination
+#pcad	temp	PCAD Thermal				42.2	5
+#pcad	aconf	ACA Configuration			42.31	3
+#pcad	iconf	IRU Configuration			42.3	3
+#pcad	ade	ACA ADE					42.32	4
+pcad	cpe	ACA CPE					42.32	4
+#pcad	dea	ACA DEA					42.33	4
+#pcad	elec	PCAD Electronics			42.34	4
+#pcad	pea	ACA PEA					42.35	4
+#pcad	flca	PCAD FIDS				42.52	3
+#pcad	itv	IRU Temperatures and Electronics	42.10	5
+#
+#EPHIN subsystem
+#eph	hk	EPHIN Housekeeping			49.1	4
+#eph	tv	EPHIN Temperatures and Voltages		49.2	4
+eph	rate	EPHIN Rates				49.3	2
+#
+#Telescope (TEL)
+#tel	therm	OBA thermal				11.1	5
+#tel	hrma	HRMA Thermal				11.0	5
+#
+#Gratings (GRAT)
+#grat	gen	Grating Voltages and Rotation Angles	15.0	3
+#
+#Other subsystems
+#sub	obc	OBC State				18.2	3
+#sub	sct	Spacecraft Temperatures			18.4	5
+#sub	batt	Battery Usage				18.5	5
+#sub	elec	Spacecraft Electronics			26.90	5
+#sub	eleca	Spacecraft Electronics Side A		26.91	5
+#sub	elecb	Spacecraft Electronics Side B		26.92	5
+safe	safe	Spacecraft Safemode			26.99	5

@@ -1,0 +1,549 @@
+<HTML>
+<HEAD>
+   <TITLE>M&TA database test report II</TITLE>
+<!-- Changed by: Scott J. Wolk, 22-Apr-1998 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; I; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#DDDDDD" BGCOLOR="#000000" LINK="#FF0000" VLINK="#FFFF22" 
+ALINK="#7500FF" background="stars.jpg">
+
+<h1> Report on MTA databases II</h1>
+<h2>Goals:</h2>
+This Memo is prepared May 10, 2001, as a summary of the results of testing the
+"1 Month" database.  In this memo I summarize our analysis process,
+present the results of the evaluation and make specific
+recommendations for moving forward both for the current, first
+generation, databases and for the second generation databases.
+
+
+<H3>An executive summary of this report:</h3>
+The primary change in this test was the use of ops to populate the
+databases.  After removal of the known long poles this process seemed 
+to work well.  Database tables were populated in 25% of realtime.
+The databases look fine except for the known problems (see <a
+href="#ACTIONS">Actions</a>).
+There are no changes in the general performance from the 3 day test.
+The impact on ops was minimal. 
+<b>The operations of populating these first generation databases, 
+should proceed as soon as possible,</B>  first populating February to
+present and then working backward through 2000.
+
+In parallel development on the second generation dbs should proceed.
+This primarily consists of moving arithmetic functions to dsops 
+pipelines to enhance speed and correct some timing (see 
+<a href="#LIM">Limitations</a>), 
+and adding additional databases.
+Most of the current and future DBs are being maintained in a 
+<a href="http://icxc.harvard.edu/scio/dp/mta_msid_eval.txt">
+document </a> by Mark.
+
+
+<h2>Operations</h2>
+ARCOPS and DSops worked together to develop a <a href
+="./db_script.txt"> script </a> to ingest data
+into the MTA DB tables.  After removing slow ingest files, the process
+was relatively simple,  stage the files for ingest and let the script
+run.  Processing time was about 1 week of data in 2 days of run time,
+using available CPU.  The ingest script works in 4 parallel queues.
+As <a href ="./average_status.txt">reported</a> by Craig, 
+each takes about 6 hours to process 1 days worth of data into the
+tables.  It will take about 1 month to get Feb. through May 2001 into
+the tables. DSops says they are ready to continue populating the
+tables whenever they get the go ahead.  <i>This should get started 
+immediately! </i>
+
+
+<h2>Analysis Process</h2>
+We employed a multi-pronged approach to the analysis:
+<ul>
+<li> We compared each database to the MTA monitoring pages for completeness.
+on an MSID by MSID basis
+
+<li>We used the dataseeker to dump data across multiple tables.
+
+<li> We used the MTA_TRENDS tool to graphically compare the contents of the
+database to the input data.
+
+
+<li>We checked that each element was in the requested 
+database. We have now gone through with a check list that 
+the database match one to one with the input files on an msid by msid basis.
+
+</ul>
+
+<h2>Evaluation</h2>
+<ul>
+<li> <h3> Databases vs. MTA Products - Comparison: </h3>
+
+<ol> 
+<li> No corresponding files for mta report  "comp" and "grad". This is
+by design as those reports are computed from databased msids.
+
+<li> ACA thermal in mta report is named 'pcadtemp'. The following
+entries are missing from pcad temp: tempccd, temphous, tempprim,
+and tempsec.  These are in the aca_image files these were sacrificed 
+       (temporarily).  There are 1-8 ACA Image files per
+       pipeline, and the lack of a stable input source caused
+       considerable trouble for the DB
+       group. We need to be sure they are captured in the second generation dbs.
+
+<li> Spacecraft temp are divided into 2 files
+(sc_anc_temp,sc_main_temp).  This is because of the number of msids
+involved and is fine.
+
+<li> HRMA thermal data are divided into 4 files (precoll, obfwdbulkhead,
+hrmatherm, hrmastruts). This is because of the number of msids
+involved and is fine.
+
+<li> OBA thermal are divided into 4 files (hrmaheaters, hrmagrad, obagrad, onaheaters).
+This is because of the number of msids
+involved and is fine.  However, these databases were also empty.  This
+is due to a CONTENT keyword mismatch present in this data through
+early March (R4CU5UPD13.3).  Once data from after this point in processed, 
+this table will begin to populate.  We need to take care that the
+second generation databases have addressed this issue.
+
+</ol>
+
+
+<p>
+<li> <h3> The DATASEEKER </h3>
+The Dataseeker received heavy usage during this period. 
+It proved the validity of design and seemed easy to improve and debug
+on the fly.  This is because we were running a
+  beta version. Not a released version.  Once released, modifications
+  will need to follow the same thread as any other software.
+The primary search criteria were not interfaced with the
+ephemeris data in  mta_sc_criteria.
+successful queries were run on 
+OBSID, SI, Grating, Attitude and roll, documentation should be clarified to
+indicate that the latter 3 are entered in degrees.
+
+Here I list some particular issues addressed - thanks, Ryan
+<ul>
+<li> primary query now done in C not perl
+<li> Non-working fields now grey.
+<li> Added quick buttons to select out db table columns as well as rows. 
+<li> Button to skip secondary criteria (ISSUE BELOW) 
+<li> Warning & continue on exceeding 2000 rows.
+<li> select by Attitude, Roll and obsid now work
+<li> Dataseeker now has all working tertiary tables.
+<li> fits headers should capture query -enhancement & done
+</ul>
+
+Here I list some particular issues outstanding 
+<ul>
+<li> followed link becomes grey, this gets confused with non-working
+fields.  followed link should go to dark blue.
+<li> There is a problem with handling files with long gaps, it is
+unclear if this is simply a time problem (i.e. it takes longer than
+the timeout) or an actual algorithm failure. (especially noticed with
+SIM data)
+<li>It seems that SQL has a limit
+on the number of AND/OR's you can have in a query, and searching with
+ACIS-S as criteria returns over that number of AND/OR's.  I'll have to
+split up the queries a bit, it seems.  Now that there's more data in the
+databases, other similar problems may start appearing.
+<li> The data seeker command line tool (dsclt) needs to be moved up to daily 
+for testing.
+</ul>
+<p>
+
+<li> <h3> Trends Tool </h3>
+This finally got a good workout. In this period, we addressed the
+fitting algorithm.  The actual algorithm is user selectable, we now
+use an algorithm which smoothes the data before fitting.  
+<p>
+I am concerned
+that the pipeline requires users to properly insert the times on the 
+start and stop of the weekly runs in seconds,  this opens up a large
+possibility of user error.  Default input should be simplified.
+One suggestion for the pipeline is that it look at the time of the
+most recent data in the database, back off to the previous midnight 
+and call that the "end time," then
+subtract 604,800 seconds from the end time and call that "start time."
+<p>
+Recall times from the 
+archive were acceptable, < 10 minutes for all ACIS products for a week.
+However, this scales to 40 minutes/subsystem for a month, and about 8 hours
+to recall all data on a subsystem for a year.
+Given the run efficiency the monthly and mission
+need to be handled differently from the weeklies.  The <a href=
+"./specs/monitor.ps">
+Monitor spec.</a> describes
+another scenario which adds weekly data to make longer term data
+products.   We have not demonstrated this.  
+
+<ul>
+<li> bug: "Last weekly update occurred on XXX-XXX" times in error.
+<li> Science deficiency: <a
+href="http://hea-www.harvard.edu/%7ejpetres/workstuff/UNIQUE_MNEMONICS_WITHOUT_DESCRIPTIONS.list">
+Many MSIDs missing descriptors </a>, SOT to fix this, next week 
+<li> Enhancement request: in addition to avg, std, min, max and count
+we should report the "slope" of the fit.
+</ul>
+
+<li> <h3> General Issues: </h3>
+We could not find readily available documentation on the general use of
+sybase tables.  This makes testing difficult. In the end we found a
+discontinued "quick reference" for the adaptive server. <b> The existence
+of the should be general knowledge for testing.</b>
+
+<p>
+
+<li> <h3> The DATABASES  </h3>
+
+Database data from dataseeker was compared with re-run daily report data.
+Timing is such that at time n, average is given for the  data points
+within the next n+300s.  Data gaps are in all tables.
+Average and standard deviation and limits have been spot checked
+for all tables/columns - no problems.
+
+ No Issues here have been resolved from the previous report.  
+They need to be addressed in the second generation DBs.
+
+<pre> 
+Database mtasim     
+  Table _simactu_avg
+    *** - oddities  (SEE ACTIONS SECTION)
+      faedge (always 0), fatabwid (always 0), mrmdest (2/3 are 0),
+      tscedge(2/3 are 0), tsctabwid(2/3 are 0)
+        Problem is that original data resolution ~1050 s. to be
+	addressed in second gen. dbs.
+        (_lim alternates 0 to 1)
+  Table _simtemp_avg - no problems
+  Table _simelec_avg - no problems
+
+Database mtahrc
+  Table _hrctemp_avg - no problems
+  Table _hrcelec_avg - 0 values in first row
+  Table _hrcveto_avg - no problems
+  Table _hrcchk_avg - no problems 
+
+Database mtasubsys
+  batt_temp_avg       - no problems            
+  sc_anc_temp_avg     - no problems            
+  sc_main_temp_avg    - no problems            
+  spcelecb_avg        - LONG POLES these 3 tables + PCAD drift 
+  spceleca_avg        - take too long to populate in the current
+  spcelec_avg         - design. They will be back in 2nd gen db.
+  epsbatt_avg         - no problems            
+
+Database mtaephin      
+ ephkey_avg  - no problems 
+ ephrate_avg - no problems 
+ ephtv_avg   - no problems 
+ ephhk_avg   - no problems 
+
+Database mtaacis
+ aciseleca_avg - no problems    
+ aciselecb_avg - no problems             
+ acismech_avg  - no problems             
+ acistemp_avg  - no problems             
+
+Database mtatel
+ gratgen_avg           - no problems                 
+ hrmagrad_avg          - NO DATA  keyword problem                    
+ hrmaheaters_avg       - NO DATA  keyword problem                         
+ hrmastruts_avg        - no problems               
+ hrmatherm_avg         - no problems               
+ obagrad_avg           - NO DATA  keyword problem                           
+ obaheaters_avg        - NO DATA  keyword problem                           
+ obfwdbulkhead_avg     - no problems              
+ precoll_avg           - no problems              
+
+Database mtapcad
+ pcadgdrift_avg          - LONG POLE - not populated in by ops  
+ pcadftsgrad_avg         - no problems    
+ pcadtemp_avg            - no problems   
+ pcadrwrate_avg          - no problems  
+ pcadgrate_avg           - no problems  
+ pcaditv_avg             - no problems  
+</pre>
+
+
+<li> Configuration DATABASES<br>
+These are unchanged as well from the last test.
+We have requested a couple of changes for the second gen. db. through MCD.
+Specifically  the format msid changed from P001 to P007/8 and is now
+CTUFMTSL.  There is now a greater need to monitor radiation and
+we are using the geometric correction for ephin  COGEOMTR as a primary
+state determiner. Third we have come to rely more on sub format data 
+than originally planned so the telemetry sub-format word COTLRDSF
+is also useful.  This is all captured in 
+<a href="http://icxc.harvard.edu/scio/dp/mta_msid_eval.txt">Mark's document</a>.
+
+
+<li> Primary DATABASES<br>
+<ul>
+<li> MTA took an action to describe primary databases so they could
+be coded by the db team.  These are currently supported in the
+dataseeker via RDB tables populated by the SOT.
+This is all captured in 
+<a href="http://icxc.harvard.edu/scio/dp/mta_msid_eval.txt">Mark's
+document</a> too. But I summarize it here:
+
+<pre>
+  
+                            Data Product 
+   DB Table        Content              MSID         Pipe   
+   -------------   ----------------     -------      ------ 
+   mta_obs_prim?   obs0a.par            detector     obidet 
+                   obs0a.par            grating      obidet 
+                   obs0a.par            observer     obidet
+                   obs0a.par            seq_num      obidet
+                   ????                 si_mode ???(alternative - see below)
+                   pbk0.fits        (could use data mode and readmode- null for HRC)
+
+
+  DB Table        Content              MSID       Pipe
+  -------------   ----------------     -------    ------  
+  mta_pcad_prim   AIPROPS              avg_ra     aspL0.5 
+                  AIPROPS              avg_dec    aspL0.5 
+                  AIPROPS              avg_roll   aspL0.5 
+                  AIPROPS              pcad_mode  aspL0.5 
+                  AIPROPS              obsid      aspL0.5 
+
+</pre>
+
+</ul>
+</ul>
+
+
+<li><a name="ACTIONS"></a><h2>Actions From March</h2></a>
+Here is a list of the actions outstanding from 
+March's meeting I have added in bold the closures that I am aware of.
+Please send me any more closure data if you have, otherwise we'll carry
+the actions until the next report.
+<ol>
+<li>  Review of the Databases
+<ul>
+<li> hrmagrad_avg, hrmaheaters_avg, obagrad_avg, & obaheaters_avg - NO DATA
+    Currently this data is not being ingested by AP 
+
+    ==> Mark: Work with DP to get this added to the AP registries
+              Also, Coordinate Ops procedure to so that back data
+                   in cache gets ingested and cleaned off of disk.
+		   <i> CLOSED- this is fixed in a recent update and 
+		   data since mid March should be ingestible.  We need
+		   to consider if backfilling will be a problem </i> 
+
+<li>  Obsolete tables need to be deleted from the Avg DB.
+    ==> Alesha: clean tables from mtasubsys & pcaddrift_avg marked on report
+
+<li> HRC elec - 1st row are 0's
+    ==> Alesha: check this DB and send group finding.
+
+<li>  Sim B
+    ==> Scott/Mark : check what MTA is reading/writing for SIM B.  May
+        want to run off of the SIM L0.5 product which checks and only
+        writes from which side is ON. <i> CLOSED. Here are our findings:
+
+The following files are the SIM L0 data products.  MSIDs monitored
+from these files get jumbled in the database tables due to the 
+side A/B duality ( meaning 2 files, 1=side A, 1=side B) are ingested.<br> 
+
+    SIM     = simf<t>N<v>_[ab]_tlm0.fits<br> 
+    SIMDIAG = simf<t>N<v>_[ab]_diag0.fits
+<br> 
+We currently monitor 26 MSIDs from these two products
+15 from SIM, and 11 from SIMDIAG.<p>
+
+I compared these MSIDs with the SIM L0.5 data products:<br> 
+  SIMCOOR =  simf<t>N<v>_coor0a.fits<br> 
+  SIM_MRG = simf<t>N<v>_tlm0a.fits<br> 
+ 
+All fields currently monitored in the SIM (tlm0.fits) data product
+can be obtained from the merged L0.5 data product SIM_MRG.  Those
+that are from the diagnostics file ( SIMDIAG ) do not have a match
+and will need some other solution.  I'm not sure how we would 
+integrate this into the current pipeline, but we could use the 
+value of the "SEAIDENT" column of the L0.5 file to select which 
+SIMDIAG file to monitor.  Not sure what to do if the side switches
+in the middle of a file?  Just an idea.<p>
+
+We recommend a move to monitoring the L0.5 SIM_MRG product instead 
+of the L0 "SIM" product.  This will ease the A/B redundancy problem 
+we are seeing.<p>
+
+
+Obviously, this has an impact on DB and AP to feed/ingest/archive 
+this different file.  How much of an impact is it in each of your
+areas to switch from the L0 SIM file to the L0.5 SIM_MRG file?
+I can provide detailed file descriptions, but aside from the
+CONTENT keyword, they appear to have the same structure.<p>
+
+All MSIDs from the L0 SIM DIAG
+file are going to be jumbled still.  A solution to that is still needed.
+However only 1 diag file is valid at a time.  The ingest tool could
+take the valid SEA as a parameter.<p></i> 
+
+
+<li>  Config DB - NULL rows - may be bad data quality
+    ==> Alesha check
+
+<li>  Ephem - move mtacriteria to primary = 3rd set of DBs
+
+<li>  Dataseeker
+    Details will be worked with MTA team.
+
+    ==> IE: check mwrfits for workaround to write problem with fits 
+        column name that start with a number for Jim. <br>  
+
+    - Need a lookup table to map DB msids to P008.<br> 
+    ==> Jim/Takashi -- short term solution - <i>Done with errors noted above </i>
+    ==> Ian - create when translate the DB for telemetry.  
+              Need to work this requirement into that effort<br> 
+</ul>   
+<li> Enhancements/Fixes
+<ul>
+   <li> Change sample time from 300s to 328s.  
+     Pros and cons outlined in Scott/Ian/Arnold discussion notes.  
+     Will add lookup table so that time can change.  Not looked at
+     as common event but need the flexibility if required.
+     ==> Alesha - evaluate impact of change on DB code.  
+     <b> I HEREBY WITH DRAW THIS REQUEST </b>
+
+   <li> Handling timepixr
+     Engineering -- timepixr = 0
+     ACIS/HRC event -- timepixr = 0.5
+     1 ephin case is different - timepixr is non-zero.
+     ==> IE: send info on timpixr for different ephin files.
+
+     ==> MCD: need to handle in new averaging code ... where the time 
+              stamp is relative to the bin.
+
+   <li> Primary DB -- currently implemented off to the side from Acorn files.  
+        Discussed that most of the data is in actual obspar or could be added.
+        ==> Scott: send info on current definition so we can map to obspar and
+                   other OCAT data in order to evaluate. -<i>CLOSED
+		   discussed in text. Though Mark Ian and I need to
+		   loop through it a few more times.</i>
+
+   <li>  Config & Avg DBs - Need to review/fix time stamps.  
+   <pre>
+     Now:
+     ====
+                        config          average
+Config bin time ---->   ------          ------- <-- avg bin start
+                          |               |
+                          |               |
+                          |               |
+        snapshot -->    ------          ------  <--- avg bin stop & bin time
+                          |               |
+                          |               |
+                          |               |
+                        ------          ------
+
+     Need it to be:
+     ==============
+
+                        config          average
+                        ------          -------
+                          |               |
+                          |               |     <--- avg bin start
+                          |               |
+snapshot & bin time ->  ------          ------  <--- avg bin time to file
+                          |               |
+                          |               |     <--- avg bin stop
+                          |               |
+                        ------          ------
+
+        ==> Alesha: evaluate current implementation.  Config has to be fixed.
+                It would be good to fix avg as well so we can go operational.
+                Evaluate the time to change config and avg to above scheme.
+                Write up algorithm change for review.
+</pre>
+
+</ul>
+</ol>
+</ul>
+<a name="LIM"><h2>Limitations</h2></a>
+
+These databases stand to be a tremendous boon to investigation of
+spacecraft performance and may well be able to serve in science
+investigations as well.  There are a few issues that need to be
+addressed though.
+
+<ul>
+<li>Limitations of first generation databases:<br>
+There are known limitations of the current generation MTA 
+database tables.  I enumerate them here for reference.
+
+Timing:
+
+The timing, as stands, is inconsistent and inappropriate. 
+This is as much an error of oversight than anything else.
+
+<li> The average (tertiary) databases take ~9 samples from T1-T9 and assign the 
+average value to T1.  This will be addressed by new sciops code.
+
+<li> The configuration (secondary) databases, only add a new record
+when there is new data,  but assuming things change between T1 and T9 above.
+take the configurations at T9 and assign it to T1.
+This will be addressed by new db_team code.
+
+<li> Four current database tables are turned off:
+  spcelecb_avg, spceleca_avg, spcelec_avg, pcadgdrift
+This will be addressed by new sciops code.
+
+<li> Four current database tables are getting no data due to keyword problems:
+hrmagrad_avg,  hrmaheaters_avg,  obagrad_avg,  obaheaters_avg 
+This will be addressed by new db_team code.
+
+<br>
+</ul>
+</ul>
+
+<h2>Recommendations</h2>
+
+I declare this test successful, there were no show stopping surprises
+and no errors in segments of the code not already scheduled for
+revamp.  I suggest we proceed as follows: (All steps and dates negotiable).
+
+<ul>
+
+<li> Continue to populate the extant databases via CXCDSops.
+with luck we could be caught up by early June, then work back to 
+DOM 1. 
+
+<li> Move the data seeker into an operational configuration
+
+<li> Move the data seeker command line tool into an operational configuration
+
+<li>In parallel, Science will continue testing on larger data base, 
+this test will involve all DOSS.  Report due by July 15.
+The aim here is to spread the testing in begin practical application
+of the data bases.
+
+<li>Also in parallel SCIOPS should work on new averaging pipeline.
+INTEG should work ingestion into OPUS.  This work is already ongoing,
+but given the number of open issues will probably take 3-5 months to make it to operation.
+</ul>
+</ul>
+
+<h2>LONG TERM-NEW DATA BASES:</h2>
+ 
+There have always been a second set of tables in the offing.
+It looks like development could start soon.
+I summarized these in the March report.
+<p>
+NEW TABLES:<br>
+
+Executive listing of new DBTs in priority order.  The previous report 
+detailed these, the are now being maintained in Mark's document.
+
+<ol>
+<li> - Level 2 sources* 
+<li> new secondary data base as described in text.
+<li> Primary data
+<li> Gratings (3) 
+<li> ACIS Background (should move up to 2 when the SIB is done)
+<li>HRC BACKGROUND  (should move up to 3 when the SIB is done)
+<li> EPHIN L1
+<li> ACA
+</ol>
+
+*An RDB form of this exists and should be brought into dataseeker as
+soon as possible. <br>
+

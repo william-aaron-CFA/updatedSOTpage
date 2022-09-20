@@ -1,0 +1,256 @@
+From SThrcelec_static_hk0
+TTYPE2  = 'P15CAST '           / +15V LVPS on/off
+TFORM2  = 'X       '           / format of field
+TTYPE3  = 'ST_P15CAST'         / Status for field P15CAST
+TFORM3  = 'B       '           / format of field
+TTYPE4  = 'SPTPAST '           / Spect Det Top Plate HV Step
+TFORM4  = 'B       '           / format of field
+TTYPE5  = 'ST_SPTPAST'         / Status for field SPTPAST
+TFORM5  = 'B       '           / format of field
+TTYPE6  = 'N15CAST '           / -15V LVPS on/off
+TFORM6  = 'X       '           / format of field
+TTYPE7  = 'ST_N15CAST'         / Status for field N15CAST
+TFORM7  = 'B       '           / format of field
+TTYPE8  = 'SPBPAST '           / Spect Det Bottom Plate HV Step
+TFORM8  = 'B       '           / format of field
+TTYPE9  = 'ST_SPBPAST'         / Status for field SPBPAST
+TFORM9  = 'B       '           / format of field
+TTYPE10 = 'P24CAST '           / +24V LVPS on/off
+TFORM10 = 'X       '           / format of field
+TTYPE11 = 'ST_P24CAST'         / Status for field P24CAST
+TFORM11 = 'B       '           / format of field
+TTYPE12 = 'IMTPAST '           / Imaging Det Top Plate HV Step
+TFORM12 = 'B       '           / format of field
+TTYPE13 = 'ST_IMTPAST'         / Status for field IMTPAST
+TFORM13 = 'B       '           / format of field
+TTYPE14 = 'IMBPAST '           / Imaging Det Bottom Plate HV Step
+TFORM14 = 'B       '           / format of field
+TTYPE15 = 'ST_IMBPAST'         / Status for field IMBPAST
+TFORM15 = 'B       '           / format of field
+TTYPE16 = 'MTRSELCT'           / Selected Motor
+TFORM16 = 'X       '           / format of field
+TTYPE17 = 'ST_MTRSELCT'        / Status for field MTRSELCT
+TFORM17 = 'B       '           / format of field
+TTYPE18 = 'MTRSTATR'           / Motor Status Register
+TFORM18 = 'X       '           / format of field
+TTYPE19 = 'ST_MTRSTATR'        / Status for field MTRSTATR
+TFORM19 = 'B       '           / format of field
+TTYPE20 = 'MTRCMNDR'           / Motor Command Register
+TFORM20 = 'X       '           / format of field
+TTYPE21 = 'ST_MTRCMNDR'        / Status for field MTRCMNDR
+TFORM21 = 'B       '           / format of field
+TTYPE22 = 'SCTHAST '           / Last Motor Step Load
+TFORM22 = 'I       '           / format of field
+TTYPE23 = 'ST_SCTHAST'         / Status for field SCTHAST
+TFORM23 = 'B       '           / format of field
+TTYPE24 = 'MTRITMP '           / Motor Over-Current/Temp
+TFORM24 = 'X       '           / format of field
+TTYPE25 = 'ST_MTRITMP'         / Status for field MTRITMP
+TFORM25 = 'B       '           / format of field
+TTYPE26 = 'MLSWENBL'           / Motor Limit Switch Enable
+TFORM26 = 'X       '           / format of field
+TTYPE27 = 'ST_MLSWENBL'        / Status for field MLSWENBL
+TFORM27 = 'B       '           / format of field
+TTYPE28 = 'MLSWSTAT'           / Motor Limit Switch Status
+TFORM28 = 'X       '           / format of field
+TTYPE29 = 'ST_MLSWSTAT'        / Status for field MLSWSTAT
+TFORM29 = 'B       '           / format of field
+TTYPE30 = 'FCPUAST '           / Forced Coarse Position - U
+TFORM30 = 'B       '           / format of field
+TTYPE31 = 'ST_FCPUAST'         / Status for field FCPUAST
+TFORM31 = 'B       '           / format of field
+TTYPE32 = 'FCPVAST '           / Forced Coarse Position - V
+TFORM32 = 'B       '           / format of field
+TTYPE33 = 'ST_FCPVAST'         / Status for field FCPVAST
+TFORM33 = 'B       '           / format of field
+TTYPE34 = 'CBHUAST '           / Blanking High Limit - U
+TFORM34 = 'B       '           / format of field
+TTYPE35 = 'ST_CBHUAST'         / Status for field CBHUAST
+TFORM35 = 'B       '           / format of field
+TTYPE36 = 'CBLUAST '           / Blanking Low Limit - U
+TFORM36 = 'B       '           / format of field
+TTYPE37 = 'ST_CBLUAST'         / Status for field CBLUAST
+TFORM37 = 'B       '           / format of field
+TTYPE38 = 'CBHVAST '           / Blanking High Limit - V
+TFORM38 = 'B       '           / format of field
+TTYPE39 = 'ST_CBHVAST'         / Status for field CBHVAST
+TFORM39 = 'B       '           / format of field
+TTYPE40 = 'CBLVAST '           / Blanking Low Limit - V
+TFORM40 = 'B       '           / format of field
+TTYPE41 = 'ST_CBLVAST'         / Status for field CBLVAST
+TFORM41 = 'B       '           / format of field
+TTYPE42 = 'WDTHAST '           / Width Threshold Setting
+TFORM42 = 'B       '           / format of field
+TTYPE43 = 'ST_WDTHAST'         / Status for field WDTHAST
+TFORM43 = 'B       '           / format of field
+TTYPE44 = 'SCIDPREN'           / Science Processor Enables
+TFORM44 = 'X       '           / format of field
+TTYPE45 = 'ST_SCIDPREN'        / Status for field SCIDPREN
+TFORM45 = 'B       '           / format of field
+TTYPE46 = 'HVPSSTAT'           / HVPS Status
+TFORM46 = 'X       '           / format of field
+TTYPE47 = 'ST_HVPSSTAT'        / Status for field HVPSSTAT
+TFORM47 = 'B       '           / format of field
+TTYPE48 = 'S1HVST  '           / Shield PMT 1 HV Setting
+TFORM48 = 'B       '           / format of field
+TTYPE49 = 'ST_S1HVST'          / Status for field S1HVST
+TFORM49 = 'B       '           / format of field
+TTYPE50 = 'S2HVST  '           / Shield PMT 2 HV Setting
+TFORM50 = 'B       '           / format of field
+TTYPE51 = 'ST_S2HVST'          / Status for field S2HVST
+TFORM51 = 'B       '           / format of field
+TTYPE52 = 'IMHVLV  '           / Imaging Bot MCP HV Monitor
+TFORM52 = 'B       '           / format of field
+TTYPE53 = 'ST_IMHVLV'          / Status for field IMHVLV
+TFORM53 = 'B       '           / format of field
+TTYPE54 = 'IMHBLV  '           / Imaging Bot & Top MCP HV Monitor
+TFORM54 = 'B       '           / format of field
+TTYPE55 = 'ST_IMHBLV'          / Status for field IMHBLV
+TFORM55 = 'B       '           / format of field
+TTYPE56 = 'SPHVLV  '           / Spect Bot MCP HV Monitor
+TFORM56 = 'B       '           / format of field
+TTYPE57 = 'ST_SPHVLV'          / Status for field SPHVLV
+TFORM57 = 'B       '           / format of field
+TTYPE58 = 'SPHBLV  '           / Spect Bot & Top MCP HV Monitor
+TFORM58 = 'B       '           / format of field
+TTYPE59 = 'ST_SPHBLV'          / Status for field SPHBLV
+TFORM59 = 'B       '           / format of field
+TTYPE60 = 'S1HVLV  '           / Shield PMT 1 HV Monitor
+TFORM60 = 'B       '           / format of field
+TTYPE61 = 'ST_S1HVLV'          / Status for field S1HVLV
+TFORM61 = 'B       '           / format of field
+TTYPE62 = 'S2HVLV  '           / Shield PMT 2 HV Monitor
+TFORM62 = 'B       '           / format of field
+TTYPE63 = 'ST_S2HVLV'          / Status for field S2HVLV
+TFORM63 = 'B       '           / format of field
+TTYPE64 = 'LLDIALV '           / Lower Level Disc Setting
+TFORM64 = 'B       '           / format of field
+TTYPE65 = 'ST_LLDIALV'         / Status for field LLDIALV
+TFORM65 = 'B       '           / format of field
+TTYPE66 = 'CALPALV '           / Cal Pulser Amplitude
+TFORM66 = 'B       '           / format of field
+TTYPE67 = 'ST_CALPALV'         / Status for field CALPALV
+TFORM67 = 'B       '           / format of field
+TTYPE68 = 'RSRFALV '           / Range Switch Setting
+TFORM68 = 'B       '           / format of field
+TTYPE69 = 'ST_RSRFALV'         / Status for field RSRFALV
+TFORM69 = 'B       '           / format of field
+TTYPE70 = 'QUALITY '           / Quality Bitarray
+TFORM70 = '70X     '           / format of field
+TLMVER  = '        '
+
+
+# HRC Electronics (1.3.9)
+2C1LVBS         hrcelec
+2C2LVBS         hrcelec
+2CSLSHM         hrcelec
+2CSLSMX         hrcelec
+2DRLSCL         hrcelec
+2DRLSOP         hrcelec
+2ELEASS         hrcelec
+2ELEBSS         hrcelec
+2FSCAST         hrcelec
+2FSMRST         hrcelec
+2FSNYST         hrcelec
+2FSPYST         hrcelec
+2IMHVBS         hrcelec
+2MYLSHM         hrcelec
+2MYLSMX         hrcelec
+2PREADS         hrcelec
+2PREBDS         hrcelec
+2PS5AON         hrcelec
+2PS5BON         hrcelec
+2PYLSHM         hrcelec
+2PYLSMX         hrcelec
+2S1HVBS         hrcelec
+2S2HVBS         hrcelec
+2SPHVBS         hrcelec
+2DETART         hrcelec
+2DETBRT         hrcelec
+N15CAST         hrcelec
+P15CAST         hrcelec
+P24CAST         hrcelec
+GRNDAST         hrcelec
+CALPALV         hrcelec
+CBHUAST         hrcelec
+CBHVAST         hrcelec
+CBLUAST         hrcelec
+CBLVAST         hrcelec
+PRBSCR          hrcelec
+PRBSVL          hrcelec
+FCPUAST         hrcelec
+FCPVAST         hrcelec
+IMBPAST         hrcelec
+IMHBLV          hrcelec
+IMHVLV          hrcelec
+IMTPAST         hrcelec
+LLDIALV         hrcelec
+RSRFALV         hrcelec
+S1HVLV          hrcelec
+S1HVST          hrcelec
+S2HVLV          hrcelec
+S2HVST          hrcelec
+SCTHAST         hrcelec
+SPBPAST         hrcelec
+SPHBLV          hrcelec
+SPHVLV          hrcelec
+SPTPAST         hrcelec
+WDTHAST         hrcelec
+HVPSSTAT        hrcelec
+MLSWENBL        hrcelec
+MLSWSTAT        hrcelec
+MTRCMNDR        hrcelec
+MTRITMP         hrcelec
+MTRSELCT        hrcelec
+MTRSTATR        hrcelec
+SCIDPREN        hrcelec
+#
+# HRC Housekeeping (1.3.9) SJW (10/20)
+C05PALV         hrchk
+C15PALV         hrchk
+C15NALV         hrchk
+C24PALV         hrchk
+PRBSCR          hrchk
+PRBSVL          hrchk
+FEPRATM         hrchk
+SPINATM         hrchk
+IMINATM         hrchk
+LVPLATM         hrchk
+SPHVATM         hrchk
+IMHVATM         hrchk
+SMTRATM         hrchk
+FE00ATM         hrchk
+CE00ATM         hrchk
+CE01ATM         hrchk
+
+
+
+**************************************
+2
+# HRC Electronics (1.3.9)  Major edits by SJW (3/1/99)
+2N15VAVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2N15VBVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2P05VAVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2P05VBVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2P15VAVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2P15VBVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2P24VAVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2P24VBVL        hrcelec HRC3ENG         1 2 3 4 5       V               
+2GRDVALV        hrcelec HRC3ENG         1 2 3 4 5       V       
+C05PALV         hrcelec hrc*_hk0.fits   V       8       +5V BUS MONITOR
+C15NALV         hrcelec hrc*_hk0.fits   V       8       -15V BUS MONITOR
+C15PALV         hrcelec hrc*_hk0.fits   V       8       +15V BUS MONITOR
+C24PALV         hrcelec hrc*_hk0.fits   V       8       +24V BUS MONITOR
+CALPALV         hrcelec hrc*_hk0.fits    V       CAL PULSER AMPLITUDE MONITOR
+RSRFALV         hrcelec hrc*_hk0.fits   V
+S1HVLV          hrcelec hrc*_hk0.fits    V       8       SHIELD A HV MONITOR
+S2HVLV          hrcelec hrc*_hk0.fits    V       8       SHIELD B HV MONITOR
+ULDIALV         hrcelec hrc*_hk0.fits    V   UPPER LEVEL DISCRIMINATOR SETTING
+SPHBLV          hrcelec hrc*_hk0.fits    V SPECTROSCOPY LO& UP MCP HV MONITOR
+SPHVLV          hrcelec hrc*_hk0.fits    V  SPECTROSCOPY LOWER MCP HV MONITOR
+LLDIALV         hrcelec hrc*_hk0.fits   V   TRIGGER LEVEL DISCRIMINATOR MONITOR
+PRBSCR          hrcelec hrc*_hk0.fits   V  Primary bus current
+PRBSVL          hrcelec hrc*_hk0.fits   V  Primary bus voltage
+TLEVART         hrcelec  hrc*_ss.fits   total event rate
+VLEVART         hrcelec  hrc*_ss.fits   valid event rate
+SHEVART         hrcelec  hrc*_ss.fits   sheild event rate

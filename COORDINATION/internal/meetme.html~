@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+   <TITLE>SOT Meet-Me facility</TITLE>
+<!-- Changed by: Scott J. Wolk, 20-Jan-1999 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; I; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#DDDDDD" BGCOLOR="#000000" LINK="#FF0000" VLINK="#FFFF22" 
+ALINK="#7500FF" background="../stars.jpg">
+
+<h1>SOT Meet-Me Facility</H1>
+
+The context here is the normal science mission. <p>
+
+The basic paradigm is for the scientists to be working in 
+their own offices on their own workstations, which they
+will have configured in standard ways to get access to data
+and to use standard tools as desired, supplemented by 
+custom configurations to use all other useful software.
+Off-hours, they may be logged in remotely, or be only 
+in voice contact. <p>
+
+
+
+<ol>
+<h3> <li> General use </h3>
+Harvard can set up a conference call with about 1/2 hour lead
+time - cost:<br> 
+$ 0.032 per minute for attended 800 meet me calls<br> 
+$ 0.028 per minute for unattended 800 meet me calls<br> 
+$ 0.018 per minute for toll meet me calls (each user pays for their own call
+to the conference)<br> 
+
+
+<H4> Details </H4>
+
+To set up the conference call with an MCI teleconference operator you can
+call 800-593-9900. Please use the Harvard University Authorization Code
+"3961720V".
+For billing purposes, the MCI operator will ask for the billing number -
+the user should then provide the Harvard telephone number that the call
+should be billed to (your number).<p>
+
+You <em>do not</em> need to be on a Harvard phone to set this up!
+You only need to know your office number- others phone may be anywhere.
+Be sure to give the operator your office telephone number to 
+bill.  The charges for each call will be processed through SAO's or 
+HCO's normal telephone monthly billing system.<p>
+
+
+
+<h3> <li> EMERGENCY USE ONLY - Future usage uncertain:</h3>
+The OCC is setting up a very expensive 
+instantanious Meet-me system. SOT may be able to use this 
+in extreme emergancies. Further discussions are needed.
+
+<!-- Primary is to use a meet-me line.  A SOT meet-me line is being
+set up by Kathy Crowley as part of Marv LeBlanc's
+full backup to the voice loops. This line is instantly 
+available 24/7. One calls a toll-free number, and then 
+enters a code. Multiple people can use speaker phones and
+remain in communication while working at their terminal, (or
+while at home, in transit, etc.). Voice contact or e-mail would
+be used to get the desired people on the line. Cost is 
+based on actual use, per line and per minute, currently at 
+$0.34.  This is too expensive for continuous and routine use
+(we would use normal office phones, e-mail, and face-to-face
+for routine shift and daily status). For 10 significant anomalies
+per year, 5 people each, on open phones for 10 hours, we would
+be talking ~ $10K, which is half the cost of floor space for
+a room (which doesn't exist anyway) in which we could work together.
+<p> -->
+
+</ol>

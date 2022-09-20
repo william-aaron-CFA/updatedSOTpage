@@ -1,0 +1,32 @@
+#######################################################################
+#
+#		Thermal Visualizar Definition file
+#
+#######################################################################
+#
+# SciOps MTA
+#
+# Thermal Subsystem:   Aft Aperture Plate (Aft Heater Plate)
+#
+# Purpose:
+#
+#
+#   This file contains the index, x_pos, y_pos, type, and mnemonic
+# that are required to properly draw the thermal subystem.  The
+# x_pos, and y_pos are in normalized (to 1) units. The type is
+# a signal for thermal/gradient type:
+#	    0 = temp
+#	    1 = radial gradient
+#	    2 = circular gradient
+# 
+#
+#index  x_pos   y_pos	Type	Mnemonic 
+#-----  -----   -----   ----	--------
+  1	0.502	0.837	0	OHRTHR05
+  2	0.193	0.330	0	OHRTHR24
+  3	0.830	0.320	0	OHRTHR49
+  4	0.193	0.680	2	HAHEATGRD1
+  5	0.500	0.117	2	HAHEATGRD2
+  6	0.753	0.655	2	HAHEATGRD3
+
+

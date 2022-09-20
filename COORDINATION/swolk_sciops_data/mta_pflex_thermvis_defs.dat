@@ -1,0 +1,49 @@
+#######################################################################
+#
+#		Thermal Visualizar Definition file
+#
+#######################################################################
+#
+# Group:  SciOps MTA
+#
+# Thermal Subsystem:	HRMA Parabolic Flexure
+#
+# Purpose:
+#
+#   This file contains the index, x_pos, y_pos, type, and mnemonic
+# that are required to properly draw the thermal subystem.  The
+# x_pos, and y_pos are in normalized (to 1) units. The type is
+# a signal for thermal/gradient type:
+#    0 = temp
+#    1 = radial gradient
+#    2 = circular gradient
+#
+#
+#index   x_pos   y_pos  Type	Mnemonic 
+#------   -----   -----  ----	--------
+   1	 0.458	 0.852	0	OHRTHR10
+   2	 0.467	 0.737	0	OHRTHR11
+   3	 0.752	 0.407	0	OHRTHR34
+   4	 0.850	 0.347	0	OHRTHR35
+   5	 0.183	 0.292	0	OHRTHR55
+   6	 0.272	 0.367	0	OHRTHR56
+   7	 0.432	 0.782  1	HPFLEXGRD1
+   8	 0.825	 0.673	2	HPFLEXGRD2
+   9	 0.713	 0.613	2	HPFLEXGRD3
+  10	 0.797	 0.415	1	HPFLEXGRD4
+  11	 0.503	 0.110	2	HPFLEXGRD5
+  12	 0.507	 0.232	2	HPFLEXGRD6
+  13	 0.285	 0.268	1	HPFLEXGRD7
+  14	 0.183	 0.678	2	HPFLEXGRD8
+  15	 0.285	 0.617	2	HPFLEXGRD9
+
+
+
+
+
+
+
+
+
+
+

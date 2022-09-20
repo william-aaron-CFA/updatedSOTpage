@@ -1,0 +1,115 @@
+<HTML>
+<HEAD>
+   <TITLE>M&TA Procedures</TITLE>
+<!-- Changed by: Scott J. Wolk, 22-Apr-1998 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; I; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#DDDDDD" BGCOLOR="#000000" LINK="#FF0000" VLINK="#FFFF22" 
+ALINK="#7500FF" background="stars.jpg">
+
+<OL>
+<LI> start at the SOT HOME PAGE currently:<BR>
+http://hea-www.harvard.edu/asc/XRCF/mta/sot.html
+
+<LI>go to Latest AXAF telemetry.
+(in general this will link to the last 24 hours worth of data)
+
+<LI> go to Lastest AXAF photons
+-click to see the latest processed data.
+
+<LI> click on your favorite highlighted subsystem and check the results.
+		
+
+all should be green or blue = ok or unchecked 
+
+nominally - you would then go an finish that paper you meant to do 6
+months ago.
+
+
+<LI>If there were a detected anomoly you would have recieved an email 
+like this:
+<PRE>
+**************************************
+
+Problem ID:                   56219
+System ID:                      eph
+Status:                             
+Responsible Scientist: Dr. Michael Juda 
+Priority:                          2
+
+YELLOW 12/31/1993 12:37:40.800 HKP5VI had range of 041.1 041.1 for   65 secs.
+YELLOW 12/31/1993 13:58:35.200 HKP5VI had range of 041.9 041.9 for   65 secs.
+YELLOW 12/31/1993 14:00:46.400 HKP5VI had range of 041.5 041.5 for   65 secs.
+RED    12/31/1993 14:02:57.600 HKP5VI had range of 042.7 042.7 for   65 secs.
+RED    12/31/1993 14:05:08.800 HKP5VI had range of 042.7 042.7 for   65 secs.
+YELLOW 12/31/1993 14:07:20.1000 HKP5VI had range of 042.3 042.3 for   65 secs.
+RED    12/31/1993 14:09:31.200 HKP5VI had range of 043.1 043.1 for   65 secs.
+YELLOW 12/31/1993 14:11:42.400 HKP5VI had range of 041.5 041.5 for   65 secs.
+RED    12/31/1993 14:13:53.600 HKP5VI had range of 042.7 042.7 for   65 secs.
+YELLOW 12/31/1993 14:16:04.800 HKP5VI had range of 041.5 041.5 for   65 secs.
+YELLOW 12/31/1993 14:18:16.1000 HKP5VI had range of 042.3 042.3 for   65 secs.
+
+in file:
+/proj/sciops/data/mta/test_checklimits/eph00059302_HKDTC.fits
+***********************
+</PRE>
+If the problem is serious enough you would get paged with this data
+(hence the cryptic form).  Such a page requires a reply withing five
+minutes or the page is resent.
+(simply reply to the page, this is easy with the skytels on order,
+impossible with the motorolas).
+
+
+<LI> 
+in the case of event data, no automated errors get reported.
+To report an error
+email the following to mtadude@head-cfa.harvard.edu, cc swolk
+
+<PRE>
+*************************************** 
+Problem ID:                   9XXXX
+System ID:                      YOUR SYSTEM
+Status:                         new   
+Responsible Scientist: Dr. YOUR NAME 
+Priority:                          3
+
+text
+
+**************************************
+</PRE>
+
+<LI> Call The flight con on the FOT and inform them of the problem
+6-7041 PRIMARY POINT OF CONTATCT 
+other contact numbers are listed here:
+http://hea-www.harvard.edu/asc/XRCF/mta/internal/pocs.html
+
+
+<LI>you can either grab the file and use your favorite tool or
+
+UNIX>setascds  (some setup required for this to work right)
+UNIX>mtadit
+
+and the MTA Data inspector GUI will appear
+
+Once you have done your preliminary analysis
+
+<LI> Rope others into helping
+
+<LI> Go to the problem tracker (via the SOT home page) 
+fill in the appropriate boxes 
+(P.S. this software is still under development 
+I have a few pages of comments on it, your comments are welcome)
+(P.P.S. The problem tracker IS THE method for logging all 
+SOT (ops) anomaly actions) 
+
+other assignees (entered by R.S)
+analysis - (from assignees or RS)
+proposed actions - (from assignees or RS)
+comments on proposed actions- (from assignees or RS)
+final action - (from assignees or RS)
+date closed 
+
+
+6 and 7 can go around many times.
+
+</OL>

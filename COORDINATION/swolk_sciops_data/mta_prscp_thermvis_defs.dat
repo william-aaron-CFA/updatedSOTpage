@@ -1,0 +1,29 @@
+#######################################################################
+#
+#		Thermal Visualizar Definition file
+#
+#######################################################################
+#
+# Group:  SciOps MTA
+#
+# Thermal Subsystem:   PERISCOPE Thermal Hardware
+#
+# Purpose:
+#
+#   This file contains the index, x_pos, y_pos, type, and mnemonic
+# that are required to properly draw the thermal subystem.  The
+# x_pos, and y_pos are in normalized (to 1) units. The type is
+# a signal for thermal/gradient type:
+#    0 = temp
+#    1 = radial gradient
+#    2 = circular gradient
+#
+#
+#index   x_pos   y_pos   Type	Mnemonic 
+#------   -----   -----   ----	--------
+  1	 0.214	 0.168	 0	OHRTHR42
+  2	 0.870	 0.563	 0	OHRTHR43
+  3	 0.872	 0.833	 0	OHRTHR43
+  4	 0.444	 0.163	 1	HPRIGRD1
+  5	 0.442	 0.507	 1	HPRIGRD1
+  6	 0.449	 0.837	 1	HPRIGRD1

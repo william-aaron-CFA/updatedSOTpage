@@ -1,0 +1,256 @@
+<HTML>
+<HEAD>
+   <TITLE>M&TA Monitoring Status</TITLE>
+<!-- Changed by: Scott J. Wolk, 22-Apr-1998 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; I; SunOS 5.5 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#DDDDDD" BGCOLOR="#000000" LINK="#FF0000" VLINK="#FFFF22" 
+ALINK="#7500FF" background="stars.jpg">
+
+<h1> MONITORING </h1>
+<IMG alt="M&TA Logo" SRC="mta_logo2.gif" ALIGN=Bottom> 
+
+<p>
+<a href="MTA.html">Back to MTA coordination page </a>
+<hr>
+
+<h2><a name="MONITOR"> Monitoring of Data</h2>
+<OL>
+<LI>  <a href="#HRMA">HRMA</a><br>
+<LI>  <a href="#PCAD">PCAD</a><br>
+<LI>  <a href="#HRC">HRC</a><br>
+<LI>  <a href="#ACIS">ACIS</a><br>
+<LI>  <a href="#TG">Gratings</a><br>
+<LI>  <a href="#SIM">SIM</a><br>
+<LI>  <a href="#ALI">Alignments</a><br>
+<LI>  <a href="#Sub">SubSystems</a><br>
+<LI>  <a href="#EPHIN">EPHIN</a><br>
+</OL>
+<hr>
+
+
+Goals for monitoring include processing data through the 
+following canned gadgets.
+Current interface control files are linked in:<p>
+
+        <h1><a name="HRMA">HRMA</a></h1> <p>
+<table Border = 2>
+<tr align=center> <th> SE03 #<th> Description <th>Notes <th> Status
+
+<tr align> <td>        <a href="./rehearsal/hrma1_1_01">* 5.6.2.1.1.1,
+.2 and .4*</a> <td> Retrieve  HRMA temperature readouts and each
+gradient<td>&#160<td> Released 12/3/98
+
+<tr align> <td><a href="./rehearsal/hrma1_1_03">*5.6.2.1.1.3* </a> <td>   Calculate
+axial,radial, diametral gradients<td>
+<FONT COLOR=#FF00FF> Now HRMA gradient tool</Font> <td> Released
+12/3/98
+
+<tr align> <td>5.6.2.1.1.6 <td>Format for the trends data base</a> <td>   
+<FONT COLOR=#FF00FF> Absorbed into general database tasks.</Font> <td>   DELETED
+
+<tr align> <td><a href="./rehearsal/hrma1_2_01">*5.6.2.1.2.1* </a> <td>
+HRMA thermal control system housekeeping<td>&#160<td>Released 12/3/98 
+</table>
+
+
+        <h1><a name="PCAD">PCAD</a></h1> <p>
+<table Border>
+<tr align=center> <th> SE03 #<th> Description <th>Notes <th> Status
+
+<tr align=center><td><a href="./rehearsal/pcad1_2_01">5.6.2.1.2.1 </a>
+<td>   Check on-board quaternion vs. expected pointing position<td>
+Done by V&V software <td> INCOMPLETE
+
+<tr align=center><td><a href="./rehearsal/pcad1_2_02">5.6.2.1.2.2 </a>
+<td>   Determine Aspect Camera Assembly temperatures<td>&#160  <td> Released 12/3/98
+
+<tr align=center><td><a href="./rehearsal/pcad1_2_03">5.6.2.1.2.3 </a>
+<td>Check ACA configuration <td> Done by V&V software <td> INCOMPLETE
+
+<tr align=center><td><a href="./rehearsal/pcad1_2_04_1">5.6.2.1.2.4.1 </a> <td>   Check
+position of each star.<td> <FONT COLOR=#FF00FF> Absored in <a href
+="./specs/aca_mon.ps">aca_mon.</a></Font> <td> INCOMPLETE 
+
+<tr align=center><td><a href="./rehearsal/pcad1_2_04_2">5.6.2.1.2.4.2 </a><td>    Check
+pattern of stars.<td> <FONT COLOR=#FF00FF> Absored in <a href ="./specs/aca_mon.ps">aca_mon.</a></Font> <td> INCOMPLETE 
+<tr align=center><td><a href="./rehearsal/pcad1_2_04_3">5.6.2.1.2.4.3 </a><td>    Check
+mag. of each star. <td> <FONT COLOR=#FF00FF> Absored in <a href ="./specs/aca_mon.ps">aca_mon.</a></Font> <td> INCOMPLETE 
+<tr align=center><td><a href="./rehearsal/pcad1_2_04_3">5.6.2.1.2.4.4 </a><td>    Check PRF
+of each star. <td><FONT COLOR=#FF00FF> Absored in <a href ="./specs/aca_mon.ps">aca_mon.</a></Font><td> INCOMPLETE  
+<tr align=center><td><a href="./rehearsal/pcad1_2_05_1">5.6.2.1.2.5.1 </a><td>    Check
+position of each FID light.<td>   <FONT COLOR=#FF00FF> Absored in <a href ="./specs/aca_mon.ps">aca_mon.</a></Font> <td> INCOMPLETE 
+<tr align=center><td><a href="./rehearsal/pcad1_2_05_2">5.6.2.1.2.5.2 </a><td>    Check
+pattern of FID lights.<td> <FONT COLOR=#FF00FF> Absored in <a href ="./specs/aca_mon.ps">aca_mon.</a></Font><td> INCOMPLETE  
+<tr align=center><td><a href="./rehearsal/pcad1_2_05_3">5.6.2.1.2.5.3 </a><td>    Check
+mag. of each FID light.<td> <FONT COLOR=#FF00FF> Absored in <a href ="./specs/aca_mon.ps">aca_mon.</a></Font><td> INCOMPLETE  
+<tr align=center><td><a href="./rehearsal/pcad1_2_05_4">5.6.2.1.2.5.4 </a><td>    Check PRF of each FID light.<td><FONT COLOR=#FF00FF> Absored in <a href ="./specs/aca_mon.ps">aca_mon.</a></Font><td> INCOMPLETE  
+<tr align=center><td><a href="./rehearsal/pcad1_2_06">5.6.2.1.2.6 </a><td>    Check for
+detection of optical monitor star, if expected.<td> <FONT COLOR=#FF00FF>Absored in<a href ="./specs/aca_mon.ps">  aca_mon.</a></Font><td> INCOMPLETE    
+<tr align=center><td><a href="./rehearsal/pcad1_2_07">5.6.2.1.2.7 </a> <td>   Check CCD camera
+dark current, readout noise, sky background...<td>&#160 <td> INCOMPLETE 
+
+<tr align=center><td> <a href="./rehearsal/pcad1_2_08">5.6.2.1.2.8 </a><td>    Check temperatures of, and gradient across FTS<td>&#160<td>Released 12/3/98 
+<tr align=center><td> <a href="./rehearsal/pcad1_2_09">5.6.2.1.2.9</a>
+<td>   IRU configuration<td>No limit checking<td>Released 12/3/98 
+<tr align=center><td> <a href="./rehearsal/pcad1_2_10">5.6.2.1.2.10</a><td>    Determine
+	IRU temperatures and voltages<td>&#160<td>Released 12/3/98 
+<tr align=center><td> <a href="./rehearsal/pcad1_2_11">5.6.2.1.2.11</a><td>   Check for gyro rate data within limits<td>&#160<td>Released 12/3/98 
+<tr align=center><td><a href="./rehearsal/pcad1_2_12">5.6.2.1.2.12</a><td>   Monitor drift rate updates to gyros<td>&#160<td>Released 12/3/98 
+<tr align=center><td> <a href="./rehearsal/pcad1_2_13">5.6.2.1.2.13</a><td>   Check for motion stability within limits<td>&#160<td>Released 12/3/98 
+<tr align=center><td> <a href="./rehearsal/pcad1_2_14">5.6.2.1.2.14</a><td>   Determine reaction wheel rates<td>&#160<td>Released 12/3/98 
+<tr align=center><td><a href="./rehearsal/pcad1_2_15">5.6.2.1.2.15</a><td>   Determine RCS gas usage, and amount in tanks<td>&#160<td>Released 12/3/98 
+<tr align=center><td><a href="./rehearsal/pcad1_2_16">5.6.2.1.2.16</a><td>   Determine Absolute maneuver accuracy<td>&#160<td>Unknown
+<tr align=center><td><a
+href="./rehearsal/pcad1_2_17">5.6.2.1.2.17</a><td> Monitor sun sensor
+readings<td>No checking against expected <td> (monitor only) 
+</table>
+
+
+        <h1><a name="HRC">HRC</a></h1> <p>
+<table Border>
+<tr align=center> <th> SE03 #<th> Description <th>Notes <th> Status
+<tr align=center><td><a
+href="./rehearsal/hrc1_3_01">5.6.2.1.3.1</a><td>      Determine HRC
+background event counting rates.<td>Requires LC<td> outlined 4/6/99
+<tr align=center><td><a href="./rehearsal/hrc1_3_02">5.6.2.1.3.2</a><td>      Determine	X-ray target source counting rates.<td>Requires L2<td>No Spec
+<tr align=center><td>5.6.2.1.3.3<td> Construct pulse height
+distributions for background events.<td>Requires new LC <td> Outlined 4/6/99
+<tr align=center><td><a href="./rehearsal/hrc1_3_04">5.6.2.1.3.4</a> <td>      Create
+	image in DET. coords <td>     <FONT COLOR=#FF00FF> Absorbed
+into <a href ="./specs/photon_mon.ps"> photon_mon	</a>
+</Font><td>Turned over 1/15/99 
+<tr align=center><td><a href="./rehearsal/hrc1_3_05">5.6.2.1.3.5</a><td>      Determine VETO rate.<td>&#160<td>Released 12/3/98 
+<tr align=center><td><a href="./rehearsal/hrc1_3_06">5.6.2.1.3.6</a><td>  infer background rates and proper functional state<td>&160<td>Released 12/3/98 
+<tr align=center><td><a href="./rehearsal/hrc1_3_07">5.6.2.1.3.7
+</a><td>     Dose tool. <td>Absorbed into <a href
+="./specs/hrc_dose.ps"> HRC_DOSE	</a><td>released 3/15/99
+<tr align=center><td><a href="./rehearsal/hrc1_3_08">5.6.2.1.3.8 </a><td>     Temperatures.<td>&#160<td>Released 12/3/98 
+<tr align=center><td><a href="./rehearsal/hrc1_3_09">5.6.2.1.3.9 </a><td>     Electronics <td>&#160<td>Released 12/3/98          
+<tr align=center><td> 5.6.2.3.10<td>  Format the status and parameters of the HRC, and prepare entries
+             for the Status and Trends Databases<td> <FONT
+	COLOR=#FF00FF> Absorbed into general database tasks. </Font> <td>DELETED
+<tr align=center><td> 5.6.2.1.3.11<td> Monitor HRC Shutter
+Position<td>&#160<td>No Spec.
+<tr align=center><td> 5.6.2.1.3.12<td> Construct an image in detector coordinates (without aspect 
+        correction). 
+<td><FONT COLOR=#FF00FF>Absorbed into <a href ="./specs/photon_mon.ps"> photon_mon
+	</a> </Font> <td>Turned over 1/15/99 
+</table>
+
+<h1><a name="ACIS">ACIS</a></h1> <p>
+<table Border>
+<tr align=center> <th> SE03 #<th> Description <th>Notes <th> Status
+<tr align=center><td><a
+href="./rehearsal/acis1_4_01">5.6.2.1.4.1</a><td>     ACIS
+configuration<td>Specialized L0 code<td>No Spec
+<tr align=center><td><a
+href="./rehearsal/acis1_4_02">5.6.2.1.4.2</a><td> Determine ACIS
+Background Rates<td>Requires LC<td> outlined 4/6/99
+<tr align=center><td><a
+href="./rehearsal/acis1_4_03">5.6.2.1.4.3</a><td> Compute electronic
+readout noise<td> Specialized Observation<td>No Spec
+<tr align=center><td><a href="./rehearsal/acis1_4_04">5.6.2.1.4.4</a><td> Monitor count rate of X-ray cosmic target source <td>Requires L2<td>No Spec
+<tr align=center><td><a href="./rehearsal/acis1_4_05">5.6.2.1.4.5</a><td> Generate Image in Detector Coordinates <td><FONT COLOR=#FF00FF> Absorbed into <a href ="./specs/photon_mon.ps"> photon_mon
+	</a> </Font> <td>Turned over 1/15/99 
+<tr align=center><td>5.6.2.1.4.6</a><td> Utilize next-in-line
+mode <td>&#160 <td>DELETED 
+<tr align=center><td><a href="./rehearsal/acis1_4_07">5.6.2.1.4.7 </a>
+<td>    ACIS thermal <td>&#160<td>Released 12/3/98
+<tr align=center><td><a href="./rehearsal/acis1_4_08">5.6.2.1.4.8 </a>
+<td>    ACIS electronics <td>&#160<td>Released 12/3/98
+<tr align=center><td><a href="./rehearsal/acis1_4_09">5.6.2.1.4.9 </a>
+<td>    ACIS DEA <td>Added to Monitor Spec 3/22/99<td>DUE 6/1/99
+<tr align=center><td><a href="./rehearsal/acis1_4_10">5.6.2.1.4.10
+</a> <td>     Check ACIS mechanism controller status <td> 
+Needs ACORN expected state
+mon<td> DUE 5/7/99
+</table>
+
+       <h1><a name="TG">Gratings</a></h1> <p>
+<table Border>
+<tr align=center> <th> SE03 #<th> Description <th>Notes <th> Status
+
+<tr align=center><td><a href="./rehearsal/grat1_5_00">5.6.2.1.5.0 </a>
+<td> Grating Hardware
+electronics<td>&#160 <td> Released 12/3/98 
+<tr align=center><td>5.6.2.1.5.1 <td> Retrieve HRC/ACIS data products
+containing grating images  <td>Part of MTA_DATA_SEEKER <td> DELETED 
+<tr align=center><td><a href="./rehearsal/grat1_5_02"> 5.6.2.1.5.2
+</a><td> Zero-order image centroid position <td>
+<a href="http://space.mit.edu/HETG/flight/obs">obs_anal.pro </a> 
+<td> DUE 6/1/99
+<tr align=center><td>5.6.2.1.5.3 <td>Retrieve line detection data
+<td>Part of MTA_DATA_SEEKER <td> DELETED 
+<tr align=center><td>5.6.2.1.5.4 <td> Characterize line widths,
+transform to grating resolution<td>
+<a href="http://space.mit.edu/HETG/flight/obs">obs_anal.pro </a> 
+<td>  DUE 6/1/99
+<tr align=center><td><a href="./rehearsal/grat1_5_05">5.6.2.1.5.5 </a>
+<td> Calculate grating constants <td><a href="http://space.mit.edu/HETG/flight/obs">obs_anal.pro </a> <td>  DUE 6/1/99
+<tr align=center><td><a href="./rehearsal/grat1_5_06">5.6.2.1.5.6 </a> <td> Grating thermal environment <td>&#160<td>No Spec.
+<tr align=center><td><a
+href="./rehearsal/grat1_5_07">5.6.2.1.5.7</a><td> Compare the
+first-order spectrum to the zero-order spectrum <td><a href="http://space.mit.edu/HETG/flight/obs">obs_anal.pro </a> <td> DUE 6/1/99
+</table>
+
+        <h1><a name="SIM">SIM</a></h1> <p>
+<table Border>
+<tr align=center> <th> SE03 #<th> Description <th>Notes <th> Status
+<tr align=center><td><a href="./rehearsal/sim1_6_01">5.6.2.1.6.1 and 1.6.2 </a> <td>  Determine SIM position<td>&#160<td>Released 12/3/98 
+<tr align=center><td><a href="./rehearsal/sim1_6_03">5.6.2.1.6.3 </a><td>   Determine SIM temperatures and voltages<td>&#160<td>Released 12/3/98 
+<tr align=center><td><a href="./rehearsal/sim1_6_04">5.6.2.1.6.4 </a><td>   Monitor SIM actuator use<td>&#160<td>Released 12/3/98 
+</table>
+
+<h1><a name="ALI">Alignments</a></h1> <p>
+<table Border>
+<tr align=center> <th> SE03 #<th> Description <th>Notes <th> Status
+<tr align=center><td>5.6.2.1.7.1<td>   Determine absolute pointing offsets<td>&#160<td>No Spec.
+<tr align=center><td>5.6.2.1.7.2<td>   Determine fiducial light shifts<td>&#160<td>No Spec.
+<tr align=center><td>5.6.2.1.7.3<td>   Determine focus quality<td>&#160<td>No Spec.
+<tr align=center><td>5.6.2.1.7.4<td>  Monitor ACIS CCD tilts<td>&#160<td>No Spec.
+<tr align=center><td>5.6.2.1.7.5<td>  Monitor HRC MCP tilts<td>&#160<td>No Spec.
+<tr align=center><td>5.6.2.1.7.6<td>   Monitor SIM tilts<td>&#160<td>No Spec.
+<tr align=center><td>5.6.2.1.7.7<td>  Determine Grating Image Orientations<td>&#160<td>No Spec.
+</table>
+
+        <h1><a name="Sub">SUBSYSTEMS</a></h1> <p>
+<table Border>
+<tr align=center> <th> SE03 #<th> Description <th>Notes <th> Status
+<tr align=center><td>5.6.2.1.8.1 <td>  Error Statistics
+Compilation<td> Needs ACORN error stats<td> DUE 5/7/99
+<tr align=center><td><a href="./rehearsal/subsys1_8_02">
+5.6.2.1.8.2</a><td>  Monitor OBC State<td>Needs ACORN expected state
+mon<td> DUE 5/7/99
+<tr align=center><td>5.6.2.1.8.3 <td> Monitor spacecraft equipment configuration<td> <FONT
+ COLOR=#FF00FF> absorbed into <a href ="./specs/mta_find_states.ps">MTA_FIND_STATES. </a></Font><td>Released 12/3/98  
+<tr align=center><td><a href="./rehearsal/subsys1_8_04">5.6.2.1.8.4</a> <td> Monitor spacecraft temperatures<td>&#160<td>Released 12/3/98 
+<tr align=center><td> <a href="./rehearsal/subsys1_8_05">5.6.2.1.8.5</a> <td> Monitor power usage and availability<td>&#160<td>Released 12/3/98 
+<tr align=center><td>5.6.2.1.8.6 <td>  Monitor radiation detector readings<td> <FONT
+ COLOR=#FF00FF> absorbed into <a
+ href="./rehearsal/ephin_x_x">5.6.2.1.9.3 </a></Font> <td> OBSOLETE
+</table>
+
+ 
+
+<h1><a name="EPHIN">EPHIN</a></h1> <p>
+<table Border>
+<tr align=center> <th> SE03 #<th> Description <th>Notes <th> Status
+<tr align=center><td><a href="./rehearsal/ephin1_9_01">5.6.2.1.9.1 </a><td> Check ephin housekeeping status<td>&#160<td>Released 12/3/98 
+<tr align=center><td><a href="./rehearsal/ephin1_9_02">5.6.2.1.9.2 </a><td> Check ephin temperatures and voltages<td>&#160<td>Released 12/3/98 
+<tr align=center><td><a href="./rehearsal/ephin1_9_03">5.6.2.1.9.3
+</a><td> Check ephin Rates<td>&#160<td>Released 12/3/98 
+<tr align=center><td><a href="./rehearsal/ephin1_9_04">5.6.2.1.9.4
+</a><td> Check EPHIN Rates in Level 1<td>&#160<td>Specd  12/14/98 
+</table>
+
+<hr>
+Last update 1/25/99<br>
+<a href="MTA.html">Back to MTA coordination page </a><p>
+<P><A HREF="mailto:swolk@head-cfa.harvard.edu">Email problems to: swolk@head-cfa.harvard.edu</A>
+(<A HREF="http://hea-www.harvard.edu/~swolk/swolk.html">Scott Wolk</A>) <BR>
+...it is all his fault <BR>
+</P>
+<!file:/proj/sciops/data/SE08_rehearsal/mta_days.html>
+</BODY>
+</HTML>

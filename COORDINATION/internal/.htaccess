@@ -1,0 +1,14 @@
+AuthName "Chandra Uplink Support"
+AuthType Basic
+#<Limit GET POST>
+order deny,allow
+deny from none
+#
+# together with "satisfy any" (inherited from top-level), this grants wide
+# open access; the CGI does its own authentication
+#
+allow from all
+#</Limit>
+
+
+
