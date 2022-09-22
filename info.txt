@@ -6,3 +6,5 @@ Webpage uses the '/data/mta4/www/index.html' file as a symbolic link to sot.html
 Included the COORDINATION directory in order to maintain page appearances however wasn't allowed to copy all information. Missing the COORDINATION/internal/makepasswordfile.pl due to lack of reading permissions.
 
 Due to listing out all the focus trends being cluttered, it's better to create directory of subpages from the main page in order to gather similar external links together.
+
+Removing web pages which no longer exist and marking semmently unused pages with RM to suggest removal
