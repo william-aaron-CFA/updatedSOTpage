@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <HTML>
-<HEAD>
+  <HEAD>
+    <style>
+      th, td { padding: 10px;}
+    </style>
    <TITLE>SOT home page</TITLE>
 <!-- Changed by: Scott J. Wolk, 22-Apr-1998 -->
    <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; I; SunOS 5.5
@@ -140,15 +143,27 @@ function QbDcTEST(s)
 
 <h2> REALTIME DATA </h2>
 
-
-
-
-
-
   
 <UL>
-<li><b> Spacecraft:</b>
- <UL>
+  <li><b> Spacecraft:</b>
+    <br><br>
+    <table Border>
+      <tr align = center>
+	<th colspan = 4 >Chandra Snapshot:</th>
+      </tr>
+      <tr align = center>
+	<td><a href="Snapshot/snap.cgi?action=Latest">Original</a></td>
+	<td><a href="https://cxc.cfa.harvard.edu/mta/CSH/soh_snap_tab.html">Maude: Realtime</a> </td>
+	<td><a href="https://cxc.cfa.harvard.edu/mta/CSH_ASVT/soh_snap_tab.html">Maude: ASVT</a></td>
+      </tr>
+      <tr align = center>
+	<td><a href="Snapshot/BUOCC/snap.cgi?action=Latest">Backup: OCC/ASVT</a></td>
+	<td><a href="Snapshot/snarc.html">Recent: No CGI</a></td>
+	<td><a href="SOH/soh.html">State of Chandra (SOH)</a></td>
+      </tr>
+      
+    </table>
+ <!-- <UL>
    <li><a href="Snapshot/snap.cgi?action=Latest">Chandra Snapshot</a>
    Original 
    <li><a href="https://cxc.cfa.harvard.edu/mta/CSH/soh_snap_tab.html">Chandra Snapshot</a>
@@ -161,7 +176,7 @@ function QbDcTEST(s)
    <li><a href="Snapshot/snarc.html"> Most recent Chandra Snapshot</a>
    (no CGI)
    <li><a href="SOH/soh.html">State of Chandra (SOH)</a> Original.
-   </UL> 
+   </UL> Changed to table format. Removed 09/26/22-->
   
 <LI>   <b> ACIS:</b>
 <ul>
