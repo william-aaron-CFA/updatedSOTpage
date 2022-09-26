@@ -2,7 +2,8 @@
 <HTML>
   <HEAD>
     <style>
-      th, td { padding: 10px;}
+      table {border: 1px solid; text-align: center}
+      th, td { padding: 10px; border: 1px solid;}
     </style>
    <TITLE>SOT home page</TITLE>
 <!-- Changed by: Scott J. Wolk, 22-Apr-1998 -->
@@ -145,21 +146,21 @@ function QbDcTEST(s)
 
   
 <UL>
-  <li><b> Spacecraft:</b>
-    <br><br>
-    <table Border>
-      <tr align = center>
+ <!-- <li><b> Spacecraft:</b>-->
+    
+    <table>
+      <tr>
 	<th colspan = 4 >Chandra Snapshot:</th>
       </tr>
-      <tr align = center>
+      <tr>
 	<td><a href="Snapshot/snap.cgi?action=Latest">Original</a></td>
 	<td><a href="https://cxc.cfa.harvard.edu/mta/CSH/soh_snap_tab.html">Maude: Realtime</a> </td>
 	<td><a href="https://cxc.cfa.harvard.edu/mta/CSH_ASVT/soh_snap_tab.html">Maude: ASVT</a></td>
       </tr>
-      <tr align = center>
+      <tr>
 	<td><a href="Snapshot/BUOCC/snap.cgi?action=Latest">Backup: OCC/ASVT</a></td>
 	<td><a href="Snapshot/snarc.html">Recent: No CGI</a></td>
-	<td><a href="SOH/soh.html">State of Chandra (SOH)</a></td>
+	<td><a href="SOH/soh.html">Chandra State of Health (SOH)</a></td>
       </tr>
       
     </table>
@@ -178,12 +179,12 @@ function QbDcTEST(s)
    <li><a href="SOH/soh.html">State of Chandra (SOH)</a> Original.
    </UL> Changed to table format. Removed 09/26/22-->
   
-<LI>   <b> ACIS:</b>
+<LI>  <b>ACIS:</b>
 <ul>
   <li> <a href="https://cxc.cfa.harvard.edu/acis/RT-ACISCDP-V/acis-mean.html">Hardware</a> 
   <li> <a href="https://cxc.cfa.harvard.edu/acis/RTACISCDPV/acisrt-aciscdpv.html">Software</a> 
 </UL>
-  <LI>   <b> HRC:</b>
+  <LI>  <b> HRC:</b>
 <ul>
 <li><a
   href="https://hrc.cfa.harvard.edu/hrcops/ARCHIVE/rtc/WWW/rtc.status">Operational
@@ -216,6 +217,7 @@ EPHIN 3-day plots  </a>
 <LI> <a href="./ASPECT/arc"> Replan Central</a> 
 <LI> <a href="/mta_days/MIRROR/"> SOT Mirror Site</a>
 <li> <a href="http://cxc.cfa.harvard.edu/cgi-bin/DataSeeker/dataseeker.cgi"> DataSeeker</a>
+<li> <a href="https://www.solarham.net/"> Solar Ham </a>
 <!-----
 <li> <a href="https://cxc.harvard.edu/acis/CRMwhatif.cgi"> CRM calculator</a>
 ------>
@@ -569,8 +571,7 @@ HETG zero-order focus</a> -- most recent, plot only.-->
 levels </a>
 ------->
 <Li> <a href="./alerts_radmon.html"> RADMON trigger levels </a>
-<Li> <a href="./REPORTS/sot_jobs.html"> A listing of the cron jobs
-</a>
+<Li> <a href="./REPORTS/sot_jobs.html"> Chandra SOT Cron Job List </a>
 <Li> <a href="./REPORTS/sot_jobs_alerts.html">Chandra SOT Alerts</a>
 When, and to whom, do we send alerts. 
 <Li> <a href="../mta_days/mta_disk_space/">MTA
