@@ -1,0 +1,55 @@
+/* MTA CSS Style Sheet Short */
+
+
+/*
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+*/
+
+
+hr {color:sienna}
+p {margin-left:20px}
+body{   background-color:#FAEBD7;
+        font-family:     serif, sans-serif, Verdana, Helvetica, Arial;
+        font-size:       10pt;
+//      text-align:      justify;
+//      color:           #FFF8DC;
+        margin:          20px;
+        padding:         10px;
+}
+
+table{
+//      color:          #FFFACD;
+        font-size:      95%;
+}
+
+p{
+//        color:          #FFFACD;
+        margin-left:    10px;
+}
+
+p.center{
+        text-align:     center;
+}
+
+a:link    {color:       #FF0000}  /* unvisited link */
+a:visited {color:       #FF00FF}  /* visited link */
+a:hover   {color:       #FFFF22}  /* mouse over link */
+a:active  {color:       #0000FF}  /* selected link */
+
+h1{
+        text-align:     center;
+}
+
+h1, h2, h3, h4{
+//        color:          #FFFACD;
+        font-style:     oblique;
+}
+
+h2.center{
+        text-align:     center;
+}
+
+
+</style>
+

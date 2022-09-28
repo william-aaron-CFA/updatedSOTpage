@@ -1,0 +1,33 @@
+
+Copy MONTHLY.html from the previous month report.
+
+Content Table:
+
+1. comment out the last month's part with <!--     --> (only "two" -- at each side. NO extra --
+   between <!-- -->.
+2. uncomment for the entries for this month's report.
+   the month name between <!-- --> indicate the month of the report (e.g. JAN means Jan Monthly report,
+   not the month publish the report). 
+
+
+For ACIS DOSE,
+a month long and the entire mission tables are found in:
+/data/mta/Script/Exposure/Exc 
+after 3rd of every month (I need to compute manually on the 3rd).
+
+Other Part:
+
+if the line says <!-- UPDATE -->, the name of the file must be updated to the month of report.
+
+if the line says <!-- REPLACE -->, you do not need to change the name on the line, but get a new
+file(s) for the input.
+
+if the line says <!-- UPDATE/REPLCE --> you need to update the name, and obtain a new file.
+
+
+put the comment <!--  --> around the last month's option report part.
+un comment this month's report option part. 
+
+
+copy "trim_gif_edge.perl" from this directory into your report directory and run it. it trims
+un-wanted blank area so that the report can have a proper spacing around figures.

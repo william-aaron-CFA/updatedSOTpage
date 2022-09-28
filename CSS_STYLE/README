@@ -1,0 +1,13 @@
+#########################################
+#CSS Stylesheets
+#Created by william.aaron@cfa.harvard.edu
+#Date 2022/09/28
+########################################
+
+This directory contains CSS Stylesheets for MTA web pages.
+
+Note that many legacy HTML pages reference stylesheets in their local directories or have a style sheet hard-coded into their HTML file.
+
+Please create all future CSS style sheets in this repository for use in future webpages.
+
+If it is desired for a legacy webpage to have its stylesheet altered beyond simple changes within the local HTML file, please use a symbolic link pointing towards this CSS_STYLE directory for the new CSS stylesheet.
