@@ -11,3 +11,5 @@ Note that many legacy HTML pages reference stylesheets in their local directorie
 Please create all future CSS style sheets in this repository for use in future webpages.
 
 If it is desired for a legacy webpage to have its stylesheet altered beyond simple changes within the local HTML file, please use a symbolic link pointing towards this CSS_STYLE directory for the new CSS stylesheet.
+
+Please comment dates next to changes in stylesheet references to keep track of when changes occur
