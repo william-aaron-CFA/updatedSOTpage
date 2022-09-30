@@ -6,3 +6,7 @@ body {
     color: #F0D070;
     background-color: #000000;
 }
+
+a:link {
+    color: #FF0000
+}

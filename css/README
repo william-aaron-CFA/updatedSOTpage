@@ -1,0 +1,17 @@
+#########################################
+#CSS Stylesheets
+#Created by william.aaron@cfa.harvard.edu
+#Date 2022/09/28
+########################################
+
+This directory contains CSS Stylesheets for MTA web pages.
+
+Note that many legacy HTML pages reference stylesheets in their local directories or have a style sheet hard-coded into their HTML file.
+
+Please create all future CSS style sheets in this directory for use in future webpages.
+
+If it is desired for a legacy webpage to have its stylesheet altered beyond simple changes within the local HTML file, please use a symbolic link pointing towards this "css" directory for the new CSS stylesheet.
+
+If a webpage is intended to have it's own personal CSS style sheet, please have that style sheet located in the same directory as the HTML file for consitensy, or have it located directly in the HTML <style> tag. Many legacy pages do not follow this convention but please maintain it for future web pages for eas of future development.
+
+Please comment dates next to changes in stylesheet references to keep track of when changes occur

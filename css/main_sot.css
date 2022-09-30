@@ -1,0 +1,41 @@
+/*Main SOT page CSS*/
+/*Created; 2022/09/28 */
+/* Personal Note. Will likely rename this page in future for use as a specific format for multiple web pages rather than use as just the main webpage style*/
+
+body {
+    color: #F0D070;
+    background-color: #000000;
+    /*background: "./COORDINATION/stars.jpg"; commented out to have black background instead */
+}
+
+table {
+    border: 1px solid;
+    text-align: center;
+    width: 50%;
+}
+
+th,td {
+    padding: 10px;
+    border: 1px solid;
+    align: center;
+}
+
+a:link {
+    color: #FF0000;
+}
+
+a:visited {
+    color: #FFFF22;
+}
+
+a:active {
+    color: #7500FF;
+}
+
+ul {
+    padding: 7px;
+}
+
+li {
+    padding: 2px;
+}

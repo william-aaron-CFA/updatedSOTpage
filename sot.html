@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <HTML>
   <HEAD>
-    <link rel="stylesheet" href="CSS_STYLE/main_sot.css">
+    <link rel="stylesheet" href="./css/main_sot.css">
     <style>
       #remove {background-color:rgb(47,79,79);}/* Style id to demark assets to be removed */
-      table {border: 1px solid; text-align: center}
-      th, td { padding: 10px; border: 1px solid;}
+      special {color:#00FFFF; font-size:200% ;}
     </style>
    <TITLE>SOT home page</TITLE>
 <!-- Changed by: Scott J. Wolk, 22-Apr-1998 -->
@@ -14,17 +13,22 @@
  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </HEAD>
 
-<BODY LINK="#FF0000" VLINK="#FFFF22" 
-ALINK="#7500FF" background="./COORDINATION/Sstars.jpg">
+<BODY>
 
 <center>
-<h1>Chandra <FONT COLOR="#00FFFF" SIZE=7>S</FONT>cience
+<!--<h1>Chandra <FONT COLOR="#00FFFF" SIZE=7>S</FONT>cience
 <FONT COLOR="#00FFFF" SIZE=7>O</FONT>perations
 <FONT COLOR="#00FFFF" SIZE=7>T</FONT>eam 
+</h1>Old HTML4 formatting for title-->
+
+<h1>Chandra <special>S</special>cience
+<special>O</special>perations
+<special>T</special>eam 
 </h1>
+
 </center>
 
-<table border="3" width="100%">
+<table style="border:3; width:100%">
         <tr>
         <td align="center" valign="top" width="650">
                 <map name="header">
@@ -50,7 +54,7 @@ ALINK="#7500FF" background="./COORDINATION/Sstars.jpg">
 
 
 
-<table width="100%" cellspacing="0" cellpadding="10">
+<table style="width:100%; cellspacing:0; cellpadding:10;">
 
 
     
@@ -275,7 +279,7 @@ Processing</a>
 <td><a href="https://cxc.cfa.harvard.edu/mta/MSID_Trends/mta_trending_main.html"> Against Time </a>
 <!--<td>  &#160 <!--  <a href="">With daily mins and maxs </a> -->
 <td><a href="https://cxc.cfa.harvard.edu/mta/MSID_Trends/mta_trending_sun_angle_main.html"> Against Pitch </a>
-<td> &#160 </a>
+<td>  &#160 </a>
 
 
 <tr align=center>
@@ -303,10 +307,13 @@ Engineering</a>
 <li><a href="/mta_days/mta_sim">Monitoring</a>
 <li><a href="/mta_days/mta_sim/Trend">Trending</a>
 <li><a href="/mta_days/mta_sim/MTR">Motor Temperatures </a>
+<li> SIM Memos:
+  <ul>
 <li><a href="/mta_days/mta_sim_twist/sim_twist.html">Memo: SIM Twist</a>
   <!-- New -- 31MAY05 -->
 <li><a href="/mta_days/mta_sim_twist/fid_light_drift.html">Memo: Fid Light
-Drift </a> <!--  -- New -- 25MAY05  -->
+    Drift </a> <!--  -- New -- 25MAY05  -->
+  </ul
 </ul>
 <br>
 
@@ -319,7 +326,8 @@ Aspect Operations Page</a>
 <!--<li id="remove"><a href="https://icxc.harvard.edu/cgi-bin/aspect/aca_bgd_mon/aca_bgd.cgi">
 ACA Background Monitor</a> Outdated 2013. Removed 2022/09/27 -->
 <!--<li id="remove"><a href="./ASPECT/acq_stats/mission_stats.html">
-ACA Acquisition History</a>Outdated 2013. Removed 2022/09/27 -->
+    ACA Acquisition History</a>Outdated 2013. Removed 2022/09/27 -->
+<li><a href="./DAILY/mta_pcad/IRU/iru_bias_trend.html"> IRU BIAS monitor</a> 
 <li><a href="./ASPECT/fid_drift">
 Memo: FID light drift</a>
 <li><a href="./ASPECT/fss_check">
@@ -341,8 +349,7 @@ ACA Dark Current Calibration</a>
   <li><a href="./ASPECT/fid_drift/">Fiducial light drift</a>
 -->
 <!--<li><a href="./DAILY/mta_pcad/IRU/bias.html"> IRU BIAS monitor -->
-<li><a href="./DAILY/mta_pcad/IRU/iru_bias_trend.html"> IRU BIAS monitor 
-</a> 
+
 </UL>
 <br>
 
@@ -361,8 +368,10 @@ ACA Dark Current Calibration</a>
   HETG Energy
  Resolution Status from MIT</a>
 <li><a href="/mta_days//mta_otg/otg.html">Grating Motion Monitoring
-and Trending</a>
-<li> Energy Resolution Memos 
+    and Trending</a>
+<li><a href="./SUBPAGE/focus_trends.html">Streak Focus Trends:</a>
+  
+<li> Energy Resolution Memos: 
 <UL>
 <li><a href="../mta_days/mta_grat/EdE_trend/Memo/EdE/ede_memo.html">Memo: E/dE Energy Resolution Trend of Capella
 </a>
@@ -373,7 +382,6 @@ and Trending</a>
 </a>
 </UL>
 
-<li><a href= './SUBPAGE/focus_trends.html'>Streak Focus Trends:</a>
 
 <!--
 <ul> 
@@ -437,7 +445,7 @@ Removed 2022/09/21 -->
 <a href="/mta_days/mta_temp/mta_fp/main_fp_temp.html">
 -->
 <a href="/mta_days/mta_fp/main_fp_temp.html">
-Focal plane temperature </a>
+ACIS Focal plane temperature </a>
 <li>
 <a Href ="/mta_days/mta_acis_sci_run/science_run.html">
 ACIS Science Run Reports </a>
@@ -487,7 +495,7 @@ ACIS event rates </a>
 <!--<li><a href="/mta_days/mta_temp/mta_eph_cti/">
 ACIS event rates vs. EPHIN/GOES etc </a> Removed 2022/09/27--> 
 </ul> 
-<li>MEMOS:
+<li>ACIS Memos:
 <UL>
 <li> <a
  href="/mta_days/mta_cti/Memo/cti_memo2017.html">Memo: CTI 
@@ -528,9 +536,12 @@ Tab delimited history of state changes </a> (comprehensive: this year only)
 Study of Heating V Pitch </a> In preparation for raising EPHIN
   limits.  <!-- 1 April 09 -->
 <li><a href="https://cxc.cfa.harvard.edu/mta/MSID_Trends/mta_trending_main.html">
-Predictive Long Term Trending </a>  <!---  <Blink> New 5 July 2016 </Blink> 5 July 16  -->
+    Predictive Long Term Trending </a>  <!---  <Blink> New 5 July 2016 </Blink> 5 July 16  -->
+<li> Memos:
+<ul>
 <li> <a href ="./SIM_backing/Document1filt/Document1filt.htm"> 
 Memo: Live ISIM Study  </a> Debugging 11 April 17  
+</ul>
 </ul>
 <br>
 
